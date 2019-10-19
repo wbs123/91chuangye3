@@ -1,0 +1,148 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta content="91创业网,注册页面" name="keywords">
+    <meta content="91创业网企业中心注册页面。" name="description">
+    <title>企业中心--注册</title>
+    <link rel="stylesheet" href="__STATIC__/member/css/reset.css" />
+    <link rel="stylesheet" href="__STATIC__/member/css/style.css" />
+    <script type="text/javascript" src="__STATIC__/member/js/jq.js"></script>
+    <script type="text/javascript" src="__STATIC__/member/js/changecode.js"></script>
+</head>
+<body>
+<div class="mainBody">
+    <div class="autoWidth clear">
+        <div class="logo fl">
+            <a href="/" class="fl jmw"><img src="__STATIC__/member/img/logo.png" /></a>
+            <p class="title fl">企业账号注册</p>
+        </div>
+        <div class="freeConsultation fr">
+            <span class="free">免费咨询：400-809-0091 </span>
+            <a href="/" class="return">返回首页</a>
+            <a href="/user/registered/" class="personalLogin">个人注册</a>
+        </div>
+    </div>
+
+    <div id="main">
+        <form action="/user/register/" method="post" id="company_register" autocomplete="off">
+            <div id="wizard">
+                <p class="title" style="display:block;">企业账号注册</p>
+                <p class="title">设置账号密码</p>
+                <ul id="status">
+                    <li class="active sp1">填写账号信息</li>
+                    <li class="sp2">设置登录密码，完成注册</li>
+                </ul>
+                <div class="items">
+                    <div class="page">
+                        <!-- 品牌名称 -->
+                        <div class="brandName">
+                            <div class="brandNameTop brandIcon select clear">
+                                <input type="text" name="brand_name" id="brand_name" placeholder="品牌名称" title="品牌名称" class="fl" onblur="checkBrandName();">
+                            </div>
+                            <div class="brandNameTop brandIcon select clear">
+                                <input type="text" name="company_name" id="company_name" placeholder="公司名称" title="公司名称" maxlength="50" class="fl" onblur="checkCompanyName();">
+                            </div>
+                            <div class="brandNameBtm clear">
+                                <div class="selectIndustry fl mapIcon" onclick="showGrade(1);">
+                                    <span id="areaCont1">选择品牌所属行业</span>
+                                    <div class="newIndustry_ul" id="industry_ul1">
+                                        <ul class="selectIndustry_ul clear">
+                                            <volist name="category" id="cate">
+                                            <li tag="{$cate.id}" onclick="selectParent($(this));"><?php echo str_replace('加盟','',$cate['name']);?></li>
+                                            </volist>
+                                        </ul>
+                                        <input type="hidden" name="industry_id" id="industry_id" value="0">
+                                    </div>
+                                </div>
+                                <div class="selectIndustry fl rightArrowIcon" onclick="showGrade(2);">
+                                    <span id="areaCont2" style="margin-left:20px;">请选择</span>
+                                    <div class="newIndustry_ul" id="industry_ul2">
+                                        <ul class="selectIndustry_ul selectIndustry_ul2 clear">
+
+                                        </ul>
+                                        <input type="hidden" name="industry_child_id" id="industry_child_id" value="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 手机号 -->
+                        <div class="brandName">
+                            <div class="brandNameTop accountPhone select">
+                                <input type="text" name="telephone" id="telephone" placeholder="手机号" title="手机号" class="fl" maxlength="11" onblur="checkTelephone();">
+                            </div>
+                            <div class="brandNameBtm">
+                                <div class="formPhone dxin_yzm clear">
+                                    <input type="text" name="combiner" id="combiner" placeholder="联系人" title="联系人" class="fl" maxlength="10" onblur="checkCombiner();">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 验证码 -->
+                        <div class="brandName">
+                            <div class="brandNameTop picYzhengm clear select">
+                                <p class="formPhone yzm fl">
+                                    <input type="text" name="code" id="code" placeholder="图形验证码" title="图形验证码" >
+                                </p>
+                                <p class="fl yzmNum">
+                                    <!--<img id="change_code" src="img/identifying_code.php" onclick="changeCode($(this))" />-->
+                                    <captcha height="40" width="100" font-size="12" length="4" id="captcha2"/>
+                                </p>
+                                <!--<p class="refresh fr" onclick="changeCode($('#change_code'))">刷新</p>-->
+                            </div>
+                            <div class="brandNameBtm">
+                                <p class="formPhone dxin_yzm clear">
+                                    <input type="text" name="check_code" id="check_code" placeholder="短信验证码" title="短信验证码" class="fl" value="">
+                                    <input type="button" value="获取验证码" class="getYzm fr" id="getYzm" onclick="sms();">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="btn_nav">
+                            <input type="button" class="next right" value="下一步" />
+                        </div>
+                        <p class="notRegistered">
+                            <span>已有账号，去</span>
+                            <a href="/user/login/">登录</a><span>>></span>
+                        </p>
+                    </div>
+                    <!-- 第二步 -->
+                    <div class="page">
+                        <!-- 品牌名称 -->
+                        <div class="brandName">
+                            <div class="brandNameBtm brandIcon clear">
+                                <input type="text" name="username" id="username" placeholder="账户名称" title="账户名称" class="fl" maxlength="12" onblur="checkUsername();">
+                            </div>
+                        </div>
+                        <div class="brandName">
+                            <div class="brandNameTop accountPassword select clear">
+                                <input type="password" name="password" id="password" placeholder="登录密码" title="登录密码" class="fl" maxlength="20" minlength="6" onblur="checkPassword();">
+                            </div>
+                            <div class="brandNameBtm accountPassword clear">
+                                <input type="password" name="check_password" id="check_password" placeholder="再次输入密码" title="再次输入密码" class="fl" maxlength="20" minlength="6" onblur="checkConfirmPassword();">
+                            </div>
+                        </div>
+                        <div class="serviceTerms">我已阅读并接受<a href="../terms.html" target="_blank">《中国加盟网服务条款》</a></div>
+                        <div class="btn_nav clear">
+                            <input type="button" class="prev logImmediately fl returnPre returnPre1" value="返回上一步" />
+                            <input type="button" class="logImmediately fr returnPre" id="sub" value="注册" />
+                        </div>
+                        <p class="notRegistered">
+                            <span>已有账号，去</span>
+                            <a href="/user/enterprise/">登录</a><span>>></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- 底部版权信息 -->
+    <div class="footer footer_qy">
+        <p>Copyright@2017-2022 <a href="http://www.91chuangye.com" style="color: white;">www.91chuangye.com</a>京ICP备14049210号3 <br>北京品创天下科技有限公司  版权所有</p>
+    </div>
+</div>
+
+<script type="text/javascript" src="__STATIC__/member/js/scrollable.js"></script>
+<script type="text/javascript" src="__STATIC__/member/js/register_v1.js"></script>
+<script type="text/javascript" src="__STATIC__/js/layer/layer.js"></script>
+</body>
+</html>

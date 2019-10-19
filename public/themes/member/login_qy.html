@@ -1,0 +1,169 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="91创业网,登录页面" name="keywords">
+    <meta content="91创业网企业中心登录页面。" name="description">
+    <title>企业中心--登录</title>
+    <link rel="stylesheet" href="__STATIC__/member/css/reset.css" />
+    <link rel="stylesheet" href="__STATIC__/member/css/style.css" />
+    <script type="text/javascript" src="__STATIC__/member/js/jq.js"></script>
+    <script type="text/javascript" src="__STATIC__/member/js/changecode.js"></script>
+</head>
+<body>
+<div class="mainBody">
+    <div class="autoWidth clear">
+        <div class="logo fl">
+            <a href="/" class="fl jmw">
+                <img src="__STATIC__/member/img/logo.png"/>
+            </a>
+            <p class="title fl">企业登录</p>
+        </div>
+        <div class="freeConsultation fr">
+            <span class="free">免费咨询：400-809-0091 </span>
+            <a href="/" class="return">返回首页</a>
+            <a href="/user/login/" class="personalLogin">个人登录</a>
+        </div>
+    </div>
+    <!-- 登录框 -->
+    <div class="loginBox">
+        <div class="loginBoxOne">
+            <p class="title">企业登录</p>
+            <form id="company_login" action="/user/loginChecked/" method="post" autocomplete="off">
+                <ul>
+                    <li>
+                        <p class="formPhone clear">
+                            <input type="text" name="username" id="username" placeholder="品牌名称" title="品牌名称" class="fl">
+                        </p>
+                    </li>
+                    <li>
+                        <p class="formPhone password">
+                            <input type="password" name="password" id="password" placeholder="密码" title="密码">
+                        </p>
+                    </li>
+                    <li class="clear mt24">
+                        <p class="formPhone yzm fl">
+                            <input type="text" name="code" id="code" placeholder="验证码" title="验证码">
+                        </p>
+                        <p class="fl yzmNum">
+                            <captcha height="36" width="144" font-size="18" length="5"/>
+                        </p>
+                        <!-- <p class="fl yzmNum">
+                            <img id="change_code" src="img/identifying_code.php" onclick="changeCode($(this));" />
+                            <captcha height="40" width="100" font-size="12" length="4" id="captcha2"/>
+                        </p> -->
+                        <!--<p class="refresh fr" onclick="changeCode($('#change_code'));">刷新</p>-->
+                    </li>
+                    <li>
+                        <input type="submit" value="立即登录" class="logImmediately">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <p class="notRegistered">
+            <span>尚未注册？</span>
+            <a href="/user/register">立即注册</a>
+        </p>
+    </div>
+    <!-- 底部版权信息 -->
+    <div class="footer">
+        <p>Copyright@2017-2022 <a href="http://www.91chuangye.com" style="color: white;">www.91chuangye.com</a>京ICP备14049210号3 <br>北京品创天下科技有限公司  版权所有</p>
+    </div>
+</div>
+<script type="text/javascript" src="__STATIC__/member/js/jquery.validate.js"></script>
+<script type="text/javascript" src="__STATIC__/member/js/jquery.form.js"></script>
+<script type="text/javascript">
+    $('.formPhone input').focus(function(){
+        $(this).parents('.formPhone').css('border','1px solid #a1aed4');
+    });
+    //找回密码浮层
+    function floatingOn(){
+        $('.floatingLayer').show();
+    }
+    function floatingOut(){
+        $('.floatingLayer').hide();
+    }
+
+    $(function(){
+        $("#company_login").validate({
+            rules: {
+                username:{
+                    required:true,
+                    maxlength:20
+                },
+                password:{
+                    required:true,
+                    maxlength:20
+                },
+                code:{
+                    required:true,
+                    remote:{
+                        url:'/user/imgcoder/',
+                        type:'post',
+                        data:{
+                            code:function () {
+                                return $('#code').val();
+                            }
+                        }
+                    }
+                }
+            },
+            messages: {
+                username:{
+                    required:'请填写账号',
+                    maxlength:'最多输入20位'
+                },
+                password:{
+                    required:'请填写密码',
+                    maxlength:'最多输入20位'
+                },
+                code:{
+                    required:'请填写验证码',
+                    remote:'验证码不正确'
+                }
+            },
+            focusInvalid: false,
+            onfocusout: function(element) {
+                $(element).valid();
+            },
+            showErrors: function(errorMap,errorList) {
+                if(errorList.length > 0)
+                {
+                    var key = Object.keys(errorMap);
+                    $('#'+key[0]).parent().css('border','1px solid #f45242');
+                    $('.wrongPass').remove();
+                    $('.mt24').after('<li class="wrongPass">'+errorList[0].message+'</li>');
+                }else{
+                    $('.wrongPass').remove();
+                    $(':text,:password').parent().css('border','1px solid #e3e4ee');
+                }
+            },
+            submitHandler: function (form) {
+                $(form).ajaxSubmit({
+                    dataType:"json",
+                    success:function (result) {
+                        var code = parseInt(result.code);
+                        if(code === 0)
+                        {
+                            setTimeout(function () {
+                                $('.wrongPass').remove();
+                                $('.mt24').after('<li class="wrongPass">'+result.msg+'</li>');
+                            }, 1000);
+                        }else{
+                            if (code === 2)
+                            {
+                                // alert('成功');
+                                window.location.href = '/user/center/';
+                            }else{
+                                // alert('错误');
+                                window.location.href = '/user/register/';
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    })
+</script>
+</body>
+</html>

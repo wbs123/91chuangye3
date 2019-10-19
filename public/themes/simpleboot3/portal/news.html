@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="applicable-device" content="pc" />
+<meta name="robots" content="all">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="renderer" content="webkit">
+<link rel="shortcut icon" href="__TMPL__/public/new/images/favicon.ico" type="image/x-icon" />
+<title>{$seo_arr.seo_title} 第 {:$page ? $page : 1} 页_91创业网</title>
+<script type="text/javascript" src="__TMPL__/public/xin/js/uaredirect.js"></script>
+<script type="text/javascript">uaredirect("{$seo_url}");</script>
+<meta name="applicable-device" content="pc">
+<meta name="mobile-agent" content="format=html5;url={$seo_url}"/>
+<link rel="alternate" media="only screen and(max-width: 640px)" href="{$seo_url}"/>
+<meta name="keywords" content="{$seo_arr.seo_keywords}">
+<meta name="description" content="{$seo_arr.seo_description}">
+<link href="__TMPL__/public/new/css/common.css" rel="stylesheet" type="text/css">
+<link href="__TMPL__/public/new/css/xm_list.css" rel="stylesheet" type="text/css">
+<link href="__TMPL__/public/new/css/index.css" rel="stylesheet" type="text/css">
+<link href="__TMPL__/public/new/css/news.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<include file="new_head1"/>
+<div class="w1200">
+        <div class="yzixun_top clearfix">
+            <div class="yzixun_top_l">
+                <div id="hdxw" class="hdxw-box">
+                    <div class="hdxw-img">
+                        <div class="images-inner">
+                            <a class="link" href="{:cmf_url('portal/common/index',['classname'=>'gongchajiameng','id'=>'92146'])}" target="_blank"><img src="/uploads/ad/banner1.jpg"/></a>
+                            <a class="link" href="{:cmf_url('portal/common/index',['classname'=>'caibaojiameng','id'=>'91577'])}" target="_blank"><img alt="" src="/uploads/ad/banner4.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="hdxw-dots">
+                        <div class="dots-inner"><a class="dot-icon dot-active" data-idx="0">&nbsp;&nbsp;&nbsp;</a><a class="dot-icon dot-normal" data-idx="1">&nbsp;&nbsp;&nbsp;</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="yzixun_top_r">
+                <a href="{:cmf_url('portal/common/index',['classname'=>'muyingyongpinjiameng','id'=>'10120'])}" target="_blank" class="link"><img alt="" src="/uploads/ad/banner2.jpg" style="width: 432px; height: 120px;" /></a>
+                <a href="{:cmf_url('portal/common/index',['classname'=>'yinliao','id'=>'13094'])}"><img src="/uploads/ad/banner3.jpg" /></a>
+            </div>
+        </div>
+    <div class="bread">
+        <span>当前位置：</span>
+        <span><a>91创业网</a>
+        <volist name="array_reverse" id="rev">
+            >
+            <a class="path" href="{:cmf_url('portal/common/index',['classname'=>$rev['path']],'')}/">{$rev['name']}</a>
+        </volist>
+        </span>
+    </div>
+    <div class="main clearfix">
+        <div class="fl main-left">
+            <ul class="content-main">
+			    <volist name="data" id="dd">
+                <li class="content-no">
+                    <div class="content-img transcale">
+                        <a href="{$dd.id|geturl=###,$dd['class']}" target="_blank" title="{$dd['post_title']}"><img src="<?php if($dd['thumbnail']){?>{$dd['thumbnail']|checkImgurl=###}<?php }else{?>__TMPL__/public/new/img/defaultpic.gif<?php }?>"  alt="{$dd['post_title']}"/></a>
+                    </div>
+                    <div class="content-text">
+                        <p class="content-1"><a href="{$dd.id|geturl=###,$dd['class']}" target="_blank" title="[{$dd['post_title']}">{$dd['post_title']}</a></p>
+                        <p class="content-3">{$dd['post_excerpt']|msubstr=0,300,'utf-8',true}</p>
+                        <span class="content-4">来源：91创业网</span>
+                        <span class="content-5">|</span>
+                        <span class="content-4">更新时间：{$dd.published_time|date='Y-m-d H:i',###}</span>
+                        <span class="content-5">|</span>
+                        <span class="content-4">浏览：{$dd['click']}</span>
+                    </div>
+                </li>
+				</volist>
+            </ul><div class="page"><ul>{$data->render()}</ul></div>
+        </div>
+        <div class="fl main-right">
+            <div class="jmxms">
+                <div class="title"><span></span>加盟小秘书</div>
+                <div class="hotline">
+                    <span>热线电话：</span>
+                    <a href="javascript:;">400-809-0091</a>
+                    <em>人工推荐好项目</em>
+					<input type="text" id="user" class="tel" value="请输入姓名" name="name" onblur="if(this.value==''){this.value='请输入姓名';}" onfocus="if(this.value=='请输入姓名'){this.value='';}">
+                    <input type="text" id="tel" class="tel" value="请输入手机号" name="tel" onblur="if(this.value==''){this.value='请输入手机号';}" onfocus="if(this.value=='请输入手机号'){this.value='';}">
+                    <p>创业顾问会以最快速度联系您</p>
+                    <input type="hidden" name="url" id="url" value="<?php echo $_SERVER['REQUEST_URI'];?>">
+                    <input type="submit" value="我要加盟" onclick="myinfo()" class="tur">
+                </div>
+            </div>
+            <div class="latest-news ">
+                <div class="title"><span></span>创业聚焦</div>
+                <ul>
+                    <volist name="data1" id="dd1">
+                    <li>
+                        <span></span><a href="{:cmf_url('portal/common/index',['id'=>$dd1['id'],'classname'=>$dd1['class']])}">{$dd1['post_title']}</a>
+                    </li>
+				</volist>
+                </ul>
+            </div>
+            <div class="latest-news ">
+                <div class="title"><span class="yico_hot"></span>品牌动态</div>
+                <ul>
+                    <volist name="data2" id="dd2">
+                    <li>
+                        <span></span><a href="{:cmf_url('portal/common/index',['id'=>$dd2['id'],'classname'=>$dd2['class']])}">{$dd2['post_title']}</a>
+                    </li>
+				</volist>
+                </ul>
+            </div>
+            <div class="xmlist_top">
+                <div class="title"><span></span>{$name}加盟排行榜</div>
+                <ul class="jingX_xm2">
+                    <volist name="data3" id="dd3" key="k">
+                        <li class="clearfix">
+                            <span class="fl span1 bgRed">{$k}</span>
+                            <a href="{:cmf_url('portal/common/index',['id'=>$dd3['aid'],'classname'=>$dd3['class']])}"  class="fl aName" title="{$dd3['title']}">{$dd3['title']}</a>
+                            <span class="fr span2">￥{$dd3['invested']}</span>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <include file="flag"/>
+</div>
+    <div class="footer">
+            <div class="w1200 ft-links clearfix">
+                <h3>友情链接：</h3>
+                <ul>
+                    <volist name="youlian" id="you"><li><a href="{$you['url']}">{$you['webname']}</a></li></volist>
+                </ul>
+            </div>
+            <div class="ft-line"></div>
+        <include file="new_footer"/>
+    </div>
+  <div class="fixrightbox">
+    <div class="selectbox"> <a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">项目库</a> </div>
+    <div class="gotop">
+      <p>TOP</p>
+    </div>
+  </div>
+<script type="text/javascript" src="__TMPL__/public/new/js/jquery.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.bread .path').each(function(){
+            console.log($(this));
+            var thisLink = $(this).attr('href');
+            var thisNewLink = thisLink.replace(/%2F/ig, "/");
+            $(this).attr('href',thisNewLink)
+        })
+    })
+</script>
+<script type="text/javascript" src="__TMPL__/public/new/js/index.js"></script>
+<script type="text/javascript" src="__TMPL__/public/new/js/base.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/xin/js/layer/layer.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    function myinfo(){
+         var username=$("#user").val(); 
+          var tel=$("#tel").val();  
+          var url=$("#url").val();
+          var cn=/^[\u0391-\uFFE5]+$/;   
+          var mobile = /^1[3|4|5|6|7|8]\d{9}$/ , phone = /^0\d{2,3}-?\d{7,8}$/; 
+          if(username=="" || username=="请输入姓名" || (username != "" && !cn.test(username))) 
+              { 
+                layer.msg('请输入您的中文姓名');
+                $("#user").focus(); 
+                return false; 
+              }else if(username.length>5){
+                  layer.msg('请控制在5个字以内！');
+                  $("#user").focus(); 
+                  return false; 
+              }else if (tel=="" || (tel != "" && !mobile.test(tel) && !phone.test(tel))) {
+                  layer.msg('请输入正确有效的手机号码');
+                  $("#tel").focus(); 
+                  return false; 
+              }else{
+                $.ajax({
+                type: "POST",
+                url: "{:cmf_url('portal/xm/liuyan')}",
+                data: {tel:tel,url:url,name:username},
+                dataType: "json",
+                success: function (msg) {
+                  if(msg.data == "1"){
+                    layer.msg('信息提交成功！');
+                  }else if(msg.data == "3"){
+                    layer.msg('已经提交过了哦！');
+                  }
+                  else{
+                    layer.msg('信息提交失败，请稍后再试！');
+                  }
+                }
+              });
+              }
+    }
+</script>

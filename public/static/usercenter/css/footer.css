@@ -1,0 +1,31 @@
+﻿/*底部*/
+.footer{
+	width:820px;
+	height: 136px;
+	margin:40px auto 0 auto;
+	text-align:center;
+	line-height:25px;
+	font-size:12px;
+	color:#999999;
+}
+.footer .hot{
+	height:14px;
+	padding-left:179px;
+	overflow:hidden;
+}
+.footer .hot img{
+	float:left;
+}
+.footer p{
+	line-height:normal;
+	height:25px;
+	overflow:hidden;
+}
+.footer a{
+	margin:0 10px;
+	color:#999999;
+}
+.footer img{
+	vertical-align:middle;
+}
+

@@ -1,0 +1,51 @@
+<div class="head">
+    <div class="h-top">
+        <div class="w1200 posr">
+            <div class="fl"><a href="/" title="加盟网" class="area">加盟网</a>
+              |<a  href="http://m.91chuangye.com" title="移动站" class="wap">移动站</a>| <a href="javascript:;"
+                                                                                          title="招商名企">招商名企</a> <span><i
+                        class="icon icon-ad"></i>广告合作：<em>18612923336</em></span> <span><i class="icon icon-tel"></i>全国服务热线：<em>400-809-0091</em></span>
+                <span><i class="icon icon-qq"></i>客服QQ：<a target="_blank" rel="nofollow"
+                                                          href="http://wpa.qq.com/msgrd?v=3&amp;uin=1569054682&amp;site=qq&amp;menu=yes"
+                                                          title="QQ 1569054682">1569054682</a></span></div>
+            <div class="fr">
+               <a rel="nofollow" href="{:url('user/login/index')}" title="登录" class="login">登录</a> 
+              <i>|</i>
+                <a rel="nofollow" href="{:url('user/register/index')}" title="注册" class="register">注册</a> 
+              <a href="/nav/" title="加盟导航" id="topNavRightNav" class="jmdh">加盟导航</a> 
+            </div>
+            <include file="top_right_nav"/>
+        </div>
+    </div>
+    <div class="h-center head-xm">
+        <div class="w1200">
+            <div class="h-nav-xm">
+                <dl class="sy">
+                    <dt><i class="icon icon-home"></i>
+                        <p><a href="/">首页</a></p></dt>
+                    <dd><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">项目库</a> <a
+                            href="{:cmf_url('portal/common/index',['classname'=>'top'],'')}/">加盟排行榜</a> <a
+                            href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/">创业资讯</a> <a
+                            href="{:cmf_url('portal/common/index',['classname'=>'ruhe'],'')}/">创业知识</a> <a
+                            href="{:cmf_url('portal/common/index',['classname'=>'chuangyegushi'],'')}/">创业故事</a> <a
+                            href="{:cmf_url('portal/common/index',['classname'=>'zhidao'],'')}/">创业之道</a>                  
+                    </dd></dl>
+                <dl class="hy">
+                    <dt><i class="icon icon-hangye"></i>
+                        <p><a href="/xiangmu/">行业</a></p></dt>
+                    <dd>
+                        <volist name="type" id="a1"><a
+                                href="{:cmf_url('portal/common/index',['classname'=>$a1['path']],'')}/">{$a1.name}</a>
+                        </volist>
+                    </dd>
+                </dl>
+            </div>
+            <div class="h-logo-xm">
+                <div class="fl logo"><a href="/"><img src="__TMPL__/public/xin/images/logo.png" alt="91创业加盟网"></a></div>
+                <div class="logo-desc"><p class="p1">{$nativeplace}{$selcttag3}<?php echo str_replace('加盟','',$cate_Name);?>加盟</p>
+                    <p class="p2">{$nativeplace}{$selcttag3}<?php echo str_replace('加盟','',$cate_Name);?>加盟品牌大全</p></div>
+                <include file="search_all"/>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>{$seo_arr.seo_title} 第 {:$page ? $page : 1} 页_91创业网</title>
+<meta name="keywords" content="{$seo_arr.seo_keywords}">
+<meta name="description" content="{$seo_arr.seo_description}">
+<link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon" />
+<meta name='description' content=''>
+<meta name='keyword' content="">
+<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+<link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/common.css" />
+<link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/lists.css" />
+   <link rel="alternate" media="only screen and(max-width: 640px)" href="http://m.91chuangye.com/">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.91chuangye.com/">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.91chuangye.com/">
+
+
+</head>
+
+<body>
+	<!-------------------------- top_bar start -------------------------->
+	<div class="header">
+		<div class="top_bar">
+			<div class="top_bar_item">
+				<div class="return"><a class="btn back" href="javascript:history.go(-1)"></a></div>
+				<div class="tit">创业资讯</div>
+				<div class="sear"><a href="javascript:;" onclick="serch()"></a></div>
+			</div>
+		</div>
+
+		<include file="mobile/header2"/>
+
+	</div>
+	<!-------------------------- top_bar   end -------------------------->
+	
+	<!---------------------- banner_xminfo   start ---------------------->
+	<div id="focus" class="banner_xminfo"> 
+		<div class="hd"> 
+			<ul> 
+			</ul> 
+		</div> 
+		<div class="bd"> 
+			<div class="tempWrap"> 
+			<ul> 
+				<li><a href="{:cmf_url('portal/common/index',['classname'=>'naichajiameng','id'=>'84335'])}"><img src="__TMPL__/public/mobile/img/banner4.jpg" /></a>
+					<span class="tag"><em>一点点奶茶</em></span>
+				</li> 
+				<li><a href="{:cmf_url('portal/common/index',['classname'=>'jipaijiameng','id'=>'80367'])}"><img src="__TMPL__/public/mobile/img/banner5.jpg" /></a>
+					<span class="tag"><em>正新鸡排 </em></span>
+				</li> 
+				<li><a href="{:cmf_url('portal/common/index',['classname'=>'xiaochichejiameng','id'=>'12988'])}"><img src="__TMPL__/public/mobile/img/banner2.jpg" /></a>
+					<span class="tag"><em>一路飘香小吃车 </em></span>
+				</li> 
+			</ul> 
+			</div> 
+		</div> 
+	</div> 
+	<!---------------------- banner_xminfo   end ------------------------>
+	
+	<!-- bread -->
+	<section class="item-section item_path">
+		<a href="/">首页</a>
+<!--		<span><a>91创业网</a></span>-->
+		<volist name="array_reverse" id="rev">
+			>
+			<a class="path" href="{:cmf_url('portal/common/index',['classname'=>$rev['path']],'')}/">{$rev['name']}</a>
+		</volist>
+	</section>
+
+
+	<!------------------------- statement start ------------------------->
+	<section class="item-section hot_news">
+		<ul class="hotnews_ul">
+			<volist name="data" id="dd">
+			<li>
+				<a href="{:cmf_url('portal/common/index',['id'=>$dd['id'],'classname'=>'news'])}" title="{$dd['post_title']}">
+					<div class="pic"><img src="<?php if($dd['thumbnail']){?>{$dd['thumbnail']}<?php }else{?>__TMPL__/public/new/img/defaultpic.gif<?php }?>" alt="{$dd['post_title']}"></div>
+					<dl>
+						<dt>{$dd['post_title']} </dt>
+						<dd class="des">{$dd['post_excerpt']|msubstr=0,300,'utf-8',true}</dd>
+						<dd>
+							<span>91创业网</span>
+							<span>{$dd.published_time|date='Y-m-d H:i',###}</span>
+						</dd>
+					</dl>
+				</a>
+			</li>
+			</volist>
+		</ul>
+		<div class="page">
+			<ul>
+				{$data->render()}
+			</ul>
+		</div>
+	</section>
+	<!------------------------ itme_jminfo   end ------------------------>
+	
+  <!----------------------- 热门行业资讯 start ------------------------->
+  <section class="item-section item_tsxm">
+		<div class="common_tit"> 
+			<a class="tit" href="javascript:;">大家正在看</a> 
+		</div> 
+		<ul class="clearfix oop">
+			<volist name="canyin_new" id="new">
+				<li><a href="{:cmf_url('portal/common/index',['id'=>$new['id'],'classname'=>'news'])}">{$new['post_title']}</a></li>
+			</volist>
+		</ul> 
+		
+	</section>
+  <!----------------------- 热门行业资讯   end ------------------------->
+
+	<!------------------------ 特色项目推荐 start ------------------------>
+	<section class="item-section item_tsxmtj">
+		<div class="common_tit"> 
+			<a class="tit" href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">特色项目推荐</a> 
+			<a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/" class="more">+更多</a>
+		</div> 
+		
+		<ul class="tsxmtj_ul">
+			<volist name="cate" id="cate">
+		 		<li><a href="{:cmf_url('portal/common/index',['classname'=>$cate['class'],'id'=>$cate['aid']])}">{$cate['title']}</a></li>
+			</volist>
+		</ul> 
+    
+	</section>
+	<!------------------------ 特色项目推荐   end ------------------------>
+	
+	<!--------------------------- footer start ---------------------------->
+	<include file="mobile/new_footer"/>
+	<!--------------------------- footer   end ---------------------------->
+	
+	<!------------------------- search_box start -------------------------->
+			<include file="mobile/search"/>
+	<!------------------------- search_box   end -------------------------->
+	
+	<!------------------------- returnTop  start -------------------------->
+	<a href="javascript:void(0);" id="returnTop"></a>
+	<!------------------------- returnTop    end -------------------------->
+	
+<script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.js"></script>
+<script type="text/javascript" src="__TMPL__/public/mobile/js/swiper.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="__TMPL__/public/mobile/js/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/mobile/js/iscroll.js"></script>
+<script type="text/javascript" src="__TMPL__/public/mobile/js/index.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('.item_path .path').each(function(){
+				console.log($(this));
+				var thisLink = $(this).attr('href');
+				var thisNewLink = thisLink.replace(/%2F/ig, "/");
+				$(this).attr('href',thisNewLink)
+			})
+          $('.oop a').each(function(){
+				console.log($(this));
+				var thisLink = $(this).attr('href');
+				var thisNewLink = thisLink.replace(/%2F/ig, "/");
+				$(this).attr('href',thisNewLink)
+			})
+		})
+	</script>
+</body>
+</html>	

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- saved from url=(0017) -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="wap-font-scale" content="no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="applicable-device" content="mobile">
+   <title>{dede:field.seotitle /}</title>
+	<meta name="keywords" content="{dede:field name='keywords'/}">
+         <meta name="description" content="{dede:field name='description' function='html2text(@me)'/}">
+    <link href="{dede:global.cfg_templets_skin/}/m/css/css.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/m/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/m/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/m/js/index.js"></script>
+</head>
+<body>
+<div class="viewport">
+<!-- Top Bar -->
+<!--header开始-->
+<div class="header">
+    <div class="top">
+        <a href="{dede:global.cfg_mobile/}" class="logo" title="{dede:global name='cfg_webname'/}"></a>
+        <div class="search">
+           <form id="search_form" action="{dede:global.cfg_cmsurl/}/plus/search.php" method="post">
+				<input type="hidden" name="mobile" value="1" />
+				<input type='hidden' name='typeid' value="1,2,3,4,5,6,7,8,9,10,350,312,313,63,339">
+                   <input class="search_txt" name="q" type="text" id="search-keyword" value="{dede:global name='keyword' function='RemoveXSS(@me)'/}" onfocus="if(this.value=='找您感兴趣的创业项目...'){this.value='';}"  onblur="if(this.value==''){this.value='找您感兴趣的创业项目...';}" />
+                    <input class="search_btn" id="top-btn" type="submit" value="搜索">
+                </form>
+        </div>
+    </div>
+    <div class="nav">
+        <a href="{dede:global.cfg_mobile/}">首页</a>
+        <a href="{dede:global.cfg_mobile/}/haoxiangmu">创业加盟项目</a>
+        <a href="{dede:global.cfg_mobile/}/chuangyezixun">创业资讯</a>
+        <a href="{dede:global.cfg_mobile/}/paihangbang">排行榜</a>
+    </div>
+</div>
+<!--header结束-->
+    <!-- 当前位置 -->
+    <div class="path">
+		<a href="{dede:global.cfg_mobile/}">首页</a> &gt;
+        <span>{dede:field name='typename'/}</span>
+    </div>
+    <!-- 当前位置 -->    
+    
+    <!--内容 开始-->
+    <div class="news_cont">
+        <h1>{dede:field name='typename'/}</h1>
+        <div class="content">
+            {dede:field.content/}
+        </div>
+    </div>
+    <!--内容 结束-->
+
+    <!--footer开始-->
+{dede:include filename="footer_m.htm"/}
+    <!--footer结束-->
+</div>
+
+</body>
+</html>

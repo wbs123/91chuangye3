@@ -1,0 +1,108 @@
+<div class="footer">
+    <div class="w1200">
+        <div class="ft-links">
+            <div class="tit">友情链接：(QQ：1569054682)</div>
+            <ul>
+                <volist name="youlian" id="you">
+                    <li><a href="{$you['url']}">{$you['webname']}</a></li>
+                </volist>
+            </ul>
+        </div>
+        <div class="ft-info">
+            <div class="fl-left">
+                <div class="ft-top">
+                    <a href="/" class="ft-logo"><img src="__TMPL__/public/xin/images/ft-logo.png" alt=""></a>
+                </div>
+                <div class="ft-bottom">
+                    <a href="javascript:;" class="btn-confirm">在线客服</a>
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1569054682&amp;site=qq&amp;menu=yes" title="QQ 1569054682" class="btn-default" rel="nofollow">友链交换</a>
+                </div>
+            </div>
+            <div class="ft-center">
+                <div class="ft-nav">
+                    <ul>
+                        <li><a href="/">首页</a>|</li>
+                        <volist name="dibu" id="di">
+                            <li>
+                             <?php if($di['name'] == 'Sitemap'){?>
+                             <a href="/sitemap.xml">{$di['name']}</a>|
+                      	<?php }else{?>
+                      		 <a href="{:cmf_url('portal/common/index',['classname'=>$di['path']],'')}/" <?php if($di['name'] != '网站地图' && $di['name'] != 'sitemap'){?> rel="nofollow"<?php }?>>{$di['name']}</a>|
+                      <?php }?>
+                      </li>
+                        </volist>
+                    </ul>
+                </div>
+                <div class="ft-tel">
+                    <span class="tel">广告合作：400-809-0091  18612923336</span>
+                    <span class="info">（ 周一至周日09：00～00：00 ）</span>
+                </div>
+                <div class="ft-copy">
+                    <p>版权所有：品创天下(北京)科技发展有限公司&nbsp;&nbsp;&nbsp;&nbsp;Copyright@2017-2022&nbsp;&nbsp;京ICP备14049210号  </p>
+                    <p>友情提示：投资有风险，咨询请细致，以便成功加盟&nbsp;&nbsp;&nbsp;&nbsp;技术支持：<a href="http://www.1558.cn/" rel="nofollow">商企云</a></p>
+                </div>
+            </div>
+            <div class="wx">
+                <img src="__TMPL__/public/xin/images/wx.png" alt="">
+                <p>关注微信公众号</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="right_float">
+  <div class="unit unit1">               
+    <img src="__TMPL__/public/xin/images/kefu.png" id="float-img0" >
+    <div class="text"><span>在线<br/>咨询</span></div>
+  </div>
+  <div class="unit unit2">
+    <img src="__TMPL__/public/xin/images/contactus.png" id="float-img1">
+    <div class="text" ><span>在线<br/>留言</span></div>
+    <div class="item item-zx" id="unit_left_consult1">
+      <div class="item-box">
+        <input type="text" class="inpt"  placeholder="请输入手机号" id="unit_left_text" >
+        <input type="hidden" name="url" id='url' value="<?php echo $_SERVER['REQUEST_URI'];?>">
+        <div class="btn" onclick="lefcheckMessageN('unit_left_text')">马上咨询</div>
+      </div>
+    </div>
+  </div>
+  <div class="unit unit3">
+    <img src="__TMPL__/public/xin/images/app.png" id="float-img3">
+    <div class="text"><span>关注<br/>微信</span></div>
+    <div class="item item-wx"  id="unit_left_consult3">
+      <div class="item-box">
+        <img src="__TMPL__/public/xin/images/QrRight.png" alt="APP下载" style="width: 108px;height: 108px;">
+      </div>
+    </div>
+  </div>
+  <div class="unit unit4" id="upTodo" onclick="pageScroll()">   
+    <img src="__TMPL__/public/xin/images/totop.png">
+    <div class="text" ><span>返回<br/>顶部</span></div>
+  </div>
+</div>
+<include file="other"/>
+<script>
+	function lefcheckMessageN() {
+		var tel = $('#unit_left_text').val();
+		var url = $('#url').val();
+		var mobile = /^1[3|4|5|6|7|8]\d{9}$/ , phone = /^0\d{2,3}-?\d{7,8}$/;
+		if (tel=="" || (tel != "" && !mobile.test(tel) && !phone.test(tel))) {
+			layer.msg('请输入正确有效的手机号码!');
+			$("#unit_left_text").focus();
+			return false;
+		}else{
+			$.ajax({
+				type: "POST",
+				url: "/plus/diy4",
+				data: {tel:tel,url:url},
+				dataType: "json",
+				success: function (msg) {
+					if(msg.data == "1"){
+						layer.msg('信息提交成功！');
+					}else{
+						layer.msg('信息提交失败，请稍后再试！');
+					}
+				}
+			});
+		}
+	}
+</script>

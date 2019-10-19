@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!-- saved from url=(0017) -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="wap-font-scale" content="no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="applicable-device" content="mobile">
+    <title>关于我们</title>
+    <link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon" />
+    <meta name="keywords" content="{$website.seo_keywords}">
+    <meta name="description" content="{$website.seo_description}">
+    <link rel="stylesheet" href="__TMPL__/public/mobile/css/swiper.min.css">
+    <link rel="stylesheet" href="__TMPL__/public/mobile/css/state.css" />
+    <link rel="stylesheet" href="__TMPL__/public/mobile/css/about.css" />
+</head>
+<body>
+<div class="viewport">
+    <include file="mobile/header"/>
+
+
+
+    <!-- 当前位置 -->
+    <div class="path">
+        <a href="/">首页</a> &gt;
+        <span>创业资讯</span>
+    </div>
+    <!-- 当前位置 -->
+
+    <!--资讯分类展示 开始-->
+    <div class="news_item">
+        <h3 class="common_tit">
+            <a class="more" href="/chuangyegushi">显示全部>></a>
+            <a class="tit" href="/chuangyegushi">创业故事</a>
+        </h3>
+        <div class="bd">
+            <ul>
+                <volist name="cygs" id="cygs">
+                    <li>
+                        <a href="{:cmf_url('portal/common/index',['classname'=>'chuangyegushi','id'=>$cygs['id']])}" >
+                            {$cygs['post_title']}
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+    <div class="news_item">
+        <h3 class="common_tit">
+            <a class="more" href="/zizhu">显示全部>></a>
+            <a class="tit" href="/zizhu">创业知识</a>
+        </h3>
+        <div class="bd">
+            <ul>
+                <volist name="cyzz" id="cyzz">
+                    <li>
+                        <a href="{:cmf_url('portal/common/index',['classname'=>'ruhe','id'=>$cyzz['id']])}" >
+                            {$cyzz['post_title']}
+                        </a>
+                    </li>
+                </volist>
+
+            </ul>
+        </div>
+    </div>
+    <div class="news_item">
+        <h3 class="common_tit">
+            <a class="more" href="/news/cy">显示全部>></a>
+            <a class="tit" href="/news/cy">餐饮加盟资讯</a>
+        </h3>
+        <div class="bd">
+            <ul>
+                <volist name="cyjm" id="cyjm">
+                    <li>
+                        <a href="{:cmf_url('portal/common/index',['classname'=>'news','id'=>$cyjm['id']])}" >
+                            {$cyjm['post_title']}
+                        </a>
+                    </li>
+                </volist>
+
+            </ul>
+        </div>
+    </div>
+    <div class="news_item">
+        <h3 class="common_tit">
+            <a class="more" href="/news/nx">显示全部>></a>
+            <a class="tit" href="/news/nx">女性加盟资讯</a>
+        </h3>
+        <div class="bd">
+            <ul>
+                <volist name="nxjm" id="nxjm">
+                    <li>
+                        <a href="{:cmf_url('portal/common/index',['classname'=>'news','id'=>$nxjm['id']])}" >
+                            {$nxjm['post_title']}
+                        </a>
+                    </li>
+                </volist>
+
+            </ul>
+        </div>
+    </div>
+    <div class="news_item">
+        <h3 class="common_tit">
+            <a class="more" href="/news/ls">显示全部>></a>
+            <a class="tit" href="/news/ls">零售加盟资讯</a>
+        </h3>
+        <div class="bd">
+            <ul>
+                <volist name="lsjm" id="lsjm">
+                    <li>
+                        <a href="{:cmf_url('portal/common/index',['classname'=>'news','id'=>$lsjm['id']])}" >
+                            {$lsjm['post_title']}
+                        </a>
+                    </li>
+                </volist>
+
+            </ul>
+        </div>
+    </div>
+    <div class="news_item">
+        <h3 class="common_tit">
+            <a class="more" href="/news/jc/">显示全部>></a>
+            <a class="tit" href="/news/jc/">建材加盟资讯</a>
+        </h3>
+        <div class="bd">
+            <ul>
+                <volist name="jcjm" id="jcjm">
+                    <li>
+                        <a href="{:cmf_url('portal/common/index',['classname'=>'news','id'=>$jcjm['id']])}" >
+                            {$jcjm['post_title']}
+                        </a>
+                    </li>
+                </volist>
+
+            </ul>
+        </div>
+    </div>
+    <div class="news_item">
+        <h3 class="common_tit">
+            <a class="more" href="/news/jj">显示全部>></a>
+            <a class="tit" href="/news/jj">家居加盟资讯</a>
+        </h3>
+        <div class="bd">
+            <ul>
+                <volist name="jjjm" id="jjjm">
+                    <li>
+                        <a href="{:cmf_url('portal/common/index',['classname'=>'news','id'=>$jjjm['id']])}" >
+                            {$jjjm['post_title']}
+                        </a>
+                    </li>
+                </volist>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <!--资讯分类展示 结束-->
+
+
+
+    <div class="footer">
+        <div class="footer_nav">
+            <a href="/">首页</a>
+            <a href="/haoxiangmu">创业加盟项目</a>
+            <a href="/chuangyezixun">创业资讯</a>
+            <a href="/paihangbang">排行榜</a>
+        </div>
+        <div class="copyright">
+            <p>91创业网 版权所有</p>
+            <p></p>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</body>
+</html>

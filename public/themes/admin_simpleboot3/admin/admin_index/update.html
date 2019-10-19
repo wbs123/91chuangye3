@@ -1,0 +1,92 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="">修改权限</a></li>
+    </ul>
+    <form action="{:url('AdminIndex/update')}" method="post" id="formData" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div class="col-md-9">
+                <table class="table table-bordered">
+                    
+                    <tr>
+                        <th>授权用户</th>
+                        <td>{$post.mobile}</td>
+                    </tr>
+					<tr>
+                        <th>授权分类</th>
+                        <td><input type="text" class="form-control" name="post[allow_cate]" id="cate" placeholder="分类ID，用“,”分开" value="{$post['allow_cate']}"></td>
+                    </tr>
+                    <tr>
+                        <th>查看条数</th>
+                        <td><input type="text" class="form-control" name="post[all_nums]" id="nums" placeholder="允许查看条数" value="{$post['all_nums']}"></td>
+                    </tr>
+					<input type="hidden" class="form-control"  name="post[id]" placeholder="允许查看条数" value="{$post['id']}">
+                </table>
+                <hook name="portal_admin_article_edit_view_main"/>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-primary js-ajax-submit" id="submit_btn">{:lang('SAVE')}</button>
+                        <a class="btn btn-default" href="{:url('admin/adminIndex/index')}">{:lang('BACK')}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    //编辑器路径定义
+    var editorURL = GV.WEB_ROOT;
+</script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/themes/simpleboot3/public/new/js/p.js"></script>
+<script src="__STATIC__/js/layer/layer.js"></script>
+<script type="text/javascript">
+function openIframeLayer(url, title, options) {
+    var params = {
+        type: 2,
+        title: title,
+        shadeClose: true,
+        // skin: 'layui-layer-nobg',
+        anim: -1,
+        shade: [0.001, '#000000'],
+        shadeClose: true,
+        area: ['95%', '90%'],
+        move: false,
+        content: url,
+        yes: function (index, layero) {
+            //do something
+            layer.close(index); //如果设定了yes回调，需进行手工关闭
+        }
+    };
+    params     = options ? $.extend(params, options) : params;
+
+    Wind.css('layer');
+
+    Wind.use("layer", function () {
+        layer.open(params);
+    });
+}
+
+$(function(){
+	$("#submit_btn").click(function(){
+
+		var cate = $('#cate').val();
+		if(cate == ''){
+			layer.msg('请填写授权分类ID');
+			return false;
+		}
+		var all_nums = $('#all_nums').val();
+		if(all_nums == ''){
+			layer.msg('请填写查看条数');
+			return false;
+		}
+		$("#formData").submit();
+	})
+})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+﻿.content {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.content_left{
+    width:198px;
+    border:1px solid #cfdce8;
+    background:#f3f8fc;
+    border-top:none;
+    border-bottom:none;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+}
+.listDl{
+    margin-bottom:40px;
+}
+.listDl dt{
+    height:48px;
+    line-height:48px;
+    font-size:15px;
+    text-indent:23px;
+    border-bottom:1px solid #e5edf3;
+    font-weight:bold;
+}
+.brand_manager{
+    width:160px;
+    border-bottom:1px dashed #ccdde9;
+    padding:10px 0;
+    margin:auto;
+    display: block;
+}
+.manager{
+    height:50px;
+}
+.manager .ico{
+    display:inline-block;
+    background:url('../img/ico.png') no-repeat;
+    margin:13px 11px 0 7px;
+}
+.manager .ico1{
+    width:24px;
+    height:24px;
+    background-position:-1px -1px;
+}
+.manager .ico2{
+    width:22px;
+    height:23px;
+    background-position:-2px -52px;
+    margin:13px 11px 0 8px;
+}
+.manager .ico3{
+    width:24px;
+    height:25px;
+    background-position:-1px -99px;
+}
+.manager span{
+    display:inline-block;
+    width:1px;
+    height:25px;
+    background:#ccdde9;
+    margin-top:13px;
+    margin-right:10px;
+}
+.manager .num{
+    width:105px;
+    color:#666;
+    font-size:14px;
+    line-height:16px;
+    margin-top:9px;
+}
+.manager .num font{
+    font-size:12px;
+}
+.if_noagree{
+    width:160px;
+    font-size:12px;
+    line-height:18px;
+    color:#999999;
+    margin:16px auto 0;
+}
+.if_noagree span{
+    color:#666666;
+}
+.listDl dt a{
+    color:#1867a0;
+    display:block;
+}
+.listDl dd a{
+    display:block;
+    height:38px;
+    line-height:38px;
+    color:#666666;
+    font-size:14px;
+    text-indent:40px;
+}
+.listDl dd a:hover{
+    color:#333333;
+    font-weight:bold;
+    background:#d6e6f2;
+}
+.listDl dd a.active{
+    color:#333333;
+    font-weight:bold;
+    background:#d6e6f2;
+}
+.help_doc{
+    display:block;
+    width:168px;
+    height:32px;
+    border-radius:4px;
+    margin:13px auto 0;
+    line-height:35px;
+    font-size:12px;
+    color:#6f9ebd;
+    font-weight:bold;
+    text-indent:64px;
+}
+.help_document{
+    background:#ebf2f8 url('../img/help.png') no-repeat 40px;
+}
+.help_document:hover{
+    background:#4999d2 url('../img/help2.png') no-repeat 40px;
+    color:#fff;
+}
+
+.help_document.active{
+    background:#4999d2 url('../img/help2.png') no-repeat 40px;
+    color:#fff;
+}
+.optionFk{
+    background:#ebf2f8 url('../img/option.png') no-repeat 40px;
+}
+.optionFk:hover{
+    background:#4999d2 url('../img/option2.png') no-repeat 40px;
+    color:#fff;
+}
+.optionFk.active{
+    background:#4999d2 url('../img/option2.png') no-repeat 40px;
+    color:#fff;
+}
+.i_touG{
+    background:#ebf2f8 url('../img/tg1.png') no-repeat 40px;
+}
+.i_touG:hover{
+    background:#4999d2 url('../img/tg2.png') no-repeat 40px;
+    color:#fff;
+}
+.jm_kexing{
+    position:relative;
+    width:134px;
+    height:22px;
+    background:#e5edf5;
+    border:1px solid #99b9ce;
+    border-radius:4px;
+    color:#5e83ac;
+    font-size:12px;
+    line-height:22px;
+    text-indent:15px;
+    margin:12px 0 15px 20px;
+}
+.jm_kexing span{
+    display:inline-block;
+    width:28px;
+    height:35px;
+    background:url('../img/ico_kexing.png') no-repeat;
+    position:absolute;
+    top:-5px;
+    left:-14px;
+}

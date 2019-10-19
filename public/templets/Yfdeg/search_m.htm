@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="wap-font-scale" content="no" /> 
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta name="applicable-device" content="mobile" />
+<title>{dede:global name='keyword' function='RemoveXSS(@me)'/}加盟店_{dede:global name='keyword' function='RemoveXSS(@me)'/}加盟费多少钱</title>
+<meta name="keywords" content="{dede:field name='keywords'/}">
+<meta name="description" content="91创业网-汇集各种{dede:global name='keyword' function='RemoveXSS(@me)'/}加盟,{dede:global name='keyword' function='RemoveXSS(@me)'/}加盟连锁品牌,{dede:global name='keyword' function='RemoveXSS(@me)'/}加盟十大品牌排行榜等{dede:global name='keyword' function='RemoveXSS(@me)'/}加盟费信息,帮助广大创业者找到适合自己的加盟项目,选择好的{dede:global name='keyword' function='RemoveXSS(@me)'/}加盟项目,让创业者轻松创业！
+">
+<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/newmobile/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/newmobile/css/common.css" />
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/newmobile/css/lists.css" />
+</head>
+
+<body>
+	<!-------------------------- top_bar start -------------------------->
+	<div class="header">
+		<div class="top_bar">
+			<div class="top_bar_item">
+				<div class="return"><a class="btn back" href="javascript:history.go(-1)"></a></div>
+				<div class="tit">搜索结果页</div>
+				<div class="sear"><a href="javascript:;" onclick="serch()"></a></div>
+			</div>
+		</div>
+		<div class="nav_bar">
+		  <div class="swiper-container nav" style="position: fixed;">
+		    <ul class="swiper-wrapper">
+		      <li class="swiper-slide"><a href="{dede:global.cfg_mobile/}">91创业网</a> </li>
+			  <li class="swiper-slide"><a href="http://m.91chuangye.com/xiangmu/">找项目</a></li>
+	          <li class="swiper-slide"><a href='http://m.91chuangye.com/top/' >品牌排行榜</a> </li>
+		      <li class="swiper-slide"><a href='http://m.91chuangye.com/haoxiangmu/' >创业好项目</a> </li>
+			  <li class="swiper-slide"><a href='http://m.91chuangye.com/news/' >创业资讯</a> </li>
+		    </ul>
+		  </div>
+		</div>
+	</div>
+	<!-------------------------- top_bar   end -------------------------->
+		
+	<!-- bread -->
+	<section class="item-section item_path">
+		<a href="{dede:global.cfg_mobile/}">首页</a> &gt;
+		<span>搜索<font color="red">“{dede:global name='keyword' function='RemoveXSS(@me)'/}”</font>的结果</span>
+	</section>
+
+
+	
+	<!-------------------------item_xmklist start------------------------>
+	<section class="item-section item_xmklist">
+		<ul class="xmlist_ul">
+				 {dede:list pagesize='15'orderby='pubdate' imgwidth='133' imgheight='100' addfields='nativeplace,sum,invested' channelid='17'}
+			<li>
+				<a href="[field:arcurl function='str_replace("www","m",@me)/]">
+					<div class="pic"><img src="[field:picname/]" alt="[field:title /]"/></div>
+					<dl>
+						<dt>  [field:title/]</dt>
+						<dd>所属行业：[field:typename/]</dd>
+						<dd>投资额度：<em>[field:invested/]</em></dd>
+						<dd>门店数量：[field:sum/]</dd>
+						<dd>地区：[field:nativeplace/]</dd>
+					</dl>
+					<div class="zx">
+						<span class="ck_more">查看更多</span>
+						<span class="zixun">立即咨询</span>
+					</div>
+				</a>
+			</li>
+				 {/dede:list}
+			
+		</ul>
+		<div class="page">
+			{dede:pagelist listitem="index,end,pre,next,pageno" listsize="1"/}
+		</div>
+	</section>
+	<!-------------------------item_xmklist   end------------------------>	
+		
+	<!-------------------------item_tsxm   start------------------------->
+	<section class="item-section item_tsxm">
+		<div class="common_tit"> 
+			<a class="tit" href="{dede:global.cfg_mobile/}/xiangmu/">特色项目推荐</a> 
+			<a href="{dede:global.cfg_mobile/}/xiangmu/"  class="more">+更多</a>
+		</div> 
+		<ul class="clearfix"> 
+				{dede:arclist typeid='top' flag='a' orderby='pubdate' addfields='invested,sum,imgs' channelid='17' titlelen='180' row="20"}
+					 <li>             
+							<a href="[field:arcurl function='str_replace("www","m",@me)/]" title="[field:title/]">[field:title/]</a>
+					 </li>
+				 {/dede:arclist} 
+		</ul> 
+	</section>
+	<!------------------------item_xmklist   end------------------------->
+	
+	<!------------------------ 特色项目推荐   end ------------------------>
+	
+	<!--------------------------- footer start ---------------------------->
+	<div class="footer">
+		<div class="link-box ">
+		   {dede:channelartlist typeid='52,52'}					
+				{dede:channel type='son'}
+				<a href="[field:typelink/]" class="foot-link" [field:global name='autoindex'runphp='yes']if(@me==5){@me='';}else{@me='rel="nofollow"';}[/field:global]>[field:typename/]</a><span class="v-line">|</span>
+				{/dede:channel} 
+			{/dede:channelartlist}
+		</div>
+		<div class="copyright">
+			<p>Copyright ©91创业网</p>
+		</div>
+		<div class="footer_nav">
+     <a href="{dede:global.cfg_mobile/}"><span class="ico1"></span>首页</a> 
+     <a href="{dede:global.cfg_mobile/}/xiangmu/"><span class="ico2"></span>找项目</a> 
+     <a href="{dede:global.cfg_mobile/}/top/"><span class="ico3"></span>排行榜</a> 
+     <a href="{dede:global.cfg_mobile/}/news/"><span class="ico4"></span>资讯</a>
+		</div>
+	</div>
+	<!--百度统计-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5294d4276f52adb2e38d1599fd6e2815";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--百度推送-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!--百度商桥-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b07628c0dc92bfe463fdd5453d5aed8e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+	<!--------------------------- footer   end ---------------------------->
+	
+	<!------------------------- search_box start -------------------------->
+	<div class="sear_box">
+		<div class="header_sear">
+			<div class="search">
+			 <form name="searchform" id="searchform" method="get" action="{dede:global.cfg_mobile/}/search.php">  
+			   <input type="hidden" name="typeid" value="1,2,3,4,5,6,7,8,9,10,350,312,313,63,339" /> 
+			  <ul> 
+			   <li class="back"><a href="javascript:;"></a></li> 
+			   <li class="input"> <i></i><input type="text" placeholder="搜索关键字" autocomplete="off" id="lkey" name="q" /> </li> 
+			   <li class="enter"><input type="submit" class="btn" value="确定" id="s_button" onclick="Search(this,'key=lkey');" /></li> 
+			  </ul> 
+			 </form>
+			</div>
+		</div>
+		<div class="sear_cont">
+			<div class="tit">热门搜索</div>
+			<div class="sear_cont_list">
+				<ul>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!------------------------- search_box   end -------------------------->
+	
+	<!------------------------- returnTop  start -------------------------->
+	<a href="javascript:void(0);" id="returnTop"></a>
+	<!------------------------- returnTop    end -------------------------->
+	
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.js"></script>
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/swiper.min.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.SuperSlide.2.1.1.js"></script> 
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/TouchSlide.1.1.js"></script> 
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.lazyload.min.js"></script> 
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/iscroll.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/index.js"></script>
+<style>
+	.wrapper2 {position: absolute;top: 128px;bottom: 0.2667rem; width: 10rem; overflow: hidden;}
+</style>
+</body>
+</html>	

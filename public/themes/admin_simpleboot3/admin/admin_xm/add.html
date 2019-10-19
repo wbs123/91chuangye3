@@ -1,0 +1,587 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+</style>
+<!-- litpic上传方法<input id="litpic-{id}" class="logo" type="hidden" name="post[litpic_name]" value="{url}"> -->
+<script type="text/html" id="litpic-item-tpl">
+    <li id="saved-litpic{id}">
+        <input id="litpic-{id}" class="logo" type="hidden" name="post[litpic_name]" value="{url}">
+        <input id="litpic-{id}-litpic" class="logo" type="hidden" name="post[thumbnail]" value="{url}">
+        <input class="form-control" id="litpic-{id}-name" type="text" name="" value="{name}"
+               style="width: 200px;" title="图片名称">
+        <img id="litpic-{id}-preview" src="{url}" style="height:36px;width: 36px;"
+             onclick="imagePreviewDialog(this.src);">
+
+        <a href="javascript:(function(){$('#saved-litpic{id}').remove();})();">移除</a>
+    </li>
+</script>
+<!-- 项目logo上传方法<input id="photo-{id}" class="logo" type="hidden" name="post[logo_name]" value="{url}"> -->
+<script type="text/html" id="photos-item-tpl">
+    <li id="saved-image{id}">
+        <input id="photo-{id}" class="logo" type="hidden" name="post[logo_name]" value="{url}">
+        <input id="photo-{id}-logo" class="logo" type="hidden" name="post[logo]" value="{url}">
+        <input class="form-control" id="photo-{id}-name" type="text" name="" value="{name}"
+               style="width: 200px;" title="图片名称">
+        <img id="photo-{id}-preview" src="{url}" style="height:36px;width: 36px;"
+             onclick="imagePreviewDialog(this.src);">
+        
+        <a href="javascript:(function(){$('#saved-image{id}').remove();})();">移除</a>
+    </li>
+</script>
+<!-- 项目海报上传方法 -->
+<script type="text/html" id="haibao-item-tpl">
+    <li id="saved-logo{id}">
+        <input id="logo-{id}" type="hidden" class="photo" name="photo_name[]" value="{url}">
+        <input class="form-control" id="logo-{id}-name" type="text" name="" value="{name}"
+               style="width: 200px;" title="图片名称">
+        <img id="logo-{id}-preview" src="{url}" style="height:36px;width: 36px;"
+             onclick="imagePreviewDialog(this.src);">
+       
+        <a href="javascript:(function(){$('#saved-logo{id}').remove();})();">移除</a>
+        
+    </li>
+</script>
+<!-- <script type="text/html" id="files-item-tpl">
+    <li id="saved-file{id}">
+        <input id="file-{id}" type="hidden" name="file_urls[]" value="{filepath}">
+        <input class="form-control" id="file-{id}-name" type="text" name="file_names[]" value="{name}"
+               style="width: 200px;" title="文件名称">
+        <a id="file-{id}-preview" href="{preview_url}" target="_blank">下载</a>
+        <a href="javascript:uploadOne('文件上传','#file-{id}','file');">替换</a>
+        <a href="javascript:(function(){$('#saved-file{id}').remove();})();">移除</a>
+    </li>
+</script> -->
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('AdminXm/index')}">项目管理</a></li>
+        <li class="active"><a href="{:url('AdminXm/add')}">添加项目</a></li>
+    </ul>
+    <form action="{:url('AdminXm/addPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div class="col-md-9">
+                <table class="table table-bordered">
+                    <tr>
+                        <th width="100">分类<span class="form-required">*</span></th>
+                        <td>
+                            <?php if(!empty($category)){?>
+                            <input class="form-control" type="text" style="width:400px;" required value="<?php echo $category;?>"
+                                   placeholder="请选择分类" onclick="doSelectCategory();" id="js-categories-name-input"
+                                   readonly/>
+                            <input class="form-control" type="hidden" value="<?php echo $categoryid;?>" name="post[typeid]"
+                                   id="js-categories-id-input"/>
+                            <?php }else{?>
+                             <input class="form-control" type="text" style="width:400px;" required value=""
+                                   placeholder="请选择分类" onclick="doSelectCategory();" id="js-categories-name-input"
+                                   readonly/>
+                            <input class="form-control" type="hidden" value="" name="post[typeid]"
+                                   id="js-categories-id-input"/>
+                            <?php }?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>项目名称<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="post[title]"
+                                   id="title" required value="" placeholder="请输入项目名称"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>自定义属性<span class="form-required">*</span></th>
+                        <td>
+                            <!--新增-->
+                            <input type="checkbox" name="flags[]" value="h"/>品牌上榜(字)[h]
+                            <input type="checkbox" name="flags[]" value="e"/>品牌上榜(图)[e]
+                            <input type="checkbox" name="flags[]" value="a"/>精品推荐(字)[a]
+                            <input type="checkbox" name="flags[]" value="f"/>精品推荐(图)[f]
+
+
+                            <input type="checkbox" name="flags[]" value="b"/>模块二左1[b]
+                            <input type="checkbox" name="flags[]" value="j"/>模块二右4[j]
+
+                            <input type="checkbox" name="flags[]" value="d"/>模块三[d]
+
+
+                            <input type="checkbox" name="flags[]" value="z"/>热门推荐[z]
+
+
+                            <!--目前有的属性-->
+                            <input type="checkbox" name="flags[]" value="c"/>logo推荐[c]
+                            <input type="checkbox" name="flags[]" value="s"/>热门品牌[s]
+                            <input type="checkbox" name="flags[]" value="p"/>图片[p]
+                            <input type="checkbox" name="flags[]" value="i"/>投资推荐[i]
+                           <!--  <input type="checkbox" name="flags[]" value="h"/>品牌上榜[h]
+                            <input type="checkbox" name="flags[]" value="c"/>logo推荐[c]
+                            <input type="checkbox" name="flags[]" value="a"/>品牌推荐[a]
+                            <input type="checkbox" name="flags[]" value="s"/>热门品牌[s]
+                            <input type="checkbox" name="flags[]" value="b"/>top[b]
+                            <input type="checkbox" name="flags[]" value="p"/>图片[p]
+                            <input type="checkbox" name="flags[]" value="j"/>跳转[j]
+                            <input type="checkbox" name="flags[]" value="d"/>品牌上榜2[d]
+                            <input type="checkbox" name="flags[]" value="i"/>投资推荐[i]
+                            <input type="checkbox" name="flags[]" value="z"/>综合排行[z] -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>关键词</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[keywords]" id="keywords" value=""
+                                   placeholder="请输入关键字">
+                            <p class="help-block">多关键词之间用英文逗号隔开</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>项目来源</th>
+                        <td><input class="form-control" type="text" name="post[source]" id="source" value=""
+                                   placeholder="请输入文章来源"></td>
+                    </tr>
+                    <tr>
+                        <th>作者</th>
+                        <td><input class="form-control" type="text" name="post[writer]" id="writer" value="<?php echo $_SESSION['think']['name']?>"
+                                   placeholder="请输入作者"></td>
+                    </tr>
+                    <tr>
+                        <th>文档摘要</th>
+                        <td>
+                            <textarea class="form-control" name="post[description]" style="height: 50px;"
+                                      placeholder="请填文档摘要"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>首页缩略图</th>
+                        <td>
+                            <ul id="litpic" class="pic-list list-unstyled form-inline"></ul>
+                            <a href="javascript:uploadMultiImage('图片上传','#litpic','litpic-item-tpl');"
+                               class="btn btn-default btn-sm">选择图片</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>项目logo<span class="form-required">*</span></th>
+                        <td>
+                               <ul id="logo" class="pic-list list-unstyled form-inline"></ul>
+                                <a href="javascript:uploadMultiImage('图片上传','#logo','photos-item-tpl');"
+                               class="btn btn-default btn-sm">选择图片</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>项目海报</th>
+                        <td>
+                            <ul id="haibao" class="pic-list list-unstyled form-inline"></ul>
+                            <a href="javascript:uploadMultiImage('图片上传','#haibao','haibao-item-tpl');"
+                               class="btn btn-default btn-sm">选择图片</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>海报SEO标题</th>
+                        <td><input type="text" class="form-control" id="input-seo_title" name="post[haibao_title]" placeholder="请输入海报SEO标题"></td>
+                    </tr>
+                    <tr>
+                        <th>海报SEO关键字</th>
+                        <td><input type="text" class="form-control" id="input-seo_keywords" name="post[haibao_keywords]" placeholder="请输入海报SEO关键字"></td>
+                    </tr>
+                    <tr>
+                        <th>海报SEO描述</th>
+                        <td><textarea class="form-control" name="post[haibao_description]"
+                                      id="input-seo_description" placeholder="请输入海报SEO描述"></textarea></td>
+                    </tr>
+                  
+					 <tr>
+                        <th>列表页推荐<span class="form-required">*</span></th>
+                        <td><input type="radio" name="post[recommend]" value="1" />推荐项目列表
+                          <input type="radio" name="post[recommend]" value="2" />不推荐项目列表</td>
+                    </tr>
+                  
+                    <tr>
+                        <th>投资金额<span class="form-required">*</span></th>
+                        <td><input type="radio" name="post[invested]" value="0-1万" />0-1万
+                            <input type="radio" name="post[invested]" value="1-5万" />1-5万
+                            <input type="radio" name="post[invested]" value="5-10万" />5-10万
+                            <input type="radio" name="post[invested]" value="10-20万"/>10-20万
+                            <input type="radio" name="post[invested]" value="20-50万"/>20-50万
+                            <input type="radio" name="post[invested]" value="50-100万"/>50-100万
+                            <input type="radio" name="post[invested]" value="100万以上" />100万+</td>
+                    </tr>
+                    <tr>
+                        <th>所在城市<span class="form-required">*</span></th>
+                        <td>
+                            <select class="form-control"  id="nat_top" style="width: 140px; float: left;">
+                            </select>
+                            <input type="hidden" value="" name="post[nativeplace_top]" id="nativeplace_top">
+
+                            <select class="form-control"  id="nat_son" style="width: 140px;float: left;margin-left: 20px;">
+                                <option value='0' >请选择</option>
+                            </select>
+                            <input type="hidden" value="" name="post[nativeplace_son]" id="nativeplace_son">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>热门城市</th>
+                        <td>
+                            <select class="form-control"  id="adderss_select" style="width: 140px;">
+                            </select>
+                            <input type="hidden" value="北京市" name="post[address]" id="address">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>公司名称<span class="form-required">*</span></th>
+                        <td><input class="form-control" type="text" name="post[companyname]" id="companyname" value=""
+                                   placeholder="请输入公司名称" required value=""></td>
+                    </tr>
+                    <tr>
+                        <th>公司地址<span class="form-required">*</span></th>
+                        <td><input class="form-control" type="text" name="post[company_address]" id="company_address" value=""
+                                   placeholder="请输入公司地址" required value=""></td>
+                    </tr>
+                    <tr>
+                        <th>企业类型</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[company_leixing]" id="company_leixing"
+                                   placeholder="请输入公司地址" required value="国有企业/私有企业/其他企业">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>注册资本</th>
+                        <td><input class="form-control" type="text" name="post[ziben]" id="ziben" value="100万"
+                                   placeholder="请输入注册资本"></td>
+                    </tr>
+                    <tr>
+                        <th>实收资本</th>
+                        <td><input class="form-control" type="text" name="post[shziben]" id="shziben" value="100万"
+                                   placeholder="请输入实收资本"></td>
+                    </tr>
+                   <!--  <tr>
+                        <th>成立时间</th>
+                        <td> <input type="text" class="form-control js-bootstrap-datetime" name="post[setup_time]"
+                                    value=""></td>
+                    </tr> -->
+                     <tr>
+                        <th>权重</th>
+                        <td><input class="form-control" type="text" name="post[weight]" id="weight" value=""
+                                   placeholder="请输入权重&nbsp;&nbsp;&nbsp;*越小越靠前*"></td>
+                    </tr>
+                    <tr>
+                        <th>点击数</th>
+                        <td><input class="form-control" type="text" name="post[click]" id="click" value=""
+                                   placeholder="请输入人气"></td>
+                    </tr>
+                    <tr>
+                        <th>已咨询</th>
+                        <td><input class="form-control" type="text" name="post[zhishu]" id="zhishu" value=""
+                                   placeholder="请输入已咨询"></td>
+                    </tr>
+                    <tr>
+                        <th>加盟店数量</th>
+                        <td><input class="form-control" type="text" name="post[sum]" id="sum" value=""
+                                   placeholder="请输入加盟店数量"></td>
+                    </tr>
+                    <!--<tr>-->
+                    <!--    <th>门店数量</th>-->
+                    <!--    <td><input class="form-control" type="text" name="post[nativeplace]" id="nativeplace" value=""-->
+                    <!--               placeholder="请输入门店数量"></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<th>内容</th>-->
+                        <!--<td>-->
+                            <!--<script type="text/plain" id="content" name="post[post_content]"></script>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <tr>
+                        <th>项目介绍/加盟前景/加盟优势：</th>
+                        <td>
+                            <script type="text/plain" id="jieshao" name="post[jieshao]" style="height: 500px;"></script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>加盟条件：</th>
+                        <td>
+                            <script type="text/plain" id="tiaojian" name="post[tiaojian]" style="height: 500px;"></script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>加盟流程：</th>
+                        <td>
+                            <script type="text/plain" id="liucheng" name="post[liucheng]" style="height: 500px;"></script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>投资分析/加盟费用/加盟利润/加盟支持/加盟政策：</th>
+                        <td>
+                            <script type="text/plain" id="fenxi" name="post[fenxi]" style="height: 500px;"></script>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <th>相册</th>
+                        <td>
+                            <ul id="photos" class="pic-list list-unstyled form-inline"></ul>
+                            <a href="javascript:uploadMultiImage('图片上传','#photos','photos-item-tpl');"
+                               class="btn btn-default btn-sm">选择图片</a>
+                        </td>
+                    </tr> -->
+                   <!--  <tr>
+                        <th>附件</th>
+                        <td>
+                            <ul id="files" class="pic-list list-unstyled form-inline">
+                            </ul>
+                            <a href="javascript:uploadMultiFile('附件上传','#files','files-item-tpl','file');"
+                               class="btn btn-sm btn-default">选择文件</a>
+                        </td>
+                    </tr> -->
+                    <tr>
+
+                    <tr>
+                        <th><b>缩略图</b></th>
+                        <td>
+                            <label style="color: #0b6cbc;">
+                                <input type="checkbox" name="post[default_img]"  value="1" checked="checked" >
+                                默认内容第一张图片为缩略图
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+                <hook name="portal_admin_article_edit_view_main"/>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary js-ajax-submit submit">{:lang('ADD')}</button>
+                        <a class="btn btn-default" href="{:url('AdminXm/index')}">{:lang('BACK')}</a>
+                    </div>
+                </div>
+            </div>
+           <!--  <div class="col-md-3">
+                <table class="table table-bordered">
+                    <tr>
+                        <th><b>缩略图</b></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="text-align: center;">
+                                <input type="hidden" name="post[more][thumbnail]" id="thumbnail" value="">
+                                <a href="javascript:uploadOneImage('图片上传','#thumbnail');">
+                                    <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                         id="thumbnail-preview"
+                                         width="135" style="cursor: pointer"/>
+                                </a>
+                                <input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><b>发布时间</b></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="form-control js-bootstrap-datetime" type="text" name="post[setup_time]"
+                                   value="{:date('Y-m-d H:i:s',time())}">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>文章模板</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="form-control" name="post[more][template]" id="more-template-select">
+                                <option value="">请选择模板</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table> -->
+
+                <!--<hook name="portal_admin_article_edit_view_right_sidebar"/>-->
+            <!-- </div> -->
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    //编辑器路径定义
+    var editorURL = GV.WEB_ROOT;
+</script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/themes/simpleboot3/public/new/js/p.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#weight").val(randNum(10,500));
+        $("#click").val(randNum(1000,10000));
+        $("#zhishu").val(randNum(500,2000));
+        $("#sum").val(randNum(50,500));
+        //遍历省份
+        $.each(province,function(k,v){
+            $("#nat_top").append('<option value='+v.ProID+'>'+v.name+'</option>>');
+        })
+        //省份改变遍历市区
+        $("#nat_top").change(function(){
+            var provinceId = $(this).val();
+            if(provinceId>0){
+                $("#nativeplace_top").val($.trim($(this).find("option:selected").text()));
+            }else{
+                $("#nativeplace_top").val('');
+            }
+            $("#nat_son").empty();
+            $("#nat_son").append('<option value="0">请选择</option>>');
+            $.each(city,function(k,v){
+                if(v.ProID == provinceId){
+                    $("#nat_son").append('<option value='+v.ProID+'>'+v.name+'</option>>');
+                    if(v.CityID <= 4 ){
+                        $.each(district,function (k1 , v1) {
+                            if(v1.CityID == v.CityID){
+                                $("#nat_son").append('<option value='+v1.Id+'>'+v1.DisName+'</option>');
+                            }
+                        });
+                    }
+
+                }
+            })
+        });
+        $("#nat_son").change(function(){
+            if($(this).val()>0){
+                $("#nativeplace_son").val($.trim($(this).find("option:selected").text()));
+            }else{
+                $("#nativeplace_son").val('');
+            }
+        });
+        $("#nat_top").trigger('change');
+
+        $.each(province,function (k,v) {
+            if(v.ProRemark  != '直辖市' && v.ProRemark !='特别行政区') {
+                $("#adderss_select").append('<option value="' + v.ProID + '">--' + v.name + '</option>');
+            }
+            $.each(city,function (key,value) {
+                if(v.ProID == value.ProID){
+                    $("#adderss_select").append('<option value="'+value.CityID+'">'+value.name+'</option>');
+                }
+            })
+        })
+        $("#adderss_select").change(function(){
+            $("#address").val($.trim($(this).find("option:selected").text()));
+        });
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('jieshao');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+    });
+
+    $(function () {
+
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('tiaojian');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+    });
+    $(function () {
+
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('liucheng');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+    });
+
+    $(function () {
+
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('fenxi');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+    });
+
+    function doSelectCategory() {
+        var selectedCategoriesId = $('#js-categories-id-input').val();
+        openIframeLayer("{:url('AdminCategory/select')}?ids=" + selectedCategoriesId, '请选择分类', {
+            area: ['700px', '400px'],
+            btn: ['确定', '取消'],
+            yes: function (index, layero) {
+                //do something
+
+                var iframeWin          = window[layero.find('iframe')[0]['name']];
+                var selectedCategories = iframeWin.confirm();
+                if (selectedCategories.selectedCategoriesId.length == 0) {
+                    layer.msg('请选择分类');
+                    return;
+                }
+                $('#js-categories-id-input').val(selectedCategories.selectedCategoriesId.join(','));
+                $('#js-categories-name-input').val(selectedCategories.selectedCategoriesName.join(' '));
+                //console.log(layer.getFrameIndex(index));
+                layer.close(index); //如果设定了yes回调，需进行手工关闭
+            }
+        });
+    }
+
+    function randNum(x,y) {
+        //x上限，y下限
+        var rand = parseInt(Math.random() * (x - y + 1) + y);
+        return rand;
+    }
+
+
+    $(function(){
+        $(".submit").click(function(){
+            var obj = document.getElementsByName("flags[]");
+            check_val = [];
+            for(k in obj){
+                if(obj[k].checked)
+                    check_val.push(obj[k].value);
+            }
+           if(check_val.length == 0){
+               layer.msg('请选择自定义属性');
+               return false;
+           }
+           var logo = $('.logo').val();
+           if(logo == '' || logo == undefined || logo == null){
+             layer.msg('请上传项目logo');
+             return false;
+           }
+            var redio_check=$('input:radio[name="post[invested]"]:checked').val();
+           if(redio_check == undefined || redio_check == null || redio_check==''){
+               layer.msg('选择投资金额');
+               return false;
+           }
+           // var photo = $('.photo').val();
+           // if(photo == '' || photo == undefined || photo == null){
+           //  layer.msg('请上传项目海报');
+           //   return false;
+           // }
+
+
+        })
+    })
+</script>
+</body>
+</html>

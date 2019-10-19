@@ -1,0 +1,122 @@
+/*phb-page*/
+
+.phb-xm-show{width: 100%; margin: 40px auto 30px; overflow: hidden;}
+.phb-xm-show .cont{margin: 0 -5px; overflow: hidden;}
+.phb-xm-show li{float: left; width: 25%; padding: 0 5px; margin-bottom: 10px; box-sizing: border-box; overflow: hidden;}
+.phb-xm-show li .item{position: relative; width: 100%; height: 180px; display: block; overflow: hidden;}
+.phb-xm-show li .hover{position: absolute; top: 100%; left: 0; width: 100%; height: 100%; background: rgba(236,43,66,0.85); text-align: center; color: #fff;    
+-webkit-transition: 0.5s ease all;
+    transition: 0.5s ease all;}
+.phb-xm-show li .tit{font-size: 16px; line-height: 36px; margin: 44px 0 12px 0; font-weight: bold;}
+.phb-xm-show li .tit a{color: #fff; }
+.phb-xm-show li .mesg span{ float: left; width:100%; line-height: 23px;}
+.phb-xm-show li .item:hover .hover{top: 0; color: #fff; }
+
+
+/*phb-list*/
+.phb-list{margin: 10px -5px 0; overflow: hidden;}
+.phb-item{float:left; width: 292px; margin: 0 5px 10px; padding: 0 20px 22px ; border-top: 4px solid #ec2b42; background: #fff; box-sizing: border-box;}
+.phb-item .tit-box{margin-bottom: 7px; line-height: 48px; font-size: 16px; font-weight: bold; color: #353535;}
+.phb-item .tit-box .more{float: right; line-height: 48px; font-size: 14px; font-weight: normal; color: #7e7e7e;}
+.phb-item .tit-box em{color: #ec2b42;}
+.phb-item .tit-box .icon{width: 20px; height: 20px; float: left; display: block; margin: 14px 8px 0 0;}
+.phb-item ul{overflow: hidden;}
+.phb-item li{ float: left; width: 100%;line-height: 38px;}
+.phb-item li .item{width:100%; overflow: hidden; display: block;}
+.phb-item li .num{float:left; width: 16px; height: 16px; margin: 12px 5px 0 0; display: block; border-radius: 50%; background: #ededed; font-size: 12px; color: #8c8c8c; line-height: 16px; text-align: center;}
+.phb-item li .name{float:left; width: 151px;  color: #282828; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+.phb-item li .price{float:left; width: 62px; color: #ff7888; font-weight: bold; text-align: center; font-size: 12px;}
+.phb-item li .redu{float:left; width: 52px; color: #a1a1a1; text-align: center;}
+.phb-item li .hangye{float: left; width: 52px; height: 16px; margin: 9px 10px 0 3px; font-size: 12px; line-height: 16px; overflow: hidden; text-align: center; color: #b8b8b8; border: 1px solid #d2d2d2; border-radius: 2px;}
+.phb-item li .icon-up{float: left; width: 8px; height: 12px; margin: 12px 0 0; background-position: -204px -117px; display: block;}
+.phb-item li .num1,
+.phb-item li .num2,
+.phb-item li .num3{background: #ec2b42; color:#fff;}
+
+
+.phb-item .m-1{ display: none; float: left; overflow: hidden; margin: 0; overflow: hidden; -webkit-transition: 0.5s ease all; transition: 0.5s ease all;}
+.phb-item .m-1 .brand{float:left;width:118px; height: 76px; border: 2px solid #eee; box-sizing: border-box; overflow:hidden; text-align: center;}
+.phb-item .m-1 .brand img{max-width: 114px; max-height: 72px;}
+.phb-item .m-1-a{float:left;width:120px;height:76px;margin: 0 0 0 12px; display: inline; overflow: hidden;}
+.phb-item .m-1-a dt a{line-height: 22px; overflow: hidden; width: 100%; display: block;}
+.phb-item .m-1-a dd{font-size: 12px; margin-top: 5px; line-height: 24px; color: #a7a7a7;overflow: hidden;} 
+.phb-item .m-1-a dd span{float: left; width: 100%; }
+.phb-item .m-1-a dd em{font-weight: bold; color: #ff7888;}
+.phb-item .m-1-a dd i{color:#353535;}
+.phb-item .m-1:hover dt a{color: #ec2b42;}
+.phb-item .info{float:left; padding: 8px 6px; height:70px; margin: 5px auto; width: 100%; line-height: 18px; background: #f4f4f4; color: #848484; font-size: 12px; border-radius: 4px; box-sizing: border-box;}
+.phb-item .info p{height:54px; overflow:hidden;}
+.phb-item .cont .link-hover .m-1{display: block;}
+
+.phb-item-top{border-top: none;}
+.phb-item-top .tit-box{font-size: 18px; line-height: 56px;}
+.phb-item-top1 .tit{ color: #ffb400;}
+.phb-item-top2 .tit{color: #ff8b4c;}
+.phb-item-top3 .tit{color: #2f9bff;}
+.phb-item-top4 .tit{color: #9b6aff;}
+.phb-item-top li .name{float:left; width: 94px;}
+.phb-item-top li .num1,
+.phb-item-top li .num2,
+.phb-item-top li .num3{background: url(../images/icon.png) no-repeat -64px -64px; text-indent: -1000em;}
+.phb-item-top li .num2{background-position: -80px -64px;}
+.phb-item-top li .num3{background-position: -96px -64px;}
+
+
+.phb-item-canyin{border-color: #ff9a38;}
+.phb-item-canyin .tit-box em{color: #ff9a38}
+
+.phb-item-jiushui{border-color: #4784ff;}
+.phb-item-jiushui .tit-box em{color: #4784ff}
+
+.phb-item-muying{border-color: #8277f0;}
+.phb-item-muying .tit-box em{color: #8277f0}
+
+.phb-item-jiaoyu{border-color: #d3ae54;}
+.phb-item-jiaoyu .tit-box em{color: #d3ae54}
+
+.phb-item-zhubao{border-color: #ff9a38;}
+.phb-item-zhubao .tit-box em{color: #ff9a38}
+
+.phb-item-shipin{border-color: #00c77e;}
+.phb-item-shipin .tit-box em{color: #00c77e}
+
+.phb-item-jiaju{border-color: #a5d765;}
+.phb-item-jiaju .tit-box em{color: #a5d765}
+
+.phb-item-jiancai{border-color: #ec422b;}
+.phb-item-jiancai .tit-box em{color: #ec422b}
+
+.phb-item-nvxing{border-color: #4784ff;}
+.phb-item-nvxing .tit-box em{color: #4784ff}
+
+.phb-item-fuzhuang{border-color: #ffd050;}
+.phb-item-fuzhuang .tit-box em{color: #ffd050}
+
+.phb-item-ganxi{border-color: #80a8c4;}
+.phb-item-ganxi .tit-box em{color: #80a8c4}
+
+.phb-item-qiche{border-color: #23ceff;}
+.phb-item-qiche .tit-box em{color: #23ceff}
+
+
+.phb-item:nth-child(1) .tit-box .icon-canyin{background-position: 0 -546px;}
+.phb-item:nth-child(2) .tit-box .icon-jiushui{background-position: -80px -546px;}
+.phb-item:nth-child(3) .tit-box .icon-muying{background-position: -40px -546px;}
+.phb-item:nth-child(4) .tit-box .icon-jiaoyu{background-position: -60px -546px;}
+.phb-item:nth-child(5) .tit-box .icon-zhubao{background-position: -20px -546px;}
+.phb-item:nth-child(6) .tit-box .icon-shipin{background-position: -120px -546px;}
+.phb-item:nth-child(7) .tit-box .icon-jiaju{background-position: -140px -546px;}
+.phb-item:nth-child(8) .tit-box .icon-jiancai{background-position: -180px -546px;}
+.phb-item:nth-child(9) .tit-box .icon-nvxing{background-position: -160px -546px;}
+.phb-item:nth-child(10) .tit-box .icon-fuzhuang{background-position: -220px -546px;}
+.phb-item:nth-child(11) .tit-box .icon-ganxi{background-position: -240px -546px;}
+.phb-item:nth-child(12) .tit-box .icon-qiche{background-position: -260px -546px;}
+
+/* add */
+.phb-list:nth-of-type(1) .phb-item li .item{
+    width:177px;
+    float:left;
+}
+.phb-list:nth-of-type(1) .phb-item li .item>.hangye{
+    display: none;
+}

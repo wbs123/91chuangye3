@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>{$seo['seo_title']}_91创业网</title>
+<meta name="keywords" content="{$seo['seo_keywords']}">
+<meta name="description" content="{$seo['seo_description']}">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta name="applicable-device" content="pc" /> 
+<meta name="robots" content="all">
+<link rel="shortcut icon" href="__TMPL__/public/new/images/favicon.ico" type="image/x-icon" />
+<meta name="mobile-agent" content=""/>
+<link rel="alternate" media="only screen and(max-width: 640px)" href=""/>
+<meta http-equiv="mobile-agent" content="format=xhtml; url=">
+<link type="text/css" rel="stylesheet" href="__TMPL__/public/xin/css/common.css">
+<link type="text/css" rel="stylesheet" href="__TMPL__/public/xin/css/xm_list.css">
+<link type="text/css" rel="stylesheet" href="__TMPL__/public/xin/css/xm_phb.css">
+<base target="_blank">
+<!--<script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="http://m.91chuangye.com"+location.pathname+location.search;}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script>-->
+</head>
+
+<body>
+	<!-- head start -->
+	<include file="header_xin3"/>
+	<!-- head end -->
+	
+	<div class="w1200">
+		<!--hot 排行榜 start-->
+		<div class="phb-top">
+			<div class="hot-phb">
+				<div class="common-tit">
+					<h2><i class="icon icon-phb"></i>热门排行榜</h2>
+				</div>
+				<div class="cont">
+					<ul>
+						<volist name="hot" id="hot">
+						<li>
+							<a href="{:cmf_url('portal/common/index',['id'=>$hot['aid'],'classname'=>$hot['class']])}" class="item" title="{$hot.title}">
+								<div class="picfocus"><img class="lazy" src="__TMPL__/public/xin/images/lazyBg3x3.jpg" data-original="{$hot.litpic}" alt="{$hot.title}"></div>
+								<div class="info-box">
+									<div class="tit">
+										<span>全国门店<em>{$hot.sum}</em>家</span>
+										<span>地区<?php echo str_replace('--','',$hot['address']);?></span>
+									</div>
+								</div>
+							</a>
+						</li>
+						</volist>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="zixun">
+				<ul class="tabs">
+					<li class="on">综合排行</li>
+					<li>热门文章</li>
+				</ul>
+				<div class="tabs-cont">
+					<div class="cont">
+						<ul class="list">
+							<volist name="zonghe" id="zonghe"  key="k">
+							<li><a href="{:cmf_url('portal/common/index',['id'=>$zonghe['aid'],'classname'=>$zonghe['class']])}" title="{$zonghe.title}"><i class="num num{$k}">{$k}</i><span class="name">{$zonghe.title}</span><em class="price">{$zonghe.invested}</em><i class="redu">{$zonghe.click}</i></a></li>
+							</volist>
+						</ul>
+					</div>
+					<div class="cont cont2">
+						<volist name="news_hot" id="hot1">
+						<div class="m-1">
+							<a href="{:cmf_url('portal/common/index',['id'=>$hot1['id'],'classname'=>'news'])}" class="picfocus"><img class="lazy" src="__TMPL__/public/xin/images/lazyBg3x2.jpg" data-original="{$hot1.thumbnail}" alt="{$hot1.post_title}" style="display: inline;"></a>
+							<dl class="m-1-a">
+								<dt><a href="{:cmf_url('portal/common/index',['id'=>$hot1['id'],'classname'=>'news'])}">{$hot1.post_title}</a></dt>
+								<dd><?php echo date('Y-m-d',$hot1['published_time']);?></dd>
+							</dl>
+						</div>
+						</volist>
+						<ul class="m-list">
+							<volist name="news_hot2" id="hot2">
+								<li><a href="{:cmf_url('portal/common/index',['id'=>$hot2['id'],'classname'=>'news'])}" title="{$hot2.post_title}">{$hot2.post_title}</a><span><?php echo date('Y-m-d',$hot1['published_time']);?></span></li>
+							</volist>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- hot 排行榜 end -->
+		
+		<!--  phb-list start -->
+		<div class="phb-list">
+			<volist name="data" id="cas">
+				<div class="phb-item phb-item-canyin">
+					<div class="tit-box">
+						<div class="tit"><i class="icon icon-{$cas['path']}"></i><em>{$cas['name']}</em>排行榜<a href="{:cmf_url('portal/top/index_top',['classname'=>$cas['path']],'')}/" class="more">MORE+</a></div>
+					</div>
+					<div class="cont">
+						<ul>
+							<volist name="cas.data" id="dd" key="k">
+								<li class="link-hover">
+									<a href="{:cmf_url('portal/common/index',['id'=>$dd['aid'],'classname'=>$dd['class']])}" title="{$dd['title']}" class="item">
+										<i class="num num{$k}">{$k}</i>
+										<span class="name">{$dd['title']}</span>
+										<em class="price">{$dd['invested']}</em>
+										<i class="hangye"><?php echo str_replace('加盟','',$dd['catename']);?></i>
+										<i class="icon icon-up"></i>
+									</a>
+									<div class="m-1">
+										<a href="{:cmf_url('portal/common/index',['id'=>$dd['aid'],'classname'=>$dd['class']])}" class="brand"><img class="lazy" src="__TMPL__/public/xin/images/lazyBg3x2.jpg" data-original="{$dd['litpic']}" alt="{$dd['title']}"></a>
+										<dl class="m-1-a">
+											<dt><a href="{:cmf_url('portal/common/index',['id'=>$dd['aid'],'classname'=>$dd['class']])}">{$dd['title']}</a></dt>
+											<dd>
+												<span>投资额：<em>{$dd['invested']}</em></span>
+												<span>咨询数：<em>{$dd.click}</em><i>人</i></span>
+												<span>门店数：<em>{$dd.sum}</em><i>家</i></span>
+											</dd>
+										</dl>
+										<p class="info">{$dd['description']|msubstr=0,60,'utf-8',true}</p>
+									</div>
+								</li>
+							</volist>
+						</ul>
+					</div>
+				</div>
+			</volist>
+		</div>
+		<!-- phb-list end -->
+		
+		<!-- 行业推荐 start -->
+		<div class="hangye-tj">
+			<ul class="tabs">
+				<volist name="catess" id="cass">
+					<li class="on"><?php echo str_replace('加盟','',$cass['name']);?></li>
+				</volist>
+			</ul>
+			<div class="cont">
+				<volist name="datas" id="das">
+				<ul>
+					<volist name="das.data" id="ddd">
+					<li>
+						<a href="{:cmf_url('portal/common/index',['id'=>$ddd['aid'],'classname'=>$ddd['class']])}" title="{$ddd.title}" class="item">
+							<div class="pic">
+								<p><img class="lazy" src="__TMPL__/public/xin/images/lazyBg3x2.jpg" data-original="{$ddd.litpic}" alt="{$ddd.title}"></p>
+							</div>
+							<div class="tit">{$ddd.title}</div>
+							<div class="price">{$ddd.invested}</div>
+						</a>
+					</li>
+					</volist>
+				</ul>
+				</volist>
+			
+			</div>
+		</div>
+		<!-- 行业推荐 end -->
+		
+		<!-- 推荐项目品牌 start -->
+		<div class="xmpp-tj">
+			<div class="side-tit">推荐项目品牌</div>
+			<div class="cont">
+				<ul>
+					<volist name="tuijian" id="tuijian">
+					<li><a href="{:cmf_url('portal/common/index',['id'=>$tuijian['aid'],'classname'=>$tuijian['class']])}">{$tuijian.title}</a>|</li>
+					</volist>
+				</ul>
+			</div>
+		</div>
+		<!-- 推荐项目品牌 end -->
+	</div>
+	
+	<!-- 友情提示 start -->
+	<div class="friend-tips">
+		<div class="w1200">
+			<ul>
+				<li><span>友情提示：</span><p>本页面内容仅供参考，为降低投资风险，建议您在投资前多做考察咨询、多对比分析。</p></li>
+				<li><span>内容声明：</span><p>以上所展示的信息均由第三方用户免费注册发布，内容的真实性、准确性和合法性均由发布用户负责。91创业网对此不承担任何相关连带责任。</p></li>
+				<li><span>投诉删除：</span><p>本平台所有品牌信息均为用户免费注册发布，91创业网遵循相关法律法规严格审核相关内容，如您发现页面有任何违法或侵权信息，欢迎向91创业网举报并提供有效线索，我们将认真核查、及时处理。</p></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 友情提示 end -->
+	
+	<!-- 创业5步 start -->
+	<div class="liucheng">
+		<div class="w1200">
+			<div class="common-tit">
+				<h2>创业<em>5</em>步</h2>
+			</div>
+			<ul>
+				<li>
+					<div class="icon icon-xunzhao"></div>
+					<div class="info">01. 寻找项目</div>
+					<span class="arrow"></span>
+				</li>
+				<li>
+					<div class="icon icon-zixun"></div>
+					<div class="info">02. 留言咨询</div>
+					<span class="arrow"></span>
+				</li>
+				<li>
+					<div class="icon icon-huifang"></div>
+					<div class="info">03. 等待回访</div>
+					<span class="arrow"></span>
+				</li>
+				<li>
+					<div class="icon icon-kaocha"></div>
+					<div class="info">04. 上门考察</div>
+					<span class="arrow"></span>
+				</li>
+				<li>
+					<div class="icon icon-hezuo"></div>
+					<div class="info">05. 成功合作</div>
+				</li>
+			</ul>	
+		</div>
+	</div>
+	<!-- 创业5步 end -->
+		
+	<!-- footer start -->
+	<include file="footer_xin1"/>
+	<!-- footer end -->
+	
+<script type="text/javascript" src="__TMPL__/public/xin/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/xin/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/xin/js/index.js"></script>
+</body>
+</html>

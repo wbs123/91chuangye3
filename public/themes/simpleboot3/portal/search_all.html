@@ -1,0 +1,16 @@
+<div class="fl top-sou">
+	<form id="search_form" action="{:cmf_url('portal/plus/index')}" method="post">
+		<input type="hidden" name="typeid" value="2,1,3,4,5,6,7,8,9,10,350,312,313,63,339">
+		<input class="top-text" name="keyword" type="text" id="search-keyword" value="" placeholder="请搜索你感兴趣的品牌项目或招商企业">
+		<input class="top-btn" id="top-btn" type="submit" value="搜索">
+		<i class="icon icon-search"></i>
+	</form>
+	<div class="search-link">
+		<span>热门搜索：</span>
+		<a href="javascript:;"></a>
+		<a href="{:cmf_url('portal/plus/index',['keyword'=>'一点点奶茶'],'')}/">一点点奶茶</a>
+		<a href="{:cmf_url('portal/plus/index',['keyword'=>'奶茶'],'')}/">奶茶</a>
+		<a href="{:cmf_url('portal/plus/index',['keyword'=>'烤鱼'],'')}/">烤鱼</a>
+		<a href="{:cmf_url('portal/plus/index',['keyword'=>'小吃车'],'')}/">小吃车</a>
+	</div>
+</div>

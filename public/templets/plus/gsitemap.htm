@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+<!-- <url>
+<loc>{dede:global.cfg_basehost/}</loc>
+<lastmod>{dede:arclist row=1 titlelen=24 orderby=pubdate}
+[field:pubdate function=strftime('%Y-%m-%d',@me)/]
+{/dede:arclist}</lastmod>
+<changefreq>always</changefreq>
+<priority>1.0</priority>
+</url>
+{dede:channel row='1000' type='top'}
+<url>
+<loc>[field:typelink /]</loc>
+<changefreq>daily</changefreq>
+<priority>0.9</priority>
+</url>
+{/dede:channel} -->
+{dede:arclist row=20000 orderby=pubdate}
+<url>
+<loc>[field:title/]</loc>
+<lastmod>[field:pubdate function=strftime('%Y-%m-%d',@me)/]</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>&#x000A;
+{/dede:arclist}
+</urlset>

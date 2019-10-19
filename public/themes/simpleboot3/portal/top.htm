@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>{dede:field.seotitle /}_91创业网</title>
+<meta name="keywords" content="{dede:field name='keywords'/}">
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta name="applicable-device" content="pc" /> 
+<meta name="robots" content="all">
+<link rel="shortcut icon" href="{dede:global.cfg_basehost/}/favicon.ico" type="image/x-icon" /> 
+<link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/new/css/common.css">
+<link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/new/css/index.css">
+<link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/new/css/xm_list.css">
+<link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/new/css/rank.css">
+<meta name="mobile-agent" content="format=html5;url={dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}"/>
+<meta http-equiv="mobile-agent" content="format=xhtml; url={dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}">
+<link rel="alternate" media="only screen and(max-width: 640px)" href="{dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}"/>
+<base target="_blank">
+ <script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="http://m.91chuangye.com"+location.pathname+location.search;}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script>
+</head>
+<body>
+<div class="wrapper">
+{dede:include filename="new_head1.htm"/}
+
+<!--subnav&hdxw-->
+<div class="banner-box">
+	<div class=" w1200 clearfix">
+		<!--左侧二级导航-->
+		<div class="fl b-subnav">
+			<ul class="ytopnav">
+				{dede:channelartlist typeid='391,391' row='15'}
+				<li>
+					 {dede:channel type='son' row='15'}
+					 <a href="[field:typelink/]" class='link' title="[field:typename/]排行榜">[field:typename/]排行榜</a> 
+					 {/dede:channel}
+				</li>
+				{/dede:channelartlist}
+			</ul>
+		</div>
+		
+		<!--焦点图&品牌上榜-->
+		<div class="fl b-hdxw top-b-hdxw">
+			<div id="hdxw" class="hdxw-box">
+				<div class="hdxw-img">
+					<div class="images-inner">
+						<a href="http://www.91chuangye.com/naichajiameng/90912.html" target="_blank" class="link">
+							<img src="{dede:global.cfg_templets_skin/}/new/images/banner4.jpg" class="img" />
+						</a>
+						<a href="http://www.91chuangye.com/xiaolongxiajiameng/75230.html" target="_blank" class="link">
+							<img src="{dede:global.cfg_templets_skin/}/new/images/banner2.jpg" class="img" />
+						</a>
+						<a href="http://www.91chuangye.com/zhajidianjiameng/13060.html" target="_blank" class="link">
+							<img src="{dede:global.cfg_templets_skin/}/new/images/banner5.jpg" class="img" />
+						</a>
+					</div>
+				</div>
+				<div class="hdxw-dots">
+						<div class="dots-inner"></div>
+				</div>
+			</div>
+
+			<!-- 热门榜单 -->
+			<div class="main-today-bottom clearfix">
+				<img src="{dede:global.cfg_templets_skin/}/new/images/image-6.png" class="main-today-img fl">
+				<div class="main-today-text fl">
+					<div class="main-today-box">
+							{dede:arclist typeid='2' orderby='pubdate' titlelen='180' row=16}
+									<a href="[field:arcurl/]" title="[field:title/]" >[field:title/]</a>
+							{/dede:arclist}
+					</div>
+				</div>
+			</div>
+		</div>	
+		<!--右侧搜索&商机资讯-->	
+		<div class="main-comprehensive">
+			<h3 class="clearfix"><strong>综合排行榜</strong><span>搜索指数</span></h3>
+			<div class="main-comprehensive-center">
+				<ul>
+					{dede:arclist typeid='2' orderby='click' titlelen='180' row=10 addfields='invested,sum,address' channelid='17'}
+					<li><a href="[field:arcurl/]">
+					<i [field:global name='autoindex'runphp='yes'] if(@me==1||@me==2||@me==3){@me='class="i_red"';}else{@me='';}[/field:global]>[field:global.autoindex/]</i>
+					<span class="li_span_1">[field:title/]</span>
+					<span class="li_span_2">[field:typename/]</span>
+					<span class="li_span_3">[field:click/]<i class="up_down0"></i></span>
+					</a></li>
+					{/dede:arclist}
+				</ul>
+			</div>
+		</div>		
+	</div>
+</div>
+	
+
+<!--top-rank-->
+<div class="w1200 clearfix">
+		<div class="join-rank top-rank">
+			<!-- year,month,week ranking -->
+			<div class="cont clearfix">
+				<div class="paihang">
+					<div class="tit tit-rank-year">
+					<i class="icon-rank icon-rank-year"></i>年度排行榜</div>
+					<div class="list">
+						<div class="top">
+							<span class="fl array-list">排名</span>
+							<span class="fl sellers-list">商家列表</span>
+							<span class="fr sear-index">搜索指数</span>
+						</div>
+						<ul>
+						{dede:arclist typeid='2,312,8' orderby='click' titlelen='180' row=10 addfields='invested,sum,address,logo' channelid='17' subday='365'}
+							<li [field:global name='autoindex'runphp='yes']else if(@me==1){@me='class="link-hover"';}else{@me='';}[/field:global]>
+								<a href="[field:arcurl/]" class="link">
+									<span class="fl array-list"><i class="num num[field:global.autoindex/]">[field:global.autoindex/]</i></span>
+									<span class="fl sellers-list">[field:title/]</span>
+									<span class="fr sear-index"><i class="number">[field:click/]</i><i class="icon icon-up"></i></span>
+								</a>
+								<dl class="link-cont">
+									<dt class="fl"><a href="[field:arcurl/]"><img src="[field:logo/]" alt="[field:title/]"></a></dt>
+									<dd>
+										<span>投资额：<em>[field:invested/]</em></span>
+										<span>门店数：<em>[field:sum/]</em></span>
+										<span>点击数：[field:click/]</span>
+									</dd>
+									<dd class="info">[field:description function='cn_substr(Html2text("@me")."...",120)'/] </dd>
+								</dl>
+							</li>
+							{/dede:arclist}
+						</ul>
+						
+					</div>
+				</div>
+				
+				<div class="paihang">
+					<div class="tit tit-rank-month">
+					<i class="icon-rank icon-rank-month"></i>本月排行榜</div>
+					<div class="list">
+						<div class="top">
+							<span class="fl array-list">排名</span>
+							<span class="fl sellers-list">商家列表</span>
+							<span class="fr sear-index">搜索指数</span>
+						</div>
+						<ul>
+						{dede:arclist typeid='6,362,265,5,7' orderby='click' titlelen='180' row=10 addfields='invested,sum,address,logo' channelid='17'}
+							<li [field:global name='autoindex'runphp='yes']else if(@me==1){@me='class="link-hover"';}else{@me='';}[/field:global]>
+								<a href="[field:arcurl/]" class="link">
+									<span class="fl array-list"><i class="num num[field:global.autoindex/]">[field:global.autoindex/]</i></span>
+									<span class="fl sellers-list">[field:title/]</span>
+									<span class="fr sear-index"><i class="number">[field:click/]</i><i class="icon icon-up"></i></span>
+								</a>
+								<dl class="link-cont">
+									<dt class="fl"><a href="[field:arcurl/]"><img src="[field:logo/]" alt="[field:title/]"></a></dt>
+									<dd>
+										<span>投资额：<em>[field:invested/]</em></span>
+										<span>门店数：<em>[field:sum/]</em></span>
+										<span>点击数：[field:click/]</span>
+									</dd>
+									<dd class="info">[field:description function='cn_substr(Html2text("@me")."...",120)'/] </dd>
+								</dl>
+							</li>
+							{/dede:arclist}
+
+						</ul>						
+					</div>
+				</div>
+				
+				<div class="paihang">
+					<div class="tit tit-rank-week">
+					<i class="icon-rank icon-rank-week"></i>本周排行榜</div>
+					<div class="list">
+						<div class="top">
+							<span class="fl array-list">排名</span>
+							<span class="fl sellers-list">商家列表</span>
+							<span class="fr sear-index">搜索指数</span>
+						</div>
+						<ul>
+						{dede:arclist typeid='2' orderby='click' titlelen='180' row=10 addfields='invested,sum,address,logo' channelid='17' subday='270'}
+							<li [field:global name='autoindex'runphp='yes']else if(@me==1){@me='class="link-hover"';}else{@me='';}[/field:global]>
+								<a href="[field:arcurl/]" class="link">
+									<span class="fl array-list"><i class="num num[field:global.autoindex/]">[field:global.autoindex/]</i></span>
+									<span class="fl sellers-list">[field:title/]</span>
+									<span class="fr sear-index"><i class="number">[field:click/]</i><i class="icon icon-up"></i></span>
+								</a>
+								<dl class="link-cont">
+									<dt class="fl"><a href="[field:arcurl/]"><img src="[field:logo/]" alt="[field:title/]"></a></dt>
+									<dd>
+										<span>投资额：<em>[field:invested/]</em></span>
+										<span>门店数：<em>[field:sum/]</em></span>
+										<span>点击数：[field:click/]</span>
+									</dd>
+									<dd class="info">[field:description function='cn_substr(Html2text("@me")."...",120)'/] </dd>
+								</dl>
+							</li>
+							{/dede:arclist}
+						</ul>
+						
+					</div>
+				</div>
+			</div>
+
+			<!-- advertisement -->
+			<div class="figure w1200">
+		        <ul class="clearfix">
+					<li> {dede:myad name='5'/}</li>
+
+					<li> {dede:myad name='6'/}</li>
+
+					<li> {dede:myad name='7'/}</li>
+
+					<li> {dede:myad name='8'/}</li>
+		        </ul>
+		    </div>		    
+			<!-- advertisement -->
+
+			<!-- industry ranking -->
+			<div class="cont clearfix">
+				{dede:channelartlist typeid='top' row='15'}
+				<div class="paihang">
+					<div class="tit tit-rank-{dede:global name='itemindex' runphp='yes'}
+					if(@me==1){
+					@me='canyin';
+					}else if(@me==2){
+					@me='drink';
+					}else if(@me==3){
+					@me='mom';
+					}else if(@me==4){
+					@me='edu';
+					}else if(@me==5){
+					@me='zhubao';
+					}else if(@me==6){
+					@me='shipin';
+					}else if(@me==7){
+					@me='house';
+					}else if(@me==8){
+					@me='build';
+					}else if(@me==9){
+					@me='fuwu';
+					}else if(@me==10){
+					@me='cloth';
+					}else if(@me==11){
+					@me='dry';
+					}else if(@me==12){
+					@me='woman';
+					}else if(@me==13){
+					@me='car';
+					}else if(@me==14){
+					@me='jinrong';
+					}else if(@me==15){
+					@me='internet';
+					}else{@me='drink';}
+					{/dede:global}">
+						<i class="icon-rank icon-rank-{dede:global name='itemindex' runphp='yes'}
+					 if(@me==1){
+					@me='canyin';
+					}else if(@me==2){
+					@me='drink';
+					}else if(@me==3){
+					@me='mom';
+					}else if(@me==4){
+					@me='edu';
+					}else if(@me==5){
+					@me='zhubao';
+					}else if(@me==6){
+					@me='shipin';
+					}else if(@me==7){
+					@me='house';
+					}else if(@me==8){
+					@me='build';
+					}else if(@me==9){
+					@me='fuwu';
+					}else if(@me==10){
+					@me='cloth';
+					}else if(@me==11){
+					@me='dry';
+					}else if(@me==12){
+					@me='woman';
+					}else if(@me==13){
+					@me='car';
+					}else if(@me==14){
+					@me='jinrong';
+					}else if(@me==15){
+					@me='internet';
+					}else{@me='drink';}
+					{/dede:global}"></i><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}排行榜</a></div>
+					<div class="list">
+						<div class="top">
+							<span class="fl array-list">排名</span>
+							<span class="fl sellers-list">商家列表</span>
+							<span class="fr sear-index">搜索指数</span>
+						</div>
+						<ul>
+							{dede:arclist typeid='0' orderby='click' titlelen='180' row=10 addfields='invested,sum,address,logo' channelid='17'}
+							<li [field:global name='autoindex'runphp='yes']else if(@me==1){@me='class="link-hover"';}else{@me='';}[/field:global]>
+								<a href="[field:arcurl/]" title="[field:title/]" class="link">
+									<span class="fl array-list"><i class="num num[field:global.autoindex/]">[field:global.autoindex/]</i></span>
+									<span class="fl sellers-list">[field:title/]</span>
+									<span class="fr sear-index"><i class="number">[field:click/]</i><i class="icon icon-up"></i></span>
+								</a>
+								<dl class="link-cont">
+									<dt class="fl"><a href="[field:arcurl/]" title="[field:title/]"><img src="[field:logo/]" alt="[field:title/]"></a></dt>
+									<dd>
+										<span>投资额：<em>[field:invested/]</em></span>
+										<span>门店数：<em>[field:sum/]</em></span>
+										<span>点击数：[field:click/]</span>
+									</dd>
+									<dd class="info">[field:description function='cn_substr(Html2text("@me")."...",120)'/] </dd>
+								</dl>
+							</li>
+							{/dede:arclist}
+						</ul>
+
+					</div>
+				</div>
+				{/dede:channelartlist}
+			</div>
+		</div>
+	</div>
+
+<!-- latest join -->
+<div class="zuiXin_JM w1200">
+		<div class="p_zhuanQ clearfix">
+			<p class="fl p1">最新加盟项目</p>
+			<ul class="yd_m4 fr">
+				<li class="fl li1">最新发布:</li>
+				<li class="fl marqueeUP">
+				{dede:arclist typeid='2' orderby='pubdate' titlelen='180' row=10}
+				<p>
+					<a href="[field:arcurl/]">[field:title/]</a>
+				</p>
+				{/dede:arclist}
+				</li>
+			</ul>
+		</div>
+
+		<!-- 最新项目选项卡 -->
+		<div class="zuiXin_list pr clearfix">
+			<div class="left_zuiXin pr fl">
+				<p class="pic_woman">
+				<a href="http://www.91chuangye.com/gongchajiameng/15878.html" title="漾漾好贡茶加盟">
+					<img src="http://www.91chuangye.com/templets/Yfdeg/new/images/topjiameng.png" alt="漾漾好贡茶加盟">
+					<!-- <span id="advert">				
+					<img src="http://image1.jmw.com.cn/industry/image/gg.png" alt="漾漾好贡茶加盟">漾漾好贡茶加盟
+					</span> -->
+			    </a>
+				</p>
+				<!-- <div class="pa touMing1"></div> -->
+				<div class="pa touMing2">
+					<p class="p1">漾漾好贡茶加盟</p>
+					<p class="p2">全国招商加盟</p>
+					<a href="http://www.91chuangye.com/gongchajiameng/15878.html" target="_blank" title="漾漾好贡茶加盟">查看详情&gt;</a>
+				</div>				
+			</div>
+			<div class="foucebox pa">
+				<div class="hd"> 
+					<ul class="canY_ul pa">
+						<!-- <li class="a_select on">
+							<a href="" target="_blank">最新加盟</a>
+						</li> -->
+						{dede:channelartlist typeid='2,1,3,4,5,6,7,8,9,10,20,339,312,313,350,396,420' row='7'}
+						<li>
+							<a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">{dede:field name='typename'/}</a>
+							<i>|</i>
+						</li>
+						{/dede:channelartlist}
+	
+					</ul>
+				</div>
+				<div class="bd">
+					<!--最新加盟-->
+				{dede:channelartlist typeid='2,1,3,4,5,6,7,8,9,10,20,339,312,313,350,396,420' row='7'}
+					<div class="showDiv">
+							<div class="canY_con1 clearfix"> 
+									{dede:arclist typeid='0' orderby='pubdate' titlelen='180' row=6 addfields='invested' channelid='17'}
+									<dl class="fl"> 
+									<dt class="pr">
+										<a href="[field:arcurl/]" target="_blank" title="[field:title/]"><img src="[field:picname/]" alt="[field:title/]"></a>
+									</dt>
+									<dd class="clearfix">
+										<a href="[field:arcurl/]" title="[field:title/]" class="fl" target="_blank">
+										[field:title/]											</a>
+										<p class="fr p_money p_money2 f12" style="bottom: 0px; opacity: 0.957289;"><span class="span_red fr">￥<em>[field:invested/]</em></span></p>
+									</dd>
+								</dl>	
+									{/dede:arclist}								
+							</div>
+					</div>
+					{/dede:channelartlist}
+									
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- 老版加盟资讯推荐 -->
+<!-- <div class="ziXun_JM w1200"> 
+	<div class="p_zhuanQ mb13 clearfix"> 
+		<p class="fl p1">加盟资讯推荐</p>
+
+		
+		<div class="yd_m42 fr">
+			<p class="fl li1">成交播报:</p>
+			<div id="bOdemo" class="qimo8 fl">
+				<div class="qimo fl">
+					<div id="bOdemo1">
+						<ul>									
+							<li>
+							<a href="">中国加盟网热烈祝贺<span >123台灯的面</span>签约武汉赵总团队！特此表示祝贺，祝其生意兴隆</a></li>
+						</ul>
+					</div>
+					<div id="bOdemo2">
+						<ul>									
+							<li><a href="meishipinp/17562090.html" se_prerender_url="complete">中国加盟网热烈祝贺<span >123台灯的面</span>签约武汉赵总团队！特此表示祝贺，祝其生意兴隆</a></li>
+							<li><a href="meishipinp/17562130.html" se_prerender_url="complete">中国加盟网热烈祝贺<span >花麦工坊小吃</span>与苏州总代理陈先生、赵小姐签约成功！特此表示祝贺，祝其生意兴隆</a></li>
+							<li><a href="jiaoyupinpdt/17563273.html" se_prerender_url="complete">中国加盟网热烈祝贺<span >忆举成名</span>签约新疆李女士，青海董先生，成立“忆举成名”超强记忆培训中心！</a></li>
+							<li><a href="meishipinp/17565617.html" se_prerender_url="complete">中国加盟网热烈祝贺<span >花麦工坊小吃</span>慈溪、太仓、哈尔滨店成功开业！特此表示祝贺，祝其生意兴隆</a></li>
+							<li><a href="meishipinp/17565689.html" se_prerender_url="complete">中国加盟网热烈祝贺<span >薡茶精致茶饮</span>越南顺化店开业！特此表示祝贺，祝其生意兴隆</a></li>
+							<li><a href="meishipinp/17566139.html" se_prerender_url="complete">中国加盟网热烈祝贺<span >肆毫薄饼小吃</span>浙江永康店开业！特此表示祝贺，祝其生意兴隆</a></li>
+							<li><a href="meishipinp/17567595.html" se_prerender_url="complete">中国加盟网热烈祝贺<span >薡茶精制茶饮</span>越南义安六店加盟！特此表示祝贺，祝其生意兴隆</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<div class="ranking_ziX clearfix"> 
+	<ul class="fl"> 
+		<p><span>创业故事</span></p>
+			{dede:arclist typeid='399' orderby='pubdate' titlelen='180' row=5}
+		  <li class="clearfix">
+			  <a href="[field:arcurl/]" class="fl a_zi" >[field:title/]</a><span class="fr">[field:pubdate function="GetDateMK(@me)"/]</span>
+		  </li>
+			{/dede:arclist}	
+	</ul>
+	<ul class="fl"> 
+		<p><span>创业之道</span></p>
+			{dede:arclist typeid='399' orderby='pubdate' titlelen='180' row=5}
+		  <li class="clearfix">
+			  <a href="[field:arcurl/]" class="fl a_zi" >[field:title/]</a><span class="fr">[field:pubdate function="GetDateMK(@me)"/]</span>
+		  </li>
+			{/dede:arclist}	
+	</ul>		
+	<div class="ranking_ziX clearfix"> 
+		<ul class="fl"> 
+			<p><span>如何创业</span></p>
+			<div id="rankDemo">
+				<ul id="rankDemo1">
+				<div class='league-dynamic'>
+				05月19日 17:14：来自<span>中国加盟网的创业投资者</span>对创业项目<a href=''  target='_blank' class='a_name'>1点点奶茶</a>产生意向：我想了解项目加盟底价！和加盟条件 [<a href=''  target='_blank' class='a_blue'>更多</a>]
+				</div>
+				</ul>
+				<div id="rankDemo2"></div>
+			</div>
+		</ul>
+		<ul class="fl" style="height: 225px;margin-right: 10px;overflow: hidden;width: 285px;"> 
+			<p><span>创业指南</span></p>
+			<div id="zrankDemo">
+				<ul id="zrankDemo1">
+					<div class="league-dynamic">意向创业者<a href="" target='_blank' class="a_name">范文士</a>正在寻找<span ><a href="" target='_blank' class="a_name">餐饮</a></span>招商项目，中国加盟网欢迎相关品牌入驻
+					</div>																					
+				</ul>
+				<div id="zrankDemo2"></div>
+			</div>
+		</ul>
+	</div>	
+  
+
+
+</div>	
+</div> -->
+
+
+	<!--加盟资讯推荐-->
+	<div class="w1200 clearfix">
+		<div class="join-news top-news">
+			<div class="title-com">
+				<h3>加盟资讯推荐</h3>
+				{dede:type typeid='399'}<a href="[field:typeurl/]" class="fr link-more">查看更多&gt;</a> {/dede:type} 
+			</div>
+			<div class="cont clearfix">
+
+				<div class="fl join-story" id="join-story1">
+					<div class="tit tabs">
+						<ul>							
+							{dede:channelartlist typeid='401,401'}<li class="active">{dede:field name='typename'/}</li>{/dede:channelartlist}	
+							{dede:channelartlist typeid='402,402'}<li>{dede:field name='typename'/}</li>{/dede:channelartlist}
+						</ul>
+					</div>
+					<div class="tab-conts">
+						  {dede:channelartlist typeid='401,402'}
+						<div {dede:global.itemindex runphp='yes'}(@me==1)?@me='class="tab-cont active"':@me='class="tab-cont"';{/dede:global.itemindex}>
+							<div class="new">
+								<ul class="m-list">
+									{dede:arclist typeid='0' orderby='pubdate' titlelen='180' row=5}
+								  <li>
+									  <a href="[field:arcurl/]">[field:title/]</a>[field:pubdate function="GetDateMK(@me)"/]
+								  </li>
+									{/dede:arclist}
+								</ul>
+							</div>
+						</div>
+						 {/dede:channelartlist}		
+					</div>
+				</div>
+
+				<div class="fl join-story" id="join-story2">
+					<div class="tit tabs">
+						<ul>					
+							{dede:channelartlist typeid='403,403'}<li class="active">{dede:field name='typename'/}</li>{/dede:channelartlist}	
+							{dede:channelartlist typeid='404,404'}<li>{dede:field name='typename'/}</li>{/dede:channelartlist}
+						</ul>
+					</div>
+					<div class="tab-conts">
+						  {dede:channelartlist typeid='403,404'}
+						<div {dede:global.itemindex runphp='yes'}(@me==1)?@me='class="tab-cont active"':@me='class="tab-cont"';{/dede:global.itemindex}>
+							<div class="new">
+								<ul class="m-list">
+									{dede:arclist typeid='0' orderby='pubdate' titlelen='180' row=5}
+								  <li>
+									  <a href="[field:arcurl/]">[field:title/]</a>[field:pubdate function="GetDateMK(@me)"/]
+								  </li>
+									{/dede:arclist}
+								</ul>
+							</div>
+						</div>
+						 {/dede:channelartlist}		
+					</div>
+				</div>
+
+				<div class="fl join-story" id="join-story3">
+					<div class="tit tabs">
+						<ul>					
+							{dede:channelartlist typeid='405,405'}<li class="active">{dede:field name='typename'/}</li>{/dede:channelartlist}	
+							{dede:channelartlist typeid='406,406'}<li>{dede:field name='typename'/}</li>{/dede:channelartlist}
+						</ul>
+					</div>
+					<div class="tab-conts">
+						  {dede:channelartlist typeid='405,406'}
+						<div {dede:global.itemindex runphp='yes'}(@me==1)?@me='class="tab-cont active"':@me='class="tab-cont"';{/dede:global.itemindex}>
+							<div class="new">
+								<ul class="m-list">
+									{dede:arclist typeid='0' orderby='pubdate' titlelen='180' row=5}
+								  <li>
+									  <a href="[field:arcurl/]">[field:title/]</a>[field:pubdate function="GetDateMK(@me)"/]
+								  </li>
+									{/dede:arclist}
+								</ul>
+							</div>
+						</div>
+						 {/dede:channelartlist}		
+					</div>
+				</div>
+
+				<div class="fl join-story" id="join-story4">
+					<div class="tit tabs">
+						<ul>					
+							{dede:channelartlist typeid='408,408'}<li class="active">{dede:field name='typename'/}</li>{/dede:channelartlist}	
+							{dede:channelartlist typeid='409,409'}<li>{dede:field name='typename'/}</li>{/dede:channelartlist}
+						</ul>
+					</div>
+					<div class="tab-conts">
+						  {dede:channelartlist typeid='408,409'}
+						<div {dede:global.itemindex runphp='yes'}(@me==1)?@me='class="tab-cont active"':@me='class="tab-cont"';{/dede:global.itemindex}>
+							<div class="new">
+								<ul class="m-list">
+									{dede:arclist typeid='0' orderby='pubdate' titlelen='180' row=5}
+								  <li>
+									  <a href="[field:arcurl/]">[field:title/]</a>[field:pubdate function="GetDateMK(@me)"/]
+								  </li>
+									{/dede:arclist}
+								</ul>
+							</div>
+						</div>
+						 {/dede:channelartlist}		
+					</div>
+				</div>
+
+
+			</div>
+		</div>	
+	</div>
+
+<!-- 加盟品牌大全 -->
+<div class="daQuan_JM w1200"> 
+	<!-- 标题 -->
+	<ul class="hot_JM rank_hotJM clearfix">
+		<li class="fl li1"><h3>加盟品牌大全</h3></li>
+		<li class="fr li2 f12"><a href="http://www.91chuangye.com/xiangmu/">更多&gt;</a></li>
+	</ul>
+
+	<!--加盟品牌 -->
+	<div class="Manycon_JM">
+		<div class="many_jiaM pr"> 
+			<div class="many_jiaMLbt">
+				<div class="many_jiaMLbtCon pa">
+					<!-- 十二个品牌-大分类导航 -->
+					<div class="jiaM_navs"> 
+						<ul class="ul_jsNav fl">	
+					  {dede:channelartlist typeid='2,1,3,339,4,5,6,7,8,9,10,312'}	  
+						<li {dede:global.itemindex runphp='yes'}(@me==1)?@me='class="navs_select"':@me='';{/dede:global.itemindex}><a href="" target="_blank" class="navs_select" title="{dede:field name='typename'/}">{dede:field name='typename'/}</a></li> 		  
+				      {/dede:channelartlist}
+						</ul>
+					</div>
+					<!-- 内容 -->
+					<div class="jsNav_bottomBoss">
+					 {dede:channelartlist typeid='top' row='12'}
+						<div class="jsNav_bottom dis_n">
+							<!-- 小分类导航 -->
+							<div class="jsNav_bottom2">
+								<p class="p1_huoG">
+									 {dede:channel type='son' row='12'}
+									 <a href="[field:typelink/]" >[field:typename/]</a> 
+									 {/dede:channel}
+								</p>
+							</div>
+							<!-- 加盟项目 -->
+							<ul class="zhengMo_ul clearfix">
+								{dede:arclist typeid='0' orderby='rand' titlelen='180' row=10}
+									<li><a href="[field:arcurl/]"><img src="[field:picname/]" alt="[field:title/]"></a></li>
+								{/dede:arclist}											
+							</ul>
+						</div>
+					{/dede:channelartlist}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+	
+
+<!--footer-->
+<div class="footer">	
+	{dede:include filename="new_footer.htm"/}
+</div>
+
+  <!-- gotop -->
+    <div class="fixrightbox">
+    <div class="selectbox">  <a href="http://www.91chuangye.com/xiangmu/">项目库</a>  </div>
+    <div class="gotop">
+      <p>TOP</p>
+    </div>
+  </div>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/index.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/base.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/ranking.js"></script>
+<script>
+$(function(){
+	//品牌大全	
+	$('.many_jiaMLbtCon .jsNav_bottomBoss .jsNav_bottom').eq(0).show();
+	$('.many_jiaMLbtCon .jiaM_navs .ul_jsNav li').mouseover(function(){
+		$(this).addClass('navs_select').siblings('.navs_select').removeClass('navs_select');
+		$('.many_jiaMLbtCon .jsNav_bottomBoss .jsNav_bottom').eq($(this).index()).show().siblings().hide();
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>编辑头像_91创业网</title>
+<meta name="applicable-device" content="pc">
+<link rel="shortcut icon" href="/themes/simpleboot3/public/new/images/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/themes/simpleboot3/public/xin/css/common.css">
+<link rel="stylesheet" href="__STATIC__/member/css/qyzx.css">
+<script type="text/javascript">
+    //全局变量
+    var GV = {
+        ROOT: "__ROOT__/",
+        WEB_ROOT: "__WEB_ROOT__/",
+        JS_ROOT: "static/js/"
+    };
+</script>
+<script src="__TMPL__/public/assets/js/jquery-1.10.2.min.js"></script>
+<script src="__TMPL__/public/assets/js/jquery-migrate-1.2.1.js"></script>
+<script src="__STATIC__/js/wind.js"></script>
+</head>
+<body>
+<!-- head start -->
+<include file="user@header"/>
+<!-- head end -->
+
+<!-- bread start -->
+<div class="w1200"><div class="bread"><span><a href="/">首页</a> &gt;<h1 style="font-size:14px"><a href="javascript:;">会员中心</a></h1></span></div></div>
+<!-- bread end -->
+
+<!-- qyzx start -->
+<div class="w1200">
+	<div class="qyzx">
+		<include file="user@left"/>
+		<div class="sideCont">
+			<ul class="tabs-tit">
+				<li class="on"><a href="{:cmf_url('user/Profile/edit','',false)}/">编辑头像</a></li>
+			</ul>
+			<div class="message_list">
+				<div class="tab-content">
+                    <div class="tab-pane active" id="one">
+                        <br>
+                        <if condition="empty($user.avatar)">
+                            <img src="__TMPL__/public/assets/images/headicon_128.png" class="headicon" width="128"/>
+                            <else/>
+                            <img src="{:cmf_get_user_avatar_url($user.avatar)}?t={:time()}" class="headicon" width="128"/>
+                        </if>
+                        <br><br>
+                        <input type="file" onchange="avatar_upload(this)" id="avatar_uploder" name="file"/>
+                        <div class="uploaded_avatar_area">
+                            <div class="uploaded_avatar_btns">
+                                <a class="btn btn-primary confirm_avatar_btn" onclick="update_avatar()">确定</a>
+                                <a class="btn" onclick="reloadPage()">取消</a>
+                            </div>
+                        </div>
+                        <p class="help-block">头像支持jpg,png,jpeg格式,文件大小最大不能超过1M</p>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- qyzx end -->
+
+<!-- footer start -->
+<include file="user@footer"/>
+<!-- footer end -->
+<include file="public@scripts" />
+<script type="text/javascript" src="__STATIC__/member/js/qyzx.js"></script>
+<link href="__TMPL__/public/assets/simpleboot3/themes/simpleboot3/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript">
+    function update_avatar() {
+        var area = $(".uploaded_avatar_area img").data("area");
+        $.post("{:url('user/Profile/avatarUpdate')}", area, function (data) {
+            if (data.code == 1) {
+                reloadPage(window);
+            }
+
+        }, "json");
+
+    }
+    function avatar_upload(obj) {
+        var $fileinput = $(obj);
+        /* $(obj)
+         .show()
+         .ajaxComplete(function(){
+         $(this).hide();
+         }); */
+        Wind.css("jcrop");
+        Wind.use("ajaxfileupload", "jcrop", "noty", function () {
+            $.ajaxFileUpload({
+                url: "{:url('user/Profile/avatarUpload')}",
+                secureuri: false,
+                fileElementId: "avatar_uploder",
+                dataType: 'json',
+                data: {},
+                success: function (data, status) {
+
+                    if (data.code == 1) {
+                        $("#avatar_uploder").hide();
+                        var $uploaded_area = $(".uploaded_avatar_area");
+                        $uploaded_area.find("img").remove();
+                        var src  = "__ROOT__/upload/" + data.data.file;
+                        var $img = $("<img/>").attr("src", src);
+                        $img.prependTo($uploaded_area);
+                        $(".uploaded_avatar_btns").show();
+                        var img = new Image();
+                        img.src = src;
+
+                        var callback = function () {
+                            $img.Jcrop({
+                                aspectRatio: 1,
+                                trueSize: [img.width, img.height],
+                                setSelect: [0, 0, 100, 100],
+                                onSelect: function (c) {
+                                    $img.data("area", c);
+                                }
+                            });
+                        }
+
+                        if (img.complete) {
+                            callback();
+                        } else {
+                            img.onload = callback;
+                        }
+
+                    } else {
+                        noty({
+                            text: data.msg,
+                            type: 'error',
+                            layout: 'center',
+                            callback: {
+                                afterClose: function () {
+                                    reloadPage(window);
+                                }
+                            }
+                        });
+                    }
+
+                },
+                error: function (data, status, e) {
+                }
+            });
+        });
+
+        return false;
+    }
+</script>
+</body>
+</html>

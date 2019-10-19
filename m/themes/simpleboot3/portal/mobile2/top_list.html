@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" /> 
+  <meta name="wap-font-scale" content="no" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+  <meta name="applicable-device" content="mobile" />
+  <link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon" />
+  <title>{$tdk['seo_title']}排行榜_2018贡茶加盟十大品牌排行榜_91创业网</title>
+     <meta name="keywords" content="{$tdk['seo_title']}排行榜,2018{$tdk['seo_title']}排行榜">
+     <meta name="description" content="91创业网(91chuangye.com)是一家提供创业加盟项目门户网站,为网友提供2018年十大品牌{$tdk['seo_title']}排行榜加盟信息,汇集2018年10大{$tdk['seo_title']}品牌排行榜,打造优质的加盟平台,帮助创业者找到适合自己的{$tdk['seo_title']}项目,让创业者轻松创业!">
+     <meta name="renderer" content="webkit" />
+     
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+  <link rel="stylesheet" href="__TMPL__/public/mobile/css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/css.css" />
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="http://m.91chuangye.com/">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.91chuangye.com/">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.91chuangye.com/">
+
+ </head> 
+ <body> 
+  <div class="viewport"> 
+   <!-- Top Bar --> 
+   <!--header开始--> 
+   <div class="header"> 
+    <div class="top_bar">
+      <div class="top_bar_item">
+        <div class="return"><a class="btn back" href="javascript:history.go(-1)"></a></div>
+        <div class="tit">排行榜</div>
+        <div class="sear"><a href="javascript:;" onclick="serch()"></a></div>
+      </div>
+    </div> 
+<!--   <div class="swiper-container nav">
+    <ul class="swiper-wrapper">
+      <li class="swiper-slide"><a href="index.html">91创业网</a> </li>
+      <li class="swiper-slide"><a href="xm_list.html">找项目</a></li>
+      <li class="swiper-slide"><a href="top.html">品牌排行榜</a></li>
+      <li class="swiper-slide"><a href="news_list.html">创业资讯</a></li>
+    </ul>
+  </div> -->
+
+
+   </div> 
+   <!--header结束-->
+
+   <!-- bread start-->
+   <section class="item-section item_xminfopath">
+    <a href="/">首页</a> &gt;
+    <a href="javascript:history.back(-1);">排行榜</a> &gt;
+    <a href="{:cmf_url('portal/common/index_top',['classname'=>$prev['path']],'')}/">{$prev.name}排行榜</a> &gt;
+    <h1>{$tdk.name}排行榜</h1>
+  </section>  
+   <!-- bread end-->
+
+   <!-- score start-->
+  <div class="contentbox">
+    <p class="bgsm">榜单说明：榜单是根据项目品牌、口碑、效益、扶持等各项指标评分计算得出。</p>
+    <ul>
+        <volist name="$anking" id="ank" key="k">
+            <li class="li-no{$k}"><a href="{:cmf_url('portal/common/index',['id'=>$ank['aid'],'classname'=>$ank['class']],'')}/">{$k}、{$ank['title']}<span>{$ank['click']}</span></a></li>
+        </volist>
+    </ul>
+  </div>
+  <!-- score end-->
+
+  <ul class="top_xm_tj">
+      <volist name="$anking" id="anks" key="k">
+            <li class="clearfix">
+                <div class="fire"><em class="ico_fire"></em>TOP.{$k}</div>
+                <div class="pic"><a href="{:cmf_url('portal/common/index',['id'=>$anks['aid'],'classname'=>$anks['class']],'')}/"><img src="{$anks['litpic']}"></a></div>
+                <dl>
+                  <dt><a href="{:cmf_url('portal/common/index',['id'=>$anks['aid'],'classname'=>$anks['class']],'')}/">{$anks.title}</a></dt>
+                  <dd>投资额度：<span><em>{$anks['invested']}</em>万</span></dd>
+                  <dd class="info">{$anks['description']}</dd>
+                  <dd class="desc"><span>综合评分： <em>{$anks['weight']}</em></span><a href="{:cmf_url('portal/common/index',['id'=>$anks['aid'],'classname'=>$anks['class']],'')}/" class="btn">我要加盟</a></dd>
+                </dl>
+            </li>
+      </volist>
+  </ul>
+
+
+   <!-- 项目推荐 开始-->
+   <div class="common_tit"> 
+    <a class="tit" href="">项目推荐</a>
+    <a href="top_fenlei.html" class="more">+更多</a> 
+   </div>
+   <div class="index_item"> 
+      <ul class="mHotAttctLists">
+          <volist name="recommend" id="recom">
+           <li><a href="{:cmf_url('portal/common/index',['id'=>$recom['aid'],'classname'=>$recom['class']],'')}/" class="mHotAttctItems"><img class="lazy" data-original="{$recom.litpic}" src="{$recom.litpic}" alt="" /><p>{$recom.title}</p><span>￥{$recom.invested}</span></a></li>
+          </volist>
+       <!--<li><a href="xm_info.html" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="" alt="" /><p>南城香餐厅</p><span>￥5-10万</span></a></li> -->
+       <!--<li><a href="xm_info.html" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="" alt="" /><p>南城香餐厅</p><span>￥5-10万</span></a></li> -->
+       <!--<li><a href="xm_info.html" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="" alt="" /><p>南城香餐厅</p><span>￥5-10万</span></a></li> -->
+       <!--<li><a href="xm_info.html" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="" alt="" /><p>南城香餐厅</p><span>￥5-10万</span></a></li> -->
+       <!--<li><a href="xm_info.html" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="" alt="" /><p>南城香餐厅</p><span>￥5-10万</span></a></li> -->
+      </ul>
+    </div>
+    
+   <!-- 项目推荐 结束 -->
+
+   <!--footer开始-->
+      <include file="mobile/new_footer"/>
+   <a href="javascript:void(0);" id="returnTop"></a>
+   <!--footer结束--> 
+   
+  
+  <!------------------------- search_box start -------------------------->
+      <include file="mobile/search"/>
+  <!------------------------- search_box   end -------------------------->
+  
+  <!------------------------- returnTop  start -------------------------->
+  <a href="javascript:void(0);" id="returnTop"></a>
+  <!------------------------- returnTop    end -------------------------->
+  </div> 
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.min.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/swiper.min.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/TouchSlide.1.1.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.lazyload.min.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/index.js"></script>
+  <script type="text/javascript">
+    //contentbox
+    $(".contentbox .li-no1").width($(".contentbox .li-no1").find("span").text()+"%");
+    $(".contentbox .li-no2").width($(".contentbox .li-no2").find("span").text()+"%");
+    $(".contentbox .li-no3").width($(".contentbox .li-no3").find("span").text()+"%");
+    $(".contentbox .li-no4").width($(".contentbox .li-no4").find("span").text()+"%");
+    $(".contentbox .li-no5").width($(".contentbox .li-no5").find("span").text()+"%");
+    $(".contentbox .li-no6").width($(".contentbox .li-no6").find("span").text()+"%");
+    $(".contentbox .li-no7").width($(".contentbox .li-no7").find("span").text()+"%");
+    $(".contentbox .li-no8").width($(".contentbox .li-no8").find("span").text()+"%");
+    $(".contentbox .li-no9").width($(".contentbox .li-no9").find("span").text()+"%");
+    $(".contentbox .li-no10").width($(".contentbox .li-no10").find("span").text()+"%");
+  </script>
+
+ </body>
+</html>

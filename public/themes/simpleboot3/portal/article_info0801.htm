@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <!--头部-->
+       {dede:include filename="head3.htm"/}
+       <!--头部结束-->
+
+<!--内容结构开始-->
+ <article>   
+    <div id="content">
+        <!-- 定位 -->
+        <div class="dingwei">
+            <span>您的位置：</span><span>{dede:field name='position'/}{dede:field.title/}</span>
+        </div>
+        <!-- 定位 -->
+
+        <!-- 主体列表 -->
+        <div class="main">
+            <!-- 左侧列表 -->
+            <div class="fl main-left">
+                <!-- 标题 -->
+                <div class="art-title">
+                    <h1>{dede:field.title/}</h1>
+                    <h2><i>时间：{dede:field.pubdate function="MyDate('Y-m-d H:i:s',@me)"/}</i> <i>来源：{dede:field.source/}</i> <i>作者：91创业网</i>  <i>点击：<script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script></i></h2>
+                </div>
+                <!-- 标题 -->
+                <div class="artinfo">
+                     {dede:field.body runphp='yes'}
+if(@me=='')
+{@me='该内容暂时无相关数据，详情请留言咨询';}
+else
+{@me=@me;}
+{/dede:field.body}
+					
+					<!-- <div class="tag">标签：<a href="">服装</a><a href="">童装</a><a href="">加盟</a></div> -->
+          
+                    <ul class="artlink">
+                       <p>{dede:prenext get='pre'/}</p>
+					    <p>{dede:prenext get='next'/}</p>     
+                    </ul>
+
+                </div>
+
+
+                <!-- 分享 开始-->
+        <div class="share">
+            <div class="tit">分享到：</div>
+            <div class="bdsharebuttonbox bdshare-button-style1-16" data-tag="share_1" data-bd-bind="1506670608204">
+                <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪</a>
+                <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                <a class="popup_weixin" data-cmd="weixin" onclick="return false;" title="分享到微信">微信</a>
+            </div>
+        </div>
+        <script>
+            window._bd_share_config = {
+                "common": {
+                    "bdSnsKey": {},
+                    "bdText": "",
+                    "bdMini": "2",
+                    "bdMiniList": false,
+                    "bdPic": "",
+                    "bdStyle": "1",
+                    "bdSize": "16"
+                }, "share": {}
+            };
+            with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+        </script>
+        <!-- 分享 结束-->
+
+                
+
+                {dede:include filename="msg.htm"/}
+                <!-- 用户留言 -->
+
+                <!-- 推荐项目 -->
+                <div class="relate">
+                    <strong class="pro-tit">推荐项目</strong>
+                    <ul>
+                        {dede:arclist typeid='0'  type='image.'  orderby='rand'  row='5' imgwidth='133' imgheight='100/' }
+                        <li><a href="[field:arcurl/]">
+                           <img src="[field:picname/]" alt="[field:title/]" width='133' height='100' >
+                            <p>[field:title/]</p>
+                        </a>
+						</li>
+                       {/dede:arclist}
+                    </ul>
+                </div>
+                <!-- 推荐项目 -->
+                
+
+
+            </div>
+            <!-- 右侧列表 -->
+            <div class="fl main-right">
+                <!-- 本类文章排行 -->
+               <div class="paihang-box red" id="article">
+                    <div class="title">
+                        <strong>本类文章排行</strong>
+                        <ul>
+                            <li>最新</li>
+                            <li>人气</li>
+                        </ul>
+                    </div>
+                     <div class="paihang">
+                       <ul>
+                            {dede:arclist typeid='11,20,32,37' orderby='pubdate' titlelen='120' row=10 getall='1'}
+                            <li>
+                                <span class="page-icon icon-num-[field:global name=autoindex/]"></span>
+                                <span class="item-name"><a href="[field:arcurl /]">[field:title/]</a></span>
+                                <span class="item-value">[field:pubdate function='strftime("%m-%d",@me)'/]</span>
+                            </li>
+                        {/dede:arclist}
+                       </ul> 
+                       <ul>
+                           {dede:arclist typeid='11,20,32,37' orderby='click' titlelen='120' row=10 getall='1'}
+                            <li>
+                                <span class="page-icon icon-num-[field:global name=autoindex/]"></span>
+                                <span class="item-name"><a href="[field:arcurl /]">[field:title/]</a></span>
+                                <span class="item-value">[field:click/]</span>
+                            </li>
+                        {/dede:arclist}
+                       </ul>
+                   </div>                   
+                </div>           
+                </div> 
+                <!-- 本类文章排行 -->
+
+                <!-- 最新留言链接列表 -->
+                <ul class="paihang-box con-down-right red">
+                   <div class="title"><a href="">最新留言</a></div>
+                   <li> <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：张女士对项目<a href="#" rel="nofollow">徐达排骨加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+                   <li> <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：李先生对项目<a href="#" rel="nofollow">中艾堂加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+                   <li> <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：刘女士对项目<a href="#" rel="nofollow">绝对牛烤鱼加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+                   <li><script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：蔡女士对项目<a href="#" rel="nofollow">勾馋麻辣烫</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+                   <li><script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：王先生对项目<a href="#" rel="nofollow">金嘉利钻石加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+                   <li> <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：徐女士对项目<a href="#" rel="nofollow">小吃车加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>               
+                   <li> <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：周女士对项目<a href="#">烤鱼加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+									<li> <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：陈女士对项目<a href="#" rel="nofollow">水饺加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+                </ul>
+                <!-- 最新留言链接列表 -->
+            </div>
+        </div>             
+    </div>
+</article>
+<!--内容结构结束-->
+
+<!--尾部结构开始-->
+       <footer>{dede:include filename="footer.htm"/}</footer>
+<!--尾部结构结束-->
+ 	
+</body>
+</html>

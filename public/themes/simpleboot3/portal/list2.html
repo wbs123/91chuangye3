@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="applicable-device" content="pc" />
+    <meta name="robots" content="all">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <title>{$seo_title}</title>
+    <link rel="shortcut icon" href="__TMPL__/public/new/images/favicon.ico" type="image/x-icon" />
+    <meta name="keywords" content="<?php echo $seo_keywords;?>">
+    <meta name="description" content="<?php echo $seo_description;?>">
+    <meta name="renderer" content="webkit">
+    <link href="__TMPL__/public/new/css/common.css" rel="stylesheet" type="text/css">
+    <link href="__TMPL__/public/new/css/xm_list.css" rel="stylesheet" type="text/css">
+   <!-- <meta name="mobile-agent" content="format=html5;url={dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}"/>
+    <meta http-equiv="mobile-agent" content="format=xhtml; url={dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}">
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="{dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}"/>-->
+    <!-- <script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="http://m.91chuangye.com"+location.pathname+location.search;}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script> -->
+</head>
+<body>
+<!-- header start -->
+<include file="new_head1"/>
+<!-- header end -->
+
+<!--content start-->
+<div class="w1200">
+    <!-- bread start-->
+    <div class="bread">
+        <span>当前位置：</span>
+        <span>91创业网
+        <volist name="array_reverse" id="arr">
+            ><a href="{:cmf_url('portal/common/index',['classname'=>$arr['path']],'')}/">{$arr['name']}</a>
+        </volist>
+        </span>
+    </div>
+    <!-- bread end-->
+
+    <!-- classify start-->
+    <div class="y_fenlei">
+        <div class="url">
+            <div class="fenlei-1 clearfix">
+                <span>行业分类：</span>
+                <div class="filter-item">
+                    <ul id="fl">
+                        <li><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/" <empty name="selcttag1"> class="on" </empty> name="0">全部</a></li>
+                        <volist name="$cate" id="ca">
+                            <li><a <if condition="$ca['path'] eq $selcttag1"> class="on" </if> href="{:cmf_url('portal/common/index',['classname'=>$ca['path']],'')}/" name="{$ca['id']}">{$ca['name']}</a></li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+            <div class="fenlei-1 clearfix">
+                <span>行业子分类：</span>
+                <div class="filter-item filter-more-click asde">
+                    <ul>
+                        <li><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/" <empty name="selcttag2" > class="on" </empty> name="0">全部</a></li>
+                        <volist name="$cates" id="cas">
+                            <li><a <if condition="$cas['path'] eq $selcttag2"> class="on" </if> href="<?php if($selcttag3 && !$selcttag4){?>{:cmf_url('portal/common/index',['classname'=>$cas['path'],'num'=>$selcttag3],'')}/<?php }else if($selcttag3 && $selcttag4){?>{:cmf_url('portal/common/index',['classname'=>$cas['path'],'num'=>$selcttag3,'address'=>$selcttag4],'')}/<?php }else{?>{:cmf_url('portal/common/index',['classname'=>$cas['path']],'')}/<?php }?>" name="{$cas['id']}">{$cas['name']}</a></li>
+                        </volist>
+                    </ul>
+                </div>
+                <em class="filter-more">展开▼</em>
+            </div>
+        </div>
+        <div class="jiazai">
+            <div class="fenlei-1 clearfix">
+                <span>投资金额：</span>
+                <div class="filter-item filter-more-click">
+                    <ul class="tzje">
+                        <li><a name="0" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5),'')}/" <empty name="selcttag3" > class="on" </empty> >全部</a></li>
+                        <empty name="selcttag4" >
+                        <li><a name="0-1" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'num'=>'0-1'),'')}/" <if condition="$selcttag3 eq '0-1'"> class="on" </if> rel="nofollow">0-1万</a></li>
+                        <li><a name="1-5" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'num'=>'1-5'),'')}/" <if condition="$selcttag3 eq '1-5'"> class="on" </if> rel="nofollow">1-5万</a></li>
+                        <li><a name="5-10" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'num'=>'5-10'),'')}/" <if condition="$selcttag3 eq '5-10'"> class="on" </if> rel="nofollow">5-10万</a></li>
+                        <li><a name="10-20" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'num'=>'10-20'),'')}/"<if condition="$selcttag3 eq '10-20'"> class="on" </if> rel="nofollow">10-20万</a></li>
+                        <li><a name="20-50" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'num'=>'20-50'),'')}/"<if condition="$selcttag3 eq '20-50'"> class="on" </if> rel="nofollow">20-50万</a></li>
+						<li><a name="50-100" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'num'=>'50-100'),'')}/"<if condition="$selcttag3 eq '50-100'"> class="on" </if> rel="nofollow">50-100万</a></li>
+                        <li><a name="100" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'num'=>'100'),'')}/"<if condition="$selcttag3 eq '100'"> class="on" </if> rel="nofollow">100万以上</a></li>
+                        <else/>
+                        <li><a name="0-1" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'address'=>$selcttag4,'num'=>'0-1'),'')}/" <if condition="$selcttag3 eq '0-1'"> class="on" </if> rel="nofollow">0-1万</a></li>
+                        <li><a name="1-5" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'address'=>$selcttag4,'num'=>'1-5'),'')}/" <if condition="$selcttag3 eq '1-5'"> class="on" </if> rel="nofollow">1-5万</a></li>
+                        <li><a name="5-10" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'address'=>$selcttag4,'num'=>'5-10'),'')}/" <if condition="$selcttag3 eq '5-10'"> class="on" </if> rel="nofollow">5-10万</a></li>
+                        <li><a name="10-20" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'address'=>$selcttag4,'num'=>'10-20'),'')}/"<if condition="$selcttag3 eq '10-20'"> class="on" </if> rel="nofollow">10-20万</a></li>
+                        <li><a name="20-50" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'address'=>$selcttag4,'num'=>'20-50'),'')}/"<if condition="$selcttag3 eq '20-50'"> class="on" </if> rel="nofollow">20-50万</a></li>
+						<li><a name="50-100" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'address'=>$selcttag4,'num'=>'50-100'),'')}/"<if condition="$selcttag3 eq '50-100'"> class="on" </if> rel="nofollow">50-100万</a></li>
+                        <li><a name="100" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'address'=>$selcttag4,'num'=>'100'),'')}/"<if condition="$selcttag3 eq '100'"> class="on" </if> rel="nofollow">100万以上</a></li>
+                    </empty>
+                    </ul>
+                </div>
+                <em class="filter-more">展开▼</em>
+            </div>
+            <div class="fenlei-1 clearfix">
+                <span>热门地区：</span>
+                <div class="filter-item filter-more-click">
+                    <ul class="rmdq">
+                        <li><a href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5),'')}/" <empty name="selcttag4" > class="on" </empty> name="0">全部</a></li>
+                        <!--{dede:php} AddFilter(17,1,'nativeplace'); {/dede:php}-->
+                        <volist name="$sys" id="cs">
+                                <empty name="selcttag3" >
+                                <li><a name="{$cs['py']}" href="{:cmf_url('portal/common/index',array('classname'=>$selcttag5,'address'=>$cs['py']),'')}/" <if condition="$cs['py'] eq $selcttag4"> class="on" </if>>{$cs['ename']}</a></li>
+                                <else/>
+                                <li><a name="{$cs['py']}" href="{:cmf_url('portal/common/index',['classname'=>$selcttag5,'num'=>$selcttag3,'address'=>$cs['py']],'')}/" <if condition="$cs['py'] eq $selcttag4"> class="on" </if>>{$cs['ename']}</a></li>
+                                </empty>
+                        </volist>
+                    </ul>
+                </div>
+                <em class="filter-more">展开▼</em>
+            </div>
+        </div>
+    </div>
+    <!-- classify end -->
+
+    <!-- main start -->
+    <div class="main clearfix">
+        <!-- main-left start-->
+        <div class="fl main-left">
+            <!-- order -->
+            <div class="s_mod_order_item">
+                <!-- filter -->
+                <div class="s_mod_order_term">
+                    <a id="mr"  class="J_order">默认排序</a>
+                    <a id="rq"  class="J_order J_order_on"><span class="text">最新</span><i class="up"></i></a>
+
+                </div>
+
+                <!-- result -->
+            </div>
+            <!-- list -->
+            <div id="list-itemList">
+                <div class="m-items">
+                    <ul class="items list ">
+                        <!--{dede:list pagesize='14'orderby='sortrank' imgwidth='134' imgheight='100'  channelid='17'}-->
+                        <volist name="dataa" id="dd">
+                            <li class="items items_V clearfix">
+                                <!-- col-1 -->
+                                <div class="col col-1 asdd">
+                                    <div class="bd-logo ">
+                                        <a href="{:cmf_url('portal/common/index',['id'=>$dd['aid'],'classname'=>$dd['class']])}" class="img"> <img src="<?php if($dd['litpic']){?>{$dd['litpic']}<?php }else{?>{$dd['thumbnail']}<?php }?>" title="{$dd['title']}" alt="{$dd['title']}" width="128" height="96" /> </a>
+                                    </div>
+                                </div>
+                                <!-- col-2 -->
+                                <div class="col col-2 ">
+                                    <div class="clearfix titbt">
+                                        <a href="{:cmf_url('portal/common/index',array('id'=>$dd['aid'],'classname'=>$dd['class']))}" title="{$dd['title']}"  class="main_link fl">{$dd['title']}</a>
+                                    </div>
+                                    <div class="text" title="{$dd['categoryname']}">
+                                        <span>项目分类：{$dd['categoryname']}</span>
+                                    </div>
+                                    <div class="text">
+                                        <span>门店数量：</span>{$dd['sum']}家
+                                    </div>
+                                    <div class="text xijin">
+                                        <a  class="vip_link">加盟条件</a>
+                                        <span>|</span>
+                                        <a >加盟费</a>
+                                        <span>|</span>
+                                        <a title="">加盟流程</a>
+                                        <span>|</span>
+                                        <a >加盟优势</a>
+                                    </div>
+                                    <div class="sale">
+                                    </div>
+                                </div>
+                                <!-- col-3 -->
+                                <div class="col col-3">
+                                    <dl class="clearfix">
+                                        <dt>投资金额：</dt>
+                                        <dd><span>{$dd['invested']}</span></dd>
+                                    </dl>
+                                    <!--<dl class="clearfix">
+                                        <dt>人气指数：</dt>
+                                        <dd><b>{$dd['click']}</b></dd>
+                                    </dl>
+                                    <dl class="clearfix">
+                                        <dt>已咨询：</dt>
+                                        <dd><b>{$dd['zhishu']}</b></dd>
+                                    </dl>-->
+                                </div>
+                                <!-- col-4 -->
+                                <div class="col col-4 ">
+                                    <div class="m-company">
+                                        <a class="text" title="{$dd['companyname']}" >{$dd['companyname']}</a>
+                                        <div class="m-com-zone">
+                                            <span><?php echo str_replace('--','',$dd['address'])?></span>
+                                        </div>
+                                        <div class="showInfo">
+                                            <strong><i></i>{$dd['companyname']}</strong>
+                                            <dl>
+                                                <dt>
+                                                    企业性质
+                                                </dt>
+                                                <dd>
+                                                    股份有限公司
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>
+                                                    注册资金
+                                                </dt>
+                                                <dd>
+                                                    {$dd['ziben']}
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>
+                                                    所在地
+                                                </dt>
+                                                <dd title="[field:company_address/]">
+                                                    {$dd['company_address']}
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="items-active appo">
+                                         <a href="{:cmf_url('portal/common/index',array('id'=>$dd['aid'],'classname'=>$dd['class']))}"  title="" class="link">查看详情</a>
+                                        <a href="http://p.qiao.baidu.com/cps/chat?siteId=12411934&userId=26127855" target="_blank" rel="nofollow" class="bt_itemService">在线咨询</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- fenpage start-->
+            <div class="page">
+                <ul>
+                    {$data->render()}
+                    <!--{dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="3"/}-->
+                </ul>
+            </div>
+            <!-- fenpage end-->
+
+        </div>
+        <!-- main-left end-->
+
+        <!-- main-right start -->
+        <div class="fl main-right">
+            <!-- hot -->
+            <div class="cainixihuan">
+                <div class="title">
+                    <div class="titleleft"><i></i>热门推荐</div>
+                    <!-- <div class="titleright"><i></i>商机无限</div> -->
+                </div>
+                <ul class="content tuijian">
+                    <volist name="lick1" id="li1">
+                        <li class="contentlist">
+                            <a href="{:cmf_url('portal/common/index',['id'=>$li1['aid'],'classname'=>$li1['class']])}">
+                                <img src="{$li1['litpic']}"  alt="{$li1['title']}"/>
+                                <div class="text">
+                                    <p>{$li1['title']}</p><span>￥{$li1['invested']}</span></div>
+                            </a>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+
+            <!-- top -->
+            <div class="xmlist_top">
+                <div class="title"><span></span>加盟排行榜</div>
+                <ul class="jingX_xm2 jiameny ">
+                    <volist name="lick2" id="li2" key="k">
+                        <li class="clearfix">
+                            <span class="fl span1 bgRed">{$k}</span>
+                            <a href="{:cmf_url('portal/common/index',['id'=>$li2['aid'],'classname'=>$li2['class']])}"  class="fl aName" title="{$li2['title']}">{$li2['title']}</a>
+                            <span class="fr span2">￥{$li2['invested']}</span>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+
+            <!-- msg -->
+            <div class="jmxms">
+                <div class="title"><span></span>加盟小秘书</div>
+                <form action="{:cmf_url('portal/xm/liuyan')}" enctype="multipart/form-data" method="post" id="listform">
+                    <input type="hidden" name="action" value="post" />
+                    <input type="hidden" name="diyid" value="2" />
+                    <input type="hidden" name="do" value="2" />
+                    <input type="hidden" name="url" value="<?php echo $_SERVER['REQUEST_URI'];?>">
+                    <div class="hotline">
+                        <span>热线电话：</span>
+                        <a href="javascript:;">400-809-0091</a>
+                        <em>人工推荐好项目</em>
+                        <input type="text" id="user" class="tel" value="请输入姓名" name="name" onblur="if(this.value==''){this.value='请输入姓名';}" onfocus="if(this.value=='请输入姓名'){this.value='';}">
+                        <input type="text" id="tel" class="tel" value="请输入手机号" name="tel" onblur="if(this.value==''){this.value='请输入手机号';}" onfocus="if(this.value=='请输入手机号'){this.value='';}">
+                        <p>创业顾问会以最快速度联系您</p>
+                        <input name="typename" value="{dede:field.typename/}" type="hidden"  />
+                        <input name="time" value="" type="hidden"  id="time"  />
+                        <input name="ip" id="ip" value="" type="hidden">
+                        <input name="yemian" id="yemian" value="{dede:geturl runphp='yes'}@me = GetCurUrl();{/dede:geturl}" type="hidden">
+                        <input type="hidden" name="dede_fields" value="name,text;tel,text;typename,text;yemian,text;ip,text;time,text" />
+                        <input type="hidden" name="dede_fieldshash" value="70082e47d5fe68f11ee6914648874169" />
+                        <input type="submit" value="我要加盟" class="tur">
+                    </div>
+                </form>
+            </div>
+
+            <!-- latest-news -->
+            <div class="latest-news ">
+                <div class="title"><span></span>最新资讯</div>
+                <ul>
+                    <volist name="lick3" id="li3">
+                        <li>
+                            <span></span><a href="{:cmf_url('portal/common/index',['id'=>$li3['id'],'classname'=>'news'])}">{$li3['post_title']}</a>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+
+        </div>
+        <!-- main-right end -->
+    </div>
+    <!-- main end -->
+
+    <!-- advertisement -->
+    <div class="figure w1200">
+        <ul class="clearfix">
+          <volist name = 'advert' id="list">
+                <li>
+                    <a href="{$list.url}">
+                        <img alt="" src="{$list.pic}" style="width: 280px; height: 100px;" />
+                    </a>
+                    <tbdiv id="playerControlBtn"></tbdiv>
+                    <tbdiv id="leftFullStackButton"></tbdiv>
+                    <tbdiv id="rightFullStackButton"></tbdiv>
+                    <tbdiv id="playerControlBtn"></tbdiv>
+                    <tbdiv id="leftFullStackButton"></tbdiv>
+                    <tbdiv id="rightFullStackButton"></tbdiv>
+                </li>
+            </volist>
+        </ul>
+    </div>
+    <!-- advertisement -->
+
+    <div class="xmtjbox">
+        <include file="flag_xm"/>
+    </div>
+
+</div>
+<!--content end-->
+
+<!--footer start-->
+<div class="footer">
+
+    <div class="w1200 ft-links clearfix">
+        <h3>友情链接：</h3>
+        <ul>
+            <volist name="youlian" id="you">
+                <li><a href="{$you['url']}">{$you['webname']}</a></li>
+            </volist>
+        </ul>
+    </div>
+    <div class="ft-line"></div>
+    <include file="new_footer"/>
+</div>
+<!--footer end-->
+
+<!-- gotop -->
+<div class="fixrightbox">
+    <div class="selectbox"> <a href="http://www.91chuangye.com/xiangmu/">项目库</a> </div>
+    <div class="gotop">
+        <p>TOP</p>
+    </div>
+</div>
+
+<script type="text/javascript" src="__TMPL__/public/new/js/jquery.js"></script>
+<script type="text/javascript" src="__TMPL__/public/new/js/p.js"></script>
+<script>
+$(function(){
+   $('.asdd a').each(function(){
+            var thisLink = $(this).attr('href');
+            var thisNewLink = thisLink.replace(/%2F/ig, "/");
+            $(this).attr('href',thisNewLink)
+        })
+      $('.appo a').each(function(){
+            var thisLink = $(this).attr('href');
+            var thisNewLink = thisLink.replace(/%2F/ig, "/");
+            $(this).attr('href',thisNewLink)
+        })
+  $('.titbt a').each(function(){
+            var thisLink = $(this).attr('href');
+            var thisNewLink = thisLink.replace(/%2F/ig, "/");
+            $(this).attr('href',thisNewLink)
+        })
+   $(".tuijian li").each(function(){
+			$(this).html($(this).html().replace(/%2F/ig, '/'));
+		  });
+     $(".jiameny li").each(function(){
+			$(this).html($(this).html().replace(/%2F/ig, '/'));
+		  });
+})
+</script>
+<script>
+ $(function () {
+     $('.asde a').each(function(){
+            var thisLink = $(this).attr('href');
+            var thisNewLink = thisLink.replace(/%2F/ig, "/");
+            $(this).attr('href',thisNewLink)
+        })
+   
+   	$('.tzje a').each(function(){
+            var thisLink = $(this).attr('href');
+            var thisNewLink = thisLink.replace(/%2F/ig, "/");
+            $(this).attr('href',thisNewLink)
+        })
+   
+   	$('.rmdq a').each(function(){
+            var thisLink = $(this).attr('href');
+            var thisNewLink = thisLink.replace(/%2F/ig, "/");
+            $(this).attr('href',thisNewLink)
+        })
+
+ 
+    })
+
+</script>
+<script type="text/javascript" src="__TMPL__/public/new/js/base.js"></script>
+
+</body>
+
+<script>
+  	
+ 
+  
+  
+    $('.tzje a').click(function(){
+        var num =  $(this).eq(0).attr('name');
+        var url = window.location.href;
+        if(num)
+        {
+            if(url.indexOf("num") > 0 ){
+                var num1 = url.match(/[?&][^?&]+=[^?&]+/g);
+                num1=num1.join("");
+                var url = url.replace(num1, '');
+            }
+            window.location.href = url+"&num="+num;
+        }
+    });
+
+    $('.rmdq a').click(function(){
+        var address =  $(this).eq(0).attr('name');
+        var url = window.location.href;
+        if(address)
+        {
+            if(url.indexOf("address") > 0){
+                var address1 = url.match(/[?&][^?&]+=[^?&]+/g);
+                address1=address1.join("");
+                // var address1 = address1.replace(',', '');
+                var url = url.replace(address1, '');
+            }
+            window.location.href = url+"&address="+address;
+        }
+    })
+
+</script>
+</html>

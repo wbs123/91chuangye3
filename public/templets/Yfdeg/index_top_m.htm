@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="wap-font-scale" content="no" /> 
+	<meta http-equiv="Cache-Control" content="no-transform">
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+	<meta name="applicable-device" content="mobile" />
+  <title>{dede:field.seotitle /}</title>
+  <meta name="keywords" content="{dede:field name='keywords'/}">
+  <meta name="description" content="{dede:field name='description' function='html2text(@me)'/}">
+  <link rel="canonical" href="{dede:type typeid='0' row=1}http://www.91chuangye.com[field:typelink /]{/dede:type}"/>
+  <link rel="stylesheet" href="{dede:global.cfg_templets_skin/}/newmobile/css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/newmobile/css/css.css" /> 
+ </head> 
+ <body> 
+  <div class="viewport"> 
+   <!-- Top Bar --> 
+   <!--header开始--> 
+   <div class="header"> 
+    <div class="top_bar">
+      <div class="top_bar_item">
+        <div class="return"><a class="btn back" href="javascript:history.go(-1)"></a></div>
+        <div class="tit">{dede:field.typename /}排行榜</div>
+        <div class="sear"><a href="javascript:;" onclick="serch()"></a></div>
+      </div>
+    </div> 
+   </div> 
+   <!--header结束--> 
+
+   <!-- fixation start-->
+   <div class="fixation">
+		<div class="drop-down-ctn clearfix up">
+			<div class="drop-left clearfix">
+			<!-- <a href="#" class="red">餐饮排行榜</a> -->
+				{dede:channelartlist typeid='391,391' row='15'}
+					 {dede:channel type='son' row='15'}
+					 <a href="[field:global.cfg_mobile/][field:typelink/]" class='link'>[field:typename/]排行榜</a> 
+					 {/dede:channel}
+				{/dede:channelartlist}
+			</div>
+			<div class="ic-drop"></div>
+		</div>
+		<div class="shade" style="display: none;"></div>
+	</div>
+	<!-- fixation end -->
+
+   <!--幻灯片开始--> 
+   <div id="focus" class="focus banner_top"> 
+    <div class="hd"> 
+     <ul> 
+     </ul> 
+    </div> 
+    <div class="bd"> 
+     <div class="tempWrap"> 
+      <ul> 
+       <li><a href="javascript:;"><img src="{dede:global.cfg_templets_skin/}/newmobile/img/banner0.jpg" /></a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <!--幻灯片结束--> 
+
+   <!-- bread start-->
+   <section class="item-section item_xminfopath">
+		<a href="{dede:global.cfg_mobile/}">首页</a> &gt;
+		<a href="{dede:global.cfg_mobile/}/top/">排行榜</a> &gt;
+		<h1>{dede:field.typename /}排行榜</h1>
+	</section>  
+   <!-- bread end-->
+
+
+   <!--排行榜 开始-->     
+    <ul class="top_list top_list2 clearfix"> 
+	 {dede:channel type='son' row='50'}
+     <li><a href="[field:global.cfg_mobile/][field:typelink/]" title="[field:typename/]"><img class="lazy" src="http://www.91chuangye.com[field:typeimg/]" alt="[field:typename/]" /></a><p><a href="[field:global.cfg_mobile/][field:typelink/]" title="[field:typename/]">[field:typename/]排行榜</a></p></li> 
+     {/dede:channel}
+
+
+    </ul> 
+   <!--排行榜 结束--> 
+
+   <!--footer开始--> 
+   <div class="footer">
+		<p>创业有风险，投资需谨慎</p>
+    <div class="link-box ">
+	   {dede:channelartlist typeid='52,52'}					
+			{dede:channel type='son'}
+			<a href="[field:global.cfg_mobile/][field:typelink/]" class="foot-link" [field:global name='autoindex'runphp='yes']if(@me==5){@me='';}else{@me='rel="nofollow"';}[/field:global]>[field:typename/]</a><span class="v-line">|</span>
+			{/dede:channel} 
+		{/dede:channelartlist}
+		</div> 
+    <div class="copyright">
+			<p>Copyright ©91网</p>
+			<p>品创天下（北京）科技发展有限公司</p>
+		</div> 
+    <div class="footer_nav"> 
+     <a href="/"><span class="ico1"></span>首页</a>
+     <a href="{dede:global.cfg_mobile/}/xiangmu/"><span class="ico2"></span>找项目</a>
+     <a href="{dede:global.cfg_mobile/}/top/"><span class="ico3"></span>排行榜</a> 
+     <a href="{dede:global.cfg_mobile/}/news/"><span class="ico4"></span>资讯</a> 
+    </div>
+   </div>
+   <a href="javascript:void(0);" id="returnTop"></a>
+   <!--footer结束--> 
+   
+  
+  <!------------------------- search_box start -------------------------->
+  <div class="sear_box">
+    <div class="header_sear">
+      <div class="search">
+		 <form name="searchform" id="searchform" method="get" action="{dede:global.cfg_mobile/}/search.php">  
+		   <input type="hidden" name="typeid" value="1,2,3,4,5,6,7,8,9,10,350,312,313,63,339" /> 
+		  <ul> 
+		   <li class="back"><a href="javascript:;"></a></li> 
+		   <li class="input"> <i></i><input type="text" placeholder="搜索关键字" autocomplete="off" id="lkey" name="q" /> </li> 
+		   <li class="enter"><input type="submit" class="btn" value="确定" id="s_button" onclick="Search(this,'key=lkey');" /></li> 
+		  </ul> 
+		 </form>
+      </div>
+    </div>
+    <div class="sear_cont">
+      <div class="tit">热门搜索</div>
+      <div class="sear_cont_list">
+        <ul>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!------------------------- search_box   end -------------------------->
+  
+  <!------------------------- returnTop  start -------------------------->
+  <a href="javascript:void(0);" id="returnTop"></a>
+  <!------------------------- returnTop    end -------------------------->
+  </div> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.min.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/swiper.min.js"></script>
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.SuperSlide.2.1.1.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/TouchSlide.1.1.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.lazyload.min.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/index.js"></script>  
+
+ </body>
+</html>

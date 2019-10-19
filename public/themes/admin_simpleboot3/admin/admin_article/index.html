@@ -1,0 +1,228 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:;">所有文章</a></li>
+        <li><a href="{:url('AdminArticle/add')}">添加文章</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url('AdminArticle/index')}">
+        分类:
+        <select class="form-control" name="category" style="width: 140px;">
+            <option value='0'>全部</option>
+            {$category_tree|default=''}
+        </select> &nbsp;&nbsp;
+        <input type="text" name="categorys" class="form-control" value="{$categorys|default=''}" placeholder="输入分类名称">&nbsp;&nbsp;
+        时间:
+        <input type="text" class="form-control js-bootstrap-date" name="start_time"
+               value="{$start_time|default=''}"
+               style="width: 140px;" autocomplete="off">-
+        <input type="text" class="form-control js-bootstrap-date" name="end_time"
+               value="{$end_time|default=''}"
+               style="width: 140px;" autocomplete="off"> &nbsp; &nbsp;
+        关键字:
+        <input type="text" class="form-control" name="keyword" style="width: 200px;"
+               value="{$keyword|default=''}" placeholder="请输入关键字...">
+        <br>
+        <br>
+        发布:
+        <select class="form-control" name="status" style="width: 140px;margin-right: 10px;">
+            <option value='0' <?php if($status == 0){  ?> selected <?php } ?> >全部</option>
+            <option value='1' <?php if($status == 1){  ?> selected <?php } ?> >发布</option>
+            <option value='2' <?php if($status == 2){  ?> selected <?php } ?> >未发布</option>
+        </select>
+
+        文章ID:
+        <input type="text" class="form-control" name="artid" style="width: 140px;"
+               value="{$artid|default=''}" placeholder="请输入文章ID...">
+
+        属性:
+        <select class="form-control" name="flags" style="width: 140px;margin-right: 10px;">
+            <option value='0'>全部</option>
+            <option value='h' <?php if($flags == 'h'){  ?> selected <?php } ?> >品牌上榜[h]</option>
+            <option value='a' <?php if($flags == 'a'){  ?> selected <?php } ?> >品牌推荐[a]</option>
+            <option value='s' <?php if($flags == 's'){  ?> selected <?php } ?> >热门品牌[s]</option>
+            <option value='b' <?php if($flags == 'b'){  ?> selected <?php } ?> >top[b]</option>
+            <option value='p' <?php if($flags == 'p'){  ?> selected <?php } ?> >图片[p]</option>
+            <option value='j' <?php if($flags == 'j'){  ?> selected <?php } ?> >跳转[j]</option>
+            <option value='d' <?php if($flags == 'd'){  ?> selected <?php } ?> >品牌上榜2[d]</option>
+            <option value='i' <?php if($flags == 'i'){  ?> selected <?php } ?> >投资推荐[i]</option>
+            <option value='z' <?php if($flags == 'z'){  ?> selected <?php } ?> >综合排行[z]</option>
+        </select>
+
+        作者:
+        <input type="text" class="form-control" name="writer" style="width: 140px;"
+               value="{$writer|default=''}" placeholder="请输入作者...">
+        <input type="submit" class="btn btn-primary" value="搜索" style="margin-left: 50px;"/>
+        <a class="btn btn-danger" href="{:url('AdminArticle/index')}">清空</a>
+    </form>
+    <form class="js-ajax-form" action="" method="post">
+        <div class="table-actions">
+            <notempty name="category">
+                <button class="btn btn-primary btn-sm js-ajax-submit" type="submit"
+                        data-action="{:url('AdminArticle/listOrder')}">{:lang('SORT')}
+                </button>
+            </notempty>
+            <button class="btn btn-primary btn-sm js-ajax-submit" type="submit"
+                    data-action="{:url('AdminArticle/publish',array('yes'=>1))}" data-subcheck="true">发布
+            </button>
+            <button class="btn btn-primary btn-sm js-ajax-submit" type="submit"
+                    data-action="{:url('AdminArticle/publish',array('no'=>1))}" data-subcheck="true">取消发布
+            </button>
+            <button class="btn btn-danger btn-sm js-ajax-submit" type="submit"
+                    data-action="{:url('AdminArticle/delete')}" data-subcheck="true" data-msg="您确定删除吗？">
+                {:lang('DELETE')}
+            </button>
+        </div>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="15">
+                    <label>
+                        <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
+                    </label>
+                </th>
+                <th width="50">ID</th>
+                <th width="350">标题</th>
+                <th width="100">分类</th>
+                <th width="100">作者</th>
+                <th width="130">添加时间</th>
+                <th width="130">修改时间</th>
+                <th width="70">状态</th>
+                <th width="90">操作</th>
+            </tr>
+            </thead>
+            <foreach name="articles" item="vo">
+                <tr>
+                    <td>
+                        <input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
+                               value="{$vo.id}" title="ID:{$vo.id}">
+                    </td>
+                    <td><b>{$vo.id}</b></td>
+                    <td>
+                        <notempty name="vo.thumbnail">
+                        <a href="javascript:parent.imagePreviewDialog('{:cmf_get_image_preview_url($vo.thumbnail)}');" style="color: red;">
+                            <i class="fa fa-photo fa-fw"></i>
+                        </a>
+                        </notempty>
+                        <notempty name="category">
+                            <a href="{:url('AdminArticle/edit')}?id=<?php echo $vo['id']?>">{$vo.post_title}</a>
+                            <else/>
+                            <a href="{:url('AdminArticle/edit')}?id=<?php echo $vo['id']?>">{$vo.post_title}</a>
+                        </notempty>
+                    </td>
+                    <td>
+                        <span class="label label-default">
+                                        <a  href="{:url('AdminArticle/add')}?category=<?php echo $vo['parent_id']?>"
+                                            style="color: #fff;"
+                                        >{$vo.cate_name}</a>
+                            </span>&nbsp;
+                    </td>
+                    <td>{$vo.author}</td>
+                    <td style="text-align: center;">
+                        <notempty name="vo.create_time">
+                            {:date('Y-m-d H:i',$vo['create_time'])}
+                            <else/>
+                            ---
+                        </notempty>
+
+                    </td>
+                    <td>
+                        <empty name="vo.update_time">
+                            ---
+                            <else/>
+                            {:date('Y-m-d H:i',$vo['update_time'])}
+                        </empty>
+
+                    </td>
+                    <td>
+                        <notempty name="vo.post_status">
+                            <a data-toggle="tooltip" title="已发布" style="color: #31bd72;text-decoration: none;">已发布</a>
+                            <else/>
+                            <a data-toggle="tooltip" title="未发布" style="color: red;text-decoration: none;">未发布</a>
+                        </notempty>
+                    </td>
+                    <td>
+                        <a href="{:url('AdminArticle/edit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
+                        <a href="{:url('AdminArticle/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:lang('DELETE')}</a>
+                        <a href="{$vo.url}" target="_blank">预览</a>
+                    </td>
+                </tr>
+            </foreach>
+        </table>
+        <ul class="pagination">{$PageHtml|default=''}<li class="page-item"><input type="text" name="page" class="page-links" style="margin-left: 50px; width: 50px;height: 35px;"><a id="goPageBtn" class="page" style="float: right;">跳转</a></li></ul>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+
+    function reloadPage(win) {
+        win.location.reload();
+    }
+
+    $(function () {
+        setCookie("refersh_time", 0);
+        Wind.use('ajaxForm', 'artDialog', 'iframeTools', function () {
+            //批量复制
+            $('.js-articles-copy').click(function (e) {
+                var ids = [];
+                $("input[name='ids[]']").each(function () {
+                    if ($(this).is(':checked')) {
+                        ids.push($(this).val());
+                    }
+                });
+
+                if (ids.length == 0) {
+                    art.dialog.through({
+                        id: 'error',
+                        icon: 'error',
+                        content: '您没有勾选信息，无法进行操作！',
+                        cancelVal: '关闭',
+                        cancel: true
+                    });
+                    return false;
+                }
+
+                ids = ids.join(',');
+                art.dialog.open("__ROOT__/index.php?g=portal&m=AdminArticle&a=copy&ids=" + ids, {
+                    title: "批量复制",
+                    width: "300px"
+                });
+            });
+            //批量移动
+            $('.js-articles-move').click(function (e) {
+                var ids = [];
+                $("input[name='ids[]']").each(function () {
+                    if ($(this).is(':checked')) {
+                        ids.push($(this).val());
+                    }
+                });
+
+                if (ids.length == 0) {
+                    art.dialog.through({
+                        id: 'error',
+                        icon: 'error',
+                        content: '您没有勾选信息，无法进行操作！',
+                        cancelVal: '关闭',
+                        cancel: true
+                    });
+                    return false;
+                }
+
+                ids = ids.join(',');
+                art.dialog.open("__ROOT__/index.php?g=portal&m=AdminArticle&a=move&old_term_id={$term.term_id|default=0}&ids=" + ids, {
+                    title: "批量移动",
+                    width: "300px"
+                });
+            });
+        });
+        $('#goPageBtn').click(function(){
+            var page = $.trim($('.page-links').val());
+            if(!isNaN(page)  && page.length > 0  ){
+                location.href = "{:url('AdminXm/index')}?page="+page+'&'+"{$url}";
+            }
+        })
+    });
+</script>
+</body>
+</html>

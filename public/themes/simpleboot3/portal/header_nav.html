@@ -1,0 +1,537 @@
+   <div class="w1200">
+            <div class="side-nav">
+                <span class="meau_but">项目分类</span>
+                <div class="nav_1">
+                    <ul class="nav_1_ul">
+                        <li>
+                            <div class="tanchu">
+                                <i class="icon icon-food"></i>
+                                <span><a href="/canyin_zt/">餐饮</a></span>/
+                                <span><a href="/jiudianjm_zt/">酒店</a></span>
+                                <em class="icon-arrow"></em>
+                            </div>
+                            <div class="menu-box">
+                                <div class="menu-nav">
+                                    <dl class="menu-list">
+                                        <dt><a href="/canyin_zt/">餐饮</a></dt>
+                                        <dd>
+                                            <volist name="cate1" id="cate1">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate1['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate1['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                    <dl class="menu-list">
+                                        <dt><a href="/jiudianjm_zt/">酒店</a></dt>
+                                        <dd>
+                                            <volist name="cate2" id="cate2">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate2['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate2['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="menu-ad">
+                                     <div class="ad">
+                                        <div class="tit_top"><a href="/xiangmu/">热门项目</a></div>
+                                        <ul>
+                                            <volist name='xm1' id='xm1'>
+                                            <li>
+                                                <div class="ad-img">
+                                                    <div class="pic">
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm1['aid'],'classname'=>$xm1['class']])}" title="{$xm1.title}" rel="nofollow">
+															<img src="{$xm1.logo|checkImgurl=###}" alt="{$xm1.title}">
+														</a>
+													</div>
+													<a href="{:cmf_url('portal/common/index',['id'=>$xm1['aid'],'classname'=>$xm1['class']])}" title="{$xm1.title}">
+														<div class="tit">{$xm1.title}</div>
+														<div class="price">{$xm1.invested}</div>
+													</a>
+                                                </div>
+                                            </li>
+                                            </volist>
+
+                                             <volist name='xm2' id='xm2'>
+                                            <li>
+                                                <div class="ad-img" >
+                                                    <div class="pic">
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm2['aid'],'classname'=>$xm2['class']])}" title="{$xm2.title}" rel="nofollow">
+															<img src="{$xm2.logo|checkImgurl=###}" alt="{$xm2.title}">
+														</a>
+													</div>
+													<a href="{:cmf_url('portal/common/index',['id'=>$xm2['aid'],'classname'=>$xm2['class']])}" title="{$xm2.title}">
+														<div class="tit">{$xm2.title}</div>
+														<div class="price">{$xm2.invested}</div>
+													</a>
+                                                </div>
+                                            </li>
+                                            </volist>
+                                        </ul>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tanchu">
+                                <i class="icon icon-edu"></i>
+                                <span><a href="/muying_zt/">母婴</a></span>/
+                                <span><a href="/jiaoyu_zt/">教育</a></span>
+                                <em class="icon-arrow"></em>
+                            </div>
+                            <div class="menu-box">
+                                <div class="menu-nav">
+                                    <dl class="menu-list">
+                                        <dt><a href="/muying_zt/">母婴</a></dt>
+                                        <dd>
+                                            <volist name="cate3" id="cate3">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate3['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate3['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                    <dl class="menu-list">
+                                        <dt><a href="/jiaoyu_zt/">教育</a></dt>
+                                        <dd>
+                                            <volist name="cate4" id="cate4">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate4['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate4['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="menu-ad">
+                                     <div class="ad">
+                                        <div class="tit_top"><a href="/xiangmu/">热门项目</a></div>
+                                        <ul>
+                                            <volist name='xm3' id='xm3'>
+                                            <li>
+                                                <div class="ad-img">
+                                                    <div class="pic">
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm3['aid'],'classname'=>$xm3['class']])}" title="{$xm3.title}" rel="nofollow">
+															<img src="{$xm3.logo|checkImgurl=###}" alt="{$xm3.title}">
+														</a>
+													</div>
+													<a href="{:cmf_url('portal/common/index',['id'=>$xm3['aid'],'classname'=>$xm3['class']])}" title="{$xm3.title}">
+														<div class="tit">{$xm3.title}</div>
+														<div class="price">{$xm3.invested}</div>
+													</a>
+                                                </div>
+                                            </li>
+                                            </volist>
+                                            <volist name='xm4' id='xm4'>
+                                                <li>
+                                                    <div class="ad-img">
+                                                        <div class="pic">
+															<a href="{:cmf_url('portal/common/index',['id'=>$xm4['aid'],'classname'=>$xm4['class']])}" title="{$xm4.title}" rel="nofollow">
+																<img src="{$xm4.logo|checkImgurl=###}" alt="{$xm4.title}">
+															</a>
+														</div>
+														<a class="ad-img" href="{:cmf_url('portal/common/index',['id'=>$xm4['aid'],'classname'=>$xm4['class']])}" title="{$xm4.title}">
+															<div class="tit">{$xm4.title}</div>
+															<div class="price">{$xm4.invested}</div>
+														</a>
+													</div>
+                                                </li>
+                                            </volist>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tanchu">
+                                <i class="icon icon-jiu"></i>
+                                <span><a href="/jiushui_zt/">酒水</a></span>/
+                                <span><a href="/zhubao_zt/">珠宝</a></span>
+                                <em class="icon-arrow"></em>
+                            </div>
+                            <div class="menu-box">
+                                <div class="menu-nav">
+                                    <dl class="menu-list">
+                                        <dt><a href="/jiushui_zt/">酒水</a></dt>
+                                        <dd>
+                                            <volist name="cate5" id="cate5">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate5['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate5['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                    <dl class="menu-list">
+                                        <dt><a href="/zhubao_zt/">珠宝</a></dt>
+                                        <dd>
+                                            <volist name="cate6" id="cate6">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate6['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate6['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="menu-ad">
+                                     <div class="ad">
+                                        <div class="tit_top"><a href="/xiangmu/">热门项目</a></div>
+                                        <ul>
+                                            <volist name='xm5' id='xm5'>
+                                            <li>
+                                                <div class="ad-img">
+                                                    <div class="pic">
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm5['aid'],'classname'=>$xm5['class']])}" title="{$xm5.title}" rel="nofollow">
+															<img src="{$xm5.logo|checkImgurl=###}" alt="{$xm5.title}">
+														</a>
+													</div>
+													<a href="{:cmf_url('portal/common/index',['id'=>$xm5['aid'],'classname'=>$xm5['class']])}" title="{$xm5.title}">
+														<div class="tit">{$xm5.title}</div>
+														<div class="price">{$xm5.invested}</div>
+													</a>
+												</div>	
+                                            </li>
+                                            </volist>
+                                            <volist name='xm6' id='xm6'>
+                                                <li>
+                                                    <div class="ad-img" >
+                                                        <div class="pic">
+															<a href="{:cmf_url('portal/common/index',['id'=>$xm6['aid'],'classname'=>$xm6['class']])}" title="{$xm6.title}" rel="nofollow">
+															<img src="{$xm6.logo|checkImgurl=###}" alt="{$xm6.title}">
+															</a>
+														</div>
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm6['aid'],'classname'=>$xm6['class']])}" title="{$xm6.title}">
+															<div class="tit">{$xm6.title}</div>
+															<div class="price">{$xm6.invested}</div>
+														</a>
+                                                    </div>
+                                                </li>
+                                            </volist>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tanchu">
+                                <i class="icon icon-shipin"></i>
+                                <span><a href="/shipin_zt/">饰品</a></span>/
+                                <span><a href="/jiaju_zt/">家居</a></span>
+                                <em class="icon-arrow"></em>
+                            </div>
+                            <div class="menu-box">
+                                <div class="menu-nav">
+                                    <dl class="menu-list">
+                                        <dt><a href="/shipin_zt/">饰品</a></dt>
+                                        <dd>
+                                            <volist name="cate7" id="cate7">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate7['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate7['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                    <dl class="menu-list">
+                                        <dt><a href="/jiaju_zt/">家居</a></dt>
+                                        <dd>
+                                            <volist name="cate8" id="cate8">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate8['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate8['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="menu-ad">
+                                    <div class="ad">
+                                        <div class="tit_top"><a href="/xiangmu/">热门项目</a></div>
+                                        <ul>
+                                            <volist name='xm7' id='xm7'>
+                                            <li>
+                                                <div class="ad-img">
+                                                    <div class="pic">
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm7['aid'],'classname'=>$xm7['class']])}" title="{$xm7.title}" rel="nofollow">
+															<img src="{$xm7.logo|checkImgurl=###}" alt="{$xm7.title}">
+														</a>
+													</div>
+													<a href="{:cmf_url('portal/common/index',['id'=>$xm7['aid'],'classname'=>$xm7['class']])}" title="{$xm7.title}">
+														<div class="tit">{$xm7.title}</div>
+														<div class="price">{$xm7.invested}</div>
+													</a>
+                                                </div>
+                                            </li>
+                                            </volist>
+                                            <volist name='xm8' id='xm8'>
+                                                <li>
+                                                    <div class="ad-img">
+                                                        <div class="pic">
+															<a href="{:cmf_url('portal/common/index',['id'=>$xm8['aid'],'classname'=>$xm8['class']])}" title="{$xm8.title}" rel="nofollow">
+																<img src="{$xm8.logo|checkImgurl=###}" alt="{$xm8.title}">
+															</a>
+														</div>
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm8['aid'],'classname'=>$xm8['class']])}" title="{$xm8.title}">
+															<div class="tit">{$xm8.title}</div>
+															<div class="price">{$xm8.invested}</div>
+														</a>
+                                                    </div>
+                                                </li>
+                                            </volist>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tanchu">
+                                <i class="icon icon-dress"></i>
+                                <span><a href="/nvxing_zt/">女性</a></span>/
+                                <span><a href="/xieye_zt/">鞋业</a></span>
+                                <em class="icon-arrow"></em>
+                            </div>
+                            <div class="menu-box">
+                                <div class="menu-nav">
+                                    <dl class="menu-list">
+                                        <dt><a href="/nvxing_zt/">女性</a></dt>
+                                        <dd>
+                                            <volist name="cate9" id="cate9">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate9['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate9['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                    <dl class="menu-list">
+                                        <dt><a href="/xieye_zt/">鞋业</a></dt>
+                                        <dd>
+                                            <volist name="cate10" id="cate10">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate10['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate10['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="menu-ad">
+                                    <div class="ad">
+                                        <div class="tit_top"><a href="/xiangmu/">热门项目</a></div>
+                                        <ul>
+                                            <volist name='xm9' id='xm9'>
+                                            <li>
+                                                <div class="ad-img">
+                                                    <div class="pic">
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm9['aid'],'classname'=>$xm9['class']])}" title="{$xm9.title}" rel="nofollow">
+															<img src="{$xm9.logo|checkImgurl=###}" alt="{$xm9.title}">
+														</a>
+													</div>
+													<a href="{:cmf_url('portal/common/index',['id'=>$xm9['aid'],'classname'=>$xm9['class']])}" title="{$xm9.title}">
+														<div class="tit">{$xm9.title}</div>
+														<div class="price">{$xm9.invested}</div>
+													</a>
+                                                </div>
+                                            </li>
+                                            </volist>
+                                            <volist name='xm10' id='xm10'>
+                                                <li>
+                                                    <div class="ad-img">
+                                                        <div class="pic">
+															<a href="{:cmf_url('portal/common/index',['id'=>$xm10['aid'],'classname'=>$xm10['class']])}" title="{$xm10.title}" rel="nofollow">
+																<img src="{$xm10.logo|checkImgurl=###}" alt="{$xm10.title}">
+															</a>
+														</div>
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm10['aid'],'classname'=>$xm10['class']])}" title="{$xm10.title}">
+															<div class="tit">{$xm10.title}</div>
+															<div class="price">{$xm10.invested}</div>
+														</a>
+                                                    </div>
+                                                </li>
+                                            </volist>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tanchu">
+                                <i class="icon icon-wood"></i>
+                                <span><a href="/fuzhuang_zt/">服装</a></span>/
+                                <span><a href="/jiancai_zt/">建材</a></span>
+                                <em class="icon-arrow"></em>
+                            </div>
+                            <div class="menu-box">
+                                <div class="menu-nav">
+                                    <dl class="menu-list">
+                                        <dt><a href="/fuzhuang_zt/">服装</a></dt>
+                                        <dd>
+                                            <volist name="cate11" id="cate11">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate11['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate11['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                    <dl class="menu-list">
+                                        <dt><a href="/jiancai_zt/">建材</a></dt>
+                                        <dd>
+                                            <volist name="cate12" id="cate12">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate12['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate12['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="menu-ad">
+                                    <div class="ad">
+                                        <div class="tit_top"><a href="/xiangmu/">热门项目</a></div>
+                                        <ul>
+                                            <volist name='xm11' id='xm11'>
+                                            <li>
+                                                <div class="ad-img">
+                                                    <div class="pic">
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm11['aid'],'classname'=>$xm11['class']])}" title="{$xm11.title}" rel="nofollow">
+															<img src="{$xm11.logo|checkImgurl=###}" alt="{$xm11.title}">
+														</a>
+													</div>
+													<a href="{:cmf_url('portal/common/index',['id'=>$xm11['aid'],'classname'=>$xm11['class']])}" title="{$xm11.title}">
+														<div class="tit">{$xm11.title}</div>
+														<div class="price">{$xm11.invested}</div>
+													</a>
+                                                </div>
+                                            </li>
+                                            </volist>
+                                            <volist name='xm12' id='xm12'>
+                                                <li>
+                                                    <div class="ad-img">
+                                                        <div class="pic">
+															<a href="{:cmf_url('portal/common/index',['id'=>$xm12['aid'],'classname'=>$xm12['class']])}" title="{$xm12.title}" rel="nofollow">
+																<img src="{$xm12.logo|checkImgurl=###}" alt="{$xm12.title}">
+															</a>
+														</div>
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm12['aid'],'classname'=>$xm12['class']])}" title="{$xm12.title}">
+															<div class="tit">{$xm12.title}</div>
+															<div class="price">{$xm12.invested}</div>
+														</a>
+                                                    </div>
+                                                </li>
+                                            </volist>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tanchu">
+                                <i class="icon icon-car"></i>
+                                <span><a href="/qiche_zt/">汽车</a></span>/
+                                <span><a href="/ganxi_zt/">干洗</a></span>
+                                <em class="icon-arrow"></em>
+                            </div>
+                            <div class="menu-box">
+                                <div class="menu-nav">
+                                    <dl class="menu-list">
+                                        <dt><a href="/qiche_zt/">汽车</a></dt>
+                                        <dd>
+                                            <volist name="cate13" id="cate13">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate13['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate13['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                    <dl class="menu-list">
+                                        <dt><a href="/ganxi_zt/">干洗</a></dt>
+                                        <dd>
+                                            <volist name="cate14" id="cate14">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate14['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate14['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="menu-ad">
+                                    <div class="ad">
+                                        <div class="tit_top"><a href="/xiangmu/">热门项目</a></div>
+                                        <ul>
+                                            <volist name='xm13' id='xm13'>
+                                            <li>
+                                                <div class="ad-img">
+                                                    <div class="pic">
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm13['aid'],'classname'=>$xm13['class']])}" title="{$xm13.title}" rel="nofollow">
+															<img src="{$xm13.logo|checkImgurl=###}" alt="{$xm13.title}">
+														</a>
+													</div>
+													<a href="{:cmf_url('portal/common/index',['id'=>$xm13['aid'],'classname'=>$xm13['class']])}" title="{$xm13.title}">
+														<div class="tit">{$xm13.title}</div>
+														<div class="price">{$xm13.invested}</div>
+													</a>
+                                                </div>
+                                            </li>
+                                            </volist>
+                                            <volist name='xm14' id='xm14'>
+                                                <li>
+                                                    <div class="ad-img">
+                                                        <div class="pic">
+															<a href="{:cmf_url('portal/common/index',['id'=>$xm14['aid'],'classname'=>$xm14['class']])}" title="{$xm14.title}" rel="nofollow">
+																<img src="{$xm14.logo|checkImgurl=###}" alt="{$xm14.title}">
+															</a>
+														</div>
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm14['aid'],'classname'=>$xm14['class']])}" title="{$xm14.title}">
+															<div class="tit">{$xm14.title}</div>
+															<div class="price">{$xm14.invested}</div>
+														</a>
+                                                    </div>
+                                                </li>
+                                            </volist>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tanchu">
+                                <i class="icon icon-web"></i>
+                                <span><a href="/jinrong_zt/">金融</a></span>/
+                                <span><a href="/internet_zt/">互联网+</a></span>
+                                <em class="icon-arrow"></em>
+                            </div>
+                            <div class="menu-box">
+                                <div class="menu-nav">
+                                    <dl class="menu-list">
+                                        <dt><a href="/jinrong_zt/">金融</a></dt>
+                                        <dd>
+                                            <volist name="cate15" id="cate15">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate15['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate15['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                    <dl class="menu-list">
+                                        <dt><a href="/internet_zt/">互联网+</a></dt>
+                                        <dd>
+                                            <volist name="cate16" id="cate16">
+                                                <a href="{:cmf_url('portal/common/index',['classname'=>$cate16['path']],'')}_zt/"><?php echo str_replace('加盟','',$cate16['name'])?></a>
+                                            </volist>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="menu-ad">
+                                     <div class="ad">
+                                        <div class="tit_top"><a href="/xiangmu/">热门项目</a></div>
+                                        <ul>
+                                            <volist name='xm15' id='xm15'>
+                                            <li>
+                                                <div class="ad-img">
+                                                    <div class="pic">
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm15['aid'],'classname'=>$xm15['class']])}" title="{$xm15.title}" rel="nofollow">
+															<img src="{$xm15.logo|checkImgurl=###}" alt="{$xm15.title}">
+														</a>
+													</div>
+													<a href="{:cmf_url('portal/common/index',['id'=>$xm15['aid'],'classname'=>$xm15['class']])}" title="{$xm15.title}">
+														<div class="tit">{$xm15.title}</div>
+														<div class="price">{$xm15.invested}</div>
+													</a>
+                                                </div>
+                                            </li>
+                                            </volist>
+                                            <volist name='xm16' id='xm16'>
+                                                <li>
+                                                    <div class="ad-img">
+                                                        <div class="pic">
+															<a href="{:cmf_url('portal/common/index',['id'=>$xm16['aid'],'classname'=>$xm16['class']])}" title="{$xm16.title}" rel="nofollow">
+																<img src="{$xm16.logo|checkImgurl=###}" alt="{$xm16.title}">
+															</a>
+														</div>
+														<a href="{:cmf_url('portal/common/index',['id'=>$xm16['aid'],'classname'=>$xm16['class']])}" title="{$xm16.title}">
+															<div class="tit">{$xm16.title}</div>
+															<div class="price">{$xm16.invested}</div>
+														</a>
+                                                    </div>
+                                                </li>
+                                            </volist>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="nav_2">
+                <li><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/"><i class="icon icon-menu"></i>项目库</a></li>
+                <li><a href="{:cmf_url('portal/common/index',['classname'=>'top'],'')}/">加盟排行榜</a></li>
+                <li><a href="{:cmf_url('portal/common/index',['classname'=>'haoxiangmu'],'')}/">创业好项目</a></li>
+              <li><a href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/">创业资讯</a></li>
+            </ul>
+        </div>

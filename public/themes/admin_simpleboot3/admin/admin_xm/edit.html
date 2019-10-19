@@ -1,0 +1,683 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+</style>
+<!-- <input id="litpic-{id}" class="logo" type="hidden" name="post[litpic]" value="{url}"> -->
+<script type="text/html" id="litpic-item-tpl">
+    <li id="saved-litpic{id}">
+        
+        <input id="litpic-{id}-litpic" class="logo" type="hidden" name="post[thumbnail]" value="{url}">
+        <input class="form-control" id="litpic-{id}-name" type="text" name="" value="{name}"
+               style="width: 200px;" title="图片名称">
+        <img id="litpic-{id}-preview" src="{url}" style="height:36px;width: 36px;"
+             onclick="imagePreviewDialog(this.src);">
+
+        <a href="javascript:(function(){$('#saved-litpic{id}').remove();})();">移除</a>
+    </li>
+</script>
+<script type="text/html" id="photos-item-tpl">
+        <li id="saved-image{id}">
+        <input id="logo-{id}" type="hidden" class="logo" name="post[logo]" value="{url}">
+        <input class="form-control" id="photo-{id}-name" type="text" name="" value="{name}"
+               style="width: 200px;" title="图片名称">
+        <img id="photo-{id}-preview" src="{url}" style="height:36px;width: 36px;"
+             onclick="imagePreviewDialog(this.src);">
+        <a href="javascript:(function(){$('#saved-image{id}').remove();})();">移除</a>
+    </li>
+</script>
+<script type="text/html" id="haibao-item-tpl">
+    <li id="saved-logo{id}">
+        <input id="photo-{id}" type="hidden" name="photo_name[]" value="{url}">
+        <input class="form-control" id="logo-{id}-name" type="text" name="" value="{name}"
+               style="width: 200px;" title="图片名称">
+        <img id="logo-{id}-preview" src="{url}" style="height:36px;width: 36px;"
+             onclick="imagePreviewDialog(this.src);">
+        <a href="javascript:(function(){$('#saved-image{id}').remove();})();">移除</a>
+    </li>
+</script>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('AdminXm/index')}">项目管理</a></li>
+        <li class="active"><a href="{:url('AdminXm/edit')}">修改项目</a></li>
+    </ul>
+    <form action="{:url('AdminXm/editPost')}" method="post" id="formData" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div class="col-md-9">
+                <table class="table table-bordered">
+                    <tr>
+                        <th width="100">分类<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" style="width:400px;" required
+                                   value="{:implode(' ',$post_categories)}"
+                                   placeholder="请选择分类" onclick="doSelectCategory();" id="js-categories-name-input"
+                                   readonly/>
+                            <input class="form-control" type="hidden" value="{$post_category_ids}"
+                                   name="post[typeid]"
+                                   id="js-categories-id-input"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>项目名称<span class="form-required">*</span></th>
+                        <td>
+                            <input id="post-id" type="hidden" name="post[aid]" value="{$post.aid}">
+                            <input class="form-control" type="text" name="post[title]"
+                                   required value="{$post.title}" placeholder="请输入项目名称"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>自定义属性<span class="form-required">*</span></th>
+                        <td>
+                            <!--新增-->
+                            <input type="checkbox" name="flags[]" value="h" <?php if(in_array('h',$post['flags'])){?>checked<?php }?>/>品牌上榜(字)[h]
+                            <input type="checkbox" name="flags[]" value="e" <?php if(in_array('e',$post['flags'])){?>checked<?php }?>/>品牌上榜(图)[e]
+                            <input type="checkbox" name="flags[]" value="a" <?php if(in_array('a',$post['flags'])){?>checked<?php }?>/>精品推荐(字)[a]
+                            <input type="checkbox" name="flags[]" value="f" <?php if(in_array('f',$post['flags'])){?>checked<?php }?>/>精品推荐(图)[f]
+
+
+                            <input type="checkbox" name="flags[]" value="b" <?php if(in_array('b',$post['flags'])){?>checked<?php }?>/>模块二左1[b]
+                            <input type="checkbox" name="flags[]" value="j" <?php if(in_array('j',$post['flags'])){?>checked<?php }?>/>模块二右4[j]
+
+                            <input type="checkbox" name="flags[]" value="d" <?php if(in_array('d',$post['flags'])){?>checked<?php }?>/>模块三[d]
+
+
+                            <input type="checkbox" name="flags[]" value="z" <?php if(in_array('z',$post['flags'])){?>checked<?php }?>/>热门推荐[z]
+
+
+                            <!--目前有的属性-->
+                            <input type="checkbox" name="flags[]" value="c" <?php if(in_array('c',$post['flags'])){?>checked<?php }?>/>logo推荐[c]
+                            <input type="checkbox" name="flags[]" value="s" <?php if(in_array('s',$post['flags'])){?>checked<?php }?>/>热门品牌[s]
+                            <input type="checkbox" name="flags[]" value="p" <?php if(in_array('p',$post['flags'])){?>checked<?php }?>/>图片[p]
+                            <input type="checkbox" name="flags[]" value="i" <?php if(in_array('i',$post['flags'])){?>checked<?php }?>/>投资推荐[i]
+                            <!-- <input type="checkbox" name="flags[]" value="h" <?php if(in_array('h',$post['flags'])){?>checked<?php }?>/>品牌上榜[h]
+                            <input type="checkbox" name="flags[]" value="c" <?php if(in_array('c',$post['flags'])){?>checked<?php }?>/>logo推荐[c]
+                            <input type="checkbox" name="flags[]" value="a" <?php if(in_array('a',$post['flags'])){?>checked<?php }?>/>品牌推荐[a]
+                            <input type="checkbox" name="flags[]" value="s" <?php if(in_array('s',$post['flags'])){?>checked<?php }?>/>热门品牌[s]
+                            <input type="checkbox" name="flags[]" value="b" <?php if(in_array('b',$post['flags'])){?>checked<?php }?>/>top[b]
+                            <input type="checkbox" name="flags[]" value="p" <?php if(in_array('p',$post['flags'])){?>checked<?php }?>/>图片[p]
+                            <input type="checkbox" name="flags[]" value="j" <?php if(in_array('j',$post['flags'])){?>checked<?php }?>/>跳转[j]
+                            <input type="checkbox" name="flags[]" value="d" <?php if(in_array('d',$post['flags'])){?>checked<?php }?>/>品牌上榜2[d]
+                            <input type="checkbox" name="flags[]" value="i" <?php if(in_array('i',$post['flags'])){?>checked<?php }?>/>投资推荐[i]
+                            <input type="checkbox" name="flags[]" value="z" <?php if(in_array('z',$post['flags'])){?>checked<?php }?>/>综合排行[z] -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>关键词</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[keywords]"
+                                   value="{$post['keywords']}" placeholder="请输入关键字">
+                            <p class="help-block">多关键词之间用英文逗号隔开</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>项目来源</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[source]"
+                                   value="{$post['source']}" placeholder="请输入项目来源">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>作者</th>
+                        <td><input class="form-control" type="text" name="post[writer]" id="writer" value="{$post['writer']}"
+                                   placeholder="请输入作者"></td>
+                    </tr>
+
+                    <tr>
+                        <th>文档摘要</th>
+                        <td>
+                            <textarea class="form-control" name="post[description]" style="height: 50px;"
+                                      placeholder="请填写文档摘要">{$post.description}</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>首页缩略图</th>
+                        <td>
+                            <ul id="litpic" class="pic-list list-unstyled form-inline"></ul>
+                            <a href="javascript:uploadMultiImage('图片上传','#litpic','litpic-item-tpl');"
+                               class="btn btn-default btn-sm">选择图片</a>
+                               <?php if($post['thumbnail']){?>
+                               <img id="photo-{id}-preview" class="move5" src="{$post['thumbnail']}" style="height:36px;width: 36px;" onclick="imagePreviewDialog(this.src);">
+                                    <a href="javascript:;" id='move4' >移除</a>
+                               <?php }?>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>项目logo<span class="form-required">*</span></th>
+                        <td>
+                            <ul id="logo" class="pic-list list-unstyled form-inline"></ul>
+                            <a href="javascript:uploadMultiImage('图片上传','#logo','photos-item-tpl');"
+                               class="btn btn-default btn-sm">选择图片</a>
+                               <?php if($post['logo']){?>
+                                    <img id="photo-{id}-preview" class="move1" src="{$post['logo']}" style="height:36px;width: 36px;" onclick="imagePreviewDialog(this.src);">
+                                    <a href="javascript:;" id='move' >移除</a>
+                               <?php }?>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>项目海报</th>
+                        <td>
+                            <ul id="haibao" class="pic-list list-unstyled form-inline"></ul>
+                            <a href="javascript:uploadMultiImage('图片上传','#haibao','haibao-item-tpl');" class="btn btn-default btn-sm">选择图片</a>
+                            <foreach name='img' item='v3'>
+                                <img id="photo-{id}-previews" class="move3" atter='{$v3['aid']}' src="{$v3['url']}" style="height:36px;width: 36px;" onclick="imagePreviewDialog(this.src);">
+                                <a href="javascript:;" id="move2" ><span onclick="imgall(this,{$v3['aid']})">移除</span></a>
+                            </foreach>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>海报SEO标题</th>
+                        <td><input type="text" class="form-control" id="input-seo_title" name="post[haibao_title]" placeholder="请输入海报SEO标题" value="{$post['haibao_title']}"></td>
+                    </tr>
+                    <tr>
+                        <th>海报SEO关键字</th>
+                        <td><input type="text" class="form-control" id="input-seo_keywords" name="post[haibao_keywords]" placeholder="请输入海报SEO关键字" value="{$post['haibao_keywords']}"></td>
+                    </tr>
+                    <tr>
+                        <th>海报SEO描述</th>
+                        <td><textarea class="form-control" name="post[haibao_description]"
+                                      id="input-seo_description" placeholder="请输入海报SEO描述">{$post.haibao_description}</textarea></td>
+                    </tr>
+
+                  
+                  <tr>
+                        <th>列表页推荐<span class="form-required">*</span></th>
+                        <td><input type="radio" name="post[recommend]" value="1" <?php if($post['recommend'] == '1'){?> checked<?php }?>/>推荐项目列表
+                          <input type="radio" name="post[recommend]" value="2" <?php if($post['recommend'] == '2'){?> checked<?php }?>/>不推荐项目列表</td>
+                    </tr>
+
+                    <tr>
+                        <th>投资金额<span class="form-required">*</span></th>
+                        <td><input type="radio" name="post[invested]" value="0-1万" <?php if($post['invested'] == '0-1万'){?> checked<?php }?>/>0-1万
+                            <input type="radio" name="post[invested]" value="1-5万" <?php if($post['invested'] == '1-5万'){?> checked<?php }?>/>1-5万
+                            <input type="radio" name="post[invested]" value="5-10万" <?php if($post['invested'] == '5-10万'){?> checked<?php }?>/>5-10万
+                            <input type="radio" name="post[invested]" value="10-20万" <?php if($post['invested'] == '10-20万'){?> checked<?php }?>/>10-20万
+                            <input type="radio" name="post[invested]" value="20-50万" <?php if($post['invested'] == '20-50万'){?> checked<?php }?>/>20-50万
+                            <input type="radio" name="post[invested]" value="50-100万" <?php if($post['invested'] == '50-100万'){?> checked<?php }?>/>50-100万
+                            <input type="radio" name="post[invested]" value="100万以上" <?php if($post['invested'] == '100万以上'){?> checked<?php }?>/>100万+</td>
+                    </tr>
+                    <tr>
+                        <th>所在城市<span class="form-required">*</span></th>
+                        <td>
+                            <select class="form-control"  id="nat_top" style="width: 140px; float: left;">
+                                <option value='0' >请选择</option>
+                            </select>
+                            <input type="hidden" value="{$post['nativeplace_top'] }" name="post[nativeplace_top]" id="nativeplace_top">
+
+                            <select class="form-control"  id="nat_son" style="width: 140px;float: left;margin-left: 20px;">
+                                <option value='0' >请选择</option>
+                            </select>
+                            <input type="hidden" value="{$post['nativeplace_son'] }" name="post[nativeplace_son]" id="nativeplace_son">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>热门城市</th>
+                        <td>
+                            <select class="form-control"  id="adderss_select" style="width: 140px;">
+                            </select>
+                            <input type="hidden" value="{$post['address'] }" name="post[address]" id="address">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>公司名称<span class="form-required">*</span></th>
+                        <td><input class="form-control" type="text" name="post[companyname]" id="companyname" value="{$post['companyname']}"
+                                   placeholder="请输入公司名称" required ></td>
+                    </tr>
+                    <tr>
+                        <th>公司地址<span class="form-required">*</span></th>
+                        <td><input class="form-control" type="text" name="post[company_address]" id="company_address" value="{$post['company_address']}"
+                                   placeholder="请输入公司地址" required></td>
+                    </tr>
+                    <tr>
+                        <th>企业类型</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[company_leixing]" id="company_leixing"
+                                   placeholder="请输入公司地址" required value="{$post['company_leixing']}">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>注册资本</th>
+                        <td><input class="form-control" type="text" name="post[ziben]" id="ziben" value="{$post['ziben']}"
+                                   placeholder="请输入注册资本"></td>
+                    </tr>
+                    <tr>
+                        <th>实收资本</th>
+                        <td><input class="form-control" type="text" name="post[shziben]" id="shziben" value="{$post['shziben']}"
+                                   placeholder="请输入注册资本"></td>
+                    </tr>
+                    <!-- <tr>
+                        <th>成立时间</th>
+                        <td><input type="text" class="form-control js-bootstrap-datetime" name="post[setup_time]"
+                                    value="<?php echo date("Y-m-d",$post['setup_time'])?>"></td>
+                    </tr> -->
+                     <tr>
+                        <th>权重</th>
+                        <td><input class="form-control" type="text" name="post[weight]" id="weight" value="{$post['weight']}"
+                                   placeholder="请输入权重&nbsp;&nbsp;&nbsp;*越小越靠前*"></td>
+                    </tr>
+                    <tr>
+                        <th>点击数</th>
+                        <td><input class="form-control" type="text" name="post[click]" id="click" value="{$post['click']}"
+                                   placeholder="请输入人气"></td>
+                    </tr>
+                    <tr>
+                        <th>已咨询</th>
+                        <td><input class="form-control" type="text" name="post[zhishu]" id="zhishu" value="{$post['zhishu']}"
+                                   placeholder="请输入已咨询"></td>
+                    </tr>
+                    <tr>
+                        <th>加盟店数量</th>
+                        <td><input class="form-control" type="text" name="post[sum]" id="sum" value="{$post['sum']}"
+                                   placeholder="请输入加盟店数量"></td>
+                    </tr>
+                    <!--<tr>-->
+                    <!--    <th>门店数量</th>-->
+                    <!--    <td><input class="form-control" type="text" name="post[nativeplace]" id="nativeplace" value="{$post['nativeplace']}"-->
+                    <!--               placeholder="请输入门店数量"></td>-->
+                    <!--</tr>-->
+                    <tr>
+                        <th>项目介绍/加盟前景/加盟优势：</th>
+                        <td>
+                            <script type="text/plain" id="jieshao" name="post[jieshao]" style="height: 500px;">{$post.jieshao}  </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>加盟条件：</th>
+                        <td>
+                            <script type="text/plain" id="tiaojian" name="post[tiaojian]" style="height: 500px;">{$post.tiaojian}</script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>加盟流程：</th>
+                        <td>
+                            <script type="text/plain" id="liucheng" name="post[liucheng]" style="height: 500px;">{$post.liucheng}</script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>投资分析/加盟费用/加盟利润/加盟支持/加盟政策：</th>
+                        <td>
+                            <script type="text/plain" id="fenxi" name="post[fenxi]" style="height: 500px;">{$post.fenxi}</script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><b>缩略图</b></th>
+                        <td>
+                            <label style="color: #0b6cbc;">
+                                <input type="checkbox" name="post[default_img]"  value="1" <?php if(!empty($post['litpic'])){  echo  'checked' ; } ?> >
+                                默认内容第一张图片为缩略图
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+                <hook name="portal_admin_article_edit_view_main"/>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-primary js-ajax-submit" id="submit_btn">{:lang('SAVE')}</button>
+                        <a class="btn btn-default" href="{:url('AdminXm/index')}">{:lang('BACK')}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!--<script type="text/javascript" src="__STATIC__/js/admin.js"></script>-->
+<script type="text/javascript">
+    //编辑器路径定义
+    var editorURL = GV.WEB_ROOT;
+</script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/themes/simpleboot3/public/new/js/p.js"></script>
+<script src="__STATIC__/js/layer/layer.js"></script>
+<script type="text/javascript">
+  
+  function openIframeLayer(url, title, options) {
+
+    var params = {
+        type: 2,
+        title: title,
+        shadeClose: true,
+        // skin: 'layui-layer-nobg',
+        anim: -1,
+        shade: [0.001, '#000000'],
+        shadeClose: true,
+        area: ['95%', '90%'],
+        move: false,
+        content: url,
+        yes: function (index, layero) {
+            //do something
+            layer.close(index); //如果设定了yes回调，需进行手工关闭
+        }
+    };
+    params     = options ? $.extend(params, options) : params;
+
+    Wind.css('layer');
+
+    Wind.use("layer", function () {
+        layer.open(params);
+    });
+
+}
+
+  
+  
+    function imgall(o,aid){
+           $.ajax({
+             type: "post",
+             url: "{:url('AdminXm/delete_imgall')}",
+             data: {aid:aid},
+             success: function(date){
+                if(date == 'ok'){
+                    layer.msg('删除成功！');
+                    $('.move1').remove();
+                    window.location.reload();
+                }else{
+                    layer.msg('删除失败！');
+                }
+             }
+         });
+        }
+
+    $(function () {
+        var id = $('#post-id').val();
+        $('#move').click(function(){
+            $.ajax({
+             type: "post",
+             url: "{:url('AdminXm/delete_img')}",
+             data: {aid:id},
+             success: function(datas){
+                if(datas == 'ok'){
+                    layer.msg('删除成功！');
+                    $('.move1').remove();
+                    window.location.reload();
+                }else{
+                    layer.msg('删除失败！');
+                }
+             }
+         });
+        })
+        
+    })
+    $(function(){
+         var id = $('#post-id').val();
+        $('#move4').click(function(){
+            $.ajax({
+             type: "post",
+             url: "{:url('AdminXm/deletel_img')}",
+             data: {aid:id},
+             success: function(dataa){
+                if(dataa == 'ok'){
+                    layer.msg('删除成功！');
+                    $('.move5').remove();
+                    window.location.reload();
+                }else{
+                    layer.msg('删除失败！');
+                }
+             }
+         });
+    })
+
+        
+        
+      
+         
+
+
+
+
+        //遍历省份
+        $.each(province,function(k,v){
+        	// console.log(province);
+                if(v.name == "{$post['ename']}"){
+                    $("#nat_top").append('<option selected value='+v.ProID+'>'+v.name+'</option>');
+                }else{
+                    $("#nat_top").append('<option value='+v.ProID+'>'+v.name+'</option>');
+                }
+           
+        })
+
+
+        //省份改变遍历市区
+        $("#nat_top").change(function(){
+            var provinceId = $(this).val();
+            if(provinceId>0){
+                $("#nativeplace_top").val($.trim($(this).find("option:selected").text()));
+            }else{
+                $("#nativeplace_top").val('');
+            }
+            $("#nat_son").empty();
+            $("#nat_son").append('<option value="0">请选择</option>>');
+            $.each(city,function(k,v){
+                if(v.ProID == provinceId){
+                    if(v.name == "{$post['nativeplace_son'] }"){
+                        $("#nat_son").append('<option selected value='+v.ProID+'>'+v.name+'</option>>');
+                    }else{
+                        $("#nat_son").append('<option value='+v.ProID+'>'+v.name+'</option>>');
+                    }
+
+                    if(v.CityID <= 4 ){
+                        $("#nat_son").empty();
+                        $.each(district,function (k1 , v1) {
+                            if(v1.CityID == v.CityID){
+                                if(v1.DisName == "{$post['nativeplace_son'] }"){
+                                    $("#nat_son").append('<option selected value='+v1.Id+'>'+v1.DisName+'</option>');
+                                }else{
+                                    $("#nat_son").append('<option  value='+v1.Id+'>'+v1.DisName+'</option>');
+                                }
+                            }
+                        });
+                    }
+
+                }
+            })
+        });
+        $("#nat_top").trigger("change");
+
+        $("#nat_son").change(function(){
+            if($(this).val()>0){
+                $("#nativeplace_son").val($.trim($(this).find("option:selected").text()));
+            }else{
+                $("#nativeplace_son").val('');
+            }
+        });
+
+
+        $.each(province,function (k,v) {
+            if(v.ProRemark  != '直辖市' && v.ProRemark !='特别行政区') {
+                //选中
+                if(v.name == "<?php echo $post['address']; ?>"){
+                    $("#adderss_select").append('<option selected value="' + v.ProID + '">--' + v.name + '</option>');
+                }else{
+                    $("#adderss_select").append('<option value="' + v.ProID + '">--' + v.name + '</option>');
+                }
+            }
+            $.each(city,function (key,value) {
+                if(v.ProID == value.ProID){
+                    //$("#adderss_select").append('<option value="'+value.CityID+'">'+value.name+'</option>');
+                    if(value.name == "<?php echo  $post['address']; ?>"){
+                        $("#adderss_select").append('<option selected  value="'+value.CityID+'">'+value.name+'</option>');
+                    }else{
+                        $("#adderss_select").append('<option  value="'+value.CityID+'">'+value.name+'</option>');
+                    }
+                }
+            })
+        })
+        $("#adderss_select").change(function(){
+            $("#address").val($.trim($(this).find("option:selected").text()));
+        });
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('jieshao');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+    });
+
+    $(function () {
+
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('tiaojian');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+    });
+    $(function () {
+
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('liucheng');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+    });
+
+    $(function () {
+
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('fenxi');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+        $(function(){
+            $("#submit_btn").click(function(){
+                var obj = document.getElementsByName("flags[]");
+                check_val = [];
+                for(k in obj){
+                    if(obj[k].checked)
+                        check_val.push(obj[k].value);
+                }
+                if(check_val.length == 0){
+                    layer.msg('请选择自定义属性');
+                    return false;
+                }
+                var logoNum = $('#logo').parent().find('img').length;
+                if(logoNum == 0){
+                    layer.msg('请上传项目logo');
+                    return false;
+                }
+                var redio_check=$('input:radio[name="post[invested]"]:checked').val();
+                if(redio_check == undefined || redio_check == null || redio_check==''){
+                    layer.msg('选择投资金额');
+                    return false;
+                }
+                // var photoNum = $('#haibao').parent().find('img').length;
+                // if(photoNum == 0){
+                //     layer.msg('请上传项目海报');
+                //     return false;
+                // }
+
+                $("#formData").submit();
+            })
+        })
+
+    });
+
+    function doSelectCategory() {
+        var selectedCategoriesId = $('#js-categories-id-input').val();
+        openIframeLayer("{:url('AdminCategory/select')}?ids=" + selectedCategoriesId, '请选择分类', {
+            area: ['700px', '400px'],
+            btn: ['确定', '取消'],
+            yes: function (index, layero) {
+                //do something
+
+                var iframeWin          = window[layero.find('iframe')[0]['name']];
+                var selectedCategories = iframeWin.confirm();
+                if (selectedCategories.selectedCategoriesId.length == 0) {
+                    layer.msg('请选择分类');
+                    return;
+                }
+                $('#js-categories-id-input').val(selectedCategories.selectedCategoriesId.join(','));
+                $('#js-categories-name-input').val(selectedCategories.selectedCategoriesName.join(' '));
+                //console.log(layer.getFrameIndex(index));
+                layer.close(index); //如果设定了yes回调，需进行手工关闭
+            }
+        });
+    }
+  
+  function uploadMultiImage(dialog_title, container_selector, item_tpl_wrapper_id, extra_params, app) {
+    openUploadDialog(dialog_title, function (dialog, files) {
+        var tpl  = $('#' + item_tpl_wrapper_id).html();
+        var html = '';
+        $.each(files, function (i, item) {
+            var itemtpl = tpl;
+            itemtpl     = itemtpl.replace(/\{id\}/g, item.id);
+            itemtpl     = itemtpl.replace(/\{url\}/g, item.url);
+            itemtpl     = itemtpl.replace(/\{preview_url\}/g, item.preview_url);
+            itemtpl     = itemtpl.replace(/\{filepath\}/g, item.filepath);
+            itemtpl     = itemtpl.replace(/\{name\}/g, item.name);
+            html += itemtpl;
+        });
+        $(container_selector).append(html);
+
+    }, extra_params, 1, 'image', app);
+}
+  function openUploadDialog(dialog_title, callback, extra_params, multi, filetype, app) {
+    Wind.css('artDialog');
+    multi      = multi ? 1 : 0;
+    filetype   = filetype ? filetype : 'image';
+    app        = app ? app : GV.APP;
+    var params = '&multi=' + multi + '&filetype=' + filetype + '&app=' + app;
+    Wind.use("artDialog", "iframeTools", function () {
+        art.dialog.open(GV.ROOT + 'user/Asset/webuploader?' + params, {
+            title: dialog_title,
+            id: new Date().getTime(),
+            width: '600px',
+            height: '350px',
+            lock: true,
+            fixed: true,
+            background: "#CCCCCC",
+            opacity: 0,
+            ok: function () {
+                if (typeof callback == 'function') {
+                    var iframewindow = this.iframe.contentWindow;
+                    var files        = iframewindow.get_selected_files();
+                    console.log(files);
+                    if (files && files.length > 0) {
+                        callback.apply(this, [this, files, extra_params]);
+                    } else {
+                        return false;
+                    }
+
+                }
+            },
+            cancel: true
+        });
+    });
+}
+  
+</script>
+</body>
+</html>

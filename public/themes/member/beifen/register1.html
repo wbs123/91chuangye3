@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>注册</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+    <link rel="shortcut icon" href="__STATIC__/member/images/favicon.ico" type="image/x-icon" />
+    <link  rel="stylesheet" type="text/css" href="__STATIC__/member/css/register/register1.css?1=4"/>
+
+
+</head>
+<body>
+<div class="container" id="select_product">
+
+    <div class="topTitle">
+        <h2>企业会员注册</h2>
+    </div>
+    <!--左侧 begin-->
+    <div class="regBox">
+        <ul class="regStep">
+            <li class="past">查找品牌是否存在</li>
+            <li>完善初始资料</li>
+            <li>完成注册</li>
+        </ul>
+        <!--表单内容 begin-->
+        <div class="formContent">
+            <p>
+                <em>品牌/项目名称：</em>
+                <input class="inp1" id="brandname" type="text" placeholder="请输入您的品牌/项目名称" name="brandname" value="" maxlength="50">
+                <span class="tipsBox" id="brandnameSpan"></span>
+            </p>
+            <p class="submitBtn agree">
+                <input id="submitCheckBtn" type="button" name="" value="提交查询">
+            </p>
+                <div id="no_reg" style="display: none;">
+                    <span class="treatyLink">
+                        <span class="tipsBox ok" style="font-size:18px;">可以开始注册了</span>
+                    </span>
+                    <span class="treatyLink">
+                        <a  class="kszc" style="cursor: pointer;">开始注册</a>
+                    </span>
+                </div>
+                <div id="yes_reg" style="display: none;">
+
+                </div>
+                <!--认领-->
+            </p>
+            <p></p>
+        </div>
+        <!--表单内容 end-->
+    </div>
+    <!--左侧 end-->
+    <!--右侧 begin-->
+    <div class="regSide">
+        <p>
+            请先查询品牌名称是否存在，如果存在请找我们来认领您的品牌，如果不存在请赶紧注册开启招商之路！
+        </p>
+    </div>
+    <!--右侧 end-->
+
+    <div class="clr"></div>
+</div>
+
+
+<div class="container" style="display: none;" id="reg_form">
+
+    <div class="topTitle">
+        <h2>企业会员注册</h2>
+    </div>
+    <!--   test='#session.registerStep!=null&&#session.registerStep=="step_2"-->
+
+    <!--左侧 B-->
+    <div class="regBox">
+        <ul class="regStep regStep2">
+            <li class="past">查找品牌是否存在</li>
+            <li class="past">完善初始资料</li>
+            <li>完成注册</li>
+        </ul>
+            <div id="infoBox" class="formContent">
+                <h2><b>证件上传</b></h2>
+                <p>
+                    <em>营业执照：</em>
+                    <button type="button" class="layui-btn" id="btn_zhizhao">上传图片</button>
+                    <input class="layui-upload-file" type="file" accept="undefined" name="img1" id="img1">
+                    <input type="hidden" name="img1" class="hideen_img"  value="">
+                </p><div class="layui-upload-list" style="margin-left: 150px;">
+                    <span style="width: 245px;">
+                        <img class="layui-upload-img" id="img_zhizhao" src="__STATIC__/member/images/zhizhao.png" style="width: 240px;height: 160px;">
+                    </span>
+                <span style="vertical-align: top;float: right;width: 270px;color: #999;">
+                        1、营业执照为清晰彩色原件<br>
+                        2、在有效期内且年检章齐全（当年成立的可无年检章）<br>
+                        3、由中国大陆工商局或市场监督管理局颁发<br>
+                        4、支持jpg、bmp、png、jpeg格式，大小不超过3M
+                    </span>
+            </div>
+                <div style="margin-left: 150px;" id="re_btn_zhizhao"></div>
+                <p></p>
+                <p>
+                    <em>品牌授权书：</em>
+                    <button type="button" class="layui-btn" id="btn_shouquan">上传图片</button>
+                    <input class="layui-upload-file" type="file" accept="undefined" name="img2">
+                    <input type="hidden" name="img2" id="img2" class="hideen_img" value="">
+
+                </p><div class="layui-upload-list" style="margin-left: 150px;">
+                    <span style="width: 245px;">
+                        <img class="layui-upload-img" id="img_shouquan" src="__STATIC__/member/images/shouquan.png" style="width: 240px;height: 160px;">
+                    </span>
+                <span style="vertical-align: top;float: right;width: 270px;color: #999;">
+                        1、下载授权运营书word模板并填写相关信息<br>
+                        2、上传签字及加盖公章的授权运营书图片（合同章、营销章、销售章，任选其一盖章即可生效）<br>
+                        3、支持jpg、bmp、png、jpeg格式，大小不超过3M<br>
+                        <a href="__STATIC__/member/files/shouquanshu.docx" style="color: blue;">立即下载</a>
+                    </span>
+            </div>
+                <div style="margin-left: 150px;" id="re_btn_shouquan"></div>
+                <p></p>
+                <p>
+                    <em>申请人身份证：</em>
+                    <button type="button" class="layui-btn" id="btn_shenfenzheng">上传图片</button>
+                    <input class="layui-upload-file" type="file" accept="undefined" name="img1">
+                    <input type="hidden" name="img3" id="img3" class="hideen_img" value="">
+                </p><div class="layui-upload-list" style="margin-left: 150px;">
+                    <span style="width: 245px;">
+                        <img class="layui-upload-img" id="img_shenfenzheng" src="__STATIC__/member/images/shenfenzheng.png" style="width: 240px;height: 160px;">
+                    </span>
+                <span style="vertical-align: top;float: right;width: 270px;color: #999;">
+                        1、证件信息真实有效,文字清晰可识别，无遮挡<br>
+                        2、证件必须保持方向正确<br>
+                        3、支持jpg、bmp、png、jpeg格式，大小不超过3M
+                    </span>
+            </div>
+                <div style="margin-left: 150px;" id="re_btn_shenfenzheng"></div>
+                <p></p>
+
+
+
+
+                <h2><b>企业资料</b></h2>
+                <p>
+                    <em><span>*</span>公司名称（中文）：</em>
+                    <input type="text" onfocus="company_zh_focus();return false;" onblur="company_zh_blur();return false;" value="" maxlength="20" name="companyForm.companyCname" id="company_zh" class="inp1">
+                    <span class="tipsBox">请用中文填写企业在工商局注册的全称</span>
+                </p>
+                <p>
+                    <em>企业类型：</em>
+                    <select style="width:191px;" id="enterprise_type" name="companyForm.companyKind">
+                        <option value="0">请选择</option>
+                        <option value="145">外商独资(欧美企业)</option>
+                        <option value="146">外商独资(非欧美企业)</option>
+                        <option value="147">合资/合作(欧美企业)</option>
+                        <option value="148">合资/合作(非欧美企业)</option>
+                        <option value="149">国营企业/上市公司</option>
+                        <option value="150">民营/私营企业/非上市公司</option>
+                        <option value="151">外企代表处</option>
+                        <option value="152">其它</option>
+                    </select>
+                    <span class="tipsBox">选择合适您的企业的企业性质</span>
+                </p>
+                <p>
+                    <em>注册资金万：</em>
+                    <input type="text" onfocus="register_capital_focus();return false;" onblur="register_capital_blur();return false;" value="" maxlength="20" name="companyForm.companyRegmoney" id="register_capital" class="inp4">
+                    <span class="tipsBox"></span>
+                </p>
+                <p>
+                    <em>企业成立年份：</em>
+                    <input type="text" value="" maxlength="4" name="companyForm.companyBuilddate" id="build_year" class="inp4" onfocus="build_year_focus();return false;" onblur="build_year_blur();return false;">
+
+                    <span class="tipsBox">请输入成立年份</span>
+                </p>
+                <p>
+                    <em>公司所在地：</em>
+
+                    <select style="width:80px;" onchange="change(1,0);" id="province" name="companyForm.companyProvince"><option value="省/市">省/市</option><option value="北京">北京</option><option value="天津">天津</option><option value="河北">河北</option><option value="山西">山西</option><option value="内蒙古">内蒙古</option><option value="辽宁">辽宁</option><option value="吉林">吉林</option><option value="黑龙江">黑龙江</option><option value="上海">上海</option><option value="江苏">江苏</option><option value="浙江">浙江</option><option value="安徽">安徽</option><option value="福建">福建</option><option value="江西">江西</option><option value="山东">山东</option><option value="河南">河南</option><option value="湖北">湖北</option><option value="湖南">湖南</option><option value="广东">广东</option><option value="广西">广西</option><option value="海南">海南</option><option value="重庆">重庆</option><option value="四川">四川</option><option value="贵州">贵州</option><option value="云南">云南</option><option value="西藏">西藏</option><option value="陕西">陕西</option><option value="甘肃">甘肃</option><option value="青海">青海</option><option value="宁夏">宁夏</option><option value="新疆">新疆</option><option value="台湾">台湾</option><option value="香港">香港</option><option value="澳门">澳门</option><option value="海外">海外</option></select>
+                    <select style="width:80px;" onchange="change(2,0);" id="city" name="companyForm.companyCity"><option value="地/州">地/州</option></select>
+                    <select style="width:93px;" id="area" name="companyForm.companyCounty"><option value="区/县">区/县</option></select>
+                    <span class="tipsBox">请正确选择公司所在地</span>
+                </p>
+                <p>
+                    <em>详细地址：</em>
+                    <input type="text" onfocus="addressfocus();return false" onblur="addressblur();return false;" maxlength="30" value="" name="companyForm.companyAddress" id="address" class="inp1">
+                    <span class="tipsBox">请填写贵公司详细地址</span>
+                </p>
+                <p>
+                    <em>公司网址：</em>
+                    <input type="text" onfocus="website_focus();return false" onblur="website_blur();return false;" maxlength="30" value="" name="companyForm.companyWww" id="website" class="inp1">
+                    <span class="tipsBox">格式如:https://www.qj.com.cn</span>
+                </p>
+
+                <h2><b>联系方式</b></h2>
+                <p>
+                    <em><span>*</span>联系人：</em>
+                    <input type="text" onfocus="contactsfocus();return false" onblur="contactsblur();return false;" maxlength="20" value="" name="companyForm.companyLinkman" id="contacts" class="inp1">
+                    <span class="tipsBox">请填写您的真实姓名，方便加盟者与您取得联系</span>
+                </p>
+                <p>
+                    <em><span>*</span>联系电话：</em>
+                    <input type="text" onfocus="contacts_phone_focus();return false;" onblur="contacts_phone_blur();return false;" maxlength="30" value="" name="companyForm.companyTel" id="contacts_phone" class="inp1">
+                    <span class="tipsBox">格式如010-88888888</span>
+                </p>
+<!--                <p>-->
+<!--                    <em>联系手机：</em>-->
+<!--                    <input type="text" onfocus="contacts_mobile_focus();return false;" onblur="contacts_mobile_blur();return false;" maxlength="11" value="" name="companyForm.companyMobile" id="contacts_mobile" class="inp1">-->
+<!--                    <span class="tipsBox">格式参照：13800138000</span>-->
+<!--                </p>-->
+                <p>
+                    <em>电子邮箱：</em>
+                    <input type="text" autocomplete="off" onfocus="emailfocus();return false;" onblur="emailblur();return false;" maxlength="50" value="" name="userForm.userEmail" id="email" class="inp1">
+                    <span class="tipsBox">请准确填写邮箱地址，以便日后查询注册信息、密码找回</span>
+                </p>
+                <p>
+                    <em>QQ：</em>
+                    <input type="text" autocomplete="off" onfocus="contacts_qq_focus();return false;" onblur="contacts_qq_blur();return false;" maxlength="50" value="" name="companyForm.companyQq" id="contacts_qq" class="inp1">
+                    <span class="tipsBox">请准确填写QQ号码</span>
+                </p>
+                <h2><b>品牌/项目资料</b></h2>
+                <p>
+                    <em><span>*</span>品牌名称（中文）：</em>
+                    <input type="text" onfocus="brand_zh_focus();return false;" onblur="brand_zh_blur();return false;" maxlength="10" value="123123sdfsd" name="brandForm.brandCname" id="brand_zh" class="inp1">
+                    <span class="tipsBox">请输入品牌中文名称</span>
+                </p>
+                <p>
+                    <em>品牌名称（英文）：</em>
+                    <input type="text" onfocus="brand_en_focus();return false;" onblur="brand_en_blur();return false;" maxlength="50" value="" name="brandForm.brandEname" id="brand_en" class="inp1">
+                    <span class="tipsBox"></span>
+                </p>
+                <p>
+                    <em><span>*</span>所属行业：</em>
+
+                    <select name="brandForm.brandBigsortid" id="industry_id">
+                        <option value="0">请选择类别</option>
+
+                        <option value="262">金融</option>
+
+                        <option value="4">餐饮</option>
+
+                        <option value="3">美容</option>
+
+                        <option value="1">干洗</option>
+
+                        <option value="5">服装</option>
+
+                        <option value="6">服务</option>
+
+                        <option value="7">教育</option>
+
+                        <option value="8">茶叶</option>
+
+                        <option value="9">休闲</option>
+
+                        <option value="10">家居</option>
+
+                        <option value="11">零售</option>
+
+                        <option value="12">医药</option>
+
+                        <option value="13">宠物店</option>
+
+                        <option value="14">超市</option>
+
+                        <option value="15">汽车</option>
+
+                        <option value="16">网络</option>
+
+                        <option value="17">珠宝</option>
+
+                        <option value="18">环保</option>
+
+                        <option value="19">农业</option>
+
+                        <option value="20">饰品</option>
+
+                        <option value="21">孕婴童</option>
+
+                        <option value="22">健身</option>
+
+                        <option value="174">酒店</option>
+
+                        <option value="175">建材</option>
+
+                        <option value="176">家纺</option>
+
+                        <option value="196">酒水</option>
+
+                        <option value="209">箱包</option>
+
+                        <option value="317">微商</option>
+
+                        <option value="370">新奇特</option>
+
+                        <option value="23">其他</option>
+
+                    </select>
+
+                    <span class="tipsBox">请选择项目所属行业</span>
+                </p>
+                <p>
+                    <em>品牌发源地：</em>
+                    <input type="text" onfocus="brand_cradle_focus();return false;" onblur="brand_cradle_blur();return false;" maxlength="20" value="" name="brandForm.brandOrigin" id="brand_cradle" class="inp1">
+                    <span class="tipsBox">品牌发源地为必填项</span>
+                </p>
+                <p>
+                    <em>品牌/项目投资额度：</em>
+
+                    <select style="width:191px;" id="brand_suminvest" name="brandForm.brandSuminvest">
+                        <option value="">选择基本投资额</option>
+                        <option value="0-1">0到1万</option>
+                        <option value="1-5">1到5万</option>
+                        <option value="5-10">5到10万</option>
+                        <option value="10-20">10到20万</option>
+                        <option value="20-30">20到30万</option>
+                        <option value="30-50">30到50万</option>
+                        <option value="50-100">50到100万</option>
+                        <option value="100-200">100到200万</option>
+                        <option value="200-300">200到300万</option>
+                        <option value="300-500">300到500万</option>
+                        <option value="500-999999">500万以上</option>
+                    </select>
+
+                    <span class="tipsBox">请选择投资金额</span>
+                </p>
+
+                <p>
+                    <em>发展模式：</em>
+
+                    <label id="fazhan_mode_label">
+
+                    <label><input type="checkbox" class="fazhan_ms" value="区域开发" name="brandForm.brandDeveloptype">区域开发</label>
+
+                    <label><input type="checkbox" class="fazhan_ms" value="二级特许" name="brandForm.brandDeveloptype">二级特许</label>
+
+                    <span class="tipsBox">选择发展模式，至少选择一项</span>
+
+                </p>
+
+                <p>
+                    <em>经营模式：</em>
+
+                    <label id="jinying_mode_label"><input type="checkbox" class="jinying_ms" value="直营" name="brandForm.brandRuntype">直营</label>
+
+                    <label><input type="checkbox" class="jinying_ms" value="特许" name="brandForm.brandRuntype">特许</label>
+
+                    <label><input type="checkbox" class="jinying_ms" value="合作" name="brandForm.brandRuntype">合作</label>
+
+                    <label><input type="checkbox" class="jinying_ms" value="代理" name="brandForm.brandRuntype">代理</label>
+
+                    <label><input type="checkbox" class="jinying_ms" value="混合" name="brandForm.brandRuntype">混合</label>
+
+                    <label><input type="checkbox" class="jinying_ms" value="连锁" name="brandForm.brandRuntype">连锁</label>
+
+                    <span class="tipsBox">选择发展模式，至少选择一项</span>
+                </p>
+
+                <p>
+                    <em>直营店总数：</em>
+                    <input type="text" onfocus="zhixiaodianfocus();return false;" onblur="zhixiaodianblur();return false;" value="" maxlength="4" name="brandForm.brandDirectshopquts" id="zhixiaodian" class="inp1">
+                    <span class="tipsBox">填写直营店总数</span>
+                </p>
+                <p>
+                    <em>加盟/代理店总数：</em>
+                    <input type="text" onfocus="jiamengdianfocus();return false;" onblur="jiamengdianblur();return false;" value="" maxlength="6" name="brandForm.brandJoinshopquts" id="jiamengdian" class="inp1">
+                    <span class="tipsBox">填写加盟/代理店总数</span>
+                </p>
+
+                <p>
+                    <em>经营产品/提供服务：</em>
+                    <input type="text" onfocus="productsfocus();return false;" onblur="productsblur();return false;" maxlength="100" value="" name="brandForm.brandMainproduct" id="products" class="inp1">
+                    <span class="tipsBox"></span>
+                </p>
+
+                <h2><b>会员登录名和密码</b></h2>
+                <p>
+                    <em><span>*</span>用户手机号：</em>
+                    <input type="text"  maxlength="11" value="" name="mobile" id="mobile" class="inp1">
+                    <span class="tipsBox">用户名长度大于4位，小于20位，一旦注册成功，不可修改</span>
+                </p>
+                <p>
+                    <em><span>*</span>验证码：</em>
+                    <input type="text"  value="" name="certCode" id="checkcode" class="inp2">
+                    <button  type="button" class="send_sms_btn" style="width: 84px;height: 27px;margin-top: 3px;">发送验证码</button>
+<!--                    <captcha height="22" width="84" font-size="12" length="4" id="captcha2"/>-->
+                    <span class="tipsBox">请填验证码</span>
+                </p>
+                <p>
+                    <em><span>*</span>密码：</em>
+                    <input type="password" onfocus="uPwdfocus();return false;" onblur="uPwdblur();return false;" maxlength="20" value="" name="userForm.userPassword" id="uPwd" class="inp1">
+                    <span class="tipsBox">6~20个字符，建议您使用大小写字母与数字的组合。</span>
+                </p>
+                <p>
+                    <em><span>*</span>重复密码：</em>
+                    <input type="password" onfocus="checkPwdfocus();return false;" onblur="checkPwdblur();return false;" value="" maxlength="20" name="company_rpwd" id="checkPwd" class="inp1">
+                    <span class="tipsBox">重复输入一次上面的密码</span>
+                </p>
+                <p class="buttonBox">
+                    <em></em>
+                    <input type="submit" class="agreeSubmit_btn" value="" id="checkRegister">
+                    <a class="tiaokuanLink" target="_blank" href="https://www.qj.com.cn/reg/terms.jsp">点击阅读前景加盟网服务条款</a>
+                </p>
+                <span id="id_error_msg" style="display: none;margin-left: 32%;font-size: 15px;" class="tipsBox tipsBox error"></span>
+                <div id="email" class="mailListBox"></div><div id="email" class="mailListBox"></div></div>
+    </div>
+    <!--左侧 E-->
+
+    <!--右侧 B-->
+    <div class="regSide">
+        <p>请认真、仔细的填写以下信息，严肃的商业信息有助于获得客户的信任，结交潜在客户，获得更多商业机会！另外，信息的完整度将会影响到您的项目在TOP排行榜中的排名。</p>
+    </div>
+    <!--右侧 E-->
+
+
+
+
+    <div class="clr"></div>
+</div>
+<script type="text/javascript" src="__STATIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__STATIC__/js/layer/layer.js"></script>
+<script>
+    var product_select_url  = '/madmin/regSelectProduct';
+    var upload_shop_img_url = '/madmin/uploadShopImg';
+    var register_url        = '/madmin/register';
+    var madmin_login_url     = '/madmin/login';
+    var reg_send_sms_url    = '/madmin/sendSmsCode';
+
+    $(".send_sms_btn").click(function(){
+        var mobile = $.trim($("#mobile").val());
+        if(mobile.length<11 || isPhoneNo(mobile) == false ){
+            layer.msg('手机号格式错误!',{time:1000});
+            return false;
+        }
+
+        $.post(reg_send_sms_url,{'phone':mobile},function(res){
+            if(res.code == 200 ){
+                layer.msg(res.msg,{time:1000});
+                settime($(".send_sms_btn"));
+            }else{
+                layer.msg(res.msg,{time:1000});
+            }
+        },"json");
+    });
+
+    $(".kszc").click(function () {
+        $("#select_product").hide();
+        $("#reg_form").show();
+    })
+    $("#submitCheckBtn").click(function () {
+        var productName = $.trim($("#brandname").val());
+        if(productName.length == 0 ){
+            layer.msg('请输入项目或品牌名称',{time:1500});
+            return false;
+        }
+        $.post(product_select_url,{'name':productName},function (res) {
+            if(res.code == 200 ){
+                if(res.data.length > 0 ){
+                    $("#yes_reg").empty();
+                    $("#yes_reg").append('<span class="treatyLink"><span class="tipsBox default" style="font-size:18px;">您查询品牌已经存在</span></span>');
+                    $("#yes_reg").show();
+                    $("#no_reg").hide();
+                    $.each(res.data,function(k,v){
+                        var str = '<span class="treatyLink"><a href="'+v.url+'" target="_blank">'+v.title+'</a><a href="tencent://message/?uin=87923608&amp;Site=前景加盟网&amp;Menu=yes" class="rl">认领</a></span>';
+                        $("#yes_reg").append(str);
+                    })
+                }else{
+                    $("#yes_reg").empty();
+                    $("#no_reg").show();
+                    $("#ye_reg").hide();
+                }
+            }else{
+                layer.msg(res.msg,{time:1500});
+            }
+        },"json")
+    })
+    
+    $("#btn_zhizhao,#btn_shouquan,#btn_shenfenzheng").click(function () {
+        $(this).next().click();
+    })
+    $(".layui-upload-file").change(function(){
+        var file = this.files[0];
+        var file_this = $(this);
+        console.log(file_this);
+        console.log(file_this.parent().find('.hideen_img').val());
+        if(file_this.val() != ''){
+            var imgForm = new FormData();
+            imgForm.append('file', file);
+            var reader = new FileReader();
+            reader.readAsDataURL(file);//调用自带方法进行转换
+            reader.onload = function(e) {
+                $.post(upload_shop_img_url,{
+                    'img'       : this.result,
+                    'old_img'   : file_this.parent().find('.hideen_img').val(),
+                },function (res) {
+                    if(res.code == 200 ){
+                        file_this.parent().next().find('img').attr('src',res.data.img_url);
+                        file_this.parent().find('.hideen_img').val(res.data.img_url);
+                    }else{
+                        layer.msg('上传失败',{time:1500});
+                    }
+                },"json")
+            }
+        }
+    });
+    var countdown=60;
+    function settime(obj) {
+        if (countdown == 0) {
+            obj.attr("disabled",false);
+            obj.text('发送验证码');
+            countdown = 60;
+            return;
+        } else {
+            obj.attr("disabled", true);
+            obj.text("重新发送(" + countdown + ")");
+            countdown--;
+        }
+        setTimeout(function() {
+                settime(obj) }
+            ,1000)
+    }
+    function isPhoneNo(phone) {
+        var pattern = /^1[34578]\d{9}$/;
+        return pattern.test(phone);
+    }
+
+</script>
+</body>
+</html>

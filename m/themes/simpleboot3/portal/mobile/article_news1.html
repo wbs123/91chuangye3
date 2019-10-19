@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{$data['post_title']}_91创业网</title>
+    <link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon" />
+    <meta name="keywords" content="{$data['post_keywords']}" />
+    <meta name="description" content="{$data['post_excerpt']}" />
+    <link rel="stylesheet" href="__TMPL__/public/mobile/xin/css/common.css">
+    <script src="__TMPL__/public/mobile/xin/lib/js/jquery.js"></script>
+    <script src="__TMPL__/public/mobile/xin/lib/js/jquery.lazyload.js"></script>
+    <script src="__TMPL__/public/mobile/xin/js/common.js"></script>
+    <script src="__TMPL__/public/mobile/xin/js/projectLibrary.js"></script>
+    <script src="__TMPL__/public/mobile/xin/lib/js/layer.js"></script>
+    <link rel="stylesheet" href="__TMPL__/public/mobile/xin/css/information-details.css">
+    <script src="__TMPL__/public/mobile/xin/js/information-details.js"></script>
+	<meta name="applicable-device" content="mobile">
+	<link rel="canonical" href="{$seo_url}">
+</head>
+<body>
+    <header class="header second active">
+        <div class="left">
+            <div class="return">
+                <a href="javascript:history.go(-1);">
+                    <img src="__TMPL__/public/mobile/xin/images/c27e82981d1f8cf843cb80c467ca4d4d.png"
+                       >
+                </a>
+            </div>
+        </div>
+        <div class="title">{$name}</div>
+        <div class="search">
+            <form action="{:cmf_url('portal/plus/index')}" method="post">
+                <input placeholder="感兴趣的品牌项目" class="search-input" type="text" name="q">
+                <span class="active"><img
+                        src="__TMPL__/public/mobile/xin/images/47543d8d4603d7ca3d5785ec94c142ad.png"
+                       ></span>
+                <span><img
+                        src="__TMPL__/public/mobile/xin/images/24e35ae249e906015475e3040991b772.png"
+                       ></span>
+                <input class="submit-input" type="submit">
+            </form>
+        </div>
+        <div class="list-iconfont">
+            <a href="/nav/">
+                <img src="__TMPL__/public/mobile/xin/images/4f95773fc89abd85c3d3fa5fda069cb4.png"
+                   >
+            </a>
+        </div>
+    </header>
+    <section class="addfresmbread">
+        当前位置:&nbsp;
+        <a href="/">91创业网</a>>
+        <volist name="array_reverse" id="arr">
+            <a href="{:cmf_url('portal/common/index',['classname'=>$arr['path']],'')}/" class="asd">{$arr.name}</a> &gt;
+        </volist>
+        <a href="javascript:;">{$data['post_title']}</a>
+    </section>
+    <?php if(!empty($xiangmu)){?>
+    <section class="addnewcard">
+        <div class="img">
+            <a href="{:cmf_url('portal/common/index',['id'=>$xiangmu['aid'],'classname'=>$xiangmu['path']])}"><img src="{$xiangmu.logo|checkImgurl=###}" alt="{$xiangmu.title}"></a>
+        </div>
+        <div class="text">
+            <div class="b">
+                <div class="left">
+                    <span> <a href="{:cmf_url('portal/common/index',['id'=>$xiangmu['aid'],'classname'=>$xiangmu['path']])}">{$xiangmu.title}</a></span>
+                    <span>
+                        ¥{$xiangmu.invested}
+                        <a href="{:cmf_url('portal/common/index',['classname'=>$xiangmu['path']],'')}/">{$xiangmu.catename}</a>
+                    </span>
+                </div>
+                <div class="righ">
+                    <a href="{:cmf_url('portal/common/index',['id'=>$xiangmu['aid'],'classname'=>$xiangmu['path']])}">申请加盟</a>
+                </div>
+            </div>
+            <div class="dec">{$xiangmu.companyname}</div>
+        </div>
+    </section>
+    <?php }?>
+    <section class="contentdetail">
+        <div class="title">{$data['post_title']}</div>
+        <div class="other">
+            <span class="timer">{$data.create_time|date='Y-m-d',###}</span>
+            <span class="ly">来源:&nbsp;{$data.author}</span>
+            <span class="eg">{$data.click}</span>
+        </div>
+        <div class="con">
+            {$data.post_content|htmlspecialchars_decode=###|domain=###}
+        </div>
+        <div class="btnmore">
+            <?php if($lick4){?>
+                <a href="{:cmf_url('portal/common/index',['classname'=>$lick4['class'],'id'=>$lick4['id']])}">上一篇&nbsp;:&nbsp;{$lick4['post_title']}</a>
+            <?php }else{?>
+                <a href="javascript:;">上一篇&nbsp;:&nbsp;暂无资讯</a>
+            <?php }?>
+            <?php if($lick5){?>
+                <a href="{:cmf_url('portal/common/index',['classname'=>$lick5['class'],'id'=>$lick5['id']])}">下一篇&nbsp;:&nbsp;{$lick5['post_title']}</a>
+            <?php }else{?>
+            <a href="javascript:;">下一篇&nbsp;:&nbsp;暂无资讯</a>
+            <?php }?>
+        </div>
+    </section>
+    <section class="item-section item_zx">
+        <div class="common_tit">{$form}</div>
+        <div class="cont">
+            <ul>
+                <li>
+                    <span>姓名</span>
+                    <div class="p">
+                        <input class="inpt" type="text" id="Name2" name="name" placeholder="请输入您的姓名" maxlength="11"
+                            value="">
+                    </div>
+                </li>
+                <li>
+                    <span>电话</span>
+                    <div class="p">
+                        <input class="inpt" type="text" id="Tel2" name="tel" placeholder="请输入您的常用手机号" maxlength="11"
+                            value="">
+                    </div>
+                </li>
+                <li class="area">
+                    <span>留言</span>
+                    <div class="p">
+                        <textarea class="textarea" name="msg" id="msg2" cols="30" rows="10"
+                            placeholder="请输入你想咨询的内容"></textarea>
+                            <input type="hidden" name="NewsXm" id="NewsXm" value="news">
+                    </div>
+                </li>
+            </ul>
+            <input type="hidden" name="urls" id="urls" value="<?php echo $_SERVER['REQUEST_URI'];?>">
+            <div class="agree on"><i class="icon-circle"></i>我已阅读并同意 <a href="{:cmf_url('portal/common/index',['classname'=>'explain'],'')}/" rel="nofollow">《91创业网服务条款》</a>
+            </div>
+            <div class="btn-box"><input type="submit" name="" onclick="myform2()" value="提交咨询" class="btn"></div>
+        </div>
+    </section>
+    <section class="item-section item_news">
+        <div class="common_tit">{$news}</div>
+        <div class="cont">
+            <ul class="m-list">
+                <volist name="lick2" id="lick2">
+                    <li><a href="{:cmf_url('portal/common/index',['classname'=>$lick2['class'],'id'=>$lick2['id']])}">{$lick2.post_title}</a>{$lick2.published_time|date='Y-m-d',###}</li>
+                </volist>
+            </ul>
+        </div>
+    </section>
+    <section class="independent">
+        <div class="common_tit">猜你喜欢</div>
+        <ul>
+            <volist name="like" id="like">
+                <li>
+                <div class="followImg" href="{:cmf_url('portal/common/index',['classname'=>$like['class'],'id'=>$like['aid']])}">
+                    <a href="{:cmf_url('portal/common/index',['classname'=>$like['class'],'id'=>$like['aid']])}" rel="nofollow">
+                            <img class="lazy" src="__TMPL__/public/mobile/xin/images/44feb2a189bb6a55ade0a5349fcccfb2.jpg"
+                            data-original="{$like.litpic|checkImgurl=###}" alt="{$like.title}" style="">
+                    </a>
+                    <div class="text"><a href="{:cmf_url('portal/common/index',['classname'=>$like['class'],'id'=>$like['aid']])}">{$like.title}</a></div>
+                </div>
+            </li>
+            </volist>
+        </ul>
+    </section>
+    <div class="commonStatement">
+        <div class="bg2">
+            <p>Copyright © 91创业网</p>
+            <p>全国免费服务热线：400-809-0091</p>
+            <p>友情提示：<span>投资有风险，咨询请细致</span>，以便成功加盟。</p>
+            <div class="addnewfooter">
+                <a href="/guanyuwomen/" rel="nofollow">关于我们</a>
+                <a href="/lianxiwomen/" rel="nofollow">联系我们</a>
+                <a href="/mianzeshengming/" rel="nofollow">免责声明</a>
+                <a href="/tousushanchu/" rel="nofollow">投诉删除</a>
+                <a href="/areas/">地区站</a>
+            </div>
+        </div>
+    </div>
+    <?php if(!empty($xiangmu)){?>
+    <section class="footer-xm-jm">
+        <div class="img">
+            <a href="{:cmf_url('portal/common/index',['id'=>$xiangmu['aid'],'classname'=>$xiangmu['path']])}"><img src="{$xiangmu.logo|checkImgurl=###}" alt="{$xiangmu.title}"></a>
+        </div>
+        <div class="text">
+            <span><a href="{:cmf_url('portal/common/index',['id'=>$xiangmu['aid'],'classname'=>$xiangmu['path']])}">{$xiangmu.title}</a></span>
+            <span>¥{$xiangmu.invested}</span>
+        </div>
+        <div class="button">
+            <a href="{:cmf_url('portal/common/index',['id'=>$xiangmu['aid'],'classname'=>$xiangmu['path']])}">申请加盟</a>
+        </div>
+    </section>
+<?php }?>
+</body>
+<include file="mobile/other"/>
+</html>
+<script>
+    function myform2() {
+        var username=$("#Name2").val();
+        var tel=$("#Tel2").val();
+        var msg=$("#msg2").val();
+        var urls = $("#urls").val();
+        var NewsXm = $('#NewsXm').val();
+        var cn=/^[\u0391-\uFFE5]+$/;
+        var mobile = /^1[3|4|5|6|7|8]\d{9}$/ , phone = /^0\d{2,3}-?\d{7,8}$/;
+        var http=/^http[s]?:\/\/([\w-]+\.)+[\w-]+([\w-./?%&=]*)?$/;
+        if(username=="" || username=="请输入姓名" || (username != "" && !cn.test(username)))
+        {
+            layer.msg('请输入您的中文姓名');
+            $("#Name2").focus();
+            return false;
+        }else if(username.length>5){
+            layer.msg('请控制在5个字以内！');
+            $("#Name2").focus();
+            return false;
+        }else if (tel=="" || (tel != "" && !mobile.test(tel) && !phone.test(tel))) {
+            layer.msg('请输入正确有效的手机号码');
+            $("#Tel2").focus();
+            return false;
+        }else if(msg == "" || (http.test(msg))){
+            layer.msg('请输入中文问题！');
+            $("#msg2").focus();
+            return false;
+        }else{
+            $.ajax({
+                type: "POST",
+                url: "{:cmf_url('portal/xm/liuyan2')}",
+                data: {name:username,tel:tel,msg:msg,urls:urls,NewsXm:NewsXm},
+                dataType: "json",
+                success: function (msg) {
+                    if(msg.data == "1"){
+                        layer.msg('信息提交成功！');
+                        setTimeout(function(){
+                            layer.closeAll();
+                        },1000)
+                    }else if(msg.data == "3"){
+                        layer.msg('今天已经提交过了哦！');
+                    }
+                    else{
+                        layer.msg('信息提交失败，请稍后再试！');
+                    }
+                }
+            });
+        }
+    };
+</script>

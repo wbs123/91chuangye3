@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title><?php echo $seo_title;?></title>
+    <link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon"/>
+    <meta name="keywords" content="<?php echo $seo_keywords;?>">
+    <meta name="description" content="<?php echo $seo_description;?>">
+    <script src="__TMPL__/public/mobile/xin/lib/js/better.scroll.js"></script>
+    <link href="__TMPL__/public/mobile/xin/lib/css/swiper.css" rel="stylesheet">
+    <script src="__TMPL__/public/mobile/xin/lib/js/jquery.js"></script>
+    <script src="__TMPL__/public/mobile/xin/lib/js/jquery.lazyload.js"></script>
+    <script src="__TMPL__/public/mobile/xin/lib/js/swiper.js"></script>
+    <script src="__TMPL__/public/mobile/xin/js/common.js"></script>
+    <script src="__TMPL__/public/mobile/xin/js/projectPage.js"></script>
+    <link href="__TMPL__/public/mobile/xin/css/common.css" rel="stylesheet">
+    <link href="__TMPL__/public/mobile/xin/css/projectPage.css" rel="stylesheet">
+	<meta name="applicable-device" content="mobile">
+	<link rel="canonical" href="{$seo_url}">
+</head>
+<body>
+<header class="header  active">
+    <div class="left">
+        <div class="logo"><a href="/">
+            <img src="__TMPL__/public/mobile/xin/images/96b6ab37f90c0223e579f5e59455923f.png"> </a>
+        </div>
+        <div class="return"><a href="javascript:history.go(-1);">
+            <img src="__TMPL__/public/mobile/xin/images/c27e82981d1f8cf843cb80c467ca4d4d.png"> </a>
+        </div>
+    </div>
+    <div class="title">项目库</div>
+    <include file="mobile/search_all"/>
+</header>
+<footer class="footer">
+    <ul>
+        <li class=""><a href="/"> <img src="__TMPL__/public/mobile/xin/images/9004914b98fa09eb39f3719a94ec8a94.png"
+                                      > <img class="active"
+                                                    src="__TMPL__/public/mobile/xin/images/a2024139e8d4ab4fae68087c6ee8c030.png"
+                                                   > <span>首页</span> </a></li>
+        <li class="active"><h1><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/"> <img
+                src="__TMPL__/public/mobile/xin/images/97e9f713f8859d9cab0422fa3ed61396.png"> <img class="active"
+                                                                                                          src="__TMPL__/public/mobile/xin/images/7f9f322c2462b2501a79e548b0ef0969.png"
+                                                                                                         > <span>项目库</span>
+        </a></h1></li>
+        <li class=""><a href="{:cmf_url('portal/common/index',['classname'=>'top'],'')}/"> <img
+                src="__TMPL__/public/mobile/xin/images/30132e0d9549c2976eee067b8b9ffe3a.png"> <img class="active"
+                                                                                                          src="__TMPL__/public/mobile/xin/images/30132e0d9549c2976eee067b8b9ffe3a.png"
+                                                                                                         > <span>排行榜</span>
+        </a></li>
+        <li class=""><a href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/"> <img
+                src="__TMPL__/public/mobile/xin/images/e6b23ae996955e5be242ffdca92beefe.png"> <img class="active"
+                                                                                                          src="__TMPL__/public/mobile/xin/images/e6b23ae996955e5be242ffdca92beefe.png"
+                                                                                                         > <span>资讯</span>
+        </a></li>
+    </ul>
+</footer> 
+<div class="classification">
+    <div class="tab">
+        <ul>
+            <empty name="$show.classname">
+                    <li><span>全部分类</span><img src="__TMPL__/public/mobile/xin/images/8e17de9a9354f9c53f4513dccd60ad8a.png"></li>
+                <else/>
+	                <li class="active">
+	                <span>{$show.classname}</span>
+	                <img src="__TMPL__/public/mobile/xin/images/8e17de9a9354f9c53f4513dccd60ad8a.png">
+	                </li>
+            </empty>
+            <empty name="$show.price">
+                	<li><span>投资金额</span><img src="__TMPL__/public/mobile/xin/images/8e17de9a9354f9c53f4513dccd60ad8a.png"></li>
+                <else/>
+	                <li class="active">
+	                    <span>{$show.price}</span>
+	                    <img src="__TMPL__/public/mobile/xin/images/8e17de9a9354f9c53f4513dccd60ad8a.png">
+	                </li>
+            </empty>
+            <empty name="$show.address">
+                	<li><span>地区</span><img src="__TMPL__/public/mobile/xin/images/8e17de9a9354f9c53f4513dccd60ad8a.png"></li>
+                <else/>
+	                <li class="active">
+	                    <span>{$show.address}</span>
+	                    <img src="__TMPL__/public/mobile/xin/images/8e17de9a9354f9c53f4513dccd60ad8a.png">
+	                </li>
+            </empty>
+        </ul>
+    </div>
+    <div class="ponglist"> 
+        <div class="content">
+            <div class="parenet">
+                <div class="contentTab">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <volist name="catess" id="catess" key="k">
+                                <div
+                                        class="swiper-slide <if condition='$catess.id eq $cateid'>active<elseif condition='$catess.id eq $cateparentid'>active</if>">
+                                    <div attr="{$catess.id}" class="type">{$catess.name}</div>
+                                </div>
+                            </volist>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="block">
+                        <div class="wrapper">
+                            <ul class="cont leftList">
+                                <li <?php if($param['classname'] == 'canyin'){?>class="active"<?php }?>>
+                                    <h1>
+                                        <a href="{:cmf_url('portal/common/index',['classname'=>'canyin'],'')}/"><span>全部</span> </a>
+                                    </h1>
+                                </li>
+                                <volist name="cated" id="cated">
+                                    <li <if condition="$cated['path'] eq $param.classname"> class="active"</if>>
+                                        <a href="{:cmf_url('portal/common/index',['classname'=>$cated['path']],'')}/" attr="{$cated.id}">
+                                            <span><?php echo str_replace('加盟','',$cated['name']);?></span>
+                                        </a>
+                                    </li>
+                                </volist>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="investment">
+            <ul class="wrapper">
+                <li><a href="{:cmf_url('portal/common/index',array('classname'=>$param.classname),'')}/"
+                <empty name="$param.num">class="active"</empty>>全部</a></li>
+                <empty name="$param.address">
+                    <li>
+                        <a
+                                href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'num'=>'0-1'),'')}/" data-type="0-1"  name="num" <if condition="$param.num eq '0-1'"> class="active"</if>>
+                            0-1万
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                                href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'num'=>'1-5'),'')}/"
+                           data-type="1-5" name="num"
+                        <if condition="$param.num eq '1-5'"> class="active"</if>
+                        >1-5万</a></li>
+                    <li>
+                        <a
+                                href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'num'=>'5-10'),'')}/"
+                           data-type="5-10" name="num"
+                        <if condition="$param.num eq '5-10'"> class="active"</if>
+                        >5-10万</a></li>
+                    <li>
+                        <a
+                                href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'num'=>'10-20'),'')}/"
+                           data-type="10-20" name="num"
+                        <if condition="$param.num eq '10-20'"> class="active"</if>
+                        >10-20万</a></li>
+                    <li>
+                        <a
+                                href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'num'=>'20-50'),'')}/" <if condition="$param.num eq '20-50'"> class="active"</if>> 20-50万</a></li>
+                    <li>
+                        <a href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'num'=>'100-200'),'')}/"
+                           data-type="100" name="num"
+                        <if condition="$param.num eq '100-200'"> class="active"</if>
+                        >100-200万</a></li>
+                    <else/>
+                        <li>
+                            <a href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$param.address,'num'=>'0-1'),'')}/"
+                               data-type="0-1" name="num"
+                            <if condition="$param.num eq '0-1'"> class="active"</if>>0-1万</a>
+                        </li>
+                        <li>
+                            <a href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$param.address,'num'=>'1-5'),'')}/"
+                               data-type="1-5" name="num"
+                            <if condition="$param.num eq '1-5'"> class="active"</if>>1-5万</a>
+                        </li>
+                        <li>
+                            <a href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$param.address,'num'=>'5-10'),'')}/"
+                               data-type="5-10" name="num"
+                            <if condition="$param.num eq '5-10'"> class="active"</if>>5-10万</a>
+                        </li>
+                        <li>
+                            <a href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$param.address,'num'=>'10-20'),'')}/"
+                               data-type="10-20" name="num"
+                            <if condition="$param.num eq '10-20'"> class="active"</if>>10-20万</a>
+                        </li>
+                        <li>
+                            <a href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$param.address,'num'=>'20-50'),'')}/"
+                               data-type="20-50" name="num"
+                            <if condition="$param.num eq '20-50'"> class="active"</if>>20-50万</a>
+                        </li>
+                        <li>
+                            <a href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$param.address,'num'=>'100-200'),'')}/"
+                               data-type="100" name="num"
+                            <if condition="$param.num eq '100-200'"> class="active"</if>>100-200万</a>
+                        </li>
+                </empty>
+            </ul>
+        </div>   
+        <div class="region">
+            <ul class="wrapper">
+                <li><a href="{:cmf_url('portal/common/index',array('classname'=>$param.classname),'')}/" <empty
+                        name="$param.address">class="active"</empty>>全部</a></li>
+                <volist name="$sys" id="cs">
+                    <empty name="$param.num">
+                        <li>
+                            <a
+                                    href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$cs.py),'')}/"
+                               name="address" data-type="{$cs['py']}"
+                            <if condition="$cs['py'] eq $param.address || $cs['py'] eq $showsheng"> class="active"</if>
+                            >{$cs['ename']}</a></li>
+                        <else/>
+                        <li><a
+                                href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$cs.py,'num'=>$param.num),'')}/"
+                               name="address" data-type="{$cs['py']}"
+                            <if condition="$cs['py'] eq $param.address || $cs['py'] eq $showsheng"> class="active"</if>
+                            >{$cs['ename']}</a></li>
+                    </empty>
+                </volist>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="projectPage">
+    <div class="contentList">
+        <div class="bg">
+            <ul class="asd">
+				<if condition="empty($total)">
+					<img style="width:210px;display:block;margin:0 auto;"
+						 src="__TMPL__/public/mobile/xin/images/nofind.png">
+                <p style="padding: 10px 44px;font-size: 14px;text-align:center;color: #c1c0c0;">
+                    抱歉，没有找到和您查询条件相符的项目信息。</p>
+				</if>
+                <volist name="dataa" id="dd">
+                    <li>
+                        <div class="img"><a
+                                href="{:cmf_url('portal/common/index',['id'=>$dd['aid'],'classname'=>$dd['class']])}" rel="nofollow">
+                            <img class="lazy"
+                                 src="__TMPL__/public/mobile/xin/images/44feb2a189bb6a55ade0a5349fcccfb2.jpg"
+                                 data-original="{$dd['litpic']|checkImgurl=###}" alt="{$dd['title']}"> </a></div>
+                        <div class="text">
+                            <div class="left">
+                                <div class="title"><h2><a
+                                        href="{:cmf_url('portal/common/index',['id'=>$dd['aid'],'classname'=>$dd['class']])}">{$dd['title']}</a>
+                                </h2></div>
+                                <div class="price">￥{$dd['invested']}</div>
+                                <div class="smallTab"><a
+                                        href="/{$dd.path}/">{$dd.categoryname}</a>
+                                    <a href="/{$dd.class}/{$dd.py}/"><?php echo str_replace('--','',$dd['address'])?></a></div>
+                                <div class="desc">{$dd.companyname}</div>
+                            </div>
+                            <div class="right">
+                                <div class="join"><a
+                                        href="{:cmf_url('portal/common/index',['id'=>$dd['aid'],'classname'=>$dd['class']])}">申请加盟</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </volist>
+				<if condition="$total lt 6 && !empty($total)"/>
+					<img style="width:210px;display:block;margin:0 auto;" src="__TMPL__/public/mobile/xin/images/nofind.png">
+					<p style="padding: 10px 44px;font-size: 14px;text-align:center;color: #c1c0c0;"> 内容太少了，下方为您推荐几条！</p>
+				</if>
+				<volist name="aboutdata" id="aboutdata">
+					<li>
+						<div class="img"><a
+								href="{:cmf_url('portal/common/index',['id'=>$aboutdata['aid'],'classname'=>$aboutdata['class']])}" rel="nofollow">
+							<img class="lazy"
+								 src="__TMPL__/public/mobile/xin/images/44feb2a189bb6a55ade0a5349fcccfb2.jpg"
+								 data-original="{$aboutdata['litpic']|checkImgurl=###}" alt="{$aboutdata['title']}"> </a></div>
+						<div class="text">
+							<div class="left">
+								<div class="title"><h2><a
+										href="{:cmf_url('portal/common/index',['id'=>$aboutdata['aid'],'classname'=>$aboutdata['class']])}">{$aboutdata['title']}</a>
+								</h2></div>
+								<div class="price">￥{$aboutdata['invested']}</div>
+								<div class="smallTab"><a
+										href="/{$aboutdata.path}/">{$aboutdata.categoryname}</a>
+									<a href="/{$aboutdata.class}/{$aboutdata.py}/"><?php echo str_replace('--','',$aboutdata['address'])?></a></div>
+								<div class="desc">{$aboutdata.companyname}</div>
+							</div>
+							<div class="right">
+								<div class="join"><a
+										href="{:cmf_url('portal/common/index',['id'=>$aboutdata['aid'],'classname'=>$aboutdata['class']])}">申请加盟</a>
+								</div>
+							</div>
+						</div>
+					</li>
+				</volist>
+            </ul>
+            <div class="more-btn" <if condition="$total == 0">style="display:none"</if>>
+            <div class="down"><span><if condition="$lastpage == 1">没有更多内容了<else/>点击加载更多</if></span> <img
+                        src="__TMPL__/public/mobile/xin/images/6fb66d9522f6563fcf0a57dbfbee4138.png"></div>
+                <div class="up"><span>收起</span> <img
+                        src="__TMPL__/public/mobile/xin/images/d5bd16afca410dac45cf897d8535f1c1.png"></div>
+            </div>
+        </div>
+    </div>   
+    <div class="news">
+        <div class="commonTabTages">
+            <ul>
+                <li class="active"><a href="javascript:;">最新资讯</a></li>
+                <li class=""><a href="javascript:;">{$topname}专题</a></li>
+                <li class=""><a href="javascript:;">创业聚焦</a></li>
+            </ul>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="content">
+                        <ul>
+                            <volist name="lick3" id="zixun">
+                                <li>
+                                    <a href="{:cmf_url('portal/common/index',['id'=>$zixun['id'],'classname'=>$zixun['class']])}">
+                                        <span>{$zixun.post_title}</span>
+                                        <span><?php echo date('Y-m-d',$zixun['published_time']);?></span> </a></li>
+                            </volist>
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="content">
+                        <ul>
+                            <volist name="lick4" id="catetop">
+								<li><a href="{:cmf_url('portal/common/index',['classname'=>$catetop['path']],'')}/" title="{$catetop.name}">{$catetop.name}十大品牌 {$catetop.name}品牌排行榜</a></li>
+                            </volist>
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="content">
+                        <ul>
+                            <volist name="lick5" id="gushi">
+                                <li>
+                                    <a href="{:cmf_url('portal/common/index',['id'=>$gushi['id'],'classname'=>$gushi['class']])}">
+                                        <span>{$gushi.post_title}</span>
+                                        <span><?php echo date('Y-m-d',$gushi['published_time']);?></span> </a></li>
+                            </volist>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="commonStatement">
+    <div class="bg">
+        <div class="title">本站声明</div>
+        <div class="desc"><p>1.本站为用户提供免费信息展示，不收取任何费用（包括加盟费），如有冒充本站收费行为请及时报警。</p>
+            <p>2. 投资有风险 加盟需谨慎。为规避投资风险，建议您在投资前务必多咨询，多考察，降低投资风险</p></div>
+    </div>
+    <div class="bg2"><p>Copyright © 91创业网</p>
+        <p>全国免费服务热线：400-809-0091</p>
+        <p>友情提示：<span>投资有风险，咨询请细致</span>，以便成功加盟。</p>
+        <div class="addnewfooter">
+          <a href="/guanyuwomen/" rel="nofollow">关于我们</a>
+          <a href="/lianxiwomen/" rel="nofollow">联系我们</a> 
+          <a  href="/mianzeshengming/" rel="nofollow">免责声明</a> 
+          <a href="/tousushanchu/" rel="nofollow">投诉删除</a>
+          <a href="/areas/">地区站</a>
+      </div>
+    </div>
+</div>
+<div class="commonTop"><img src="__TMPL__/public/mobile/xin/images/fc51cd31a0b75c3aa1f88cc11f63ed1b.png"></div>
+<div class="mc"></div>
+<input type="hidden" id="url" value="<?php echo $_SERVER['QUERY_STRING'];?>">
+<include file="mobile/other"/>
+</body>
+</html>
+<script>
+    $(".classification .content .contentTab .swiper-container .swiper-slide").click(function () {
+        var id = $(this).find('div').attr('attr');
+        $.ajax({
+            type: "POST", url: "/cate/xmajax/", data: {id: id,cateid:{$cateid}}, success: function (msg) {
+                var msg = eval('(' + msg + ')');
+                $('.leftList').html(msg.html);
+            }
+        });
+    });
+
+    // 初始化加载分类
+    $.ajax({
+        type: "POST",
+        url: "/cate/reload/",
+        data: {id:1},
+        dataType: "json",
+        success: function (msg) {
+            alert(msg);return false;
+        }
+    });
+    
+    $(function(){
+        // 初始化
+        $('.classification .content .contentTab .swiper-container .swiper-slide.active').click()
+    })
+    var id = 0;
+    $('.projectPage .contentList .more-btn').click(function () {
+        var url = $('#url').val();
+        id+=1;
+        $.ajax({
+            type: "POST",
+            url: "/cate/listajax/",
+            data: {classname:'{$param.classname}',num:'{$param.num}',address:'{$param.address}',url:url,page:id},
+            dataType: "json",
+            success: function (msg) {
+                if(msg.html){
+
+                    $('.asd').append(msg.html);
+                    $("img.lazy").lazyload({
+                        effect: "fadeIn",
+                        container:$('.projectPage .contentList ul'),
+                        threshold: 200,
+                        skip_invisible: false
+                    });
+                }else{
+                    $(".projectPage .contentList .more-btn .down span").html("没有更多内容了");
+                }
+
+            }
+        });
+    });
+</script>

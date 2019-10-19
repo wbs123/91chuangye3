@@ -1,0 +1,245 @@
+﻿@charset "utf-8";
+body{
+	background:#f6f9fc;
+}
+
+.content_right{
+	width:974px;
+	margin-top:25px;
+	background:#fff;
+	border:1px solid #edf3f8;
+	min-height: 820px;
+}
+.zp_joinIn{
+	width:846px; 
+	margin:auto;
+}
+.zp_titleLink{
+	margin-top:30px;
+	height:48px; 
+	line-height:48px; 
+	border-bottom:1px solid #cfdce8; 
+	margin-bottom:16px;
+}
+.zp_titleLink a{
+	font-size:16px; 
+	color:#666666;
+	margin-right:40px;
+	display:inline-block;
+}
+.zp_titleLink a.active{
+	font-weight:bold;
+	color:#13639c;
+	border-bottom:2px solid #13639c; 
+	height:47px;
+}
+.question_sec li{
+	padding:23px 0;
+	border-bottom:1px solid #e5e6e7;
+}
+.question_sec .wen{
+	height:32px;
+	line-height:32px;
+	background:url('../img/wen.png') no-repeat left center;
+}
+.question_sec .wen .sp1{
+	font-size:16px;
+	color:#404040;
+	margin-left:50px;
+}
+.question_sec .wen .sp2{
+	font-size:14px;
+	color:#757575;
+}
+/* 自动回复 */
+.ziDong_replay{
+	padding:13px 0;
+	background:#f3f8fc;
+	border-top:1px solid #d6e6f2;
+	margin-top:16px;
+	font-size:14px;
+}
+.ziDong_replay.clear p {
+	padding: 0 30px;
+	line-height: 22px;
+	color: #5e83ac
+}
+.ziDong_replay .sp1{
+	color:#999;
+}
+.ziDong_replay .sp2{
+	color:#5e83ac;
+}
+.ziDong_replay .sp3{
+	display:inline-block;
+	width:72px;
+	height:25px;
+	line-height:26px;
+	border-radius:4px;
+	text-indent:32px;
+	font-size:12px;
+	color:#fff;
+	margin-right:22px;
+	background:#7eabc9 url('../img/xiugai2.png') no-repeat 15px;
+	cursor:pointer;
+}
+.ziDong_replay .p2 font{
+	font-size:12px;
+	color:#999;
+}
+.ziDong_replay .p2 .ft1{
+	margin:0 15px;
+}
+/* 回复内容 */
+.replayContent{
+	padding:16px 23px 10px;
+	background:#f9fafa;
+	border-radius:4px;
+	margin-top:15px;
+	display:none;
+}
+.replayCon textarea{
+	width:778px;
+	height:20px;
+	float:left;
+	font-size:12px;
+	padding:10px;
+	line-height:18px;
+	border-radius:4px;
+	border:1px solid #dedede;
+	resize:none;
+}
+.submit_hf{
+	height:26px;
+	margin-top:11px;
+	line-height:26px;
+}
+.submit_hf span{
+	font-size:12px;
+	color:#757575;
+}
+.submit_hf input{
+	width:72px;
+	height:26px;
+	background:#7eabc9;
+	color:#fff;
+	border-radius:4px;
+	font-size:12px;
+	margin-left:15px;
+}
+.page_num {
+  height: 65px;
+  line-height: 65px;
+  width: 100%;
+  margin:20px 0;
+}
+.page_num .num_page {
+  font-size: 14px;
+}
+.page_num .num_page p {
+  color: #4999d2;
+}
+.page_num .num_page .every_page_num {
+  display:inline-block;
+  width:78px;
+  text-align:center;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 16px;
+  border-radius: 4px;
+  border: 1px solid #acb6c0;
+  position: relative;
+  margin-right: 10px;
+  color:#999999;
+  font-size:12px;
+	cursor: pointer;
+}
+.page_num .num_page .every_page_num .ps_data_num {
+  width: 100%;
+  height: 160px;
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid #acb6c0;
+  border-radius: 4px;
+  display: none;
+}
+.page_num .num_page .every_page_num .ps_data_num .item {
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 12px;
+  color: #999999;
+}
+.page_num .num_page .every_page_num .ps_data_num .item:hover {
+  font-weight: bold;
+  cursor: pointer;
+  width: 99%;
+}
+.page_num .num_page .page_item {
+  margin-top: 16px;
+}
+.page_num .num_page .page_item .item {
+  width: 32px;
+  height: 32px;
+  background: #eef0f1;
+  float: left;
+  line-height: 32px;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.page_num .num_page .page_item div:hover a{
+	background:#4999d2!important;
+	color: #fff!important;
+}
+.page_num .num_page .page_item .item a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #343434;
+	border-radius: 4px;
+}
+.page_num .num_page .page_item .is_item a{
+  background: #4999d2;
+  color: #fff;
+	cursor: pointer;
+}
+.page_num .num_page .page_item .longBox {
+  width: 56px;
+  font-size: 12px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background: #eef0f1;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.page_num .num_page .page_item .longBox a{
+	color: #343434;
+	display: block;
+}
+.page_num .num_page .page_item .longBox a:hover {
+	border-radius: 4px;
+}
+.item_message {
+	border: 1px solid #e5e6e7;
+	border-radius: 4px;
+	margin-bottom: 16px;
+	padding: 23px;
+	font-size: 14px;
+	position: relative;
+	box-shadow: 1px 1px 10px 1px #e5e6e7;
+}
+.common_right .title {
+	color: #404040;
+	font-size: 16px;
+	font-weight: bold;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 66px;
+	position: relative;
+	top: 38px;
+}

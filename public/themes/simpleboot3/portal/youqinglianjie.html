@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>友情链接_91创业网</title>
+	<meta name="applicable-device" content="pc,mobile">
+	<meta name="mobile-agent" content="format=html5;url={$seo_url}"/>
+	<meta http-equiv="mobile-agent" content="format=xhtml; url={$seo_url}">
+	<link rel="alternate" media="only screen and(max-width: 640px)" href="{$seo_url}"/>
+	<script type="text/javascript" src="__TMPL__/public/xin/js/uaredirect.js"></script>
+	<php>$pc_url = str_replace('m.','www.',$seo_url);</php>
+	<script type="text/javascript">uaredirect("{$seo_url}");</script>
+    <link rel="shortcut icon" href="__TMPL__/public/new/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="__TMPL__/public/xin/css/common.css">
+    <link rel="stylesheet" href="__TMPL__/public/xin/css/about.css">
+</head>
+<body>
+     <include file="header_xin5"/>
+     <div class="w1200"><div class="bread"><span><a href="/">首页</a> &gt;<h1><a href="/guanyuwomen/">关于91</a></h1>&gt;<a href="/youqinglianjie/">友情链接</a></span></div></div>
+    <div class="newaddContent">
+        <div class="banner">
+            <img src="__TMPL__/public/xin/images/asd.png" alt="">
+        </div>
+        <div class="tab">
+            <ul>
+                <li><a href="{:cmf_url('portal/Singlepage/guanyuwomen',[],'')}/">关于我们</a></li>
+                <li><a href="{:cmf_url('portal/Singlepage/lianxiwomen',[],'')}/">联系我们</a></li>
+                <li><a href="{:cmf_url('portal/Singlepage/mianzeshengming',[],'')}/">免责声明</a></li>
+                <li><a href="{:cmf_url('portal/Singlepage/falvguwen',[],'')}/">法律顾问</a></li>
+                <li class="active"><a href="{:cmf_url('portal/Singlepage/youqinglianjie',[],'')}/">友情链接</a></li>
+                <li><a href="{:cmf_url('portal/Singlepage/nav',[],'')}/">网站地图</a></li>
+                <li><a href="{:cmf_url('portal/Singlepage/tousushanchu',[],'')}/">投诉删除</a></li>
+            </ul>
+        </div>
+        <div class="friendlink">
+            <div class="newaddContent-title">
+                <span>友情链接</span>
+                <span>FRIENDSHIP&nbsp;LINKS</span>
+            </div>
+            <div class="block1">
+                <p>链接文字：91创业网</p>
+                <p>链接地址：<a href="http://www.91chuangye.com/">http://www.91chuangye.com</a></p>
+                <p>网站收录联系QQ：1569054682</p>
+            </div>
+        </div>
+    </div>
+     <include file="footer_xin3"/>
+</body>
+</html>
+<script type="text/javascript" src="__TMPL__/public/xin/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/xin/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/xin/js/scroll.js"></script>
+<script src="__TMPL__/public/xin/js/index.js"></script>
+<script>
+    $(function () {
+        var navFindUl = $('.h-nav .side-nav').find('.nav_1')
+        $('.h-nav .side-nav').click(function () {
+            if (navFindUl.is(':hidden')) {
+                navFindUl.stop().slideDown()
+            } else {
+                navFindUl.stop().slideUp()
+            }
+        })
+    })
+</script>

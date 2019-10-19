@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta content="91创业网,注册页面" name="keywords">
+	<meta content="91创业网个人中心注册页面。" name="description">
+	<title>个人注册-91创业网</title>
+	<link rel="stylesheet" href="__STATIC__/member/css/reset.css" />
+	<link rel="stylesheet" href="__STATIC__/member/css/style.css" />
+	<script type="text/javascript" src="__STATIC__/member/js/jquery-1.8.3.min.js"></script>
+	<link rel="stylesheet" href="__STATIC__/member/css/new-register.css" />
+	<script type="text/javascript" src="__STATIC__/member/js/new-register.js"></script>
+</head>
+<body>
+	<div class="mainBody">
+		<div class="autoWidth clear">
+			<div class="logo fl">
+				<a href="/" class="fl jmw"><img src="__STATIC__/member/img/logo.png" alt="" /></a>
+				<p class="title fl">个人账号注册</p>
+			</div>
+			<div class="freeConsultation fr">
+				<span class="free">免费咨询：400-809-0091 </span>
+				<a href="/" class="return">返回首页</a>
+				<a href="{:url('user/Register/comregister')}" class="personalLogin">企业注册</a>
+			</div>
+		</div>
+		<!-- 登录框 -->
+		<div class="loginBox" style="margin-top:120px">
+			<div class="loginBoxOne">
+				<p class="title">个人账号注册</p>
+				<form id="registration_information" action="{:url('user/Register/doRegister')}" method="post" autocomplete="off" >
+					<ul>
+						<li>
+							<p class="formPhone clear">
+								<input type="text" name="username" id="username" placeholder="手机号码" title="手机号码" class="fl" maxlength="11">
+							</p>
+						</li>
+						<li>
+							<p class="formPhone category">
+								<select name="category" id="category">
+									<volist name="type" id="v">
+										<option value="{$v.id}">{$v.name}</option>
+									</volist>
+								</select>
+							</p>
+						</li>
+						<li>
+							<p class="formPhone invested">
+								<select name="invested" id="invested">
+									<option value="0-1万">0-1万</option>
+									<option value="1-5万">1-5万</option>
+									<option value="5-10万">5-10万</option>
+									<option value="10-20万">10-20万</option>
+									<option value="20-50万">20-50万</option>
+									<option value="50-100万">50-100万</option>
+									<option value="100万以上">100万以上</option>
+								</select>
+							</p>
+						</li>
+						<li>
+							<p class="formPhone address">
+								<select class="form-control" id="adderss_select" style="width: 140px; color: rgb(153, 153, 153);" aria-invalid="false">
+								<option value="1">北京市</option><option value="2">天津市</option><option value="3">--河北省</option><option value="5">邯郸市</option><option value="6">石家庄市</option><option value="7">保定市</option><option value="8">张家口市</option><option value="9">承德市</option><option value="10">唐山市</option><option value="11">廊坊市</option><option value="12">沧州市</option><option value="13">衡水市</option><option value="14">邢台市</option><option value="4">--山西省</option><option value="16">朔州市</option><option value="17">忻州市</option><option value="18">太原市</option><option value="19">大同市</option><option value="20">阳泉市</option><option value="21">晋中市</option><option value="22">长治市</option><option value="23">晋城市</option><option value="24">临汾市</option><option value="25">吕梁市</option><option value="26">运城市</option><option value="5">--内蒙古</option><option value="351">呼伦贝尔市</option><option value="352">呼和浩特市</option><option value="353">包头市</option><option value="354">乌海市</option><option value="355">乌兰察布市</option><option value="356">通辽市</option><option value="357">赤峰市</option><option value="358">鄂尔多斯市</option><option value="359">巴彦淖尔市</option><option value="360">锡林郭勒盟</option><option value="361">兴安盟</option><option value="362">阿拉善盟</option><option value="6">--辽宁省</option><option value="27">沈阳市</option><option value="28">铁岭市</option><option value="29">大连市</option><option value="30">鞍山市</option><option value="31">抚顺市</option><option value="32">本溪市</option><option value="33">丹东市</option><option value="34">锦州市</option><option value="35">营口市</option><option value="36">阜新市</option><option value="37">辽阳市</option><option value="38">朝阳市</option><option value="39">盘锦市</option><option value="40">葫芦岛市</option><option value="7">--吉林省</option><option value="41">长春市</option><option value="42">吉林市</option><option value="43">延边朝鲜族自治州</option><option value="44">四平市</option><option value="45">通化市</option><option value="46">白城市</option><option value="47">辽源市</option><option value="48">松原市</option><option value="49">白山市</option><option value="8">--黑龙江省</option><option value="50">哈尔滨市</option><option value="51">齐齐哈尔市</option><option value="52">鸡西市</option><option value="53">牡丹江市</option><option value="54">七台河市</option><option value="55">佳木斯市</option><option value="56">鹤岗市</option><option value="57">双鸭山市</option><option value="58">绥化市</option><option value="59">黑河市</option><option value="60">大兴安岭地区</option><option value="61">伊春市</option><option value="62">大庆市</option><option value="3">上海市</option><option value="10">--江苏省</option><option value="63">南京市</option><option value="64">无锡市</option><option value="65">镇江市</option><option value="66">苏州市</option><option value="67">南通市</option><option value="68">扬州市</option><option value="69">盐城市</option><option value="70">徐州市</option><option value="71">淮安市</option><option value="72">连云港市</option><option value="73">常州市</option><option value="74">泰州市</option><option value="75">宿迁市</option><option value="11">--浙江省</option><option value="76">舟山市</option><option value="77">衢州市</option><option value="78">杭州市</option><option value="79">湖州市</option><option value="80">嘉兴市</option><option value="81">宁波市</option><option value="82">绍兴市</option><option value="83">温州市</option><option value="84">丽水市</option><option value="85">金华市</option><option value="86">台州市</option><option value="12">--安徽省</option><option value="87">合肥市</option><option value="88">芜湖市</option><option value="89">蚌埠市</option><option value="90">淮南市</option><option value="91">马鞍山市</option><option value="92">淮北市</option><option value="93">铜陵市</option><option value="94">安庆市</option><option value="95">黄山市</option><option value="96">滁州市</option><option value="97">阜阳市</option><option value="98">宿州市</option><option value="99">巢湖市</option><option value="100">六安市</option><option value="101">亳州市</option><option value="102">池州市</option><option value="103">宣城市</option><option value="13">--福建省</option><option value="104">福州市</option><option value="105">厦门市</option><option value="106">宁德市</option><option value="107">莆田市</option><option value="108">泉州市</option><option value="109">漳州市</option><option value="110">龙岩市</option><option value="111">三明市</option><option value="112">南平市</option><option value="14">--江西省</option><option value="113">鹰潭市</option><option value="114">新余市</option><option value="115">南昌市</option><option value="116">九江市</option><option value="117">上饶市</option><option value="118">抚州市</option><option value="119">宜春市</option><option value="120">吉安市</option><option value="121">赣州市</option><option value="122">景德镇市</option><option value="123">萍乡市</option><option value="15">--山东省</option><option value="124">菏泽市</option><option value="125">济南市</option><option value="126">青岛市</option><option value="127">淄博市</option><option value="128">德州市</option><option value="129">烟台市</option><option value="130">潍坊市</option><option value="131">济宁市</option><option value="132">泰安市</option><option value="133">临沂市</option><option value="134">滨州市</option><option value="135">东营市</option><option value="136">威海市</option><option value="137">枣庄市</option><option value="138">日照市</option><option value="139">莱芜市</option><option value="140">聊城市</option><option value="16">--河南省</option><option value="141">商丘市</option><option value="142">郑州市</option><option value="143">安阳市</option><option value="144">新乡市</option><option value="145">许昌市</option><option value="146">平顶山市</option><option value="147">信阳市</option><option value="148">南阳市</option><option value="149">开封市</option><option value="150">洛阳市</option><option value="151">济源市</option><option value="152">焦作市</option><option value="153">鹤壁市</option><option value="154">濮阳市</option><option value="155">周口市</option><option value="156">漯河市</option><option value="157">驻马店市</option><option value="158">三门峡市</option><option value="17">--湖北省</option><option value="159">武汉市</option><option value="160">襄樊市</option><option value="161">鄂州市</option><option value="162">孝感市</option><option value="163">黄冈市</option><option value="164">黄石市</option><option value="165">咸宁市</option><option value="166">荆州市</option><option value="167">宜昌市</option><option value="168">恩施土家族苗族自治州</option><option value="169">神农架林区</option><option value="170">十堰市</option><option value="171">随州市</option><option value="172">荆门市</option><option value="173">仙桃市</option><option value="174">天门市</option><option value="175">潜江市</option><option value="18">--湖南省</option><option value="176">岳阳市</option><option value="177">长沙市</option><option value="178">湘潭市</option><option value="179">株洲市</option><option value="180">衡阳市</option><option value="181">郴州市</option><option value="182">常德市</option><option value="183">益阳市</option><option value="184">娄底市</option><option value="185">邵阳市</option><option value="186">湘西土家族苗族自治州</option><option value="187">张家界市</option><option value="188">怀化市</option><option value="189">永州市</option><option value="19">--广东省</option><option value="190">广州市</option><option value="191">汕尾市</option><option value="192">阳江市</option><option value="193">揭阳市</option><option value="194">茂名市</option><option value="195">惠州市</option><option value="196">江门市</option><option value="197">韶关市</option><option value="198">梅州市</option><option value="199">汕头市</option><option value="200">深圳市</option><option value="201">珠海市</option><option value="202">佛山市</option><option value="203">肇庆市</option><option value="204">湛江市</option><option value="205">中山市</option><option value="206">河源市</option><option value="207">清远市</option><option value="208">云浮市</option><option value="209">潮州市</option><option value="210">东莞市</option><option value="20">--海南省</option><option value="255">海口市</option><option value="256">三亚市</option><option value="257">五指山市</option><option value="258">琼海市</option><option value="259">儋州市</option><option value="260">文昌市</option><option value="261">万宁市</option><option value="262">东方市</option><option value="263">澄迈县</option><option value="264">定安县</option><option value="265">屯昌县</option><option value="266">临高县</option><option value="267">白沙黎族自治县</option><option value="268">昌江黎族自治县</option><option value="269">乐东黎族自治县</option><option value="270">陵水黎族自治县</option><option value="271">保亭黎族苗族自治县</option><option value="272">琼中黎族苗族自治县</option><option value="21">--广西区</option><option value="307">防城港市</option><option value="308">南宁市</option><option value="309">崇左市</option><option value="310">来宾市</option><option value="311">柳州市</option><option value="312">桂林市</option><option value="313">梧州市</option><option value="314">贺州市</option><option value="315">贵港市</option><option value="316">玉林市</option><option value="317">百色市</option><option value="318">钦州市</option><option value="319">河池市</option><option value="320">北海市</option><option value="22">--甘肃省</option><option value="211">兰州市</option><option value="212">金昌市</option><option value="213">白银市</option><option value="214">天水市</option><option value="215">嘉峪关市</option><option value="216">武威市</option><option value="217">张掖市</option><option value="218">平凉市</option><option value="219">酒泉市</option><option value="220">庆阳市</option><option value="221">定西市</option><option value="222">陇南市</option><option value="223">临夏回族自治州</option><option value="224">甘南藏族自治州</option><option value="23">--陕西省</option><option value="297">西安市</option><option value="298">咸阳市</option><option value="299">延安市</option><option value="300">榆林市</option><option value="301">渭南市</option><option value="302">商洛市</option><option value="303">安康市</option><option value="304">汉中市</option><option value="305">宝鸡市</option><option value="306">铜川市</option><option value="24">--新疆区</option><option value="333">塔城地区</option><option value="334">哈密地区</option><option value="335">和田地区</option><option value="336">阿勒泰地区</option><option value="337">克孜勒苏柯尔克孜自治州</option><option value="338">博尔塔拉蒙古自治州</option><option value="339">克拉玛依市</option><option value="340">乌鲁木齐市</option><option value="341">石河子市</option><option value="342">昌吉回族自治州</option><option value="343">五家渠市</option><option value="344">吐鲁番地区</option><option value="345">巴音郭楞蒙古自治州</option><option value="346">阿克苏地区</option><option value="347">阿拉尔市</option><option value="348">喀什地区</option><option value="349">图木舒克市</option><option value="350">伊犁哈萨克自治州</option><option value="25">--青海省</option><option value="289">海北藏族自治州</option><option value="290">西宁市</option><option value="291">海东地区</option><option value="292">黄南藏族自治州</option><option value="293">海南藏族自治州</option><option value="294">果洛藏族自治州</option><option value="295">玉树藏族自治州</option><option value="296">海西蒙古族藏族自治州</option><option value="26">--宁夏区</option><option value="328">银川市</option><option value="329">石嘴山市</option><option value="330">吴忠市</option><option value="331">固原市</option><option value="332">中卫市</option><option value="4">重庆市</option><option value="28">--四川省</option><option value="225">成都市</option><option value="226">攀枝花市</option><option value="227">自贡市</option><option value="228">绵阳市</option><option value="229">南充市</option><option value="230">达州市</option><option value="231">遂宁市</option><option value="232">广安市</option><option value="233">巴中市</option><option value="234">泸州市</option><option value="235">宜宾市</option><option value="236">资阳市</option><option value="237">内江市</option><option value="238">乐山市</option><option value="239">眉山市</option><option value="240">凉山彝族自治州</option><option value="241">雅安市</option><option value="242">甘孜藏族自治州</option><option value="243">阿坝藏族羌族自治州</option><option value="244">德阳市</option><option value="245">广元市</option><option value="29">--贵州省</option><option value="246">贵阳市</option><option value="247">遵义市</option><option value="248">安顺市</option><option value="249">黔南布依族苗族自治州</option><option value="250">黔东南苗族侗族自治州</option><option value="251">铜仁地区</option><option value="252">毕节地区</option><option value="253">六盘水市</option><option value="254">黔西南布依族苗族自治州</option><option value="30">--云南省</option><option value="273">西双版纳傣族自治州</option><option value="274">德宏傣族景颇族自治州</option><option value="275">昭通市</option><option value="276">昆明市</option><option value="277">大理白族自治州</option><option value="278">红河哈尼族彝族自治州</option><option value="279">曲靖市</option><option value="280">保山市</option><option value="281">文山壮族苗族自治州</option><option value="282">玉溪市</option><option value="283">楚雄彝族自治州</option><option value="284">普洱市</option><option value="285">临沧市</option><option value="286">怒江傈傈族自治州</option><option value="287">迪庆藏族自治州</option><option value="288">丽江市</option><option value="31">--西藏区</option><option value="321">拉萨市</option><option value="322">日喀则地区</option><option value="323">山南地区</option><option value="324">林芝地区</option><option value="325">昌都地区</option><option value="326">那曲地区</option><option value="327">阿里地区</option><option value="32">--台湾省</option><option value="363">台北市</option><option value="364">高雄市</option><option value="365">基隆市</option><option value="366">台中市</option><option value="367">台南市</option><option value="368">新竹市</option><option value="369">嘉义市</option><option value="370">澳门特别行政区</option><option value="371">香港特别行政区</option></select>
+								<input type="hidden" value="北京市" name="address" id="address">
+							</p>
+						</li>
+						<li class="clear mt24">
+							<p class="formPhone yzm fl">
+								<input type="text" name="captcha" id="captcha" placeholder="请输入图文验证码" title="图形验证码">
+							</p>
+							<p class="fl yzmNum">
+								<captcha height="36" width="147" font-size="18" length="5"/>
+							</p>
+						</li>
+						<li class="mt24">
+							<p class="formPhone dxin_yzm clear">
+								<input type="text" name="code" id="code" placeholder="短信验证码" title="短信验证码" class="fl">
+								<input type="button" value="获取验证码" class="getYzm fr" id="getYzm" onclick="sendcode()">
+							</p>
+						</li>
+						<li>
+							<p class="formPhone password">
+								<input type="password" name="password" id="password" placeholder="设置登录密码" title="设置登录密码">
+							</p>
+						</li>
+						<div style="font-size: 14px;color: #b6b6b6;margin-top:10px">我已阅读并接受<a href="/explain/" target="_blank">《91创业网服务条款》</a></div>
+						<li class="person_registered personalLog">
+							<input type="submit" value="注册" class="logImmediately" >
+						</li>
+					</ul>
+				</form>
+			</div>
+			<p class="notRegistered">
+				<span>已有账号，去</span>
+				<a href="{:url('user/login/index')}">登录</a>
+			</p>
+		</div>
+		<!-- 底部版权信息 -->
+		<div class="footer">
+			<p>Copyright@2017-2022 <a href="http://www.91chuangye.com" style="color: white;">www.91chuangye.com</a>京ICP备14049210号3 <br>北京品创天下科技有限公司  版权所有</p>
+		</div>
+	</div>
+	<script type="text/javascript" src="__STATIC__/member/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="__STATIC__/member/js/jquery.form.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/layer/layer.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			jQuery.validator.addMethod("mobile", function(value, element) {
+				var length = value.length; 
+				var mobile = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/ 
+				return this.optional(element) || (length == 11 && mobile.test(value)); 
+			}, "手机号码格式错误");
+            $("#registration_information").validate({
+                rules: {
+                    username:{
+                        required:true,
+                        maxlength:11,
+						number:true,
+						mobile:true,
+						remote:{
+                            url:"{:url('user/Register/checkTel')}",
+                            type:'post',
+                            data:{
+                                username:function () {
+                                    return $('#username').val();
+                                }
+                            }
+                        }
+                    },
+                    captcha:{
+                        required:true,
+						remote:{
+                            url:"{:url('user/Register/checkcaptcha')}",
+                            type:'post',
+                            data:{
+                                captcha:function () {
+                                    return $('#captcha').val();
+                                }
+                            }
+                        }
+                    },
+					code:{
+                        required:true,
+						remote:{
+                            url:"{:url('user/Register/checkcode')}",
+                            type:'post',
+                            data:{
+                                code:function () {
+                                    return $('#code').val();
+                                },
+								mobile:function () {
+                                    return $('#username').val();
+                                }
+                            }
+                        }
+                    },
+					password:{
+                        required:true,
+                        maxlength:16,
+						minlength:6
+                    }
+                },
+                messages: {
+                    username:{
+                        required:'请填写手机号',
+                        maxlength:'手机号最多输入11位',
+                        number:'手机号码格式不正确',
+                        mobile:'手机号码格式不正确',
+						remote:'手机号已注册，请直接登录'
+                    },
+                    password:{
+                        required:'请填写密码',
+                        maxlength:'密码最多输入16位',
+                        minlength:'密码最少输入6位',
+                    },
+                    captcha:{
+                        required:'请填写图形验证码',
+						remote:'图形验证码输入错误'
+                    },
+					code:{
+                        required:'请填写短信验证码',
+						remote:'短信验证码错误'
+                    }
+                },
+                focusInvalid: false,
+                onfocusout: function(element) {
+                    $(element).valid();
+                },
+                showErrors: function(errorMap,errorList){
+                    if(errorList.length > 0)
+                    {
+                        var key = Object.keys(errorMap);
+                        $('#'+key[0]).parent().css('border','1px solid #f45242');
+                        $('.wrongPass').remove();
+                        $('.personalLog').before('<li class="wrongPass">'+errorList[0].message+'</li>');
+                    }else{
+                        $('.wrongPass').remove();
+                        $(':text,:password').parent().css('border','1px solid #e3e4ee');
+                    }
+                },
+				submitHandler: function (form) {
+					$(form).ajaxSubmit({
+						dataType:"json",
+						success:function (result) {
+							if(result.code == 0)
+							{
+								layer.msg(result.msg,{time:1000});
+								refresh();
+								setTimeout(function () {
+									$('.wrongPass').remove();
+									$('.personalLog').before('<li class="wrongPass">'+result.msg+'</li>');
+								}, 1000);
+							}else{
+								layer.msg('注册成功,正在为您跳转到会员中心...', {
+								  time:2000,
+								  end:function(){
+									location.href="{:cmf_url('user/Profile/center','',false)}/";
+								  }
+								});
+							}
+						}
+					});
+				}
+            });
+        });
+		
+		$('.formPhone input:text,.formPhone input:password').focus(function(){
+			$(this).parents('.formPhone').css('border','1px solid #a1aed4')
+		});
+
+		//获取验证码
+		var countdown=60;
+		function sendcode()
+        {
+			var myreg=/^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
+			if($("#username").val().length==0){
+				layer.msg('请填写手机号!',{time:1000});
+				return false;
+			}
+			if(!myreg.test($("#username").val()))
+            {
+                layer.msg('手机号码格式不正确!',{time:1000});
+				return false;
+            }
+			//验证图形验证码
+			if($("#captcha").val().length==0){
+				layer.msg('请填写图形验证码!',{time:1000});
+				return false;
+			}else{
+				$.ajax({
+					type:'post',
+					url:"{:url('user/Register/sendsmscode')}",
+					data:{mobile:$('#username').val(),captcha:$('#captcha').val()},
+					success:function(html)
+					{
+						if(html.code == 1 ){
+							layer.msg(html.msg,{time:3000});
+							settime($("#getYzm"));
+							$('#code').val(html.msg);
+						}else{
+							layer.msg(html.msg,{time:3000});
+							// $("#imgCode2").next().click();
+						}
+					}
+				})
+			}
+		}
+		function settime(obj)
+        {
+			if (countdown == 0) {
+				obj.attr('disabled',false);
+				obj.val("重新发送");
+				countdown = 60;
+				return;
+			} else {
+				obj.attr('disabled',true);
+				obj.val("(" + countdown + ")秒");
+				countdown--;
+			}
+            setTimeout(function() { settime(obj) },1000);
+		}
+       
+		//图形验证码变化
+		function refresh(obj)
+        {
+            $('.captcha').attr("src","/captcha/new.html?height=36&width=144&font_size=18&length=5&time="+Math.random());
+			return false;
+		}
+        
+	</script>
+</body>
+</html>

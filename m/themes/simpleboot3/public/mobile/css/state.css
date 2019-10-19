@@ -1,0 +1,12 @@
+/*顶部导航*/
+.nav{height:40px;background: #38424a;box-shadow:0 5px 20px rgba(0,0,0,.3);position:relative;z-index:99;padding: 0 5%;display: flex;display: -webkit-flex;flex-flow: row wrap;justify-content: space-between;}
+.nav ul li{width: auto!important;    margin-right: 0!important;}
+.nav a{float:left;font-size: 14px;line-height:40px;color:#fff;text-align:center;    padding: 0 20px 0 0;}
+
+
+/*footer*/
+.footer{background: #e60012;color: #fff}
+.footer .footer_nav{text-align: center;height: 40px;line-height: 40px;border-bottom: 1px solid #e60303}
+.footer .footer_nav a{display: inline-block;height: 16px;line-height: 16px;padding: 0 11px;text-align: center;color: #fff}
+.footer .footer_nav a:hover{text-decoration: underline}
+.footer .copyright{text-align: center;line-height: 25px;padding: 10px;border-top: 1px solid #ff5656}

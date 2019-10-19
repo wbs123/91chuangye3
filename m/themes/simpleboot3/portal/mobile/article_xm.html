@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="wap-font-scale" content="no" />
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>{$data['title']}_{$data['title']}加盟费多少钱_91创业网</title>
+  <link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon" />
+  <meta name="keywords" content="{$data['keywords']}">
+  <meta name="description" content="{$data['description']}">
+  <link href="__TMPL__/public/mobile/xin/lib/css/swiper.css" rel="stylesheet">
+  <script src="__TMPL__/public/mobile/xin/lib/js/jquery-1.11.3.min.js"></script>
+  <script src="__TMPL__/public/mobile/xin/lib/js/jquery.lazyload.js"></script>
+  <script src="__TMPL__/public/mobile/xin/lib/js/swiper.js"></script>
+  <script src="__TMPL__/public/mobile/xin/lib/js/layer.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/xin/js/common.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/xin/js/xm_info_common.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/xin/js/xm_info_other.js"></script>
+  <link href="__TMPL__/public/mobile/xin/css/xm_info.css" rel="stylesheet">
+  <meta name="applicable-device" content="mobile">
+  <link rel="canonical" href="{$seo_url}">
+</head>
+<body>
+  <header class="header header_xm">
+    <div class="top_bar">
+      <div class="top_bar_item">
+        <div class="return"><a class="btn back" href="javascript:history.go(-1)"></a></div>
+        <div class="icon_bar">
+          <a class="nav" href="{:cmf_url('portal/common/index',['classname'=>'nav'],'')}/"></a>
+          <a class="index" href="/"></a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="item-xmbanner">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <volist name="imgs_arrs" id="ims">
+        <div class="swiper-slide">
+          <img class="swiper-lazy" data-src="{$ims['src']|checkImgurl=###}" alt="{$ims['title']}" src="__TMPL__/public/mobile/xin/images/64032e6d5fbc1d1a9ddc31ce8e3441fa.jpg">
+        </div>
+        </volist>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+  <section class="item-section itme_xminfo">
+    <div class="cont">
+      <div class="info">
+        <div class="brand"><img class="lazy" src="__TMPL__/public/mobile/xin/images/44feb2a189bb6a55ade0a5349fcccfb2.jpg" data-original="{$data.logo|checkImgurl=###}"></div>
+        <div class="tit_info">
+          <h1 class="tit">{$data['title']}<em>￥{$data['invested']}</em></h1>
+          <p>加盟店：{$data['sum']}家<a href="{:cmf_url('portal/common/index',['classname'=>$data['class']],'')}/">{$data.category}</a></p>
+          <p>{$data['companyname']}</p>
+        </div>
+      </div>
+      <div class="getInfo">
+          <input class="inpt" type="text" id="Tel3" name="tel" placeholder="请输入手机号" maxlength="11" value="">
+          <input type="hidden" name="urls" id="urlsa" value="<?php echo $_SERVER['REQUEST_URI'];?>">
+          <input class="btn" type="submit" onclick="myform1()" name="" value="获取费用底价">
+      </div>
+    </div>
+  </section>
+  <section class="item-section item_jminfo">
+    <ul class="tabs-tit">
+      <notempty name="imgs">
+      <li><a href="/{$data.class}/{$data.aid}/haibao/">招商海报</a></li>
+      <else/>
+      </notempty>
+      <li class="js_join_2 on"><a href="#">项目前景</a></li>
+      <li class="js_join_3"><a href="#">加盟条件</a></li>
+      <li class="js_join_4"><a href="#">加盟流程</a></li>
+      <li class="js_join_5"><a href="#">加盟费用</a></li>
+    </ul>
+    <div class="tabs-cont">
+      <div class="jm_tab_boxs" id="js_join_1">
+        <div class="tit"><span class="name"><em>项目</em>前景</span></div>
+        <div class="jm_tab_item">
+          <p>
+            {$data.jieshao|htmlspecialchars_decode=###|domain=###}
+          </p>
+        </div>
+      </div>
+      <div class="jm_tab_boxs" id="js_join_2">
+        <div class="tit"><span class="name"><em>加盟</em>条件</span></div>
+        <div class="jm_tab_item">
+          <p>
+            {$data.tiaojian|htmlspecialchars_decode=###|domain=###}
+          </p>
+        </div>
+      </div>
+      <div class="jm_tab_boxs" id="js_join_3">
+        <div class="tit"><span class="name"><em>加盟</em>流程</span></div>
+        <div class="jm_tab_item">
+          <p>
+            {$data.liucheng|htmlspecialchars_decode=###|domain=###}
+          </p>
+        </div>
+      </div>
+      <div class="jm_tab_boxs" id="js_join_4">
+        <div class="tit"><span class="name"><em>加盟</em>费用</span></div>
+        <div class="jm_tab_item">
+          <p>
+            {$data.fenxi|htmlspecialchars_decode=###|domain=###}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="item-section item_zx">
+    <div class="common_tit">咨询{$data.title}项目</div>
+    <div class="cont">
+        <ul>
+          <li>
+            <span>姓名</span>
+            <div class="p">
+              <input class="inpt" type="text" id="Name2" name="name" placeholder="请输入您的姓名" maxlength="11" value="">
+            </div>
+          </li>
+          <li>
+            <span>电话</span>
+            <div class="p">
+              <input class="inpt" type="text" id="Tel2" name="tel" placeholder="请输入您的常用手机号" maxlength="11" value="">
+            </div>
+          </li>
+          <li class="area">
+            <span>留言</span>
+            <div class="p">
+              <textarea class="textarea" name="msg" id="msg2" cols="30" rows="10" placeholder="请输入你想咨询的内容"></textarea>
+            </div>
+          </li>
+        </ul>
+        <input type="hidden" name="urls" id="urls" value="<?php echo $_SERVER['REQUEST_URI'];?>">
+        <div class="agree on"><i class="icon-circle"></i>我已阅读并同意 <a
+                href="{:cmf_url('portal/common/index',['classname'=>'explain'],'')}/" rel="nofollow">《91创业网服务条款》</a></div>
+        <div class="btn-box"><input type="submit" name="" onclick="myform2()" value="提交咨询" class="btn"></div>
+    </div>
+  </section>
+  <section class="item-section item_news">
+    <div class="common_tit">{$data.title}资讯</div>
+    <div class="cont">
+      <ul class="m-list">
+        <volist name="did" id="did">
+        <li><a href="{:cmf_url('portal/common/index',['id'=>$did['id'],'classname'=>'news'])}">{$did.post_title}</a>{$did.published_time|date='Y-m-d',###}</li>
+        </volist>
+      </ul>
+    </div>
+  </section>
+  <section class="item-section item_xm">
+    <div class="common_tit">{$data.category}项目推荐</div>
+    <div class="commonListImgText">
+      <ul>
+        <volist name="txiangmu" id="txiangmu">
+        <li>
+          <div class="followImg" href="{:cmf_url('portal/common/index',['id'=>$txiangmu['aid'],'classname'=>$txiangmu['class']])}">
+            <div class="img">
+              <a href="{:cmf_url('portal/common/index',['id'=>$did['id'],'classname'=>'news'])}" rel="nofollow">
+                  <img class="lazy" src="__TMPL__/public/mobile/xin/images/79649848806f3269c48897450738db68.jpg"
+                  data-original="{$txiangmu.litpic|checkImgurl=###}">
+              </a>
+            </div>
+            <div class="text">
+
+              <div class="title">
+                <a href="{:cmf_url('portal/common/index',['id'=>$did['id'],'classname'=>'news'])}">
+                    <span>{$txiangmu.title}</span>
+                    <span>¥{$txiangmu.invested}</span>
+                </a>
+              </div>
+              <div class="stores"><a href="{:cmf_url('portal/common/index',['id'=>$did['id'],'classname'=>'news'])}">门店:&nbsp;{$txiangmu.sum}家</a></div>
+              <div class="belongs"><a href="{:cmf_url('portal/common/index',['id'=>$did['id'],'classname'=>'news'])}">{$txiangmu.companyname}</a></div>
+            </div>
+          </div>
+        </li>
+        </volist>
+      </ul>
+    </div>
+  </section>
+  <div class="commonStatement">
+    <div class="bg">
+      <div class="title">本站声明</div>
+      <div class="desc">
+        <p>1.本站为用户提供免费信息展示，不收取任何费用（包括加盟费），如有冒充本站收费行为请及时报警。</p>
+        <p>2. 投资有风险 加盟需谨慎。为规避投资风险，建议您在投资前务必多咨询，多考察，降低投资风险</p>
+      </div>
+    </div>
+    <div class="bg2">
+      <p>Copyright © 91创业网</p>
+      <p>全国免费服务热线：400-809-0091</p>
+      <p>友情提示：<span>投资有风险，咨询请细致</span>，以便成功加盟。</p>
+      <div class="addnewfooter">
+                <a href="/guanyuwomen/" rel="nofollow">关于我们</a>
+                <a href="/lianxiwomen/" rel="nofollow">联系我们</a>
+                <a href="/mianzeshengming/" rel="nofollow">免责声明</a>
+                <a href="/tousushanchu/" rel="nofollow">投诉删除</a>
+                <a href="/areas/">地区站</a>
+            </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <ul>
+      <li id="btel">
+        <a href="#">
+          <img src="__TMPL__/public/mobile/xin/images/db8d79586ed070eec8adb4ff0c623f9b.png">
+          <span>通话</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://p.qiao.baidu.com/cps/chat?siteId=12411934&userId=26127855" rel="nofollow">
+          <img src="__TMPL__/public/mobile/xin/images/b752ee03b0ac95ff658ad3f45fc42ac0.png">
+          <span>客服</span>
+        </a>
+      </li>
+      <li id="bvzlico">
+        <a href="#">
+          <img src="__TMPL__/public/mobile/xin/images/91bfe48ca5f44b577ea5ead0eec94b33.png">
+          <span>资料</span>
+        </a>
+      </li>
+      <li class="zixun">
+        <a href="#">
+          <img src="__TMPL__/public/mobile/xin/images/d4fc46679a1de7421871cace872fb698.png">
+          <span>立即咨询</span>
+        </a>
+      </li>
+    </ul>
+  </footer>
+  <div class="commonTop">
+    <img src="__TMPL__/public/mobile/xin/images/fc51cd31a0b75c3aa1f88cc11f63ed1b.png">
+  </div>
+  <div class="webtel" id="webtelbox">
+      <div><img src="__TMPL__/public/mobile/xin/images/d26bfe7e0796bc81a82e9a3fa3f99d65.png"></div>
+      <h3>我们立即与您沟通</h3>
+      <dl>
+        <dd>
+          <input type="text" name="tel" id="tel4" class="telinput" maxlength="11" placeholder="请输入您的手机号码">
+          <input type="hidden" name="url" id="urls3" value="<?php echo $_SERVER['REQUEST_URI'];?>">
+          <input id="lytj" onclick="lytj()" class="telbut" type="submit" value="点击免费通话">
+          <p>（提交后，企业招商经理马上给您回拨）</p>
+        </dd>
+      </dl>
+  </div>
+  <div class="popups" id="popups-msg">
+    <div class="title">获取资料</div>
+    <div class="bg">
+      <div class="form">
+          <div class="formTips">真实姓名认证<span>（验证后可获取所有资料）</span> <img class="closebtn" onclick="layer.closeAll();"
+              src="https://m.qj.com.cn/images/close_1.png"></div>
+          <label for="">
+            <input type="text" data-type="names" class="name" name="name" id="name" placeholder="请输入您的姓名">
+          </label>
+          <label for="">
+            <input type="text" data-type="phone" class="tel" name="tel" id="tel" maxlength="11" placeholder="请输入您的手机号码">
+          </label>
+          <input type="hidden" name="url" id="urls4" value="<?php echo $_SERVER['REQUEST_URI'];?>">
+          <div class="tipsbox"></div>
+          <input type="submit" id="popupsBtn" onclick="myform3()" class="mysubmit" value="立即获取">
+      </div>
+    </div>
+  </div>
+<include file="mobile/other"/>
+</body>
+</html>
+<script>
+  function myform1() {
+    var tel=$("#Tel3").val();
+    var urlsa = $('#urlsa').val();
+    var mobile = /^1[3|4|5|6|7|8]\d{9}$/ , phone = /^0\d{2,3}-?\d{7,8}$/; 
+    if (tel=="" || (tel != "" && !mobile.test(tel) && !phone.test(tel))) {
+      layer.msg('请输入正确有效的手机号码！');
+      $("#Tel3").focus();
+      return false;
+    }else{
+      $.ajax({
+        type: "POST",
+        url: "{:cmf_url('portal/xm/liuyan3')}",
+        data: {tel:tel,urls:urlsa},
+        dataType: "json",
+        success: function (msg) {
+          if(msg.data == "1"){
+            layer.msg('信息提交成功！');
+            setTimeout(function(){
+              layer.closeAll();
+            },1000)
+          }else if(msg.data == "3"){
+            layer.msg('已经提交过了哦！');
+          }else{
+            layer.msg('信息提交失败，请稍后再试！');
+          }
+
+        }
+      });
+    }
+  };
+  function myform2() {
+    var username=$("#Name2").val();
+    var tel=$("#Tel2").val();
+    var msg=$("#msg2").val();
+    var urls = $("#urls").val();
+    var cn=/^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/;
+    var mobile = /^1[3|4|5|6|7|8]\d{9}$/ , phone = /^0\d{2,3}-?\d{7,8}$/; 
+    var http=/^http[s]?:\/\/([\w-]+\.)+[\w-]+([\w-./?%&=]*)?$/;
+    if(username=="" || username=="请输入姓名")
+    {
+      layer.msg('请输入您的中文姓名');
+      $("#Name2").focus();
+      return false;
+    }else if((username != "" && !cn.test(username))){
+      layer.msg('中文名称不合法');
+      $("#Name2").focus();
+      return false;
+    }else if(username.length>5){
+      layer.msg('请控制在5个字以内！');
+      $("#Name2").focus();
+      return false;
+    }else if (tel=="" || (tel != "" && !mobile.test(tel) && !phone.test(tel))) {
+      layer.msg('请输入正确有效的手机号码');
+      $("#Tel2").focus();
+      return false;
+    }else if(msg == "" || (http.test(msg))){
+      layer.msg('请输入中文问题！');
+      $("#msg2").focus();
+      return false;
+    }else{
+      $.ajax({
+        type: "POST",
+        url: "{:cmf_url('portal/xm/liuyan2')}",
+        data: {name:username,tel:tel,msg:msg,urls:urls},
+        dataType: "json",
+        success: function (msg) {
+          if(msg.data == "1"){
+            layer.msg('信息提交成功！');
+            setTimeout(function(){
+              layer.closeAll();
+            },1000)
+          }else if(msg.data == "3"){
+            layer.msg('已经提交过了哦！');
+          }
+          else{
+            layer.msg('信息提交失败，请稍后再试！');
+          }
+        }
+      });
+    }
+  };
+  function lytj() {
+    var mobile = /^1[3|4|5|6|7|8]\d{9}$/ , phone = /^0\d{2,3}-?\d{7,8}$/; 
+    var tel4 = $("#tel4").val();
+    var urls = $("#urls3").val();
+    if (tel4=="" || (tel4 != "" && !mobile.test(tel4) && !phone.test(tel4))) {
+      layer.msg('请输入正确的电话号码！');
+      $("#tel4").focus().select();
+      return false;
+    }else{
+      $.ajax({
+        type: "POST",
+        url: "{:cmf_url('portal/xm/liuyan')}",
+        data: {tel:tel4,url:urls},
+        dataType: "json",
+        success: function (msg) {
+          if(msg.data == "1"){
+            layer.msg('信息提交成功！');
+            setTimeout(function(){
+              layer.closeAll();
+            },1000)
+          }else if(msg.data == "3"){
+            layer.msg('已经提交过了哦！');
+          }
+          else{
+            layer.msg('信息提交失败，请稍后再试！');
+          }
+        }
+      });
+    }
+  };
+
+  function myform3(){
+    var username=$("#name").val();
+    var tel=$("#tel").val();
+    var urls4 = $("#urls4").val();
+    var cn=/^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/;
+    var mobile = /^1[3|4|5|6|7|8]\d{9}$/ , phone = /^0\d{2,3}-?\d{7,8}$/; 
+    if(username=="" || username=="请输入姓名")
+    {
+      layer.msg('请输入您的中文姓名');
+      $("#name").focus();
+      return false;
+    }else if((username != "" && !cn.test(username))){
+      layer.msg('中文名称不合法');
+      $("#Name2").focus();
+      return false;
+    }else if(username.length>5){
+      layer.msg('请控制在5个字以内！');
+      $("#name").focus();
+      return false;
+    }else if (tel=="" || (tel != "" && !mobile.test(tel) && !phone.test(tel))) {
+      layer.msg('请输入正确有效的手机号码');
+      $("#tel").focus();
+      return false;
+    }else{
+      
+       $.ajax({
+        type: "POST",
+        url: "{:cmf_url('portal/xm/liuyan')}",
+        data: {name:username,tel:tel,url:urls4},
+        dataType: "json",
+        success: function (msg) {
+          if(msg.data == "1"){
+            layer.msg('信息提交成功！');
+            setTimeout(function(){
+              layer.closeAll();
+            },1000)
+          }else if(msg.data == "3"){
+            layer.msg('已经提交过了哦！');
+          }
+          else{
+            layer.msg('信息提交失败，请稍后再试！');
+          }
+        }
+      });
+    }
+  };
+</script>

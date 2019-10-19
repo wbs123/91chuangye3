@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>联系我们_91创业网</title>
+    <meta name="applicable-device" content="pc,mobile">
+	<meta name="mobile-agent" content="format=html5;url={$seo_url}"/>
+	<meta http-equiv="mobile-agent" content="format=xhtml; url={$seo_url}">
+	<link rel="alternate" media="only screen and(max-width: 640px)" href="{$seo_url}"/>
+    <link rel="shortcut icon" href="__TMPL__/public/new/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="__TMPL__/public/xin/css/common.css">
+    <link rel="stylesheet" href="__TMPL__/public/xin/css/about.css">
+</head>
+<body>
+    <include file="header_xin5"/>
+    <div class="w1200"><div class="bread"><span><a href="/">首页</a> &gt;<h1><a href="/guanyuwomen/">关于91</a></h1>&gt;<a href="/lianxiwomen/">联系我们</a></span></div></div>
+    <div class="newaddContent">
+        <div class="banner">
+            <img src="__TMPL__/public/xin/images/asd.png" alt="">
+        </div>
+        <div class="tab">
+            <ul>
+                <li><a href="{:cmf_url('portal/Singlepage/guanyuwomen',[],'')}/">关于我们</a></li>
+                <li class="active"><a href="{:cmf_url('portal/Singlepage/lianxiwomen',[],'')}/">联系我们</a></li>
+                <li><a href="{:cmf_url('portal/Singlepage/mianzeshengming',[],'')}/">免责声明</a></li>
+                <li><a href="{:cmf_url('portal/Singlepage/falvguwen',[],'')}/">法律顾问</a></li>
+                <li><a href="{:cmf_url('portal/Singlepage/youqinglianjie',[],'')}/">友情链接</a></li>
+                <li><a href="{:cmf_url('portal/Singlepage/nav',[],'')}/">网站地图</a></li>
+                <li><a href="{:cmf_url('portal/Singlepage/tousushanchu',[],'')}/">投诉删除</a></li>
+            </ul>
+        </div>
+        <div class="contactus">
+            <div class="newaddContent-title">
+                <span>联系我们</span>
+                <span>CONTACT</span>
+            </div>
+            <div class="p1">
+                <p>欢迎联系91创业网，我们将竭诚为您服务。</p>
+            </div>
+            <div class="block1">
+                <p>客户服务</p>
+                <p>如果您在使用91创业网过程中，有任何问题、建议或意见等，请联系：400-809-0091</p>
+                <p>加盟热线：400-809-0091</p>
+                <p>邮箱：www.91chuangye.com</p>
+                <p>Q Q：1569054682</p>
+                <p>为了更好的与您沟通并为您服务，请在发信息的时候，留下您的联系方式。您的来信我们</p>
+                <p>非常重视，我们会及时给你反馈！</p>
+            </div>
+            <div class="block1">
+                <p>广告合作</p>
+                <p>广告投放合作，联系电话：18612923336</p>
+            </div>
+        </div>
+    </div>
+    <include file="footer_xin3"/>
+</body>
+</html>
+<script type="text/javascript" src="__TMPL__/public/xin/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/xin/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/xin/js/scroll.js"></script>
+<script src="__TMPL__/public/xin/js/index.js"></script>
+<script>
+    $(function () {
+        var navFindUl = $('.h-nav .side-nav').find('.nav_1')
+        $('.h-nav .side-nav').click(function () {
+            if (navFindUl.is(':hidden')) {
+                navFindUl.stop().slideDown()
+            } else {
+                navFindUl.stop().slideUp()
+            }
+        })
+    })
+</script>

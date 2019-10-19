@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>企业中心-线索管理</title>
+
+    <style>
+        .PromptBoxAddNews p {
+            padding: 20px;
+        }
+
+        .layerContentImport {
+            display: none;
+            
+        }
+
+        .layerContentImport .parent{
+            display: flex;
+            flex-flow: wrap;
+            padding: 20px;
+            align-items: center;
+        }
+
+        .layerContentImport .layerUser {
+            width: 20%;
+        }
+
+        .layerContentImport .layerIphone {
+            width: 50%;
+        }
+
+        .layerContentImport .contentImLayer {
+            padding: 20px 0;
+            line-height: 1.8;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="__STATIC__/usercenter/css/reset.css" />
+    <!--头部公共的部分-->
+    <link rel="stylesheet" type="text/css" href="__STATIC__/usercenter/css/header.css" />
+    <!--左侧公共的部分-->
+    <link rel="stylesheet" type="text/css" href="__STATIC__/usercenter/css/aside.css" />
+    <!--内容部分-->
+    <link rel="stylesheet" type="text/css" href="__STATIC__/usercenter/css/message_records.css" />
+    <!--弹层部分-->
+    <link rel="stylesheet" type="text/css" href="__STATIC__/usercenter/css/tips.css" />
+    <!--底部公共的部分-->
+    <link rel="stylesheet" type="text/css" href="__STATIC__/usercenter/css/footer.css" />
+
+    <link rel="stylesheet" href="__STATIC__/usercenter/css/layui.css" media="all">
+    <script src="__STATIC__/usercenter/js/head_new.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="content clear">
+        <div class="common_right fr">
+            <!-- 主体开始 -->
+            <div class="content_right">
+                <div class="main_infor">
+                    <div class="title"><span>创业库</span></div>
+                    <div class="search_message">
+                        <div class="message_nav">
+                            <div class="nav_item active_me">
+                                <a href="javascript:;">创业库</a>
+                            </div>
+                            <div class="nav_item">
+                                <a href="/user/lookas/">已查看</a>
+                            </div>
+                        </div>
+
+                        <p class="message_num">您好， 您一共可以浏览 <span>{$user.all_nums}</span> 条信息 已查看：
+                            <span>{$shengyu}</span> 条，还可以查看： <span>{$user.look_nums}</span> 条</p>
+
+                    </div>
+                    <!--信息头部-->
+
+                    <!--留言列表-->
+                    <div class="message_list">
+                        <volist name="data" id="vo" empty="$empty">
+                                <div class="item_message">
+                                    <div class="name_from">
+                                        <i class="checkBox"></i>
+                                        <span class="user_name">用户：<i>
+                                                <empty name="$vo.name">无名用户
+                                                    <else />{$vo.name}</empty>
+                                            </i></span>
+                                        <span class="from">来源 ：<i>
+                                                <if condition="$vo['source'] == 1">网页版--<a href="http://91chuangye.com{$vo.url}">{$vo.url}</a>
+                                                    <else />手机版--<a href="http://m.91chuangye.com{$vo.url}">{$vo.url}</a></if>
+                                            </i> </span>
+                                        <span class="time">{$vo.inputtime|date='Y-m-d H:i',###}</span>
+                                        <img class="yz_img" src="__STATIC__/usercenter/img/sucsess.png"
+                                            title="此创业者手机号，已经过短信验证或客服核实" />
+                                        <input type="hidden" name="id" class="id" value="{$vo.id}">
+                                    </div>
+                                    <div class="message_nei">
+                                        <span class="lx_title">留言内容：</span>
+                                        <empty name="$vo.rules">无留言内容
+                                            <else />{$vo.rules}</empty>
+                                    </div>
+                                    <div class="three_btn">
+                                        <div class="b_t_n" id="look"></div>
+                                    </div>
+
+                                    <!-- 弹出框信息 -->
+                                    <div class="layerContentImport">
+
+                                        <div class="parent">
+
+                                            <!-- 用户名 -->
+                                            <div class="layerUser" style="width: 50%;">用户：<span style="color: red;">{$vo.name}</span></div>
+
+                                            <!-- 手机号 -->
+                                            <div class="layerIphone" style="width: 50%;">电话：<span style="color: red;">{$vo.tel}</span></div>
+
+                                            <!-- 留言内容 -->
+                                            <div class="contentImLayer" style="width: 100%;"><empty name="$vo.rule">无留言内容
+                                            <else />{$vo.rule}</empty></div>
+
+                                            <!-- 日期 -->
+                                            <div class="date" style="width: 100%;">添加日期：{$vo.inputtime|date='Y-m-d H:i',###}</div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                        </volist>
+                    </div>
+
+                    <!--留言列表-->
+
+                </div>
+            </div>
+        </div>
+        <!--右侧不相同的-->
+    </div>
+
+    <script src="__STATIC__/usercenter/js/jquery-1.8.3.min.js"></script>
+    <script src="__STATIC__/usercenter/js/common.js"></script>
+    <script src="__STATIC__/usercenter/js/list_common.js"></script>
+    <script src="__STATIC__/usercenter/js/city.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/xin/js/layer/layer.js"></script>
+    <script src="__STATIC__/usercenter/js/layui.js" charset="utf-8"></script>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    $('.content_right .main_infor .message_list .item_message .three_btn').click(function () {
+        question = confirm("确定查看此条信息吗？")
+        var id = $(this).siblings('.name_from').find('.id').val();
+        var domContent = $(this).siblings('.layerContentImport')
+        if (question != "0") {
+            $.ajax({
+                type: "POST",
+                url: "/user/information/",
+                data: { id: id },
+                dataType: "json",
+                success: function (msg) {
+                    if (msg.data == "1") {
+                        layer.open({
+                            type: 1,
+                            title: '信息',
+                            area: ['500px', '300px'],
+                            shadeClose: true,
+                            skin: 'webtellayer',
+                            // content:$('.PromptBoxAddNews')
+                            content: domContent
+                        })
+                    } else if (msg.data == "3") {
+                        layer.msg('该信息已经查看过了！');
+                    } else {
+                        layer.msg('信息查看失败，请稍后再试！');
+                    }
+                }
+            });
+        }
+
+    })
+</script>

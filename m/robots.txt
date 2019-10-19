@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /uploads
+Disallow: /upload
+Disallow: /templets
+Disallow: /static
+Disallow: /public
+Disallow: /images
+Disallow: /example
+Disallow: /assets
+Disallow: /plugins
+Disallow: /themes
+
+
+

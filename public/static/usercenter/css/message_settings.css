@@ -1,0 +1,207 @@
+﻿@charset "utf-8";
+
+body{
+	background:#f6f9fc;
+}
+.content_right{
+	width:974px;
+	margin-top:25px;
+	background:#fff;
+	border:1px solid #edf3f8;
+	min-height: 820px;
+}
+.zp_joinIn{
+	width:846px; 
+	margin:auto;
+	padding-bottom:300px;
+}
+.zp_titleLink{
+	margin-top:30px;
+	height:48px; 
+	line-height:48px; 
+	border-bottom:1px solid #cfdce8; 
+	margin-bottom:16px;
+}
+.zp_titleLink a{
+	font-size:16px; 
+	color:#666666;
+	margin-right:40px;
+	display:inline-block;
+}
+.zp_titleLink a.active{
+	font-weight:bold;
+	color:#13639c;
+	border-bottom:2px solid #13639c; 
+	height:47px;
+}
+.error_set{
+	padding:66px 0;
+	border-bottom:1px dotted #e9e9e9;
+	text-align:center;
+}
+.error_set span{
+	display:inline-block;
+	font-size:15px;
+	color:#666;
+	height:28px;
+	line-height:28px;
+	padding-left:42px;
+	background:url('../img/makemiss.png') no-repeat;
+}
+.success_set{
+	padding:66px 0;
+	border-bottom:1px dotted #e9e9e9;
+	text-align:center;
+}
+.success_set span{
+	display:inline-block;
+	font-size:15px;
+	color:#666;
+	height:28px;
+	line-height:28px;
+	padding-left:42px;
+	background:url('../img/success.png') no-repeat;
+}
+.dangQian{
+	margin-top:40px;
+	height:32px;
+	line-height:32px;
+	color:#333333;
+	font-size:16px;
+	text-align:center;
+}
+.dangQian span{
+	color:#4999d2;
+	font-weight:bold;
+}
+.dangQian input{
+	width:110px;
+	height:30px;
+	line-height:30px;
+	background:#4999d2;
+	color:#fff;
+	font-size:12px;
+	border:1px solid #1867a0;
+	border-radius:4px;
+	margin-left:27px;
+}
+.dangQian input:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+.change_info{
+	display: none;
+}
+.kaiTong{
+	color:#f66534;
+	font-size:14px;
+	line-height:23px;
+	margin:40px 0;
+}
+.zp_pleaseInput .p1{
+	min-height:40px;
+	margin-bottom:24px;
+}
+.zp_pleaseInput .p1 em{
+	display:inline-block;
+	width:96px;
+	line-height:40px;
+	font-size:14px;
+	color:#333333;
+	margin-left:30px;
+}
+.ipt2{
+	width:263px;
+}
+.zp_pleaseInput .p1 input{
+	border:1px solid #b2b7c4;
+	border-radius:4px;
+	font-size:12px;
+	height:38px;
+	line-height:38px;
+	padding-left:15px;
+}
+.zp_pleaseInput{
+	position:relative;
+}
+.ipt_error{
+	color:#bababa;
+	font-size:12px;
+	margin-left:130px;
+	border:1px solid #e4e7ed;
+	padding: 9px 7px;
+	width: auto;
+	display: none;
+	z-index: 2;
+	position: absolute;
+	border-radius:4px;
+	top:36px;
+	left:6px;
+	background:#fff url('../img/dengp.png') no-repeat 7px;
+	padding-left:25px;
+}
+.ipt_error img{
+	position:absolute;
+	top:-7px;
+	left:15px;
+}
+.ipt_errorRed{
+	background:#fff url('../img/dengp2.png') no-repeat 7px;
+	color:#ec4c16;
+}
+.checkMark{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	position:relative;
+	top:6px;
+	left:10px;
+}
+.checkMark_dui{
+	background:url('../img/yes.png') no-repeat;
+}
+.checkMark_cuo{
+	background:url('../img/error1.png') no-repeat;
+}
+.zp_pleaseInput .p1 .freeGet{
+	width:110px;
+	height:30px;
+	line-height:30px;
+	background:#4999d2;
+	color:#fff;
+	font-size:12px;
+	border:1px solid #1867a0;
+	border-radius:4px;
+	margin-left:24px;
+	padding-left:0;
+	position: relative;
+	top: 2px;
+}
+.zp_pleaseInput .p1 .freeGet:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+.bangDing_phone{
+	width:168px;
+	height:40px;
+	line-height:40px;
+	color:#fff;
+	font-size:15px;
+	border-radius:4px;
+	background:#4999d2;
+	margin:30px 0 0 130px;
+}
+.bangDing_phone:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+.common_right .title {
+	color: #404040;
+	font-size: 16px;
+	font-weight: bold;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 66px;
+	position: relative;
+	top: 38px;
+}

@@ -1,0 +1,26 @@
+<?xml version=”1.0″ encoding=”{dede:global.cfg_soft_lang /}”?>
+<urlset xmlns=”http://www.sitemaps.org/schemas/sitemap/0.9″>
+<url>
+<loc>{dede:global.cfg_basehost/}</loc>
+<changefreq>always</changefreq>
+<priority>1.0</priority>
+</url>
+{dede:arclist row=’10000′ orderby=’pubdate’}
+<url>
+<loc>[field:global.cfg_basehost/][field:arcurl/]</loc>
+<lastmod>[field:pubdate function=”GetDateMK(@me)”/]</lastmod>
+</url>
+{/dede:arclist}
+{dede:channelartlist row=’50’}
+<url>
+<loc>{dede:global.cfg_basehost/}{dede:field name=’typeurl’/}</loc>
+<lastmod>{dede:php}echo date(‘Y-m-d’);{/dede:php}</lastmod>
+</url>
+{dede:channel type=’son’ row=’8′}
+<url>
+<loc>[field:global.cfg_basehost/][field:typelink/]</loc>
+<lastmod>[field:id runphp=”yes”]@me=date(‘Y-m-d’);[/field:id]</lastmod>
+</url>
+{/dede:channel}
+{/dede:channelartlist}
+</urlset>

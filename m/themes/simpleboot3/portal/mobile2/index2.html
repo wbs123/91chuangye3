@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" /> 
+  <meta name="wap-font-scale" content="no" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+  <meta name="applicable-device" content="mobile" />
+  <title>{$website.seo_title}</title>
+  <link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon" />
+  <meta name="keywords" content="{$website.seo_keywords}">
+  <meta name="description" content="{$website.seo_description}">
+  <link rel="stylesheet" href="__TMPL__/public/mobile/css/swiper.min.css">
+  <link rel="stylesheet" href="__TMPL__/public/mobile/css/css.css" />
+
+ </head> 
+ <body> 
+  <div class="viewport"> 
+   <!-- Top Bar --> 
+   <!--header开始-->
+   <include file="mobile/header"/>
+   <!--header结束--> 
+   <!--幻灯片开始--> 
+   <div id="focus" class="focus"> 
+    <div class="hd"> 
+     <ul> 
+     </ul> 
+    </div> 
+    <div class="bd"> 
+     <div class="tempWrap"> 
+      <ul>
+       <li><a href="{:cmf_url('portal/common/index',['classname'=>'naichajiameng','id'=>'84335'])}"><img src="__TMPL__/public/mobile/img/banner4.jpg" /></a></li>
+       <li><a href="{:cmf_url('portal/common/index',['classname'=>'jipaijiameng','id'=>'80367'])}"><img src="__TMPL__/public/mobile/img/banner5.jpg" /></a></li>
+       <li><a href="{:cmf_url('portal/common/index',['classname'=>'xiaochichejiameng','id'=>'12988'])}"><img src="__TMPL__/public/mobile/img/banner2.jpg" /></a></li>
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <!--幻灯片结束--> 
+   <!--导航开始--> 
+   <div class="index_nav" id="index_nav"> 
+    <div class="hd"> 
+     <ul> 
+     </ul> 
+    </div> 
+    <!-- 导航 --> 
+    <div class="bd"> 
+     <div class="tempWrap"> 
+      <ul>
+                    <li>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'canyin'],'')}/" class="icon1"><em></em>餐饮加盟</a></span>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'jiushui'],'')}/" class="icon19"><em></em>酒水加盟</a></span>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'muying'],'')}/" class="icon12"><em></em>母婴加盟</a></span>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'jiaoyu'],'')}/" class="icon11"><em></em>教育加盟</a></span>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'zhubao'],'')}/" class="icon15"><em></em>珠宝加盟</a></span>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'shipin'],'')}/" class="icon6"><em></em>饰品加盟</a></span>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'jiaju'],'')}/" class="icon7"><em></em>家居加盟</a></span>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'jiancai'],'')}/" class="icon4"><em></em>建材加盟</a></span> </li>
+                    <li> <span><a href="{:cmf_url('portal/common/index',['classname'=>'nvxing'],'')}/" class="icon9"><em></em>女性加盟</a></span>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'fuzhuang'],'')}/" class="icon2"><em></em>服装加盟</a></span>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'ganxi'],'')}/" class="icon5"><em></em>干洗加盟</a></span>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'xieye'],'')}/" class="icon13"><em></em>鞋业加盟</a></span>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'qiche'],'')}/" class="icon10"><em></em>汽车加盟</a></span>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'jinrong'],'')}/" class="icon14"><em></em>金融加盟</a></span>
+                        <span><a href="{:cmf_url('portal/common/index',['classname'=>'internet'],'')}/" class="icon16"><em></em>互联网+</a></span>
+                      	<span><a href="{:cmf_url('portal/common/index',['classname'=>'internet'],'')}/" class="icon3"><em></em>加盟好项目</a></span></li>
+                </ul>
+     </div> 
+    </div> 
+   </div> 
+   <!--导航结束--> 
+   <!--加盟头条开始-->  
+    <div class="headerHot"> 
+     <div class="mainBox"> 
+      <span><img src="__TMPL__/public/mobile/img/hottop.png" /></span>
+      <div id="scrollDiv1"> 
+       <div class="scrollText1 bd"> 
+        <ul> 
+           <volist name="headlines" id="lines">
+         <li>
+          <a href="{:cmf_url('portal/common/index',['classname'=>'news','id'=>$lines['id']])}"> <p class="circlePic" style="background: url(<?php echo $lines['thumbnail']?>) no-repeat;"></p> <p class="a"><?php echo $lines['post_title'];?>  </p>
+          <div class="p clearfix"> 
+           <p> 5小时之前更新 </p> 
+           <p> <?php echo $lines['click'];?> </p>
+         <p>来源：<?php echo $lines['post_source']?></p> 
+          </div>
+           </a>
+         </li> 
+       </volist>
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+   <!--加盟头条结束--> 
+   <!--新品推荐 开始--> 
+   <div class="index_item"> 
+    <div class="common_tit"> 
+     <a class="tit" href="javascript:;"><i class="index_icon1"></i>新品推荐</a> 
+    </div> 
+    <ul class="mHotAttctLists">
+     <volist name="lick2" id="li2">
+     <li>
+      <a href="{:cmf_url('portal/common/index',['id'=>$li2['aid'],'classname'=>$li2['class']])}" title="{$li2['title']}" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="{$li2['litpic']}" alt="" /><p>{$li2['title']}</p><span>{$li2['invested']}</span></a>
+     </li>
+     </volist>
+    </ul> 
+   </div> 
+   <!--新品推荐 结束--> 
+   <!--火爆招商 开始--> 
+   <!--火爆招商 结束--> 
+   <!--加盟列表 开始--> 
+   <div class="lmflBoxListsBox lmflBoxListsBox1"> 
+    <ul class="lmflBoxtit lmflBoxtitS1 clearfix"> 
+     <li>餐饮加盟</li> 
+     <li>服装加盟</li> 
+     <li>干洗加盟</li> 
+     <li>鞋业加盟</li> 
+    </ul> 
+    <div class="con"> 
+     <ul class="mHotAttctLists">
+      <volist name="cates1" id="info1">
+      <li>
+       <a href="{:cmf_url('portal/common/index',['id'=>$info1['aid'],'classname'=>$info1['class']])}" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="{$info1['litpic']}" alt="{$info1['title']}" /><p>{$info1['title']}</p><span>{$info1['invested']}</span></a>
+      </li>
+      </volist>
+     </ul> 
+     <ul class="mHotAttctLists">
+      <volist name="cates2" id="info2">
+      <li>
+       <a href="{:cmf_url('portal/common/index',['id'=>$info2['aid'],'classname'=>$info2['class']])}" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="{$info2['litpic']}" alt="{$info2['title']}" /><p>{$info2['title']}</p><span>{$info2['invested']}</span></a>
+      </li>
+      </volist>
+     </ul> 
+     <ul class="mHotAttctLists">
+      <volist name="cates3" id="info3">
+      <li>
+       <a href="{:cmf_url('portal/common/index',['id'=>$info3['aid'],'classname'=>$info3['class']])}" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="{$info3['litpic']}" alt="{$info3['title']}" /><p>{$info3['title']}</p><span>{$info3['invested']}</span></a>
+      </li>
+      </volist>
+     </ul> 
+     <ul class="mHotAttctLists">
+      <volist name="cates4" id="info4">
+      <li>
+       <a href="{:cmf_url('portal/common/index',['id'=>$info4['aid'],'classname'=>$info4['class']])}" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="{$info4['litpic']}" alt="{$info4['title']}" /><p>{$info4['title']}</p><span>{$info4['invested']}</span></a>
+      </li>
+      </volist>
+     </ul> 
+    </div> 
+   </div> 
+   <div class="lmflBoxListsBox lmflBoxListsBox2"> 
+    <ul class="lmflBoxtit lmflBoxtitS2 clearfix"> 
+     <li>饰品加盟</li> 
+     <li>珠宝加盟</li> 
+     <li>建材加盟</li> 
+     <li>家居加盟</li> 
+    </ul> 
+    <div class="con"> 
+     <ul class="mHotAttctLists">
+      <volist name="cates5" id="info5">
+      <li>
+       <a href="{:cmf_url('portal/common/index',['id'=>$info5['aid'],'classname'=>$info5['class']])}" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="{$info5['litpic']}" alt="{$info5['title']}" /><p>{$info5['title']}</p><span>{$info5['invested']}</span></a>
+      </li>
+      </volist>
+     </ul> 
+     <ul class="mHotAttctLists">
+      <volist name="cates6" id="info6">
+      <li>
+       <a href="{:cmf_url('portal/common/index',['id'=>$info6['aid'],'classname'=>$info6['class']])}" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="{$info6['litpic']}" alt="{$info6['title']}" /><p>{$info6['title']}</p><span>{$info6['invested']}</span></a>
+      </li>
+      </volist>
+     </ul> 
+     <ul class="mHotAttctLists">
+      <volist name="cates7" id="info7">
+      <li>
+       <a href="{:cmf_url('portal/common/index',['id'=>$info7['aid'],'classname'=>$info7['class']])}" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="{$info7['litpic']}" alt="{$info7['title']}" /><p>{$info7['title']}</p><span>{$info7['invested']}</span></a>
+      </li>
+      </volist>
+     </ul> 
+     <ul class="mHotAttctLists">
+      <volist name="cates8" id="info8">
+      <li>
+       <a href="{:cmf_url('portal/common/index',['id'=>$info8['aid'],'classname'=>$info8['class']])}" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="{$info8['litpic']}" alt="{$info8['title']}" /><p>{$info8['title']}</p><span>{$info8['invested']}</span></a>
+      </li>
+      </volist>
+     </ul> 
+    </div> 
+   </div> 
+   <div class="lmflBoxListsBox lmflBoxListsBox3"> 
+    <ul class="lmflBoxtit lmflBoxtitS3 clearfix"> 
+     <li>母婴加盟</li> 
+     <li>女性加盟</li> 
+     <li>教育加盟</li> 
+     <li>酒水加盟</li> 
+    </ul> 
+    <div class="con"> 
+     <ul class="mHotAttctLists">
+      <volist name="cates9" id="info9">
+      <li>
+       <a href="{:cmf_url('portal/common/index',['id'=>$info9['aid'],'classname'=>$info9['class']])}" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="{$info9['litpic']}" alt="{$info9['title']}" /><p>{$info9['title']}</p><span>{$info9['invested']}</span></a>
+      </li>
+      </volist>
+     </ul> 
+     <ul class="mHotAttctLists">
+      <volist name="cates10" id="info10">
+      <li>
+       <a href="{:cmf_url('portal/common/index',['id'=>$info10['aid'],'classname'=>$info10['class']])}" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="{$info10['litpic']}" alt="{$info10['title']}" /><p>{$info10['title']}</p><span>{$info10['invested']}</span></a>
+      </li>
+      </volist>
+     </ul> 
+     <ul class="mHotAttctLists">
+      <volist name="cates11" id="info11">
+      <li>
+       <a href="{:cmf_url('portal/common/index',['id'=>$info11['aid'],'classname'=>$info11['class']])}" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="{$info11['litpic']}" alt="{$info11['title']}" /><p>{$info11['title']}</p><span>{$info11['invested']}</span></a>
+      </li>
+      </volist>
+     </ul> 
+     <ul class="mHotAttctLists">
+      <volist name="cates12" id="info12">
+      <li>
+       <a href="{:cmf_url('portal/common/index',['id'=>$info12['aid'],'classname'=>$info12['class']])}" class="mHotAttctItems"><img class="lazy" data-original="img/3.jpg" src="{$info12['litpic']}" alt="{$info12['title']}" /><p>{$info12['title']}</p><span>{$info12['invested']}</span></a>
+      </li>
+      </volist>
+     </ul> 
+    </div> 
+   </div> 
+   <!--加盟列表 结束--> 
+   <!--创业资讯 开始--> 
+   <div class="index_news"> 
+    <ul class="lmflBoxtit clearfix"> 
+     <li>创业咨询</li>
+      <li>餐饮咨询</li>
+    </ul> 
+     <div class="Headlines">
+     <volist name="canyin_new" id="new">
+     <dl>
+      <a href="{:cmf_url('portal/common/index',['id'=>$new['id'],'classname'=>$new['class']])}">
+       <dd>
+        <img class="lazy" data-original="" src="{$new['thumbnail']}" alt="{$new['post_title']}" />
+       </dd>
+       <dt>
+        <p class="jmjj"> <?php echo mb_substr($new['post_title'],0,16,'UTF-8');?>...</p>
+        <div class="p clearfix">
+         <p>来源：餐饮咨询</p>
+         <p> {$new['weight']} </p>
+         <p> {$new.published_time|date='Y-m-d H:i',###} </p>
+        </div>
+       </dt> </a>
+     </dl>
+     </volist>
+     <!--<a href="new_list.html" class="addMoreBoxBottom">查看更多&gt;</a>-->
+    </div>
+    <div class="Headlines"> 
+     <dl class="first">
+      <a href="{:cmf_url('portal/common/index',['id'=>$hangye_new[0]['id'],'classname'=>'news'])}">
+       <dd> 
+        <img class="lazy" data-original="" src="{$hangye_new[0]['thumbnail']}" alt="{$hangye_new[0]['post_title']}" />
+       </dd> 
+       <dt> 
+        <p class="jmjj"><?php echo mb_substr($hangye_new[0]['post_title'],0,16,'UTF-8');?>...</p>
+        <div class="p clearfix"> 
+         <p>来源：创业回答</p>
+         <p> {$hangye_new[0]['weight']} </p>
+         <p> {$hangye_new[0]['published_time']|date='Y-m-d H:i',###} </p>
+        </div> 
+       </dt> </a>
+     </dl> 
+     <dl>
+      <a href="{:cmf_url('portal/common/index',['id'=>$hangye_new[1]['id'],'classname'=>'news'])}">
+       <dd> 
+        <img class="lazy" data-original="" src="{$hangye_new[1]['thumbnail']}" alt="{$hangye_new[1]['post_title']}" />
+       </dd> 
+       <dt> 
+        <p class="jmjj"> <?php echo mb_substr($hangye_new[1]['post_title'],0,16,'UTF-8');?>...</p>
+        <div class="p clearfix"> 
+         <p>来源：创业回答</p>
+         <p> {$hangye_new[1]['weight']} </p>
+         <p> {$hangye_new[1]['published_time']|date='Y-m-d H:i',###} </p>
+        </div> 
+       </dt> </a>
+     </dl> 
+     <dl>
+      <a href="{:cmf_url('portal/common/index',['id'=>$hangye_new[2]['id'],'classname'=>'news'])}">
+       <dd> 
+        <img class="lazy" data-original="" src="{$hangye_new[2]['thumbnail']}" alt="{$hangye_new[2]['post_title']}" />
+       </dd> 
+       <dt> 
+        <p class="jmjj"> <?php echo mb_substr($hangye_new[2]['post_title'],0,16,'UTF-8');?>...</p>
+        <div class="p clearfix"> 
+         <p>来源：创业回答</p>
+         <p> {$hangye_new[2]['weight']} </p>
+         <p> {$hangye_new[2]['published_time']|date='Y-m-d H:i',###} </p>
+        </div> 
+       </dt> </a>
+     </dl> 
+     <dl>
+      <a href="{:cmf_url('portal/common/index',['id'=>$hangye_new[3]['id'],'classname'=>'news'])}">
+       <dd> 
+        <img class="lazy" data-original="" src="{$hangye_new[3]['thumbnail']}" alt="{$hangye_new[3]['post_title']}" />
+       </dd> 
+       <dt> 
+        <p class="jmjj"> <?php echo mb_substr($hangye_new[3]['post_title'],0,16,'UTF-8');?>...</p>
+        <div class="p clearfix"> 
+         <p>来源：创业回答</p>
+         <p> {$hangye_new[3]['weight']} </p>
+         <p> {$hangye_new[3]['published_time']|date='Y-m-d H:i',###} </p>
+        </div> 
+       </dt> </a>
+     </dl> 
+     <dl>
+      <a href="{:cmf_url('portal/common/index',['id'=>$hangye_new[4]['id'],'classname'=>'news'])}">
+       <dd> 
+        <img class="lazy" data-original="" src="{$hangye_new[4]['thumbnail']}" alt="{$hangye_new[4]['post_title']}" />
+       </dd> 
+       <dt> 
+        <p class="jmjj"> <?php echo mb_substr($hangye_new[4]['post_title'],0,16,'UTF-8');?>...</p>
+        <div class="p clearfix"> 
+         <p>来源：创业回答</p>
+         <p> {$hangye_new[4]['weight']} </p>
+         <p> {$hangye_new[4]['published_time']|date='Y-m-d H:i',###} </p>
+        </div> 
+       </dt> </a>
+     </dl>  
+     <dl class="first second">
+      <a href="{:cmf_url('portal/common/index',['id'=>$hangye_new[5]['id'],'classname'=>'news'])}">
+       <dt> 
+        <p class="jmjj"> <?php echo mb_substr($hangye_new[5]['post_title'],0,16,'UTF-8');?>...</p>
+        <div class="p clearfix"> 
+         <p>来源：创业回答</p>
+         <p> {$hangye_new[5]['weight']} </p>
+         <p> {$hangye_new[5]['published_time']|date='Y-m-d H:i',###} </p>
+        </div> 
+       </dt> 
+       <dd> 
+        <img class="lazy" data-original="" src="{$hangye_new[5]['thumbnail']}" alt="{$hangye_new[5]['post_title']}" />
+        <img class="lazy" data-original="" src="{$hangye_new[5]['thumbnail']}" alt="{$hangye_new[5]['post_title']}" />
+        <img class="lazy" data-original="" src="{$hangye_new[5]['thumbnail']}" alt="{$hangye_new[5]['post_title']}" />
+       </dd>
+      </a>
+     </dl> 
+     <dl>
+      <a href="{:cmf_url('portal/common/index',['id'=>$hangye_new[6]['id'],'classname'=>'news'])}">
+       <dd> 
+        <img class="lazy" data-original="" src="{$hangye_new[6]['thumbnail']}" alt="{$hangye_new[6]['post_title']}" />
+       </dd> 
+       <dt> 
+        <p class="jmjj"> <?php echo mb_substr($hangye_new[6]['post_title'],0,16,'UTF-8');?>...</p>
+        <div class="p clearfix"> 
+         <p>来源：创业回答</p>
+         <p> {$hangye_new[5]['weight']} </p>
+         <p> {$hangye_new[6]['published_time']|date='Y-m-d H:i',###} </p>
+        </div> 
+       </dt> </a>
+     </dl> 
+     <dl>
+      <a href="{:cmf_url('portal/common/index',['id'=>$hangye_new[7]['id'],'classname'=>'news'])}">
+       <dd> 
+        <img class="lazy" data-original="" src="{$hangye_new[7]['thumbnail']}" alt="{$hangye_new[7]['post_title']}" />
+       </dd> 
+       <dt> 
+        <p class="jmjj"> <?php echo mb_substr($hangye_new[7]['post_title'],0,16,'UTF-8');?>...</p>
+        <div class="p clearfix"> 
+         <p>来源：创业回答</p>
+         <p> {$hangye_new[7]['weight']} </p>
+         <p> {$hangye_new[7]['published_time']|date='Y-m-d H:i',###} </p>
+        </div> 
+       </dt> </a>
+     </dl> 
+     <dl>
+      <a href="{:cmf_url('portal/common/index',['id'=>$hangye_new[8]['id'],'classname'=>'news'])}">
+       <dd> 
+        <img class="lazy" data-original="img/7.jpg" src="{$hangye_new[8]['thumbnail']}" alt="{$hangye_new[8]['post_title']}" />
+       </dd> 
+       <dt> 
+        <p class="jmjj"> <?php echo mb_substr($hangye_new[8]['post_title'],0,16,'UTF-8');?>...</p>
+        <div class="p clearfix"> 
+         <p>来源：创业回答</p>
+         <p> {$hangye_new[8]['weight']} </p>
+         <p> {$hangye_new[8]['published_time']|date='Y-m-d H:i',###} </p>
+        </div> 
+       </dt> </a>
+     </dl> 
+     <dl>
+      <a href="{:cmf_url('portal/common/index',['id'=>$hangye_new[9]['id'],'classname'=>'news'])}">
+       <dd> 
+        <img class="lazy" data-original="img/7.jpg" src="{$hangye_new[9]['thumbnail']}" alt="{$hangye_new[9]['post_title']}" />
+       </dd> 
+       <dt> 
+        <p class="jmjj"> <?php echo mb_substr($hangye_new[9]['post_title'],0,16,'UTF-8');?>...</p>
+        <div class="p clearfix"> 
+         <p>来源：创业回答</p>
+         <p> {$hangye_new[9]['weight']} </p>
+         <p> {$hangye_new[9]['published_time']|date='Y-m-d H:i',###} </p>
+        </div> 
+       </dt> </a>
+     </dl> 
+     <a href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/" class="addMoreBoxBottom">查看更多&gt;</a>
+    </div>
+    
+   </div> 
+   <!--创业资讯 结束--> 
+
+  <div class="" id="tuijian"> 
+    <ul class="lmflBoxtit clearfix"> 
+     <li>加盟行业导航</li> 
+     <li>特色项目推荐</li>
+    </ul> 
+     <!-- 加盟行业导航 开始-->
+     <div class="Headlines index_news_nav"> 
+    <ul class="clearfix">
+     <volist name="cate" id="cate">
+     <li><a href="{:cmf_url('portal/common/index',['classname'=>$cate['path']],'')}/">{$cate['name']}</a></li>
+     </volist>
+    </ul> 
+   </div> 
+   <!-- 加盟行业导航 结束 -->
+
+   <!-- 特色项目推荐 结束 -->
+   <div class="Headlines index_news_nav index_tuijian"> 
+    <ul class="clearfix">
+        <volist name="data" id="data">
+            <li><a href="{:cmf_url('portal/common/index',['id'=>$data['aid'],'classname'=>$data['class']])}">{$data.title}</a></li>
+        </volist>
+    </ul> 
+    <a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/" class="addMoreBoxBottom">查看更多&gt;</a>
+   </div> 
+   <!-- 特色项目推荐 结束 -->
+  </div>
+   <!-- 本网声明 结束 -->
+   <div class="statement">
+       <div class="common_tit"> 
+        <a class="tit" href="javascript:;">本网声明</a> 
+       </div> 
+       <div class="statCon">
+           <p>1.本网信息仅供参考，为降低投资风险，建议您在投资前多做考察咨询、多对比分析。部分品牌暂未开放加盟，请以该品牌官方信息为准。</p>
+           <p>2.本网信息均由第三方用户免费注册发布，内容的真实性、准确性和合法性均由发布用户负责。本网对此不承担任何相关连带责任。</p>
+           <p>3.本网对任何包含、经由、链接、下载；或从任何与本网站有关服务所获得的资讯、内容或广告，不声明或保证其内容的正确性、真实性或可靠性；并且对于您通过我方平台广告、资讯或要约而展示、购买或取得的任何产品、资讯或资料，本网站亦不负品质保证的责任。您与此接受并承认信赖任何信息所产生之风险应自行承担，本网对任何使用或提供本网站信息的商业活动及其风险不承担任何责任。</p>
+           <p class="lastP">4.本网所有品牌信息均为用户免费注册发布，如您发现页面有任何违法或侵权信息，欢迎向本网举报并提供有效线索，我们将认真核查、及时处理。沟通热线：400-809-0091</p>
+       </div>
+   </div>
+   <!-- 本网声明 结束 -->
+
+   <!-- 友情链接 开始-->
+   <div class="common_tit"> 
+    <a class="tit" href="javascript:;">友情链接</a> 
+   </div> 
+   <div class="index_news_nav"> 
+    <ul class="clearfix">
+     <volist name="youlian" id="you">
+      <li><a href="{$you['url']}">{$you['webname']}</a></li>
+     </volist>
+    </ul> 
+   </div> 
+   <!-- 友情链接 结束 -->
+   <include file="mobile/new_footer"/>
+
+   <a href="javascript:void(0);" id="returnTop"></a>
+   <!--footer结束--> 
+  </div> 
+
+
+ </body>
+</html>

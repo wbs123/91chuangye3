@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="applicable-device" content="pc" />
+    <meta name="robots" content="all">
+    <title>{$data['title']}_{$data['title']}加盟费多少钱_91创业网</title>
+    <meta name="keywords" content="$data['keywords']">
+    <meta name="description" content="$data['description']">
+    <meta name="mobile-agent" content=""/>
+    <meta http-equiv="mobile-agent" content="format=xhtml; url={dede:field.id runphp='yes'}$id=@me;
+@me='';$url=GetOneArchivess($id);@me=$url['arcurl'];{/dede:field.id}">
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="{dede:field.id runphp='yes'}$id=@me;@me='';$url=GetOneArchivess($id);@me=$url['arcurl'];{/dede:field.id}"/>
+    <link rel="canonical" href="{dede:field.id runphp='yes'}$id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];{/dede:field.id}"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/new/css/common.css" />
+    <link rel="stylesheet" type="text/css" href=__TMPL__/public/new/css/xm_list.css" />
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/new/css/zhome.css" />
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/new/css/header.css" />
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/new/css/index3.css" />
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/new/css/tt_detial.css" />
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/new/css/message.css" />
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/new/css/library.css" />
+    <script src="__TMPL__/public/new/js/jquery.1.9.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="http://m.91chuangye.com"+location.pathname+location.search;}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}
+    </script>
+</head>
+<body>
+<!-- header start -->
+<include file="new_head1"/>
+<!-- header end -->
+<div class="bread w1200">
+    <span>当前位置：</span>
+    <span>91创业网
+        <volist name="array_reverse" id="arr">
+            >{$arr['name']}
+        </volist>>{$data['title']}</span>
+</div>
+<div id="item1">
+    <div class="item1box container clearfix">
+        <div class="item1boxleft fl">
+            <div class="text">
+                <div class="xm_logo"><img src="{$data['logo']}"  alt="{$data['title']}"></div>
+                <h1 class="title">
+                    {$data['title']}
+                </h1>
+                <p>{$data['title']}</p>
+                <span>￥{$data['invested']}</span>
+            </div>
+        </div>
+        <div class="item1boxmiddle fl">
+            <div class="item1boxmiddle_top clearfix">
+                <a href="javascript:;">
+                    <div class="imgbox">
+                        <div class="icon icon0"></div>
+                        <p>招商海报</p>
+                        <i></i>
+                    </div> </a>
+                <a href="javascript:;">
+                    <div class="imgbox">
+                        <div class="icon icon1"></div>
+                        <p>项目详情</p>
+                        <i></i>
+                    </div> </a>
+                <a href="javascript:;">
+                    <div class="imgbox">
+                        <div class="icon icon2"></div>
+                        <p>项目资讯</p>
+                        <i></i>
+                    </div> </a>
+            </div>
+
+        </div>
+        <div class="item1boxright">
+            <i></i>
+            <img src="" />
+            <p>更新时间：{$data.pubdate|date='Y-m-d H:i',###}</p>
+        </div>
+    </div>
+</div>
+<div id="item2" class="clearfix">
+    <div class="item2box container">
+
+        <!-- 项目介绍 -->
+        <div class="boxlefttop clearfix">
+            <div class="left">
+                <div class="bigimgbox">
+                    <img src="" />
+                </div>
+                <div class="smallimgbox">
+                    <div class="prevbtn">
+                        <img src="__TMPL__/public/new/img/arrow-left.png" />
+                    </div>
+                    <div class="midbox">
+                        <ul>
+                            <volist name="imgs" id="ims">
+                                <li><img src="{$ims['url']}" alt="{$ims['title']}" /></li>
+                            </volist>
+                        </ul>
+                    </div>
+                    <div class="nextbtn">
+                        <img src="__TMPL__/public/new/img/arrow-right.png" />
+                    </div>
+                </div>
+
+                <!-- 分享 -->
+                <div class="enjoyDb clearfix">
+                    <div class="fr bdsharebuttonbox bdshare-button-style0-16" style="margin-top:13px;">
+                        <a href="#" class="bds_more" data-cmd="more" rel="nofollow">帮助找项目</a>
+                    </div>
+                    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                    </script>
+                </div>
+
+            </div>
+            <div class="right">
+                <!-- 基本信息 -->
+                <div class="content1">
+                    <div class="title icon_basic">
+                        <i></i>基本信息：
+                    </div>
+                    <ul class="clearfix">
+                        <li class="first"> <p>项目名称：{$data['title']}</p> </li>
+                        <li> <p>所在地区：{$data['nativeplace']}</p></li>
+                        <li> <p>所属行业：<span>{$name}</span></p></li>
+                        <li class="br"></li>
+                        <li> <p>招商区域：全国</p> </li>
+                        <li> <p>人气：{$data['click']}</p></li>
+                        <li> <p>已咨询：{$data['zhishu']}</p></li>
+                    </ul>
+                    <div class="title icon_com">
+                        <i></i>公司信息：
+                    </div>
+                    <ul class="clearfix">
+                        <li class="first"> <p>公司名称：{$data['companyname']}</p> </li>
+                        <li><p>注册资本：{$data['ziben']}万元</p> </li>
+                        <li><p>企业类型：国有企业/私营企业/其它企业</p></li>
+                        <li><p>经营状态：开业</p></li>
+                        <li><p>公司地址：{$data['company_address']}</p></li>
+                    </ul>
+                </div>
+                <!-- 其他信息 -->
+                <div class="youHui_btm">
+                    <ul class="assort clearfix">
+                        <li> <p class="fontred">{$data['invested']}</p>投资金额</li>
+                        <li> <p>{$data['sum']}</p>加盟店数量 </li>
+                        <li> <p>暂无</p>品牌成立时间 </li>
+                    </ul>
+                    <div class="pinPaifang clear">
+                        <p class="fl p1"> <span>投资费用因包含其他保证金、加盟费、品牌等其他的相关费用，具体投资总额根据实际情况为准！</span> </p>
+                    </div>
+                </div>
+                <!-- 立即咨询 -->
+                <ul class="freeLine clearfix">
+                    <li class="li1 fl"><a href="#item3box"><i class="i1"></i>索要加盟资料</a></li>
+                    <li class="allRight fr"><a href="#item3box"><i class="i3"></i>立即咨询</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- 项目首页 -->
+        <div class="boxleft1">
+            <volist name="imgs" id="ims">
+                <img src="{$ims['url']}" alt="{$ims['title']}" />
+            </volist>
+        </div>
+        <div class="boxleft">
+
+            <!-- 项目详情 -->
+            <div class="top" style="display: block;">
+                <div class="boxleftbottom clearfix">
+                    <div class="bottomtitle" id="bottomtitle">
+                        <ul>
+                            <li>加盟前景</li>
+                            <li>加盟条件</li>
+                            <li>加盟流程</li>
+                            <li>投资分析</li>
+                            <!-- <li>加盟优势</li> -->
+                        </ul>
+                        <div class="tell">
+                            <i></i>
+                            <img style="margin:25px 0;" src="__TMPL__/public/new/img/toptell.png" />
+                        </div>
+                    </div>
+                    <div class="bottomcontent" id="bottomcontent">
+                        <div class="jm_xq" id="b-info">
+                            <div class="tb-first">
+                                <div class="title" id="o-info_1">
+                                    <h2 class="stit"><o>{$data['title']}加盟前景/加盟优势</o></h2>
+                                </div>
+                                <div class="jm_xq_con">
+                                    <p>{$data['jieshao']}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jm_xq" id="b-info">
+                            <div class="tb-first">
+                                <div class="title" id="o-info_1">
+                                    <h2 class="stit"><o>加盟条件</o></h2>
+                                </div>
+                                <div class="jm_xq_con">
+                                    <p>{$data['tiaojian']}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jm_xq" id="b-info">
+                            <div class="tb-first">
+                                <div class="title" id="o-info_1">
+                                    <h2 class="stit"><o>{$data['title']}加盟流程</o></h2>
+                                </div>
+                                <div class="jm_xq_con">
+                                    <p>{$data['liucheng']}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jm_xq" id="b-info">
+                            <div class="tb-first">
+                                <div class="title" id="o-info_1">
+                                    <h2 class="stit"><o>{$data['title']}加盟费用/加盟利润/政策扶持</o></h2>
+                                </div>
+                                <div class="jm_xq_con">
+                                    <p>{$data['fenxi']}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="jm_xq" id="b-info">
+                         <div class="tb-first">
+                          <div class="title" id="o-info_1">
+                           <h2 class="stit"><o>{dede:field.title/}加盟优势</o></h2>
+                          </div>
+                          <div class="jm_xq_con">
+
+                          </div>
+                         </div>
+                        </div> -->
+                    </div>
+                    <div class="xmsm">
+                        <span>注：</span>本篇文章为转载，转载目的在于传递更多信息，并不代表本网赞同其观点和对其真实性负责，因内容、版权和其它问题，请及时和本站取得联系，我们将第一时间删除内容！
+                    </div>
+                </div>
+            </div>
+
+            <!-- 项目资讯 -->
+            <div class="top">
+                <div class="boxleftbox">
+                    <div class="boxleftcentent">
+
+                        <volist name="lick7" id="li7">
+                            <div class="contentlist">
+                                <a href='[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]' >
+                                <div class="leftimg">
+                                    <img src="{$li7['thumbnail']}" />
+                                </div>
+                                <div class="rightcontent">
+                                    <div class="title">
+                                        {$li7['post_title']}
+                                    </div>
+                                    <div class="text">
+                                        {$li7['post_excerpt']}
+                                    </div>
+                                    <div class="textbottom">
+                                        <span>来源：91创业网</span>
+                                        <span>{$li7['click']}浏览</span>
+                                        <span>[field:pubdate function="GetDateMK(@me)"/]</span>
+                                    </div>
+                                </div> </a>
+                            </div>
+                        </volist>
+
+                    </div>
+                    <div class="nocontentlist">
+                        <div class="listbox">
+                            <img src="__TMPL__/public/new/img/muyou.png" alt="该项目暂无品牌资讯！" />
+                            <p>该项目暂无品牌资讯！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <div id="item3box" class="item3box">
+                    <div class="item3boxtitle">
+                        <img src="__TMPL__/public/new/img/img02.png" />
+                    </div>
+
+                    <div id="_msg1" class="user_mesg " style="background: #FFFFFF;">
+                        <div id="quick_liuyan1">
+                            <div class="title">
+                                <strong>{$data['title']}留言咨询<em>(24小时内获得企业的快速回复)</em> </strong>
+                                <span>(<b class="star1">*</b>为必填选项)</span>
+                            </div>
+                            <div id="quick_liuyan_ad1" class="quick_liuyan_ad_default">
+                                <div class="form-left-top">
+                                    <img src="{$data['logo']}"  alt="{$data['title']}">
+                                    <p>我们立即与您沟通</p>
+                                </div>
+                                <form action="{:cmf_url('portal/xm/liuyan')}" enctype="multipart/form-data" method="post">
+                                    <input type="hidden" name="action" value="post" />
+                                    <input type="hidden" name="diyid" value="3" />
+                                    <input type="hidden" name="do" value="2" />
+                                    <div class="Free_phone_bottom">
+                                        <input type="text" id="Free_phone_text_1" maxlength="11" name='phone' class="Free_phone_text" value="请输入手机号码" onfocus="if(this.value == '请输入手机号码') this.value = ''" onblur="if(this.value =='') this.value = '请输入手机号码'" />
+                                        <input name="xiangmu" value="{dede:field.title/}" type="hidden"  />
+                                        <input name="time" value="" type="hidden"  id="time"  /><!-- 如不需要在前台显示的话可以修改type="hidden" -->
+                                        <input name="ip" id="ip" value="" type="hidden">
+                                        <input name="yemian" id="laiyuanyemian" value="{dede:field.id runphp='yes'}$id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];{/dede:field.id}" type="hidden">
+                                        <input type="hidden" name="dede_fields" value="phone,text;time,text;yemian,text;xiangmu,text;ip,text" />
+                                        <input type="hidden" name="dede_fieldshash" value="b83251052edae4a74c2d33319b6d7c30" />
+                                        <a data-pointkey="XQ005-002">
+                                            <input type="submit" id="Free_phone_btn_1" class="Free_phone_btn" value="免费电话" /></a>
+                                        <p><span>温馨提示:</span><br /> 1.此次通话将不会产生任何费用, 请放心使用</p>
+                                    </div>
+                                </form>
+                            </div>
+                            <script type="text/javascript">
+                                $(function() {
+                                    if($("#form_contact_us_left_ad").length == 0) {
+                                        //$("#quick_liuyan_ad").hide();
+                                        return;
+                                    }
+                                    var html = $("#form_contact_us_left_ad").html();
+                                    $("#quick_liuyan_ad1").removeClass("quick_liuyan_ad_default").html(html);
+                                });
+                            </script>
+                            <form action="{:cmf_url('portal/xm/liuyan')}" enctype="multipart/form-data" method="post" id="msgform1" class="fl">
+                                <input type="hidden" name="action" value="post" />
+                                <input type="hidden" name="diyid" value="1" />
+                                <input type="hidden" name="do" value="2" />
+                                <div class="quick_liuyan_con">
+                                    <div class="item">
+                                        <span><b class="star">*</b>姓名</span>
+                                        <div class="item-right">
+                                            <input type="text" class="v-ipt" value="" name="name" id="Name1" />
+                                            <label for="man"> <input type="radio" id="man1" name="sex" style="border: none" checked="checked" value="0" /> 先生 </label>
+                                            <label for="woman"> <input type="radio" id="woman1" name="sex" style="border: none" value="1" /> 女士 </label>
+                                        </div>
+                                        <div style="clear: both"></div>
+                                    </div>
+                                    <div class="item">
+                                        <span><b class="star">*</b>电话</span>
+                                        <div class="item-right">
+                                            <input type="text" value="" name="tel" id="Tel1" maxlength="11" />
+                                        </div>
+                                        <div style="clear: both"></div>
+                                    </div>
+                                    <div class="item">
+                                        <span>投资金额</span>
+                                        <div class="item-right">
+                                            <select id="InvestMoney1" class="c-money" name="jine"> <option value="0" selected="selected">请选择投资金额</option> <option value="1">1万以下</option> <option value="2">1-5万</option> <option value="3">5-10万</option> <option value="4">10-20万</option> <option value="5">20-50万</option> <option value="6">50-100万</option> <option value="7">100万以上</option> </select>
+                                        </div>
+                                        <div style="clear: both"></div>
+                                    </div>
+                                    <div class="item">
+                                        <span>QQ/Email</span>
+                                        <div class="item-right">
+                                            <input type="text" value="" name="Email" id="Email" />
+                                        </div>
+                                        <div style="clear: both"></div>
+                                    </div>
+                                    <div class="item">
+                                        <span>加盟地区</span>
+                                        <div class="item-right">
+                                            <select name="msgProvince1" id="msgProvince1" size="1" class="mselect " onchange="showSmalla(this.value)"> <option selected="selected" value="0">省/市 </option> </select>
+                                            <select id="msgCity1" size="1" class="mselect1" name="msgCity1" onchange="showXiana(this.value)"> <option selected="selected" value="0">地/州 </option> </select>
+                                            <select id="msgXian1" size="1" class="mselect2" name="msgXian1" onchange="resetAddressa()"> <option selected="selected" value="0">区/县 </option> </select>
+                                            <div class="box-address">
+                                                <input type="text" value="" name="Address" id="Address1" />
+                                            </div>
+                                        </div>
+                                        <div style="clear: both"></div>
+                                    </div>
+                                    <div class="item">
+                                        <span>留言</span>
+                                        <div class="item-right">
+                                            <textarea name="msg" id="msg1" class="Message1" cols="30" rows="10"></textarea>
+                                        </div>
+                                        <div style="clear: both"></div>
+                                    </div>
+                                    <div class="item item_checkbox">
+                                        <span> </span>
+                                        <div class="item-right">
+                                            <input type="checkbox" id="checkbox1" value="11" checked="checked" />
+                                            <span>我同意将我的联系方式推荐给商家</span>
+                                        </div>
+                                    </div>
+                                    <input name="xiangmu" value="{dede:field.title/}" type="hidden"  />
+                                    <input name="time" value="" type="hidden"  id="time"  /><!-- 如不需要在前台显示的话可以修改type="hidden" -->
+                                    <input name="ip" id="ip" value="" type="hidden">
+                                    <input name="yemian" id="laiyuanyemian" value="{dede:field.id runphp='yes'}$id=@me;@me='';
+					$url=GetOneArchive($id);
+					@me=$url['arcurl'];
+					{/dede:field.id}" type="hidden">
+
+                                    <input type="hidden" name="dede_fields" value="name,text;sex,radio;jine,radio;msg,multitext;tel,text;yemian,text;xiangmu,text;time,text;ip,text" />
+                                    <input type="hidden" name="dede_fieldshash" value="d14d8aeca17aeac40c5bdd792081c238" />
+                                    <div class="item">
+                                        <a data-pointkey="XQ005-001"><input type="submit" class="btn-mesSubmit" id="imgBtnUp1"  value="提交留言" /></a>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="form-right fl">
+                                <div class="form-400">
+                                    <img src="__TMPL__/public/new/img/tel.png" />
+                                </div>
+                                <h3>您可以根据下列意向,<span>快捷留言</span></h3>
+                                <ul id="quickMessage" class="quickMessage1">
+                                    <li> <a data-pointkey="XQ006-001"> <p>想要加盟{$data['title']},请尽快联系.</p> </a> </li>
+                                    <li> <a data-pointkey="XQ006-002"> <p>{$data['title']}加盟流程怎样的?</p> </a> </li>
+                                    <li> <a data-pointkey="XQ006-003"> <p>{$data['title']}加盟费是多少钱?</p> </a> </li>
+                                    <li> <a data-pointkey="XQ006-004"> <p>{$data['title']}有哪些扶持政策?</p> </a> </li>
+                                    <li> <a data-pointkey="XQ006-005"> <p>{$data['title']}能实地考察吗?</p> </a> </li>
+                                </ul>
+                                <i></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- 右侧信息 -->
+        <div class="boxright">
+            <!-- 猜你喜欢 -->
+            <div class="cainixihuan clearfix">
+                <div class="title">
+                    <div class="titleleft">
+                        <i></i>猜你喜欢
+                    </div>
+                    <div class="titleright">
+                        <i></i>换一批
+                    </div>
+                </div>
+
+                <div class="content">
+                    <volist name="lick1" id="li1">
+                        <div class="contentlist">
+                            <a href="{:cmf_url('portal/common/index',['id'=>$li1['aid'],'classname'=>$li1['class']])}"  title="{$li1['title']}"> <img src="{$li1['litpic']}"  alt="{$li1['title']}"/>
+                                <div class="text">
+                                    <p>{$li1['title']}</p>
+                                    <span>￥{$li1['invested']}</span>
+                                </div>
+                            </a>
+                        </div>
+                    </volist>
+                </div>
+                <div class="content">
+                    <volist name="lick2" id="li2">
+                        <div class="contentlist">
+                            <a href="{:cmf_url('portal/common/index',['id'=>$li2['aid'],'classname'=>$li2['class']])}"  title="{$li2['title']}"> <img src="{$li2['litpic']}"  alt="{$li2['title']}"/>
+                                <div class="text">
+                                    <p>{$li2['title']}</p>
+                                    <span>￥{$li2['invested']}</span>
+                                </div>
+                            </a>
+                        </div>
+                    </volist>
+                </div>
+                <div class="content">
+                    <volist name="lick3" id="li3">
+                        <div class="contentlist">
+                            <a href="{:cmf_url('portal/common/index',['id'=>$li3['aid'],'classname'=>$li3['class']])}"  title="{$li3['title']}"> <img src="{$li3['litpic']}"  alt="{$li3['title']}"/>
+                                <div class="text">
+                                    <p>{$li3['title']}</p>
+                                    <span>￥{$li3['invested']}</span>
+                                </div>
+                            </a>
+                        </div>
+                    </volist>
+                </div>
+            </div>
+            <!-- 行业资讯 -->
+            <div class="latest-news ">
+                <div class="title"><span></span>行业资讯</div>
+                <ul>
+                    <volist name="lick6" id="li6">
+                        <li>
+                            <span></span><a href="{:cmf_url('portal/common/index',['id'=>$li6['id']])}">{$li6['post_title']}</a>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+            <!-- 大家都在看 -->
+            <div class="latest-news ">
+                <div class="title"><span></span>大家都在看</div>
+                <ul>
+                    <volist name="lick4" id="li4">
+                        <li>
+                            <span></span><a href="{:cmf_url('portal/common/index',['id'=>$li4['id']])}">{$li4['post_title']}</a>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="item3">
+    <div id="item3box" class="item3box">
+        <div id="item3boxtitle" class="item3boxtitle">
+            <img src="__TMPL__/public/new/img/img01.png" />
+        </div>
+        <link rel="stylesheet" type="text/css" href="__TMPL__/public/new/css/quick_mesg3.css" />
+        <div id="_msg" class="user_mesg ">
+            <div id="quick_liuyan">
+                <div class="title">
+                    <strong>留言咨询<em>(24小时内获得企业的快速回复)</em> </strong>
+                    <span>(<b class="star1">*</b>为必填选项)</span>
+                </div>
+                <div id="quick_liuyan_ad" class="quick_liuyan_ad_default">
+                    <div class="form-left-top">
+                        <img src="{$data['logo']}"  alt="{dede:field.title/}">
+                        <p>我们立即与您沟通</p>
+                    </div>
+                    <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+                        <input type="hidden" name="action" value="post" />
+                        <input type="hidden" name="diyid" value="3" />
+                        <input type="hidden" name="do" value="2" />
+                        <div class="Free_phone_bottom">
+                            <input type="text" id="Free_phone_text" class="Free_phone_text" name='phone' maxlength="11" value="请输入手机号码" onfocus="if(this.value == '请输入手机号码') this.value = ''" onblur="if(this.value =='') this.value = '请输入手机号码'" />
+                            <input name="xiangmu" value="{dede:field.title/}" type="hidden"  />
+                            <input name="time" value="" type="hidden"  id="time"  /><!-- 如不需要在前台显示的话可以修改type="hidden" -->
+                            <input name="ip" id="ip" value="" type="hidden">
+                            <input name="yemian" id="laiyuanyemian" value="{dede:field.id runphp='yes'}$id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];{/dede:field.id}" type="hidden">
+                            <input type="hidden" name="dede_fields" value="phone,text;time,text;yemian,text;xiangmu,text;ip,text" />
+                            <input type="hidden" name="dede_fieldshash" value="b83251052edae4a74c2d33319b6d7c30" />
+                            <a data-pointkey="XQ005-002"><input type="submit" id="Free_phone_btnleft" class="Free_phone_btn" value="免费电话" /></a>
+                            <p><span>温馨提示:</span><br /> 1.此次通话将不会产生任何费用, 请放心使用。</p>
+                            <div class="b-pos-a"></div>
+                        </div>
+                    </form>
+                </div>
+                <script type="text/javascript">
+                    $(function() {
+                        if($("#form_contact_us_left_ad").length == 0) {
+                            //$("#quick_liuyan_ad").hide();
+                            return;
+                        }
+                        var html = $("#form_contact_us_left_ad").html();
+                        $("#quick_liuyan_ad").removeClass("quick_liuyan_ad_default").html(html);
+                    });
+                </script>
+                <form action="/plus/diy.php" enctype="multipart/form-data" method="post" id="msgform2" class="fl">
+                    <input type="hidden" name="action" value="post" />
+                    <input type="hidden" name="diyid" value="1" />
+                    <input type="hidden" name="do" value="2" />
+                    <div class="quick_liuyan_con">
+                        <div class="item">
+                            <span><b class="star">*</b>姓名</span>
+                            <div class="item-right">
+                                <input type="text" class="v-ipt" value="" name="name" id="Name2" />
+                                <label for="man"> <input type="radio" id="man" name="sex" style="border: none" checked="checked" value="男" /> 先生 </label>
+                                <label for="woman"> <input type="radio" id="woman" name="sex" style="border: none" value="女" /> 女士 </label>
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                        <div class="item">
+                            <span><b class="star">*</b>电话</span>
+                            <div class="item-right">
+                                <input type="text" value="" name="tel" id="Tel2" maxlength="11" />
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                        <div class="item">
+                            <span>投资金额</span>
+                            <div class="item-right">
+                                <select id="InvestMoney" class="c-money" name="jine"> <option value="0" selected="selected">请选择投资金额</option> <option value="1">1万以下</option> <option value="2">1-5万</option> <option value="3">5-10万</option> <option value="4">10-20万</option> <option value="5">20-50万</option> <option value="6">50-100万</option> <option value="7">100万以上</option> </select>
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                        <div class="item">
+                            <span>QQ/Email</span>
+                            <div class="item-right">
+                                <input type="text" value="" name="Email" id="Email" />
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                        <input name="xiangmu" value="{dede:field.title/}" type="hidden"  />
+                        <input name="time" value="" type="hidden"  id="time"  /><!-- 如不需要在前台显示的话可以修改type="hidden" -->
+                        <input name="ip" id="ip" value="" type="hidden">
+                        <input name="yemian" id="laiyuanyemian" value="{dede:field.id runphp='yes'}$id=@me;@me='';
+					$url=GetOneArchive($id);
+					@me=$url['arcurl'];
+					{/dede:field.id}" type="hidden">
+
+                        <input type="hidden" name="dede_fields" value="name,text;sex,radio;jine,radio;msg,multitext;tel,text;yemian,text;xiangmu,text;time,text;ip,text" />
+                        <input type="hidden" name="dede_fieldshash" value="d14d8aeca17aeac40c5bdd792081c238" />
+                        <div class="item">
+                            <span>加盟地区</span>
+                            <div class="item-right">
+                                <select name="msgProvince" id="msgProvince" size="1" class="mselect" onchange="showSmall(this.value)"> <option selected="selected" value="0">省/市 </option> </select>
+                                <select id="msgCity" size="1" class="mselect" name="msgCity" onchange="showXian(this.value)"> <option selected="selected" value="0">地/州 </option> </select>
+                                <select id="msgXian" size="1" class="mselect" name="msgXian" onchange="resetAddress()"> <option selected="selected" value="0">区/县 </option> </select>
+                                <div class="box-address">
+                                    <input type="text" value="" name="Address" id="Address" />
+                                </div>
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                        <div class="item">
+                            <span>留言</span>
+                            <div class="item-right">
+                                <textarea name="msg" id="msg2" class="Message" cols="30" rows="10"></textarea>
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                        <div class="item item_checkbox">
+                            <span> </span>
+                            <div class="item-right">
+                                <input type="checkbox" id="checkbox" value="11" checked="checked" />
+                                <span>我同意将我的联系方式推荐给商家</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a data-pointkey="XQ005-001"><input type="submit" class="btn-mesSubmit" id="imgBtnUp" value="提交留言" /></a>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-right fl">
+                    <div class="form-400">
+                        <img src="__TMPL__/public/new/img/tel.png" />
+                    </div>
+                    <h3>您可以根据下列意向,<span>快捷留言</span></h3>
+                    <ul id="quickMessage" class="quickMessage">
+                        <li> <a data-pointkey="XQ006-001"> <p>想要加盟{$data['title']},请尽快联系.</p> </a> </li>
+                        <li> <a data-pointkey="XQ006-002"> <p>{$data['title']}加盟流程怎样的?</p> </a> </li>
+                        <li> <a data-pointkey="XQ006-003"> <p>{$data['title']}加盟费是多少钱?</p> </a> </li>
+                        <li> <a data-pointkey="XQ006-004"> <p>{{$data['title']}有哪些扶持政策?</p> </a> </li>
+                        <li> <a data-pointkey="XQ006-005"> <p>{$data['title']}能实地考察吗?</p> </a> </li>
+                    </ul>
+                    <i></i>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript"></script>
+    </div>
+</div>
+
+<div class="xmtjbox">
+    <include file="flag_xm"/>
+</div>
+
+<div id="item5">
+    <div class="item5box">
+        <div class="Poster-Poster">
+            <div class="container">
+                <div id="mod-detail-disclaimer">
+                    <p> <b> 免责声明：</b>本站为用户提供免费信息展示，不收取任何费用（包括加盟费），如有冒充本站收费行为请及时报警。<br /> <b>友情提醒：</b>投资有风险 加盟需谨慎。为规避投资风险，建议您在投资前务必多咨询，多考察，降低投资风险。<br /> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer start-->
+<div class="footer">
+
+    <!-- <div class="w1200 ft-links clearfix">
+        <h3>友情链接：</h3>
+        <ul>
+
+        </ul>
+    </div> -->
+    <include file="new_footer"/>
+
+</div>
+<!--footer end-->
+
+
+<div id="floatbottom">
+    <div class="imgbox">
+        <div class="pos">
+            <img src="__TMPL__/public/new/img/button-out.png" />
+            <img src="__TMPL__/public/new/img/icon-zhankai.png" />
+        </div>
+    </div>
+    <div class="floatbox container">
+        <img src="__TMPL__/public/new/img/bg-02.png" />
+        <input type="text" id="bottomTel" placeholder="请输入您的手机号码，立即免费电话" />
+        <div class="bottombtnleft">
+            <i></i>免费电话
+        </div>
+        <div class="bottombtnright">
+            <i></i>立即咨询
+        </div>
+    </div>
+</div>
+<!-- gotop -->
+<div class="fixrightbox">
+    <div class="selectbox"> <a href="http://www.91chuangye.com/xiangmu/">项目库</a> </div>
+    <div class="gotop">
+        <p>TOP</p>
+    </div>
+</div>
+<script src="__TMPL__/public/new/js/p.js" type="text/javascript"></script>
+<script src="__TMPL__/public/new/js/submit.js" type="text/javascript"></script>
+<script src="__TMPL__/public/new/js/validate.js" type="text/javascript"></script>
+<script type="text/javascript" src="_TMPL__/public/new/js/tracks.js"></script>
+<script src="__TMPL__/public/new/js/tt_detial.js" type="text/javascript"></script>
+<script type="text/javascript">
+    //xm-list xmtj
+    $(".xmtj .tab-cont").first().show().siblings().hide();
+    $(".xmtj .tab li").first().addClass("active").siblings().removeClass("active");
+    $(".xmtj .tab-cont dd a:nth-last-child(1)").addClass("bdrnone");
+    $(".xmtj .tab-cont dd:nth-last-child(1) a").addClass("bdbnone");
+    $(".xmtj .tab li").mouseover(function(){
+        var x=$(this).index();
+        $(this).addClass("active").siblings().removeClass("active");
+        $(".xmtj .tab-cont").eq(x).show().siblings().hide();
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta name="applicable-device" content="pc" /> 
+<meta name="robots" content="all">
+<title>{$website.seo_title}</title>
+<meta name="keywords" content="{$website.seo_keywords}">
+<meta name="description" content="{$website.seo_description}">
+<meta name="renderer" content="webkit">
+<link rel="shortcut icon" href="__TMPL__/public/new/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" media="only screen and(max-width: 640px)" href="http://m.91chuangye.com/">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.91chuangye.com/">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.91chuangye.com/">
+<link type="text/css" rel="stylesheet" href="__TMPL__/public/new/css/common.css">
+<link type="text/css" rel="stylesheet" href="__TMPL__/public/new/css/index.css">
+<base target="_blank">
+
+
+</head>
+<body>
+<div class="wrapper">
+<include file="new_head3"/>
+	<div class="banner-box clearfix">
+		<div class=" w1200">
+			<!--左侧二级导航-->
+			<div class="fl b-subnav">
+				<ul class="m-list">
+                    <volist name="cate" id="ca">
+					<li><a href="{:cmf_url('portal/common/index',['classname'=>$ca['path']],'')}/">{$ca['name']}</a></li>
+                    </volist>
+				</ul>
+			</div>
+			
+			<!--焦点图&品牌上榜-->
+			<div class="fl b-hdxw">
+				<div id="hdxw" class="hdxw-box">
+					<div class="hdxw-img">
+							<div class="images-inner">
+									<a href="{:cmf_url('portal/common/index',['classname'=>'naichajiameng','id'=>'84335'])}" target="_blank" class="link">
+											<img src="__TMPL__/public/new/images/banner4.jpg" class="img" />
+									</a>
+									<a href="{:cmf_url('portal/common/index',['classname'=>'xiaochichejiameng','id'=>'12988'])}" target="_blank" class="link">
+											<img src="__TMPL__/public/new/images/banner2.jpg" class="img" />
+									</a>
+									<a href="{:cmf_url('portal/common/index',['classname'=>'jipaijiameng','id'=>'80367'])}" target="_blank" class="link">
+											<img src="__TMPL__/public/new/images/banner5.jpg" class="img" />
+									</a>
+							</div>
+					</div>
+					<div class="hdxw-dots">
+							<div class="dots-inner"></div>
+					</div>
+				</div>
+
+				<div class="b-brand">
+					<div class="brand-title">
+						<div class="title-inner clearfix">
+							<a href="http://www.91chuangye.com/xiangmu/" target="_blank" class="link-title">
+								<i class="icon icon-brand"></i>
+								品牌上榜
+							</a>
+							 <!--{dede:arclist typeid='2,1,3,4,5,6,7,8,9,10,20,339,312,313,350,396,420' orderby='pubdate' titlelen='180' limit='16,5'}-->
+							 <!--<a href="[field:arcurl /]" title="[field:title/]" class="link-other">[field:title/]</a>-->
+							 <!--{/dede:arclist}-->
+                            <!--<volist name="lick1" id="li1">
+                                <a href="{:cmf_url('portal/common/index',['id'=>$li1['aid'],'classname'=>$li1['class']])}" title="{$li1['title']}" class="link-other">{$li1['title']}</a>
+                            </volist>
+							<a href="http://www.91chuangye.com/xiangmu/" target="_blank" class="link-more">MORE+</a>-->
+						</div>
+					</div>
+					<div class="brand-cont">
+						<div class="cont-inner">
+							 <!--{dede:arclist typeid='top' row='15' flag='h' addfields='imgs' channelid='17' orderby='pubdate' titlelen='180' row=4 }-->
+							 <!--<a href="[field:arcurl /]" title="[field:title/]"><img src="[field:imgs/]"  alt="[field:title/]"><span class="ad_logo"><img src="http://www.91chuangye.com/templets/Yfdeg/new/images/gg.png"></span></a>-->
+							 <!--{/dede:arclist}-->
+                            <volist name="lick2" id="li2">
+                                <a href="{:cmf_url('portal/common/index',['id'=>$li2['aid'],'classname'=>$li2['class']])}" title="{$li2['title']}">
+									<img src="{$li2['thumbnail']}" alt="{$li2['title']}"/><span class="ad_logo">
+									<img src="http://www.91chuangye.com/templets/Yfdeg/new/images/gg.png"></span></a>
+                            </volist>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--右侧搜索&商机资讯-->
+			<div class="fl b-search">
+				<div class="search">
+					<form action="{:cmf_url('portal/plus/index')}" id="project-form" method="post">
+						<input type="hidden" name="typeid" value="2,1,3,4,5,6,7,8,9,10,350,312,313,63,339">
+						<ul>
+							<li>
+								<label>感兴趣行业：</label>
+							<select name="typeid" class="search-right">
+								<option value='2' selected>--不限栏目--</option>
+
+							</select>
+							</li>
+							<li>
+								<label>欲投资金额：</label>
+								<select name="invested" class="search-right">
+									<option value="">不限</option>
+									<option value="0-1万">0-1万</option>
+									<option value="1-5万">1-5万</option>
+									<option value="5-10万">5-10万</option>
+									<option value="10-20万">10-20万</option>
+									<option value="20-50万">20-50万</option>
+									<option value="50-100万">50-100万</option>
+									<option value="100-200万">100-200万</option>
+									<option value="100万以上">100万以上</option>
+								</select>
+							</li>
+							<li>
+								<label>输入关键字：</label>
+								<input name="q" type="text" class="search-right search-input" id="search-keyword">
+							</li>
+							<li>
+								<button type="submit" class="sear-btn">项目搜索</button>
+								<a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/" target="_blank">快速进入>></a>
+							</li>
+						</ul>
+					</form>
+				</div>
+				<div class="zixun">
+					<div class="zixun-title">
+						<ul>
+							<li class="link-tab link-active">创业商机</li>
+							<li class="link-tab">创业头条</li>
+						</ul>
+					</div>
+					<div class="zixun-cont">
+						<ul class="list list_num2">
+							<!--创业商机-->
+                            <volist name="lick3" id="li3">
+                                <li><a href="{:cmf_url('portal/common/index',['id'=>$li3['aid'],'classname'=>$li3['class']])}" title="{$li3['title']}">{$li3['title']}</a></li>
+                            </volist>
+						</ul>
+						<ul class="list list_num1">
+                            <volist name="lick4" id="li4">
+                                <li><a href="{:cmf_url('portal/common/index',['id'=>$li4['id'],'classname'=>'news'])}" title="{$li4['post_title']}" class="link-other">{$li4['post_title']}</a></li>
+                            </volist>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--brand-pic-->
+	<div class="brand-pic ">
+		<div class="w1200 clearfix">
+			<ul>
+             
+                <volist name="lick5" id="li5">
+                    <li>
+                        <a href="{:cmf_url('portal/common/index',['id'=>$li5['aid'],'classname'=>$li5['class']])}" title="{$li5['title']}">
+							<img src="{$li5['thumbnail']}" alt="{$li5['title']}"/></a>
+                        <span class="ad_logo"><img src="http://www.91chuangye.com/templets/Yfdeg/new/images/gg.png" alt=""/></span>
+                    </li>
+                </volist>
+			</ul>
+		</div>
+	</div>
+	
+	<!--brand-logo-->
+	<div class="w1200">
+		<div class="brand-logo">
+			<ul class="zm_mod3_1 clearfix">
+					<!--{dede:arclist  flag='c' orderby='rand' addfields='logo' channelid='17' titlelen='180' row=16}-->
+					<!--<li> <a href="[field:arcurl /]" title="[field:title/]"><p><img src="[field:logo/]"  alt="[field:title/]"></p></a>	</li>-->
+				 <!--{/dede:arclist}-->
+                <volist name="lick6" id="li6">
+                    <li>
+                        <a href="{:cmf_url('portal/common/index',['id'=>$li6['aid'],'classname'=>$li6['class']])}" title="{$li6['title']}">
+							<p>
+								<img src="{$li6['logo']}" alt="{$li6['title']}">
+							</p>
+						</a>
+                    </li>
+                </volist>
+			</ul>
+		</div>	
+	</div>
+	
+	<!--品牌推荐&新品上线-->
+	<div class="w1200 clearfix">
+		<div class="fl brand-tj">
+			<div class="title-com">
+				<h3><i class="icon icon-brand"></i>品牌推荐</h3>
+				
+			</div>
+			<div class="cont">
+				<ul>
+				<!--{dede:arclist type='top' row='17' flag='a' orderby='pubdate' addfields='invested,sum,imgs' channelid='17' titlelen='180' row=8}-->
+					<!--<li>-->
+						<!--<a href="[field:arcurl /]" title="[field:title/]">-->
+							<!--<p><img src="[field:imgs/]" alt="[field:title/]"></p>-->
+							<!--<span>[field:title/]</span>-->
+							<!--<em class="money">￥[field:invested/]</em>-->
+						<!--</a>	-->
+						<!--<p class="desc"><em>项目简介：</em>[field:description function='cn_substr(@me,66)'/]...</p>-->
+					<!--</li>-->
+				 <!--{/dede:arclist}-->
+                    <volist name="lick7" id="li7">
+                        <li>
+                            <a href="{:cmf_url('portal/common/index',['id'=>$li7['aid'],'classname'=>$li7['class']])}" title="{$li7['title']}">
+                            <p><img src="{$li7['thumbnail']}" alt="{$li7['title']}"> </p>
+                            <span>{$li7['title']}</span>
+                            <em class="money">￥{$li7['invested']}</em>
+                            </a>
+                            <p class="desc"><em>项目简介：</em>{$li7['description']|msubstr=0,25,'utf-8',true}...</p>
+                        </li>
+                    </volist>
+				</ul>
+			</div>
+		</div>
+		<div class="fr new-pro">
+			<div class="title-com">
+				<h3><i class="icon icon-newPros"></i>新品上线</h3>
+				
+			</div>
+			<div class="cont">
+				<ul>
+                    <volist name="lick8" id="li8" key='k'>
+                        <li>
+                            <a href="{:cmf_url('portal/common/index',['id'=>$li8['aid'],'classname'=>$li8['class']])}" class="link"><i class="num" style="<?php if($k == 1){?>background: #e60012;<?php }else if($k == 2){?>background: #fd6205;<?php }else if($k == 3){?>background: #fd8005;<?php }?>">{$k}</i><span class="text-name">{$li8['title']}</span></a>
+                            <dl class="link-cont">
+                                 <dt>
+									 <a href="{:cmf_url('portal/common/index',['id'=>$li8['aid'],'classname'=>$li8['class']])}">
+									 	<img src="{$li8['litpic']}" alt="{$li8['title']}" width="112px" height="70px">
+								 	</a>
+								 </dt>
+                                 <dd>
+                                     <span>投资额：<em>{$li8['invested']}</em></span>
+                                     <span>门店数：<em>{$li8['sum']}</em></span>
+                                     <a class="btn" href="{:cmf_url('portal/common/index',['id'=>$li8['aid'],'classname'=>$li8['class']])}">立即咨询</a>
+                                 </dd>
+                            </dl>
+                        </li>
+                    </volist>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--热门品牌-->
+	<div class="w1200 clearfix">
+		<div class="brand-hot">
+			<div class="title-com">
+				<h3><i class="icon icon-brand-hot"></i>热门品牌</h3>
+				
+			</div>
+			<div class="cont">
+				<div class="tab">
+					<ul>
+		  <!--{dede:channelartlist type='top' row='12'}	  -->
+			<!--<li id="brand_{dede:global name='itemindex' runphp='yes'}@me;{/dede:global}{dede:global name='itemindex' runphp='yes'}@me;{/dede:global}"><a href='{dede:field name='typeurl'/}'>{dede:field name='typename'/}</a></li> 		  -->
+	      <!--{/dede:channelartlist}-->
+                        <volist name="cates" id="cas">
+                           <li><a href="{:cmf_url('portal/common/index',['classname'=>$cas['path']],'')}/">{$cas['name']}</a></li>
+                        </volist>
+					</ul>
+				</div>
+				<div class="tab-conts">
+                    <volist name="cates" id="cas">
+					<div class="tab-cont">
+						<div class="tab-cont-news clearfix">
+							<ul>
+							<volist name="cas.pp1" id="p1">
+								<li>
+									<a href="{:cmf_url('portal/common/index',['id'=>$p1['aid'],'classname'=>$p1['class']])}" class="link">{$p1['title']}</a>
+								</li>
+                            </volist>
+							</ul>
+							<ul>
+							<volist name="cas.pp2" id="p2">
+                                <li>
+                                    <a href="{:cmf_url('portal/common/index',['id'=>$p2['aid'],'classname'=>$p2['class']])}" class="link">{$p2['title']}</a>
+                                </li>
+                            </volist>
+							</ul>
+
+							<ul>
+                                <volist name="cas.pp3" id="p3">
+                                    <li>
+                                        <a href="{:cmf_url('portal/common/index',['id'=>$p3['aid'],'classname'=>$p3['class']])}" class="link">{$p3['title']}</a>
+                                    </li>
+                                </volist>
+							</ul>
+
+							<ul>
+                                <volist name="cas.pp4" id="p4">
+                                    <li>
+                                        <a href="{:cmf_url('portal/common/index',['id'=>$p4['aid'],'classname'=>$p4['class']])}" class="link">{$p4['title']}</a>
+                                    </li>
+                                </volist>
+							</ul>
+
+							<ul>
+                                <volist name="cas.pp5" id="p5">
+                                    <li>
+                                        <a href="{:cmf_url('portal/common/index',['id'=>$p5['aid'],'classname'=>$p5['class']])}" class="link">{$p5['title']}</a>
+                                    </li>
+                                </volist>
+							</ul>
+
+							<ul>
+							<!--{dede:arclist typeid='0' orderby='sortrank' flag='s' titlelen='180' limit='60,10'}-->
+								<!--<li [field:global name='autoindex'runphp='yes']if(@me==1){@me='class="link-hover"';}else{@me='';}[/field:global]>-->
+									<!--<a href="[field:arcurl/]" class="link">[field:title/]</a>-->
+								<!--</li>-->
+							<!--{/dede:arclist}-->
+                                <volist name="cas.pp6" id="p6">
+                                    <li>
+                                        <a href="{:cmf_url('portal/common/index',['id'=>$p6['aid'],'classname'=>$p6['class']])}" class="link">{$p6['title']}</a>
+                                    </li>
+                                </volist>
+							</ul>
+						</div>
+					</div>
+					<!-- end -->
+                    </volist>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<!-- advertisement -->
+	<div class="adbox w1200">
+
+		<a href="http://www.91chuangye.com/malatangjiameng/1380.html" title="勾馋麻辣烫"><img src="__TMPL__/public/new/images/ad2.png" alt="勾馋麻辣烫"></a>
+		<a href="http://www.91chuangye.com/shaokaojiameng/81195.html" title="蜀国烤鱼"><img src="__TMPL__/public/new/images/sgky.jpg" alt="蜀国烤鱼"></a>
+		<ul class="clearfix">
+			<li><a href="http://www.91chuangye.com/yinpinjiameng/86463.html" title="蜜雪冰城"><img src="__TMPL__/public/new/images/mxbc.jpg" alt="蜜雪冰城"></a></li>
+			<li><a href="http://www.91chuangye.com/news/90485.html" title="中街1946"><img src="__TMPL__/public/new/images/zj.jpg" alt="中街1946"></a></li>
+			<li><a href="http://www.91chuangye.com/jianbingjiameng/9539.html" title="煎饼王子"><img src="__TMPL__/public/new/images/jb.jpg" alt="煎饼王子"></a></li>
+			<li><a href="http://www.91chuangye.com/muyingyongpinjiameng/8554.html" title="好爸爸母婴用品店"><img src="__TMPL__/public/new/images/hbb.jpg" alt="好爸爸母婴用品店"></a></li>
+		</ul>
+	</div>
+
+	
+	<!--投资推荐-->
+	<div class="w1200 clearfix">
+		<div class="touzi-tj">
+			<div class="title-com">
+				<h3><i class="icon icon-touzi"></i>投资推荐</h3>
+				<div class="title-com-bar">
+					<a href="javascript:;"><i>热门投资项目：</i></a>
+		  <!--{dede:channelartlist typeid='2,1,3'}	  -->
+			<!--<a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>|  -->
+	      <!--{/dede:channelartlist}-->
+                   <volist name="lick9" id="li9">
+                       <a href="{:cmf_url('portal/common/index',['classname'=>$li9['path']],'')}/">{$li9['name']}</a>
+                   </volist>
+				</div>
+			</div>
+			<div class="cont">
+				<div class="tab">
+					<ul>
+						<li id="touzi_1">1-5万</li>
+						<li id="touzi_2">5-10万</li>
+						<li id="touzi_3">10-20万</li>
+						<li id="touzi_4">20-50万</li>
+						<li id="touzi_5">50-100万</li>
+						<li id="touzi_6">100万以上</li>
+					</ul>
+				</div>
+				<div class="tab-conts">
+					<div class="tab-cont" id="touzi_con_1">
+						<ul>
+                            <volist name="tz1" id="t1">
+                                <li>
+                                    <a href="{:cmf_url('portal/common/index',['id'=>$t1['aid'],'classname'=>$t1['class']])}" title="{$t1['title']}">
+                                        <img src="{$t1['litpic']}" alt="{$t1['title']}"/>
+                                    </a>
+                                </li>
+                            </volist>
+						    <li>
+								<a href="http://www.91chuangye.com/xiangmu/">查看更多>></a>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-cont" id="touzi_con_2">
+						<ul>
+                            <volist name="tz2" id="t2">
+                                <li>
+                                    <a href="{:cmf_url('portal/common/index',['id'=>$t2['aid'],'classname'=>$t2['class']])}" title="{$t2['title']}">
+                                        <img src="{$t2['litpic']}" alt="{$t2['title']}"/>
+                                    </a>
+                                </li>
+                            </volist>
+						    <li>
+								<a href="http://www.91chuangye.com/xiangmu/">查看更多>></a>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-cont" id="touzi_con_3">
+						<ul>
+                            <volist name="tz3" id="t3">
+                                <li>
+                                    <a href="{:cmf_url('portal/common/index',['id'=>$t3['aid'],'classname'=>$t3['class']])}" title="{$t3['title']}">
+                                        <img src="{$t3['litpic']}" alt="{$t3['title']}"/>
+                                    </a>
+                                </li>
+                            </volist>
+						    <li>
+								<a href="http://www.91chuangye.com/xiangmu/">查看更多>></a>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-cont" id="touzi_con_2">
+						<ul>
+                            <volist name="tz4" id="t4">
+                                <li>
+                                    <a href="{:cmf_url('portal/common/index',['id'=>$t4['aid'],'classname'=>$t4['class']])}" title="{$t4['title']}">
+                                        <img src="{$t4['litpic']}" alt="{$t4['title']}"/>
+                                    </a>
+                                </li>
+                            </volist>
+						    <li>
+								<a href="http://www.91chuangye.com/xiangmu/">查看更多>></a>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-cont" id="touzi_con_2">
+						<ul>
+                            <volist name="tz5" id="t5">
+                                <li>
+                                    <a href="{:cmf_url('portal/common/index',['id'=>$t5['aid'],'classname'=>$t5['class']])}" title="{$t5['title']}">
+                                        <img src="{$t5['litpic']}" alt="{$t5['title']}"/>
+                                    </a>
+                                </li>
+                            </volist>
+						    <li>
+								<a href="http://www.91chuangye.com/xiangmu/">查看更多>></a>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-cont" id="touzi_con_2">
+						<ul>
+                            <volist name="tz6" id="t6">
+                                <li>
+                                    <a href="{:cmf_url('portal/common/index',['id'=>$t6['aid'],'classname'=>$t6['class']])}" title="{$t6['title']}">
+                                        <img src="{$t6['litpic']}" alt="{$t6['title']}"/>
+                                    </a>
+                                </li>
+                            </volist>
+							<li>
+								<a href="http://www.91chuangye.com/xiangmu/">查看更多>></a>
+							</li>
+						</ul>
+					</div>			
+				</div>	
+			</div>
+		</div>	
+	</div>	
+	
+	<!--行业分类-->
+	<div class="w1200 clearfix">
+		<div class="trade-type">
+			<div class="title-com">
+				<h3><i class="icon icon-trade"></i>行业分类</h3>
+			</div>
+			<div class="cont">
+				<volist name="class1" id="cla1">
+				<dl class="first">
+					<dt><a href="{:cmf_url('portal/common/index',['classname'=>$cla1['path']],'')}/">{$cla1.name}</a></dt>
+					<dd>
+						<div class="firstdd clearfix">
+						 <volist name="cla1.cate" id="cat1">
+						 <a href="{:cmf_url('portal/common/index',['classname'=>$cat1['path']],'')}/" name='autoindex'>{$cat1.name}</a>
+                         </volist>
+						</div>
+						<div class="more"><span></span></div>
+					</dd>
+				</dl>
+                </volist>
+				<div class="yhangye clearfix">
+					<div class="yhy_l">						
+						<volist name="class2" id="cla2">
+						<dl>
+							<dt><a href="{:cmf_url('portal/common/index',['classname'=>$cla2['path']],'')}/">{$cla2['name']}</a></dt>
+							<dd>
+								<volist name="cla2.cate" id="cat2">
+								 <a href="{:cmf_url('portal/common/index',['classname'=>$cat2['path']],'')}/">{$cat2['name']}</a>
+                                </volist>
+							</dd>
+						</dl>
+                        </volist>
+					</div>
+					<div class="yhy_r">						
+						<volist name="class3" id="cla3">
+						<dl>
+							<dt><a href="{:cmf_url('portal/common/index',['classname'=>$cla3['path']],'')}/">{$cla3['name']}</a></dt>
+							<dd>
+                                <volist name="cla3.cate" id="cat3">
+								 <a href="{:cmf_url('portal/common/index',['classname'=>$cat3['path']],'')}/">{$cat3['name']}</a>
+								</volist>
+							</dd>
+						</dl>
+                        </volist>
+					</div>
+				</div>
+
+			</div>
+		</div>	
+	</div>
+
+	<!-- advertisement -->
+	<div class="adbox w1200">
+		<a href="http://www.91chuangye.com/naichajiameng/91823.html" title="奶茶加盟"><img src="__TMPL__/public/new/images/ad1.png" alt=""></a>
+	</div>
+
+	<!--加盟资讯-->
+	<div class="w1200 clearfix">
+		<div class="join-news">
+			<div class="title-com">
+				<h3><i class="icon icon-joinNews"></i>创业头条</h3>
+				<a href="{:cmf_url('portal/common/index',['classname'=>'chuangyegushi'],'')}/" class="fr link-more">查看更多></a>
+			</div>
+			<div class="cont">
+				<div class="fl join-story" id="join-story1">
+					<div class="tit tabs">
+						<ul>
+							<li class="active"><i class="icon icon-story"></i>创业故事</li>
+							<li><i class="icon icon-road"></i>创业之道</li>
+						</ul>
+					</div>
+					<div class="tab-conts">
+						  <volist name="data1" id="da1">
+						<div class="tab-cont">
+							<div class="pic">
+                                <volist name="da1.img" id="li11">
+                                    <a href="{:cmf_url('portal/common/index',['id'=>$li11['id'],'classname'=>$li11['class']])}" title='{$li11['post_title']}'>
+                                        <img src="{$li11['thumbnail']}" alt="{$li11['post_title']}"/>
+                                        <p>{$li11['post_title']}</p>
+                                    </a>
+                                </volist>
+							</div>
+							<div class="new">
+								<ul class="m-list">
+                                    <volist name="da1.data" id="li10">
+                                       <li>
+                                           <a href="{:cmf_url('portal/common/index',['id'=>$li10['id'],'classname'=>$li10['class']])}" title='{$li10['post_title']}'>{$li10['post_title']}</a>{$li10.published_time|date='Y-m-d',###}
+                                       </li>
+                                    </volist>
+								</ul>
+							</div>
+						</div>
+                    </volist>
+					</div>
+				</div>
+				<div class="fl join-cy">
+					 <volist name="data2" id="da2">
+					<div class="imgText">
+						<div class="tit">
+							<a href="{:cmf_url('portal/common/index',['classname'=>$da2['path']],'')}/"><i class="icon icon-story"></i>{$da2['name']}</a>
+						</div>
+						<div class="cont">
+							<div class="m-1">
+							<volist name="da2.img" id="im">
+								<a href="{:cmf_url('portal/common/index',['id'=>$im['id'],'classname'=>$im['class']])}" class="img"><img src="{$im['thumbnail']}" alt="{$im['post_title']}"></a>
+								<dl class="m-1-a">
+									<dt><a href="{:cmf_url('portal/common/index',['id'=>$im['id'],'classname'=>$im['class']])}" title="{$im['post_title']}">{$im['post_title']}</a></dt>
+									<dd>{$im['post_excerpt']}...<a href="[field:arcurl/]" class="more">[详情]</a></dd>
+								</dl>
+                            </volist>
+							</div>
+							<ul class="m-list">
+									<volist name="da2.data" id="daa2">
+								  <li>
+									  <a href="{:cmf_url('portal/common/index',['id'=>$daa2['id'],'classname'=>$daa2['class']])}" title="{$daa2['post_title']}">{$daa2['post_title']}</a>{$daa2.published_time|date='Y-m-d',###}
+								  </li>
+                                    </volist>
+							</ul>
+						</div>
+					</div>
+                     </volist>
+				</div>
+				<div class="fl join-cy join-wd">
+					<div class="tit">
+						<a href="javascript:;"><i class="icon icon-quest"></i>创业问答</a>
+					</div>
+					<div class="imgText">
+						<div class="cont">
+							<div class="m-1">
+							<volist name="lick13" id="li13">
+								<a href="{:cmf_url('portal/common/index',['id'=>$li13['id'],'classname'=>$li13['class']])}" class="img"><img src="{$li13['thumbnail']}" alt="{$li13['post_title']}"></a>
+								<dl class="m-1-a">
+									<dt><a href="{:cmf_url('portal/common/index',['id'=>$li13['id'],'classname'=>$li13['class']])}" title="{$li13['post_title']}">{$li13['post_title']}</a></dt>
+									<dd>{$li13['post_excerpt']}...<a href="{:cmf_url('portal/common/index',['id'=>$li13['id'],'classname'=>$li13['class']])}" class="more">[详情]</a></dd>
+								</dl>
+                            </volist>
+							</div>
+							<ul class="m-list">
+                                <volist name="lick14" id="li14">
+								  <li>
+									  <a href="{:cmf_url('portal/common/index',['id'=>$li14['id'],'classname'=>$li14['class']])}" title="{$li14['post_title']}">{$li14['post_title']}</a>{$li14.published_time|date='Y-m-d',###}
+								  </li>
+									</volist>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<!--行业资讯-->
+		<div class="w1200 clearfix">
+			<div class="fl hy_zx">
+				<div class="title-com">
+					<h3><i class="icon icon_hy_zx"></i>行业资讯</h3>
+					<a href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/" class="fr link-more">查看更多></a>
+				</div>
+				<div class="hy_zx_item">
+				<volist name="data3" id="da3">
+					<div class="hy_zx_m fl">
+							<volist name="da3.img" id="im3">
+							<div class="pic pr">
+								<a href="{:cmf_url('portal/common/index',['id'=>$im3['id'],'classname'=>'news'])}"  title="{$im3['post_title']}"  class="a1">
+									<img class="lazy" src="{$im3['thumbnail']}" alt="{$im3['post_title']}">
+								</a>
+								<p class="hyIcon"></p>
+							</div>
+                            </volist>
+							<div class="ruHe">
+								<ul>
+                                    <volist name="da3.data" id="daa3">
+								  <li><a href="{:cmf_url('portal/common/index',['id'=>$daa3['id'],'classname'=>'news'])}" title="{$daa3['post_title']}">{$daa3['post_title']}</a>{$daa3.published_time|date='Y-m-d',###}</li>
+								    </volist>
+								</ul>
+							</div>
+					</div>
+                </volist>
+				</div>
+	
+			</div>
+			<div class="fr hy_hot">
+				<div class="title-com">
+					<h3><i class="icon icon_hy_hot"></i>热文推荐</h3>
+					<a href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/" class="fr link-more">查看更多></a>
+				</div>
+				<div class="con">
+					<ul style="display:block;">
+
+						<volist name="lick15" id="li15" key="k">
+							<li class="clear li1">
+									<i class="num">{$k}</i>
+									<p class="fr">
+											<a href="{:cmf_url('portal/common/index',['id'=>$li15['id'],'classname'=>'news'])}" target="_blank" title="{$li15['post_title']}">{$li15['post_title']}</a>
+											<font>
+													<i class="hyIcon i37" style="margin-top:6px;vertical-align:top;"></i>
+													<!-- <em class="">5条评论</em> -->
+											</font>
+									</p>
+							</li>
+                        </volist>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		
+	
+	
+	<!--加盟流程-->
+	<div class="w1200 clearfix">
+		<div class="jm-path">
+			<dl>
+				<a herf="javascript:;">
+					<dt><i class="icon icon-xunzhao"></i></dt>
+					<dd>
+						<em>01 寻找项目</em>
+						<span>浏览网站，筛选项目</span>
+					</dd>
+				</a>
+			</dl>
+			<dl>
+				<a herf="javascript:;">
+					<dt><i class="icon icon-zixun"></i></dt>
+					<dd>
+						<em>02 留言咨询</em>
+						<span>留言/在线留言/拨打电话</span>
+					</dd>
+				</a>
+			</dl>
+			<dl>
+				<a herf="javascript:;">
+					<dt><i class="icon icon-huifang"></i></dt>
+					<dd>
+						<em>03 等待回访</em>
+						<span>电话回访，深入沟通</span>
+					</dd>
+				</a>
+			</dl>
+			<dl>
+				<a herf="javascript:;">
+					<dt><i class="icon icon-kaocha"></i></dt>
+					<dd>
+						<em>04 上门考察</em>
+						<span>实地考察，深入了解</span>
+					</dd>
+				</a>
+			</dl>
+			<dl>
+				<a herf="javascript:;">
+					<dt><i class="icon icon-hezuo"></i></dt>
+					<dd>
+						<em>05 成功合作</em>
+						<span>签订合同，成功加盟</span>
+					</dd>
+				</a>
+			</dl>
+		</div>
+	</div>
+	<div class="w1200 clearfix">
+		<div class="friend-tips">
+			<ul>
+				<li>
+					<span><i class="icon icon_ts"></i>友情提示：</span>
+					<p>本页面内容仅供参考，为降低投资风险，建议您在投资前多做考察咨询、多对比分析。部分品牌暂未开放加盟，请以该品牌官方信息为准</p>
+				</li>
+				<li>
+					<span><i class="icon icon_sm"></i>内容声明：</span>
+					<p>以上所展示的信息均由第三方用户免费注册发布，内容的真实性、准确性和合法性均由发布用户负责。91创业网对此不承担任何相关连带责任。</p>
+				</li>
+				<li>
+					<span><i class="icon icon_tousu"></i>投诉删除：</span>
+					<p>本平台所有品牌信息均为用户免费注册发布，91创业网遵循相关法律法规严格审核相关内容，如您发现页面有任何违法或侵权信息，欢迎向91创业网举报并提供有效线索，我们将认真核查、及时处理。91创业网感谢您的参与和支持！</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--footer-->
+	<div class="footer">
+		
+			<div class="w1200 ft-links clearfix">
+				<h3>友情链接：</h3>
+				<ul>
+					<volist name="youlian" id="you"><li><a href="{$you['url']}">{$you['webname']}</a></li></volist>
+				</ul>
+			</div>
+			<div class="ft-line"></div>
+                <include file="new_footer"/>
+	</div>
+</div>
+
+  <!-- gotop -->
+    <div class="fixrightbox">
+    <div class="selectbox"> <a href="http://www.91chuangye.com/xiangmu/">项目库</a> </div>
+    <div class="gotop">
+      <p>TOP</p>
+    </div>
+  </div>
+
+<script type="text/javascript" src="__TMPL__/public/new/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/new/js/index.js"></script>
+</body>
+</html>

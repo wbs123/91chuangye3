@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>404_91创业网</title>
+    <meta name='description' content=''>
+    <meta name='keyword' content="">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/lists.css" />
+
+</head>
+<style>
+    .error {
+        width: 100%;
+        padding: 50px 10px;
+        background:#fff url(__TMPL__/public/new/img/404.png) no-repeat center 50px;
+        background-size:150px 166px;
+        box-sizing: border-box;
+        min-height: calc(100vh - 220px);
+    }
+
+    .error .tit {
+        margin-bottom: 20px;
+        color: #d71318;
+        font-size: 20px;
+        line-height: 36px;
+        text-align:center;
+        padding-top:180px;
+        /*background: url(__TMPL__/public/new/img/huojian.png) no-repeat right bottom*/
+    }
+
+    .error p,.error p span {
+        font-size: 14px;
+        color: #9c9c9c
+    }
+
+    .error p,.error .btn {
+        width: 100%
+    }
+
+    .error p span {
+        display: inline-block;
+        margin: 0 4px;
+        line-height: 30px;
+    }
+
+    .error a:hover {
+        background: #d71318;
+        color: #fff;
+    }
+
+    .error a {
+        display: inline-block;
+        margin-top: 20px;
+        /* width:90px; */
+        height: 30px;
+        padding: 0 10px;
+        line-height: 30px;
+        text-align: center;
+        /* font-size:14px; */
+    }
+
+</style>
+<body >
+<!--------------------------top_bar start---------------------------->
+<div class="header">
+    <div class="top_bar">
+        <div class="top_bar_item">
+            <div class="return"><a class="btn back" href="javascript:history.go(-1)"></a></div>
+            <div class="tit">404_91创业网</div>
+            <div class="sear"><a href="javascript:;"></a></div>
+        </div>
+    </div>
+</div>
+<!--------------------------top_bar   end---------------------------->
+
+
+<div class="shadow"></div>
+
+
+
+<div class="error">
+    <p class="tit">很抱歉，您访问的页面出错了</p>
+    <p>可能原因：
+      <span>①系统繁忙</span>
+      <span>②找不到请求页面</span>
+      <span>③输入的网址有误</span></p>
+    <div class="btn">
+        <a href="/">91创业</a>
+        <a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">加盟项目大全</a>
+        <a href="{:cmf_url('portal/common/index',['classname'=>'top'],'')}/">十大品牌排行榜</a>
+        <a href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/">创业资讯</a>
+    </div>
+</div>
+
+    <!---------------------------footer start---------------------------->
+    <include file="mobile/new_footer"/>
+    <!---------------------------footer   end---------------------------->
+
+
+    <!-------------------------search_box start-------------------------->
+    <include file="mobile/search"/>
+    <!-------------------------search_box   end-------------------------->
+
+    <!------------------------- returnTop  start -------------------------->
+    <a href="javascript:void(0);" id="returnTop"></a>
+    <!------------------------- returnTop    end -------------------------->
+
+    <script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/mobile/js/index.js"></script>
+
+    <!--<script>-->
+    <!--$('#condition_1').html($('.left li>a.on').html());-->
+    <!--$('#condition_2').html($('.right li>a.on').html());-->
+    <!--var value = $('.selected_box_1 li>a.on').html();-->
+    <!--var value1 = $('.selected_box_2 li>a.on').html();-->
+    <!--if (value != '全部') {-->
+    <!--$('#condition_3').html(value);-->
+    <!--}-->
+    <!--if (value1 != '全部') {-->
+    <!--$('#condition_4').html(value1);-->
+    <!--}-->
+    <!--// if (!$('.left li>a').hasClass('on')) {-->
+    <!--//     $('.left li:first>a').addClass('on');-->
+    <!--// }-->
+    <!--// if (!$('.right li>a').hasClass('on')) {-->
+    <!--//     $('.right li:first>a').addClass('on');-->
+    <!--// }-->
+    <!---->
+    <!--$('.left li>a').click(function () {-->
+    <!--$('.left li>a').removeClass('on');-->
+    <!--$(this).addClass('on');-->
+    <!--$('#condition_1').html($(this).html());-->
+
+    <!--var id = $(this).attr('data-id');-->
+    <!--$.post('http://m.91chuangye.com/plus/filter.php', {id:id}, function (h) {-->
+    <!--$('.right ul').html(h);-->
+    <!--});-->
+    <!--});-->
+    <!--$('.right li>a').click(function () {-->
+    <!--$('.right li>a').removeClass('on');-->
+    <!--$(this).addClass('on');-->
+    <!--});-->
+    <!---->
+    <!--$(".right li>a").live("click", function(){-->
+    <!--$(this).addClass("on");-->
+    <!--var s = $(this).attr('data-url');-->
+    <!--$("#hiddens").html(s);   	-->
+    <!--$('#condition_2').html($(this).html());-->
+    <!--});-->
+
+    <!--$('.selected_box_1 li>a').click(function () {-->
+    <!--$('.selected_box_1 li>a').removeClass('on');-->
+    <!--$(this).addClass('on');-->
+    <!--$('#condition_3').html($(this).html());-->
+    <!--});-->
+    <!--$('.selected_box_2 li>a').click(function () {-->
+    <!--$('.selected_box_2 li>a').removeClass('on');-->
+    <!--$(this).addClass('on');-->
+    <!--$('#condition_4').html($(this).html());-->
+    <!--});-->
+
+    <!--$("#search-btn").click(function(){-->
+    <!---->
+    <!--//var type = $('.right li>a.on').attr('data-url');-->
+    <!--var type= $("#hiddens").html();-->
+    <!--console.log(type);-->
+    <!--if(!type) {-->
+    <!--type = $('.left li>a.on').attr('data-url');-->
+    <!--}-->
+    <!---->
+    <!--if(!type) {-->
+    <!--type = '/xiangmu/';-->
+    <!--}-->
+
+    <!--var address = $('.selected_box_2 li>a.on').attr('data-type');-->
+    <!--var invested = $('.selected_box_1 li>a.on').attr('data-type');-->
+    <!--var url = type;-->
+    <!--if (address) {-->
+    <!--url = url + address + '/';-->
+    <!--}-->
+    <!--if (invested) {-->
+    <!--url = url + invested + '/';-->
+    <!--}-->
+    <!--window.location.href = url;-->
+    <!---->
+    <!--})-->
+    <!---->
+    <!--</script>-->
+</body>
+</html>

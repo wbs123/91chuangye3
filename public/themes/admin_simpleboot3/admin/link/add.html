@@ -1,0 +1,121 @@
+<include file="public@header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:url('link/index')}">{:lang('ADMIN_LINK_INDEX')}</a></li>
+			<li class="active"><a href="{:url('link/add')}">{:lang('ADMIN_LINK_ADD')}</a></li>
+			<li><a href="{:url('link/excel')}">友情链接导入</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('link/addPost')}" >
+			<div class="form-group">
+				<label for="input-name" class="col-sm-2 control-label">选择位置<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<input type="radio"  id="input-name" name="did" class="tyid" value="1" checked >选择首页
+					<input type="radio"  id="input-name" class="tyid" value="2" name="did">选择分类
+				</div>
+			</div>
+
+			<div class="form-group type">
+                    <label for="input-name" class="col-sm-2 control-label">选择分类<span class="form-required">*</span></label>
+                    <div class="col-md-6 col-sm-10">
+                    	<input class="form-control" type="text" style="width:400px;" required value=""
+                                   placeholder="请选择分类" onclick="doSelectCategory();" id="js-categories-name-input"
+                                   readonly/>
+                            <input class="form-control typeid" type="hidden" value="" name="typeid"
+                                   id="js-categories-id-input"/>
+                    </div>
+			</div>
+                        
+
+			<div class="form-group">
+				<label for="input-name" class="col-sm-2 control-label">名称<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-name" name="name">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-url" class="col-sm-2 control-label">链接地址<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-url" name="url">
+				</div>
+			</div>
+            <div class="form-group">
+				<label for="input-url" class="col-sm-2 control-label">备注<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					 <textarea class="form-control" name="rule" style="height: 50px;"
+                              placeholder="请填备注"></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-primary js-ajax-submit" id="fromSubmit">{:lang('ADD')}</button>
+					<a class="btn btn-default" href="javascript:history.back(-1);">{:lang('BACK')}</a>
+				</div>
+			</div>
+
+		</form>
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+	<script src="__STATIC__/js/layer/layer.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+	function doSelectCategory() {
+        var selectedCategoriesId = $('#js-categories-id-input').val();
+        openIframeLayer("{:url('AdminCategory/select')}?ids=" + selectedCategoriesId, '请选择分类', {
+            area: ['700px', '400px'],
+            btn: ['确定', '取消'],
+            yes: function (index, layero) {
+                //do something
+
+                var iframeWin          = window[layero.find('iframe')[0]['name']];
+                var selectedCategories = iframeWin.confirm();
+                if (selectedCategories.selectedCategoriesId.length == 0) {
+                    layer.msg('请选择分类');
+                    return;
+                }
+                $('#js-categories-id-input').val(selectedCategories.selectedCategoriesId.join(','));
+                $('#js-categories-name-input').val(selectedCategories.selectedCategoriesName.join(' '));
+                //console.log(layer.getFrameIndex(index));
+                layer.close(index); //如果设定了yes回调，需进行手工关闭
+            }
+        });
+    }
+	$(document).ready(function(){
+		$("#fromSubmit").click(function(){
+			var val=$('input:radio[name="did"]:checked').val();
+			if(val == 2){
+				if($.trim($(".typeid").val()).length == 0 ){
+					layer.msg('请输入分类名称');
+					return false;
+				}
+			}else{
+				return true;
+			}
+			
+			if($.trim($("#input-name").val()).length == 0 ){
+				layer.msg('请输入友情链接名称');
+				return false;
+			}
+			if($.trim($("#input-url").val()).length == 0 ){
+				layer.msg('请输入友情链接URL');
+				return false;
+			}
+			$(this).submit();
+		 })
+	});
+
+	$(function(){
+		$('.tyid').click(function(){
+			 var val=$('input:radio[name="did"]:checked').val();
+			 if(val == 1){
+			 	$('.type').hide();
+			 }else{
+			 	$('.type').show();
+			 }
+		})
+		$('.type').hide();
+	})
+	
+</script>

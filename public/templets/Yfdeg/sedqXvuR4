@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+{dede:php}
+$xm = empty($lv->Fields['xm']) ? $GLOBALS['xm'] : $lv->Fields['xm'];
+if(!empty($xm)){
+   if($xm == 1) {
+	   $GLOBALS['seotitle']= '加盟项目大全_2018招商加盟项目推荐';
+	   $GLOBALS['keywords']= '加盟,招商加盟,品牌加盟,品牌加盟网';
+	   $GLOBALS['description']= '91创业网-汇集各种品牌加盟项目大全,招商连锁加盟,品牌加盟十大排行榜等2018招商加盟费信息,帮助广大创业者找到适合自己的加盟项目,选择好的品牌加盟项目,让创业者轻松创业！';
+	}
+}else{
+  $GLOBALS['invested'] = $lv->Fields['invested'];
+  $GLOBALS['address'] = $lv->Fields['address'];
+  $GLOBALS['typename'] = $lv->Fields['typename'];
+  $GLOBALS['seotitle'] = str_replace(array('加盟加盟','省','市'),array('加盟','',''),$GLOBALS['address'].$GLOBALS['invested'].$GLOBALS['typename']."加盟项目_".$GLOBALS['address'].$GLOBALS['invested'].$GLOBALS['typename']."加盟店排行榜");
+  $GLOBALS['keywords'] = str_replace(array('加盟加盟','省','市'),array('加盟','',''),$GLOBALS['address'].$GLOBALS['invested'].$GLOBALS['typename'].'加盟,'.$GLOBALS['address'].$GLOBALS['invested'].$GLOBALS['typename'].'加盟店,'.$GLOBALS['address'].$GLOBALS['invested'].$GLOBALS['typename'].'加盟排行榜,'.$GLOBALS['address'].$GLOBALS['invested'].$GLOBALS['typename'].'加盟十大品牌');
+  $GLOBALS['description'] = str_replace(array('加盟加盟','省','市'),array('加盟','',''),'91创业网-汇集各种'.$GLOBALS['address'].$GLOBALS['invested'].$GLOBALS['typename'].'加盟,'.$GLOBALS['address'].$GLOBALS['invested'].$GLOBALS['typename'].'连锁加盟,'.$GLOBALS['address'].$GLOBALS['invested'].$GLOBALS['typename'].'十大品牌排行榜等'.$GLOBALS['address'].$GLOBALS['invested'].$GLOBALS['typename'].'加盟费信息,帮助广大创业者找到适合自己的加盟项目,选择好的'.$GLOBALS['address'].$GLOBALS['invested'].$GLOBALS['typename'].'加盟项目,让创业者轻松创业！');
+}
+
+{/dede:php}
+<title>{dede:global.seotitle /}_第 {dede:pagelist listsize='0' listitem='pageno' function='doPage(@me)'/} 页-91创业网</title>
+<meta name="keywords" content="{dede:global.keywords /}">
+<meta name="description" content="{dede:global.description /}">
+<meta name="renderer" content="webkit"> 
+<link href="{dede:global.cfg_templets_skin/}/new/css/common.css" rel="stylesheet" type="text/css">
+<link href="{dede:global.cfg_templets_skin/}/new/css/xm_list.css" rel="stylesheet" type="text/css">
+
+<meta name="applicable-device" content="pc,mobile">
+<meta name="mobile-agent" content="format=html5;url={dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}"/>
+<meta http-equiv="mobile-agent" content="format=xhtml; url={dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}">
+<link rel="alternate" media="only screen and(max-width: 640px)" href="{dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}"/>
+<link rel="canonical" href="{dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAds(@me);[/field:id]{/dede:type}"/>
+
+ <script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="http://m.91chuangye.com"+location.pathname+location.search;}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script>
+</head> 
+<body> 
+<!-- header start --> 
+{dede:include filename="new_head.htm"/}
+<!-- header end -->
+
+<!--content start-->    
+<div class="w1200">
+    <!-- bread start-->
+    <div class="bread">
+        <span>当前位置：</span>
+        <span>{dede:field name='position'/}</span>
+    </div>
+    <!-- bread end-->
+
+    <!-- classify start-->
+    <div class="y_fenlei">
+        <div class="fenlei-1 clearfix">
+            <span>行业分类：</span>
+            <div class="filter-item">
+                <ul>
+				{dede:field name='one_url'/}
+         {dede:channel type='top' row='14' currentstyle="
+						<li><a class='on' href='~typelink~' ~rel~>~typename~</a></li>
+						"}
+						<li><a href='[field:typelink/]' [field:rel/]>[field:typename/]</a></li>
+						{/dede:channel}
+						{dede:type typeid='63'}<li><a href="[field:typelink/]" title="[field:typename /]">[field:typename /]</a></li>{/dede:type}
+						{dede:type typeid='391'}<li><a href="[field:typelink/]" title="[field:typename /]">[field:typename /]</a></li>{/dede:type}
+                </ul>
+            </div>
+        </div>
+        <div class="fenlei-1 clearfix">
+            <span>行业子分类：</span>
+            <div class="filter-item filter-more-click">
+                <ul>{dede:field name='two_url'/}
+                       {dede:channel type='son' row='150' currentstyle="
+						<li ><a class='on' href='~typelink~' ~rel~>~typename~</a></li>
+						"} <li><a href='[field:typelink/]' [field:rel/]>[field:typename/]</a> </li>
+					   {/dede:channel}
+                </ul>
+            </div>
+            <em class="filter-more">展开▼</em>
+        </div>
+        <div class="fenlei-1 clearfix">
+            <span>投资金额：</span>
+            <div class="filter-item filter-more-click">
+                <ul>
+     {dede:php} AddFilter(17,1,'invested'); {/dede:php}
+                </ul>
+            </div>
+            <em class="filter-more">展开▼</em>
+        </div>
+        <div class="fenlei-1 clearfix">
+            <span>热门地区：</span>
+            <div class="filter-item filter-more-click">
+                <ul>
+                   {dede:php} AddFilter(17,1,'nativeplace'); {/dede:php}
+                </ul>
+            </div>
+            <em class="filter-more">展开▼</em>
+        </div>
+    </div>
+    <!-- classify end -->
+
+    <!-- main start -->
+    <div class="main clearfix">
+        <!-- main-left start-->
+        <div class="fl main-left">
+            <!-- order -->
+            <div class="s_mod_order_item">
+                <!-- filter -->
+                <div class="s_mod_order_term">
+                    <a id="mr"  class="J_order">默认排序</a>
+                    <a id="rq"  class="J_order J_order_on"><span class="text">最新</span><i class="up"></i></a>
+                   
+                </div>
+                
+                <!-- result -->
+               </div>
+            <!-- list -->
+              <div id="list-itemList"> 
+               <div class="m-items"> 
+                    <ul class="items list"> 
+					 {dede:list pagesize='15' orderby='sortrank' imgwidth='134' imgheight='100' addfields='jiage' channelid='17'}
+                         <li class="items items_V clearfix">
+                         <!-- col-1 -->
+                          <div class="col col-1"> 
+                           <div class="bd-logo"> 
+                            <a href="[field:arcurl /]" class="img"> <img src="[field:picname/]" title="[field:title /]" alt="[field:title /]" width="128" height="96" /> </a> 
+                           </div> 
+                          </div>                   
+                          <!-- col-2 -->
+                          <div class="col col-2"> 
+                           <div class="clearfix"> 
+                            <a href="[field:arcurl /]" title="[field:title/]"  class="main_link fl">[field:title/]</a>  
+                           </div> 
+                           <div class="text" title="饮品"> 
+                            <span>项目分类：</span> [field:typename/]
+                           </div> 
+                           <div class="text"> 
+                            <span>门店数量：</span>[field:sum/]家 
+                           </div> 
+                           <div class="text xijin">  
+                             <a  class="vip_link">加盟条件</a>
+                             <span>|</span>  
+                             <a >加盟费</a> 
+                             <span>|</span> 
+                             <a title="">加盟流程</a>  
+                             <span>|</span> 
+                             <a >加盟优势</a>  
+                           </div>  
+                           <div class="sale"> 
+                           </div> 
+                          </div>           
+                          <!-- col-3 -->
+                          <div class="col col-3"> 
+                               <dl class="clearfix">
+                                <dt>投资金额：</dt> 
+                                <dd><span>[field:invested/]</span></dd> 
+                               </dl> 
+                               <dl class="clearfix">
+                                <dt>人气指数：</dt> 
+                                <dd><b>[field:click/]</b></dd> 
+                               </dl>                           
+                               <dl class="clearfix">
+                                <dt>已咨询：</dt> 
+                                <dd><b>[field:zhishu/]</b></dd> 
+                               </dl>
+                          </div>           
+                          <!-- col-4 -->
+                          <div class="col col-4"> 
+                           <div class="m-company"> 
+                            <a class="text" title="[field:companyname/]" >[field:companyname/]</a> 
+                            <div class="m-com-zone"> 
+                             <span>[field:nativeplace/]</span> 
+                            </div> 
+                            <div class="showInfo"> 
+                             <strong><i></i>[field:companyname/]</strong> 
+                             <dl> 
+                              <dt>
+                                企业性质 
+                              </dt> 
+                              <dd>
+                                股份有限公司
+                              </dd> 
+                             </dl> 
+                             <dl> 
+                              <dt>
+                                注册资金 
+                              </dt> 
+                              <dd>
+                                [field:ziben/]
+                              </dd> 
+                             </dl> 
+                             <dl> 
+                              <dt>
+                                所在地 
+                              </dt> 
+                              <dd title="[field:company_address/]">
+                                [field:company_address/]
+                              </dd> 
+                             </dl> 
+                            </div> 
+                           </div> 
+                           <div class="items-active"> 
+                            <a href="[field:arcurl/]"  title="" class="link">查看详情</a> 
+                            <a href="http://p.qiao.baidu.com/cps/chat?siteId=12411934&userId=26127855" target="_blank" rel="nofollow" class="bt_itemService">在线咨询</a> 
+                           </div> 
+                          </div> 
+                        </li>
+						 {/dede:list}                  
+                    </ul> 
+               </div>  
+              </div>
+
+               <!-- fenpage start-->
+                   <div class="page"> 
+				   <ul>
+					{dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="3"/}
+					</ul>
+                   </div>
+               <!-- fenpage end-->
+
+        </div>
+        <!-- main-left end-->
+
+        <!-- main-right start -->
+        <div class="fl main-right">
+            <!-- hot -->
+            <div class="cainixihuan">
+                <div class="title">
+                    <div class="titleleft"><i></i>热门推荐</div>
+                    <!-- <div cl

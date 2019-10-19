@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+     <!--头部-->
+       {dede:include filename="head2.htm"/}
+       <!--头部结束-->
+
+<!--内容结构开始-->
+<article>   
+    <div id="content">
+        <!-- 定位 -->
+        <div class="dingwei">
+            <span>您的位置：</span>
+            <span>{dede:field name='position'/}</span>
+			<span>{dede:field.title/}</span>
+        </div>
+        <!-- 定位 -->
+
+        <!-- 主体列表 -->
+        <div class="main">
+            <!-- 左侧列表 -->
+            <div class="fl main-left">
+                <!-- 标题 -->
+                <div class="title">
+                    <h1>{dede:field.title/}-加盟项目</h1>
+                    <ul>
+						<li><a href="#youshi">加盟前景</a></li>
+                        <li><a href="#tiaojian">加盟条件</a></li>
+                        <li><a href="#liucheng">加盟流程</a></li>
+                        <li><a href="#touzi">投资分析</a></li>
+                        <li><a href="">招商页面</a></li>
+                    </ul>
+                </div>
+                <!-- 标题 -->
+
+                <!-- 项目内容 -->
+                <div class="project">
+                    <!-- 项目介绍 -->
+                    <div class="project-top">
+                        <ul class="project-info">
+                            <h1><img src="{dede:field.logo/}" alt="{dede:field.title/}"></h1>
+                            <li><i>项目名称：</i><b class="tit">{dede:field.title/}</b><a href="#msg" class="btn btn-red">我要留言</a><a href="#msg" class="btn">获取资料</a></li>
+                            <li><i>官方网站：</i><a href="#msg">[索取加盟官方网址]</a></li>
+                            <li><i>项目分类:</i><a href="{dede:type typeid='0' row=1}[field:typelink /]{/dede:type}">{dede:field.typename/}</a></li>
+                            <li><i>所在地区：</i>{dede:field.nativeplace/}</li>
+                            <li><i>门店总数：</i>{dede:field.sum/}家</li>
+                            <li><i>投资金额：</i><a href="#" class="red">{dede:field.invested/}</a></li>
+                            <li><i>人气：</i><script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript'language="javascript"></script></li>
+                            <li><i>留言：</i><a href="#msg">456</a></li>
+                            <li><i>招商区域：</i>全国</li>
+                            <li><i>咨询电话：</i>400-809-0091</li>
+                            <li><i>加盟邮箱：</i></li>
+                            <p>{dede:prenext get='pre'/}  {dede:prenext get='next'/}</p>
+                        </ul>
+                        <div class="project-pic">
+                            <p class="time">更新时间：{dede:field.pubdate function="MyDate('Y-m-d',@me)"/}</p>
+                            <div class="pic"><img src="{dede:field.litpic /}" alt="{dede:field.title/}"></div>
+                        </div>
+                    </div>
+                    <!-- 项目介绍 -->
+
+                    <!-- 项目详情 -->
+                    <div class="project-content">
+                        <strong class="pro-tit">企业工商信息</strong>
+                        <ul>
+                            <li>
+                                <span><i>公司名称：</i>{dede:field.companyname/}</span>
+                                <span><i>注册资本：</i>{dede:field.ziben/}万元</span>
+                                <span><i>实收资本：</i>{dede:field.shziben/}万元</span>
+                                <span><i>成立时间：</i><!--  {dede:field.setup_time function="GetDateMK(@me)"/}--> 暂无 </span>
+                            </li>
+                            <li>                                
+                                <span><i>企业类型：</i>国有企业/私营企业/其它企业</span>
+<!--                                 <span><i>法定代表人：</i>{dede:field.represent/}</span> -->
+                                <span><i>公司地址：</i>{dede:field.company_address/}</span>
+                                <span><i>经营状态：</i>开业</span>
+                            </li>
+<!--                             <li> -->
+<!--                                 <span><i>经营范围：</i>{dede:field.fanwei/}</span> -->
+<!--                             </li> -->
+                        </ul>
+						<a class="tiaozhuan" name="youshi"></a>
+                        <strong class="pro-tit">{dede:field.title/}项目介绍/加盟前景/加盟优势</strong>
+                        <p>  {dede:field.jieshao runphp='yes'}
+if(@me =='')
+{@me='该内容暂时无相关数据，详情请留言咨询';}
+else
+{@me=@me;}
+{/dede:field.jieshao}</p>
+                        <a class="tiaozhuan" name="tiaojian"></a>
+                        <strong class="pro-tit">{dede:field.title/}加盟条件</strong>
+                        <p>  {dede:field.tiaojian runphp='yes'}
+if(@me =='')
+{@me='该内容暂时无相关数据，详情请留言咨询';}
+else
+{@me=@me;}
+{/dede:field.tiaojian}</p>
+                        <a class="tiaozhuan" name="liucheng"></a>
+                        <strong class="pro-tit">{dede:field.title/}加盟流程</strong>
+                        <p>  {dede:field.liucheng runphp='yes'}
+if(@me=='')
+{@me='该内容暂时无相关数据，详情请留言咨询';}
+else
+{@me=@me;}
+{/dede:field.liucheng}</p>
+                        <a class="tiaozhuan" name="touzi"></a>
+                        <strong class="pro-tit">{dede:field.title/}投资分析/加盟费用/加盟支持</strong>
+                        <p>  {dede:field.fenxi runphp='yes'}
+if(@me=='')
+{@me='该内容暂时无相关数据，详情请留言咨询';}
+else
+{@me=@me;}
+{/dede:field.fenxi}</p>                        
+                    </div>
+                    <!-- 项目详情 -->
+					<!-- <div class="tag">标签：<a href="">服装</a><a href="">童装</a><a href="">加盟</a></div> -->
+                </div>
+                <!-- 项目内容 -->
+
+        <div class="zhu">
+            <p>
+               　　<strong>注：</strong>本项目投资金额、加盟店数量、招商加盟地区和经营模式，请以最新咨询为准!我们建议您在下方【留言板留言】您即可与企业免费通话并及时获得加盟项目最新动态(企业要求各不一，建议了解多个项目做对比)。
+            </p>
+        </div>
+
+                      <!-- 分享 开始-->
+        <div class="share">
+            <div class="tit">分享到：</div>
+            <div class="bdsharebuttonbox bdshare-button-style1-16" data-tag="share_1" data-bd-bind="1506670608204">
+                <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪</a>
+                <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                <a class="popup_weixin" data-cmd="weixin" onclick="return false;" title="分享到微信">微信</a>
+            </div>
+        </div>
+        <script>
+            window._bd_share_config = {
+                "common": {
+                    "bdSnsKey": {},
+                    "bdText": "",
+                    "bdMini": "2",
+                    "bdMiniList": false,
+                    "bdPic": "",
+                    "bdStyle": "1",
+                    "bdSize": "16"
+                }, "share": {}
+            };
+            with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+        </script>
+        <!-- 分享 结束-->
+
+                <!-- 用户留言 -->
+                <a name="msg"></a>
+                <!--<div class="usermsg">
+                    <h3>用户留言<i>（想进一步了解或有疑问，请在下面留言，您将获得免费寄送的资料和专业解答）</i></h3>
+                    <div class="msginfo">
+                        <ul class="fl usermsg-l">
+                            <li><i></i><span>汇聚海量知名、诚信招商品牌随时为您提供招商信息!</span></li>
+                            <li><i></i><span>十万创业者通过渠道网找项目迈出成功创富第一步!</span></li>
+                            <li><i></i><span>多留言、多咨询、零风险投资是您快速创富的最好途径!</span></li>
+                        </ul>
+                        <form action="/plus/guestbook.php"  method="post" name="msgform" id="msgform" class="fl usermsg-r">
+						  <input type='hidden' name='action' value='save' />
+                            <ul>
+							    <input type='hidden'  class="msg-r" name="title" value="{dede:field.title/}">
+                                <li><label>姓名：</label><input type="text" placeholder="您的真实姓名" id="user" class="msg-r" name="uname"></li>
+                                <li><label>手机：</label><input type="text" placeholder="您的联系电话" id="tel" class="msg-r" name="qq"></li>
+                                <li><label>金额：</label>
+                                    <select name="homepage" class="msg-r" id="money">
+                                        <option value="">请选择金额</option>
+                                        <option value="1">1万元以下</option>
+                                        <option value="2">1~5万元</option>
+                                        <option value="3">5~10万元</option>
+                                        <option value="4">10~20万元</option>
+                                        <option value="5">20~50万元</option>
+                                        <option value="6">50~100万元</option>
+                                        <option value="7">100万以上</option>
+                                    </select>
+                                </li>
+                                <li><label>留言：</label><textarea id="liuyan" placeholder="请输入您的留言" class="msg-r textarea" name="msg"></textarea></li>
+                                <li><label></label><input type="submit" value="立即提交" class="msg-r submit"></li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>-->
+
+
+
+
+
+                {dede:include filename="msg.htm"/}
+               
+                <!-- 用户留言 -->
+				<!-- 免责声明 -->
+                <div class="Poster-Poster">
+                    <p>
+                       <b> 友情提示：</b>本页面内容仅供参考，为降低投资风险，建议您在投资前多做考察咨询、多对比分析。部分品牌暂未开放加盟，请以该品牌官方信息为准。<br>
+                        <b>内容声明：</b>本网页信息来源互联网，本平台不保证信息的真实性，请用户自行与商家联系核对真实性。91创业网对此不承担任何相关连带责任。<br>
+                        <b> 投诉删除：</b>本平台所有品牌信息均来源于互联网，91创业网遵循相关法律法规严格审核相关内容，如您发现页面有任何违法或侵权信息，欢迎向91创业网举报并提供有效线索，我们将认真核查、及时处理。91创业网感谢您的参与和支持！加盟热线：400-809-0091<br>
+
+                    </p>
+                </div>
+                <!-- 免责声明 -->
+                <!-- 相关项目 -->
+                <div class="relate">
+                    <strong class="pro-tit">相关项目</strong>
+                    <ul>
+					  {dede:arclist typeid='0'  type='image.'  orderby='rand' titlelen='120' row='5' imgwidth='133' imgheight='100/' }
+                        <li><a href="[field:arcurl/]"title="[field:title/]">
+                           <img src="[field:picname/]" alt="[field:title/]" width='133' height='100' >
+                            <p>[field:title function='( strlen("@me")>60 ? cn_substr("@me",60)."…" : "@me" ) ' /]</p>
+                        </a>
+						</li>
+                       {/dede:arclist}
+                    </ul>
+                </div>
+                <!-- 相关项目 -->
+                
+
+
+            </div>
+            <!-- 右侧列表 -->
+            <div class="fl main-right">
+                <!-- 文章排行 -->
+                <div class="paihang-box red" id="article">
+                    <div class="title">
+                        <strong>文章排行</strong>
+                        <ul>
+                            <li>最新</li>
+                            <li>人气</li>
+                        </ul>
+                    </div>
+                    <div class="paihang">
+                       <ul>
+                            {dede:arclist typeid='11,20,32,37' orderby='pubdate' titlelen='120' row=20 getall='1'}
+                            <li>
+                                <span class="page-icon icon-num-[field:global name=autoindex/]"></span>
+                                <span class="item-name"><a href="[field:arcurl /]"title="[field:title/]">[field:title function=' ( strlen("@me")>32 ? cn_substr("@me",32)."…" : "@me" ) ' /]</a></span>
+                                <span class="item-value">[field:pubdate function='strftime("%m-%d",@me)'/]</span>
+                            </li>
+                        {/dede:arclist}
+                       </ul> 
+                       <ul>
+                           {dede:arclist typeid='11,20,32,37' orderby='click' titlelen='120' row=20 getall='1'}
+                            <li>
+                                <span class="page-icon icon-num-[field:global name=autoindex/]"></span>
+                                <span class="item-name"><a href="[field:arcurl /]" title="[field:title/]">[field:title function=' ( strlen("@me")>32 ? cn_substr("@me",32)."…" : "@me" ) ' /]</a></span>
+                                <span class="item-value">[field:click/]</span>
+                            </li>
+                        {/dede:arclist}
+                       </ul>
+                   </div>                   
+                </div> 
+                <!-- 文章排行 -->
+
+                <!-- 本类项目排行 -->
+                <div class="paihang-box red" id="paihang">
+                    <div class="title">
+                        <strong>本类项目排行</strong>
+                        <ul>
+                            <li>人气</li>
+                            <li>时间</li>
+                        </ul>
+                    </div>
+                    <div class="paihang">
+                       <ul>
+					 {dede:arclist typeid='0' orderby='click' titlelen='120' row=20}
+                            <li>
+                                <span class="page-icon icon-num-[field:global name=autoindex/]"></span>
+                                <span class="item-name"><a href="[field:arcurl /]"title="[field:title/]">[field:title function=' ( strlen("@me")>30 ? cn_substr("@me",30)."…" : "@me" ) ' /]</a></span>
+                                <span class="item-value">[field:click/]</span>
+                            </li>
+                        {/dede:arclist}
+                       </ul> 
+                       <ul>
+                            {dede:arclist typeid='0' orderby='click' titlelen='120' row=20}
+                            <li>
+                                <span class="page-icon icon-num-[field:global name=autoindex/]"></span>
+                                <span class="item-name"><a href="[field:arcurl /]" title="[field:title/]">[field:title function=' ( strlen("@me")>30 ? cn_substr("@me",30)."…" : "@me" ) ' /]</a></span>
+                                <span class="item-value">[field:pubdate function='strftime("%m-%d",@me)'/]</span>
+                            </li>
+                        {/dede:arclist}
+                       </ul>
+                   </div>                   
+                </div> 
+                <!-- 本类项目排行 -->
+
+
+
+                <!-- 最新留言链接列表 -->
+                <ul class="paihang-box con-down-right red">
+                   <div class="title"><a href="">最新留言</a></div>
+                   <li> <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：张女士对项目<a href="#" rel="nofollow">徐达排骨加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+                   <li> <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：李先生对项目<a href="#" rel="nofollow">中艾堂加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+                   <li> <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：刘女士对项目<a href="#" rel="nofollow">绝对牛烤鱼加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+                   <li><script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：蔡女士对项目<a href="#" rel="nofollow">勾馋麻辣烫</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+                   <li><script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：王先生对项目<a href="#" rel="nofollow">金嘉利钻石加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+                   <li> <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：徐女士对项目<a href="#" rel="nofollow">小吃车加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>               
+                   <li> <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：周女士对项目<a href="#" rel="nofollow">烤鱼加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+									<li> <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var time=myyear+"-"+mymonth+"-"+myday;
+									document.write(time);
+									</script>：陈女士对项目<a href="#" rel="nofollow">水饺加盟</a>产生意向：我想加盟，具体细节，及费用事项。</li>
+                </ul>
+                <!-- 最新留言链接列表 -->
+				<!-- <ul class="paihang-box con-down-right red"> -->
+                   <!-- <div class="title">最新留言</div> -->
+				   <!-- {dede:loop table='u88_dedeform1' sort='dtime' row='10' titlelen='30' typeid='50' if='ischeck=1'}    -->
+                   <!-- <li> [field:dtime function="GetDateMK(@me)"/]：[field:name function="cn_substr('@me',0)"/]**对项目<a href="[field:yemian /]">[field:xiangmu /]</a>产生意向：[field:msg function="cn_substr('@me',30)"/]</li> -->
+					<!-- {/dede:loop} -->
+                <!-- </ul> -->
+            </div>
+        </div>
+
+
+              
+
+        
+    </div>
+
+    
+</article>
+<!--内容结构结束-->
+
+<!--尾部结构开始--> 
+<!--尾部结构开始-->
+    <footer>   {dede:include filename="footer.htm"/}</footer>
+<!--尾部结构结束-->
+
+</body>
+</html>

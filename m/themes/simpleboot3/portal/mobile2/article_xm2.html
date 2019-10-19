@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>{$data['title']}_{$data['title']}加盟费多少钱_91创业网</title>
+<link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon" />
+	<meta name="keywords" content="{$data['keywords']}">
+	<meta name="description" content="{$data['description']}">
+	<meta name="mobile-agent" content=""/>
+	<meta http-equiv="mobile-agent" content="format=xhtml; url={dede:field.id runphp='yes'}$id=@me;
+@me='';$url=GetOneArchivess($id);@me=$url['arcurl'];{/dede:field.id}">
+<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+<link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/common.css" />
+<link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/lists.css" />
+   <link rel="alternate" media="only screen and(max-width: 640px)" href="http://m.91chuangye.com/">
+<!--<meta http-equiv="mobile-agent" content="format=html5; url=http://m.91chuangye.com/">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.91chuangye.com/">-->
+
+
+</head>
+
+<body>
+	<!--------------------------top_bar start-------------------------->
+	<div class="header">
+		<div class="top_bar">
+			<div class="top_bar_item">
+				<div class="return"><a class="btn back" href="javascript:history.go(-1)"></a></div>
+				<div class="tit">{$data['title']}</div>
+				<div class="sear"><a href="javascript:;" onclick="serch()"></a></div>
+			</div>
+		</div>
+		 <div class="swiper-container nav">
+		    <ul class="swiper-wrapper">
+		      <li class="swiper-slide"><a href="/">91创业网</a> </li>
+      <li class="swiper-slide"><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">找项目</a></li>
+      <li class="swiper-slide"><a href="{:cmf_url('portal/common/index',['classname'=>'top'],'')}/">品牌排行榜</a></li>
+      <li class="swiper-slide"><a href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/">创业资讯</a></li>
+		    </ul>
+		  </div>
+	</div>
+	<!--------------------------top_bar   end-------------------------->
+	
+	<!----------------------banner_xminfo   start---------------------->
+	<div id="focus" class="banner_xminfo"> 
+		<div class="hd"> 
+			<ul> 
+			</ul> 
+		</div> 
+		<div class="bd"> 
+			<div class="tempWrap"> 
+			<ul>
+				<volist name="imgs_arrs" id="ims">
+					<li><a href="javascript:;"><img src="{$ims['url']}" alt="{$ims['title']}"/></a></li>
+				</volist>
+             
+			</ul> 
+			</div> 
+		</div> 
+	</div> 
+	<!----------------------banner_xminfo   end------------------------>
+	
+	<!---------------------------path start---------------------------->
+	<section class="item-section item_xminfopath daoha">
+		<a href="/">首页</a> &gt;
+		 <volist name="array_reverse" id="arr"><a href="{:cmf_url('portal/common/index',['classname'=>$arr['path']],'')}/">{$arr['name']}</a>&gt;</volist> 
+		<span>{$data['title']}</span>
+	</section>
+	<!---------------------------path   end---------------------------->
+	
+	<!------------------------itme_xminfo start------------------------>
+	<section class="item-section itme_xminfo">
+		<div class="xm_info_top">
+			<div class="left">
+				<div class="tit_info">
+					<p class="tit">{$data['title']}</p>
+					<p class="desc">{$data['companyname']}</p>
+					<p class="date">{$data.pubdate|date='Y-m-d H:i',###}</p>
+				</div>
+				<div class="tit_zx">
+					<p class="price">￥{$data['invested']}</p>
+					<p class="info">{$data['title']}加盟</p>
+				</div>
+			</div>
+			<div class="right">
+				<a href="#ly">我要加盟</a>
+			</div>
+		</div>
+		<ul class="listNum">
+			<li>
+				<span>招商区域</span>
+				<span><em>全国</em></span>
+			</li>
+			<li>
+				<span>门店数量</span>
+				<span><em>{$data['nativeplace']}家</em></span>
+			</li>
+			<li>
+				<span>已申请</span>
+				<span><em>{$data['sum']}</em></span>
+			</li>
+		</ul>
+		<div class="tel_info">
+			<div class="phone"></div>
+			<a href="tel:400-809-0091" class="btn">拨打电话</a> 	
+		</div>
+	</section>
+	<!------------------------itme_xminfo   end------------------------>
+	
+	<!------------------------itme_qyjs   start------------------------>
+	<section class="item-section itme_qyjs">
+		<div class="common_tit"> 
+			<a class="tit" href="javascript:;">企业介绍</a>
+		</div>
+		<p class="name">{$data['companyname']}</p>
+		<ul>
+			<li>企业性质：国有企业/私营企业/其它企业</li>
+			<li>注册资金：{$data['ziben']}万元</li>
+			<li>所在地区：{$data['address']}</li>
+		</ul>
+	</section>
+	<!------------------------itme_qyjs     end------------------------>
+	
+	<!------------------------itme_jminfo start------------------------>
+	<section class="item-section itme_jminfo">			
+		<ul class="jminfo_tab">
+			<li class="js_join_1">加盟前景</li>
+			<li class="js_join_2">加盟条件</li>
+			<li class="js_join_3">加盟流程</li>
+			<li class="js_join_4">投资分析</li>
+		</ul>
+		<div class="jm_box">
+		<!-- 项目介绍/加盟前景/加盟优势	start -->
+		<div class="common_tit join_tit" id="js_join_1"><span class="tit">{$data['title']}/加盟前景/加盟优势</span></div>
+		<div class="jm_tab_boxs">
+			<div class="jm_tab_item">
+				<p><?php echo htmlspecialchars_decode($data['jieshao'])?></p>
+			
+			</div>		
+		</div>
+		<!-- 项目介绍/加盟前景/加盟优势	end -->
+
+
+		<!-- 加盟条件	start -->
+		<div class="common_tit join_tit" id="js_join_2"><span class="tit">加盟条件</span></div>
+		<div class="jm_tab_boxs">
+			<div class="jm_tab_item">
+				<p><?php echo htmlspecialchars_decode($data['tiaojian'])?></p>
+			</div>			
+		</div>
+		<!-- 加盟条件	end -->
+
+
+		<!-- 加盟流程	start -->
+		<div class="common_tit join_tit" id="js_join_3"><span class="tit">{$data['title']}加盟流程</span></div>
+		<div class="jm_tab_boxs">
+			<div class="jm_tab_item">
+				<p><?php echo htmlspecialchars_decode($data['liucheng'])?></p>
+			</div>
+		</div>
+		<!-- 加盟流程	end -->
+
+
+		<!-- 投资分析/加盟费用/加盟利润	start -->
+		<div class="common_tit join_tit" id="js_join_4"><span class="tit">{$data['title']}/加盟费用/加盟利润</span></div>
+		<div class="jm_tab_boxs">
+			<div class="jm_tab_item">
+				<p>{$data['fenxi']}</p>
+			</div>
+		</div>
+		</div>		
+		<a href="javascript:;" class="show_more"><em>加载更多</em><i></i></a>
+		<!-- 投资分析/加盟费用/加盟利润	end -->
+	</section>
+	<!------------------------itme_jminfo   end------------------------>
+	       
+	<!-------------------------item-zx   start------------------------->
+	<section class="item-section item_zx" id="ly">
+		<div class="common_tit"> 
+			<a class="tit" href="javascript:;">我要咨询</a>
+		</div>			
+		<form action="{:cmf_url('portal/xm/liuyan2')}" method="post" id="myform">
+			<ul>
+				<li>
+					<span><i>*</i>姓 名</span>
+					<div class="p">
+						<input type="text" name="name" id="name" placeholder="如 万先生" maxlength="11" value="">
+					</div>
+				</li>
+				<li>
+					<span><i>*</i>手 机</span>
+					<div class="p">
+						<input type="text" id="tel" name="tel" placeholder="如：180***66666" maxlength="11" value="">
+					</div>
+				</li>
+				<li>
+					<span><i>*</i>咨 询</span>
+					<div class="p">
+						<input type="text" id="msg" name="msg" placeholder="我想咨询能逅座十二茶加盟项目" value="">
+					</div>
+				</li>
+				<input type="hidden" name="urls" value="<?php echo $_SERVER['REQUEST_URI'];?>">
+				<li class="btn"><input type="submit" name="" value="提交"></li>
+			</ul>
+		</form>
+	</section>
+	<!-------------------------item-zx   start------------------------->
+	
+	<!-----------------------guess_like   start------------------------>
+	<section class="item-section xm_tj">
+		<div class="common_tit"> 
+			<a class="tit" href="javascript:;"><i class="index_icon2"></i>项目推荐</a>
+			<a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/" class="more">+更多</a>
+		</div>
+		<volist name="lick5" id="lick5">
+
+		<div class="xm_tj_big">
+			<div class="pic"><a href="{:cmf_url('portal/common/index',['id'=>$lick5['aid'],'classname'=>$lick5['class']])}"><img src="{$lick5['litpic']}"></a></div>
+			<dl>
+				<dt><a href="{:cmf_url('portal/common/index',['id'=>$lick5['aid'],'classname'=>$lick5['class']])}">{$lick5['title']}</a></dt>
+				<dd>投资额度：<span><em>{$lick5['invested']}</em>万</span></dd>
+				<dd>店铺数量：<span><em>22</em>{$lick5['sum']}</span></dd>
+				<dd class="desc"><a href="{:cmf_url('portal/common/index',['id'=>$lick5['aid'],'classname'=>$lick5['class']])}" class="btn">我要加盟</a><a href="{:cmf_url('portal/common/index',['id'=>$lick5['aid'],'classname'=>$lick5['class']])}" class="btn">获取资料</a></dd>
+			</dl>
+		</div>
+		</volist>
+		<ul>
+			<volist name="lick8" id="li8">
+				<li>
+					<a href="{:cmf_url('portal/common/index',['id'=>$li8['aid'],'classname'=>$li8['class']])}">
+						<div class="pic">
+							<img src="{$li8['litpic']}">
+							<p class="m_t">{$li8['title']}</p>
+						</div>
+						<div class="cont">
+							<span class="price">￥<em>{$li8['invested']}</em>万</span>
+							<span class="num">我要加盟</span>
+						</div>
+					</a>
+				</li>
+			</volist>
+		</ul>
+	</section>
+	<!------------------------guess_like start------------------------->
+	
+	<!-------------------------statement start------------------------->
+	<section class="item-section hot_news">
+		<div class="common_tit"> 
+			<a class="tit" href="javascript:;">项目资讯</a>
+		</div>
+		<ul class="hotnews_ul">
+			<volist name="lick6" id="li6">
+				<li>
+				<a href="{:cmf_url('portal/common/index',['classname'=>'news','id'=>$li6['id']])}" title="">
+					<div class="pic"><img src="{$li6['thumbnail']}"></div>
+					<dl>
+						<dt>{$li6['post_title']}</dt>
+						<dd>
+							<span>91创业网</span>
+							<span>{$li6.published_time|date='Y-m-d H:i',###}</span>
+						</dd>
+					</dl>
+				</a>
+			</li>
+			</volist>
+		</ul>
+	</section>
+	<!------------------------itme_jminfo   end------------------------>
+	
+   <!-------------------------statement start-------------------------->
+   <div class="item-section statement">
+       <div class="common_tit"> 
+        <a class="tit" href="javascript:;">本网声明</a> 
+       </div> 
+       <div class="statCon">
+           <p>1.本网信息仅供参考，为降低投资风险，建议您在投资前多做考察咨询、多对比分析。部分品牌暂未开放加盟，请以该品牌官方信息为准。</p>
+           <p>2.本网信息均由第三方用户免费注册发布，内容的真实性、准确性和合法性均由发布用户负责。本网对此不承担任何相关连带责任。</p>
+           <p>3.本网对任何包含、经由、链接、下载；或从任何与本网站有关服务所获得的资讯、内容或广告，不声明或保证其内容的正确性、真实性或可靠性；并且对于您通过我方平台广告、资讯或要约而展示、购买或取得的任何产品、资讯或资料，本网站亦不负品质保证的责任。您与此接受并承认信赖任何信息所产生之风险应自行承担，本网对任何使用或提供本网站信息的商业活动及其风险不承担任何责任。</p>
+           <p class="lastP">4.本网所有品牌信息均为用户免费注册发布，如您发现页面有任何违法或侵权信息，欢迎向本网举报并提供有效线索，我们将认真核查、及时处理。沟通热线：400-809-0091</p>
+       </div>
+   </div>
+   <!-------------------------statement   end-------------------------->
+
+   <!-- kd_msg start-->
+	<div id="mes_div_unlogin_UNM">
+		<div class="coverTan"></div>
+		<div class="lastCeng"></div>
+		<div class="CengBox">
+			<img src="__TMPL__/public/mobile/img/kai.png" class="money">
+			<img src="__TMPL__/public/mobile/img/cha.png" class="chaaaa">	
+			<p class="top1"><span id="brand_name_UNM">花溪渚时尚火锅</span><span><font style="margin:0 3px;">|</font></span><span id="title_one_UNM">开店方案</span></p>
+			<p class="top2" id="title_two_UNM">手机验证，获取详细开店方案</p>
+			<form action="#" method="post" id="myform1">
+				<ul>
+					<li>
+						<p><label for=""></label><input type="text" id="name1" placeholder="请输入您的称呼"></p>
+					</li>
+					<li>
+						<p class=""><label for=""></label><input type="text" maxlength="11" class="tellTex" id="tel1" placeholder="请输入手机号码"></p>
+					</li>
+					<li style="height: 82px;">
+						<p><label for=""></label></p> 
+						<textarea name="" rows="" cols="" id="msg1">【现金奖励活动】我有意向加盟小碗布丁项目，申请领取现金奖励！</textarea>
+					</li>
+				</ul>
+				<input type="submit" name="" value="确定" class="sure">
+			</form>
+		</div>	
+	</div>
+   <!-- kd_msg end -->
+
+	<!---------------------------footer start---------------------------->
+	<include file="mobile/new_footer"/>
+	<!---------------------------footer   end---------------------------->
+	
+	<!-------------------------search_box start-------------------------->
+			<include file="mobile/search"/>
+	<!-------------------------search_box   end-------------------------->
+	
+	<!------------------------- returnTop  start -------------------------->
+	<a href="javascript:void(0);" id="returnTop"></a>
+	<!------------------------- returnTop    end -------------------------->
+	
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.min.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/swiper.min.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/TouchSlide.1.1.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.lazyload.min.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/index.js"></script>
+  <script>
+    $(function () {
+        $('.daoha a').each(function(){
+            var thisLink = $(this).attr('href');
+            var thisNewLink = thisLink.replace(/%2F/ig, "/");
+            $(this).attr('href',thisNewLink)
+        })
+    })
+</script>
+</body>
+</html>	

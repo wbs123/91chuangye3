@@ -1,0 +1,17 @@
+    <div class="xmtj">        
+        <div class="title-com">
+            <h3><i class="icon icon-brand"></i>项目推荐</h3>
+            <a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/" class="fr link-more">查看更多&gt;</a>
+        </div>
+
+        <ul class="xmtj2 clearfix">                
+            <volist name="lick5" id="li5">
+               <li class="content"> 
+                 <div class="tranImg">
+                  <a href="{:cmf_url('portal/common/index',['id'=>$li5['aid'],'classname'=>$li5['class']])}" title="{$li5['title']}"><img src="{$li5['litpic']|checkImgurl=###}" alt="{$li5['title']}"></a>
+                 </div>
+                <p><a href="{:cmf_url('portal/common/index',['id'=>$li5['aid'],'classname'=>$li5['class']])}" title="{$li5['title']}">{$li5['title']}</a><span><small>￥</small>{$li5['invested']}</span></p>
+               </li>
+            </volist>
+        </ul>
+    </div> 

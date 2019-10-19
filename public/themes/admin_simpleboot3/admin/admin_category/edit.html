@@ -1,0 +1,217 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('AdminCategory/index')}">分类管理</a></li>
+        <li><a href="{:url('AdminCategory/add')}">添加分类</a></li>
+        <li class="active"><a>编辑分类</a></li>
+    </ul>
+    <div class="row margin-top-20">
+        <div class="col-md-2">
+            <div class="list-group">
+                <a class="list-group-item" href="#A" data-toggle="tab">基本属性</a>
+                <a class="list-group-item" href="#B" data-toggle="tab">SEO设置</a>
+                <!-- <a class="list-group-item" href="#C" data-toggle="tab">模板设置</a> -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <form class="js-ajax-form" action="{:url('AdminCategory/editPost')}" method="post">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="A">
+                        <div class="form-group">
+                            <label for="input-parent"><span class="form-required">*</span>上级</label>
+                            <div>
+                                <select class="form-control" name="parent_id" id="input-parent">
+                                    <option value="0">作为一级分类</option>
+                                    {$categories_tree}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-name"><span class="form-required">*</span>分类名称</label>
+                            <div>
+                                <input type="text" class="form-control" id="input-name" name="name" value="{$name}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-name">分类简称</label>
+                            <div>
+                                <input type="text" class="form-control" id="input-path" name="path"
+                                       value="{$path}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-description">描述</label>
+                            <div>
+                                <textarea class="form-control" name="description"
+                                          id="input-description">{$description}</textarea>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label for="input-name"><span class="form-required">*</span>排列顺序</label>
+                            <div>
+                                <input type="text" class="form-control" id="input-list_order" name="list_order" value="{$list_order}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-parent"><span class="form-required">*</span>内容模型</label>
+                            <div>
+                                <select class="form-control" name="channeltype" id="input-channeltype">
+                                    <option value="-8" <?php if($channeltype == -8){?> selected<?php }?>>分类信息</option>
+                                    <option value="1" <?php if($channeltype == 1){?> selected<?php }?>>普通文章</option>
+                                    <option value="2" <?php if($channeltype == 2){?> selected<?php }?>>图片集</option>
+                                    <option value="3" <?php if($channeltype == 3){?> selected<?php }?>>软件</option>
+                                    <option value="6" <?php if($channeltype == 6){?> selected<?php }?>>商品</option>
+                                    <option value="17" <?php if($channeltype == 17){?> selected<?php }?>>加盟</option>
+                                    <option value="18" <?php if($channeltype == 18){?> selected<?php }?>>排行榜</option>
+                                    <option value="19" <?php if($channeltype == 19){?> selected<?php }?>>综合排行榜</option>
+                                    <option value="20" <?php if($channeltype == 20){?> selected<?php }?>>新文章模型</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="input-description">缩略图</label>
+                            <div>
+                                <input type="hidden" name="more[thumbnail]" class="form-control"
+                                       value="{$more.thumbnail|default=''}" id="js-thumbnail-input">
+                                <div>
+                                    <a href="javascript:uploadOneImage('图片上传','#js-thumbnail-input');">
+                                        <if condition="empty($more.thumbnail)">
+                                            <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                                 id="js-thumbnail-input-preview"
+                                                 width="135" style="cursor: pointer"/>
+                                            <else/>
+                                            <img src="{:cmf_get_image_preview_url($more.thumbnail)}"
+                                                 id="js-thumbnail-input-preview"
+                                            width="135" style="cursor: pointer"/>
+                                        </if>
+                                    </a>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="tab-pane" id="B">
+                        <div class="form-group">
+                            <label for="input-seo_title">SEO标题</label>
+                            <div>
+                                <input type="text" class="form-control" id="input-seo_title" name="seo_title"
+                                       value="{$seo_title}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-seo_keywords">SEO关键字</label>
+                            <div>
+                                <input type="text" class="form-control" id="input-seo_keywords" name="seo_keywords"
+                                       value="{$seo_keywords}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-seo_description">SEO描述</label>
+                            <div>
+                                <textarea class="form-control" name="seo_description" id="input-seo_description">{$seo_description}</textarea>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="input-seo_title">专题标题</label>
+                            <div>
+                                <input type="text" class="form-control" id="input-zt_title" name="zt_title"
+                                       value="{$zt_title}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-seo_keywords">专题关键字</label>
+                            <div>
+                                <input type="text" class="form-control" id="input-zt_keywords" name="zt_keywords"
+                                       value="{$zt_keywords}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-seo_description">专题描述</label>
+                            <div>
+                                <textarea class="form-control" name="zt_description" id="input-zt_description">{$zt_description}</textarea>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                    <tr>
+                        <td>
+                            <div style="text-align: center;">
+                                <label>电脑版缩略图:</label>
+                                <input type="hidden" name="pc_thumbnail" id="pc_thumbnail" value="">
+                                <a href="javascript:uploadOneImage('图片上传','#pc_thumbnail');">
+
+                                    <if condition="empty($pc_thumbnail)">
+                                        <img src="__TMPL__/public/assets/images/default-thumbnail.png" id="pc_thumbnail-preview"" width="135" style="cursor: pointer"/>
+                                        <else/>
+                                        <img src="{:cmf_get_image_preview_url($pc_thumbnail)}" id="pc_thumbnail-preview"" width="135" style="cursor: pointer"/>
+                                    </if>
+                                </a>
+                                <input type="button" class="btn btn-sm btn-cancel-thumbnail-pc" value="取消图片">
+                            </div>
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <div style="text-align: center;">
+                                <label>手机版缩略图:</label>
+                                <input type="hidden" name="mobile_thumbnail" id="mobile_thumbnail" value="">
+                                <a href="javascript:uploadOneImage('图片上传','#mobile_thumbnail');">
+                                    <if condition="empty($mobile_thumbnail)">
+                                        <img src="__TMPL__/public/assets/images/default-thumbnail.png" id="mobile_thumbnail-preview"" width="135" style="cursor: pointer"/>
+                                        <else/>
+                                        <img src="{:cmf_get_image_preview_url($mobile_thumbnail)}" id="mobile_thumbnail-preview"" width="135" style="cursor: pointer"/>
+                                    </if>
+                                </a>
+                                <input type="button" class="btn btn-sm btn-cancel-thumbnail-mobile" value="取消图片">
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- <div class="tab-pane" id="C">
+                        <div class="form-group">
+                            <label for="input-list_tpl"><span class="form-required">*</span>列表模板</label>
+                            <div>
+                                <select class="form-control" name="list_tpl" id="input-list_tpl">
+                                    <foreach name="list_theme_files" item="vo">
+                                        <php>$value=preg_replace('/^portal\//','',$vo['file']);</php>
+                                        <option value="{$value}">{$vo.name} {$vo.file}.html</option>
+                                    </foreach>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-one_tpl"><span class="form-required">*</span>文章模板</label>
+                            <div>
+                                <select class="form-control" name="one_tpl" id="input-one_tpl">
+                                    <foreach name="article_theme_files" item="vo">
+                                        <php>$value=preg_replace('/^portal\//','',$vo['file']);</php>
+                                        <option value="{$value}">{$vo.name} {$vo.file}.html</option>
+                                    </foreach>
+                                </select>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="id" value="{$id}">
+                    <button type="submit" class="btn btn-primary js-ajax-submit" data-refresh="0">{:lang('SAVE')}
+                    </button>
+                    <a class="btn btn-default" href="{:url('AdminCategory/index')}">{:lang('BACK')}</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script>
+    $('#input-list_tpl').val("{$list_tpl|default=''}");
+    $('#input-one_tpl').val("{$one_tpl|default=''}");
+</script>
+</body>
+</html>

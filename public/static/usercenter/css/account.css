@@ -1,0 +1,124 @@
+﻿body{
+	background:#f6f9fc;
+}
+.listDl{
+	margin-bottom:70px;
+}
+.listDl dt{
+	height:48px;
+	line-height:48px;
+	font-size:15px;
+	text-indent:23px;
+	border-bottom:1px solid #e5edf3;
+}
+.listDl dt a{
+	color:#1867a0;
+	display:block;
+}
+.listDl dd a{
+	display:block;
+	height:38px;
+	line-height:38px;
+	color:#666666;
+	font-size:14px;
+	text-indent:40px;
+}
+.listDl dd a:hover{
+	color:#333333;
+	font-weight:bold;
+	background:#d6e6f2;
+}
+.listDl dd a.active{
+	color:#333333;
+	font-weight:bold;
+	background:#d6e6f2;
+}
+.help_doc{
+	display:block;
+	width:168px;
+	height:32px;
+	border-radius: 4px;
+	margin:8px auto 0;
+	line-height:35px;
+	font-size:12px;
+	color:#6f9ebd;
+	font-weight:bold;
+	text-indent:64px;
+}
+.help_document{
+	background:#ebf2f8 url('../img/help.png') no-repeat 40px;
+}
+.help_document:hover{
+	background:#4999d2 url('../img/help2.png') no-repeat 40px;
+	color:#fff;
+}
+.optionFk{
+	background:#ebf2f8 url('../img/option.png') no-repeat 40px;
+}
+.optionFk:hover{
+	background:#4999d2 url('../img/option2.png') no-repeat 40px;
+	color:#fff;
+}
+/* 右侧部分 */
+.content_right{
+	width:976px;
+	margin-top:24px;
+	background:#fff;
+	min-height: 820px;
+}
+.zp_joinIn{
+	width:846px; 
+	margin:auto;
+	padding-bottom:45px;
+}
+.zp_titleLink{
+	margin-top:30px;
+	height:48px; 
+	line-height:48px; 
+	border-bottom:1px solid #cfdce8; 
+	margin-bottom:40px;
+}
+.zp_titleLink a{
+	font-size:16px; 
+	color:#666666;
+	margin-right:40px;
+	display:inline-block;
+}
+.zp_titleLink a.active{
+	font-weight:bold;
+	color:#13639c;
+	border-bottom:2px solid #13639c; 
+	height:47px;
+}
+.zhangHu_tab p{
+	height:56px;
+	line-height:56px;
+	font-size:15px;
+	margin-bottom:8px;
+}
+.zhangHu_tab p span{
+	display:block;
+	width:117px;
+	background:#d6e6f2;
+	color:#404040;
+	padding-right:28px;
+	text-align:right;
+}
+.zhangHu_tab p font{
+	display:block;
+	width:695px;
+	background:#f3f8fc;
+	font-weight:bold;
+	color:#666666;
+	text-indent:30px;
+}
+.common_right .title {
+	color: #404040;
+	font-size: 16px;
+	font-weight: bold;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 66px;
+	position: relative;
+	top: 38px;
+}

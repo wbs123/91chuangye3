@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<title>{$seo_title}</title>
+<script type="text/javascript" src="__TMPL__/public/xin/js/uaredirect.js"></script>
+<script type="text/javascript">uaredirect("{$seo_url}");</script>
+<meta name="keywords" content="<?php echo $seo_keywords;?>">
+<meta name="description" content="<?php echo $seo_description;?>">
+<meta name="renderer" content="webkit">
+<link rel="shortcut icon" href="__TMPL__/public/new/images/favicon.ico" type="image/x-icon" />
+<meta name="applicable-device" content="pc">
+<meta name="mobile-agent" content="format=html5;url={$seo_url}"/>
+<link rel="alternate" media="only screen and(max-width: 640px)" href="{$seo_url}"/>
+<link type="text/css" rel="stylesheet" href="__TMPL__/public/xin/css/common.css">
+<link type="text/css" rel="stylesheet" href="__TMPL__/public/xin/css/xm_list.css">
+</head> 
+<body>
+	<include file="header_xin2"/>
+	<div class="w1200">
+		<div class="bread">
+			<span>当前位置：</span>
+			<span><a href="/">91创业网</a> > <?php if(isset($array_reverse) && ($array_reverse != '')){?><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">品牌项目库</a><?php }else{?><h1><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">品牌项目库</a></h1> <?php }?>
+			<volist name="array_reverse" id="arr">
+			<?php if(isset($arr['style']) && ($arr['style'] == 'on')){?>
+				><h1><a href="{:cmf_url('portal/common/index',['classname'=>$arr['path']],'')}/">{$arr['name']}</a></h1>
+			<?php }else{?>
+				><a href="{:cmf_url('portal/common/index',['classname'=>$arr['path']],'')}/">{$arr['name']}</a>
+			<?php }?>
+			</volist>
+			</span>
+			<div class="tishi red"><i class="icon icon-ts"></i>温馨提示：投资有风险，91创业网提示多做项目考察！</div>
+		</div>
+	</div>
+	<div class="w1200">
+		<div class="fenlei">
+			<div class="fenlei-item">
+				<span><i class="icon icon-fenlei"></i>分&nbsp;&nbsp;&nbsp;&nbsp;类：</span>
+				<div class="list">
+					<ul>
+						<li><a <empty name="$selcttag1" > class="on" </empty>
+                            href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">全部</a></li>
+						<volist name="$cate" id="ca">
+							<li><a href="{:cmf_url('portal/common/index',['classname'=>$ca['path']],'')}/" <if condition="$ca['path'] eq $param.classname"> class="on" <elseif  condition="$ca['path'] eq $param.classname"/> class="on" </if>name="{$ca['id']}"><?php echo $ca['name']?></a></li>
+						</volist>
+					</ul>
+				</div>
+			</div>
+			<div class="fenlei-item">
+				<span><i class="icon icon-money"></i>金&nbsp;&nbsp;&nbsp;&nbsp;额：</span>
+				<div class="list">
+					<ul>
+						<li><a <empty name="$param.num" > class="on" </empty>  name="0"
+                            href="{:cmf_url('portal/common/index',array('classname'=>$param.classname),'')}/">全部</a></li>
+						<empty name="param.address" >
+							<li><a name="0-1" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'num'=>'0-1'),'')}/" <if condition="$param.num eq '0-1'"> class="on" </if>>0-1万</a></li>
+							<li><a name="1-5" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'num'=>'1-5'),'')}/" <if condition="$param.num eq '1-5'"> class="on" </if>>1-5万</a></li>
+							<li><a name="5-10" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'num'=>'5-10'),'')}/" <if condition="$param.num eq '5-10'"> class="on" </if>>5-10万</a></li>
+							<li><a name="10-20" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'num'=>'10-20'),'')}/"<if condition="$param.num eq '10-20'"> class="on" </if>>10-20万</a></li>
+							<li><a name="20-50" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'num'=>'20-50'),'')}/"<if condition="$param.num eq '20-50'"> class="on" </if>>20-50万</a></li>
+							<li><a name="50-100" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'num'=>'50-100'),'')}/"<if condition="$param.num eq '50-100'"> class="on" </if>>50-100万</a></li>
+							<li><a name="100" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'num'=>'100-200'),'')}/"<if condition="$param.num eq '100-200'"> class="on" </if>>100-200万</a></li>
+							<else/>
+							<li><a name="0-1" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$param.address,'num'=>'0-1'),'')}/" <if condition="$param.num eq '0-1'"> class="on" </if>>0-1万</a></li>
+							<li><a name="1-5" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$param.address,'num'=>'1-5'),'')}/" <if condition="$param.num eq '1-5'"> class="on" </if>>1-5万</a></li>
+							<li><a name="5-10" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$param.address,'num'=>'5-10'),'')}/" <if condition="$param.num eq '5-10'"> class="on" </if>>5-10万</a></li>
+							<li><a name="10-20" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$param.address,'num'=>'10-20'),'')}/"<if condition="$param.num eq '10-20'"> class="on" </if>>10-20万</a></li>
+							<li><a name="20-50" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$param.address,'num'=>'20-50'),'')}/"<if condition="$param.num eq '20-50'"> class="on" </if>>20-50万</a></li>
+							<li><a name="50-100" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$param.address,'num'=>'50-100'),'')}/"<if condition="$param.num eq '50-100'"> class="on" </if>>50-100万</a></li>
+							<li><a name="100" href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$param.address,'num'=>'100-200'),'')}/"<if condition="$param.num eq '100-200'"> class="on" </if>>100-200万</a></li>
+						</empty>
+					</ul>
+				</div>
+			</div>
+			<div class="fenlei-item">
+				<span><i class="icon icon-fayuan"></i>发源地：</span>
+				<div class="list">
+					<ul>
+						<li><a href="{:cmf_url('portal/common/index',array('classname'=>$param.classname),'')}/ " <empty
+								name="$param.address" > class="on" </empty> name="0">全部</a></li>
+						<volist name="$sys" id="cs">
+							<empty name="param.num" >
+								<li><a name="{$cs['py']}"
+									   href="{:cmf_url('portal/common/index',array('classname'=>$param.classname,'id'=>$cs['py']),'')}/" <if condition="$cs['py'] eq $param.address || $cs['py'] eq $showsheng"> class="on" </if>>{$cs['ename']}</a></li>
+								<else/>
+								<li><a name="{$cs['py']}" href="{:cmf_url('portal/common/index',['classname'=>$param.classname,'num'=>$param.num,'id'=>$cs['py']],'')}/" <if condition="$cs['py'] eq $param.address || $cs['py'] eq $showsheng"> class="on" </if>>{$cs['ename']}</a></li>
+							</empty>
+						</volist>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="main">
+			<div class="main-left">	
+				<div class="brand-tj">
+					<div class="column-tit">{$nativeplace}<if condition="$selcttag3 eq '100万'">
+						{$selcttag3}以上<else/>{$selcttag3}</if>{$seo_name}招商加盟项目<span>共为您找到<i>{$total
+						}</i>条<notempty name="$nativeplace">{$nativeplace}地区</notempty><if condition="$selcttag3 eq '100万'">{$selcttag3}以上<else/>{$selcttag3}</if>{$seo_name}招商加盟项目信息
+					</span></div>
+					<div class="cont">
+						<ul>
+							<volist name="lick7" id="lick7">
+							<li>
+								<a  class="pic" href="{:cmf_url('portal/common/index',array('id'=>$lick7['aid'],'classname'=>$lick7['class']))}" title="{$lick7.title}" rel="nofollow">
+									<p>
+										<img class="lazy" src="__TMPL__/public/xin/images/lazyBg3x2.jpg" data-original="{$lick7.litpic|checkImgurl=###}" alt="{$lick7.title}">
+									</p>
+								</a>
+								<a href="{:cmf_url('portal/common/index',array('id'=>$lick7['aid'],'classname'=>$lick7['class']))}" title="{$lick7.title}">
+									<h2 class="tit">{$lick7.title}</h2>
+								</a>
+							</li>
+							</volist>
+						</ul>	
+					</div>	
+				</div>
+				<div class="list-itemList">
+					<ul>
+						<if condition="empty($total)">
+		                    <img style="width:210px;display:block;margin:0 auto;" src="__TMPL__/public/mobile/xin/images/nofind.png" alt="">
+		                    <p style="padding: 10px 44px;font-size: 14px;text-align:center;color: #c1c0c0;">抱歉，没有找到和您查询条件相符的项目信息。</p>
+						</if>
+						<volist name="dataa" id="dd">
+							<li class="list-item">
+								<div class="bd-logo">
+									<a href="{:cmf_url('portal/common/index',array('id'=>$dd['aid'],'classname'=>$dd['class']))}" class="pic" rel="nofollow">
+										<img class="lazy" src="__TMPL__/public/xin/images/lazyBg3x3.jpg" data-original="<?php if($dd['litpic']){?>{$dd['litpic']|checkImgurl=###}<?php }else{?>{$dd['thumbnail']|checkImgurl=###}<?php }?>" title="{$dd.title}" alt="{$dd.title}">
+									</a>
+								</div>
+								<div class="info">
+									<div class="info-left">
+										<div class="top">
+											<h2 class="tit"><a href="{:cmf_url('portal/common/index',array('id'=>$dd['aid'],'classname'=>$dd['class']))}" title="{$dd.title}">{$dd.title}</a></h2>
+											<a href="/{$dd.path}/" class="tag">{$dd.categoryname}</a>
+											<ul class="store">
+												<li>门店：<span><em>{$dd['sum']}</em>家</span></li>
+												<li>发源地：<i><a href="/{$dd.class}/{$dd.py}/"><?php echo str_replace('--','',$dd['address'])?></a></i></li>
+											</ul>
+										</div>
+										<div class="des"><?php echo htmlspecialchars_decode($dd['jieshao'])?><a href="{:cmf_url('portal/common/index',array('id'=>$dd['aid'],'classname'=>$dd['class']))}" title="查看详情">查看详情 &gt;&gt;</a></div>
+									</div>
+									<div class="info-right">
+										<div class="money">投资金额：<span>¥ {$dd['invested']}</span></div>
+										<div class="btn">
+											<a href="{:cmf_url('portal/common/index',array('id'=>$dd['aid'],'classname'=>$dd['class']))}" title="申请加盟" class="btn-confirm">申请加盟</a>
+										</div>
+										<h3 class="company">{$dd['companyname']}</h3>
+									</div>
+								</div>
+							</li>
+						</volist>
+						<if condition="$total lt 6 && !empty($total)"/>
+							<img style="width:210px;display:block;margin:0 auto;" src="__TMPL__/public/xin/images/nofind.png" alt="">
+							<p style="padding: 10px 44px;font-size: 14px;text-align:center;color: #c1c0c0;"> 内容太少了，下方为您推荐几条！</p>
+						</if>
+						<volist name="aboutdata" id="dd">
+							<li class="list-item">
+								<div class="bd-logo">
+									<a href="{:cmf_url('portal/common/index',array('id'=>$dd['aid'],'classname'=>$dd['class']))}" class="pic" rel="nofollow">
+										<img class="lazy" src="__TMPL__/public/xin/images/lazyBg3x3.jpg" data-original="<?php if($dd['litpic']){?>{$dd['litpic']|checkImgurl=###}<?php }else{?>{$dd['thumbnail']|checkImgurl=###}<?php }?>" title="{$dd.title}" alt="{$dd.title}">
+									</a>
+								</div>
+								<div class="info">
+									<div class="info-left">
+										<div class="top">
+											<h2 class="tit"><a href="{:cmf_url('portal/common/index',array('id'=>$dd['aid'],'classname'=>$dd['class']))}" title="{$dd.title}">{$dd.title}</a></h2>
+											<a href="/{$dd.path}/" class="tag">{$dd.categoryname}</a>
+											<ul class="store">
+												<li>门店：<span><em>{$dd['sum']}</em>家</span></li>
+												<li>发源地：<i><a href="/{$dd.class}/{$dd.py}/"><?php echo str_replace('--','',$dd['address'])?></a></i></li>
+											</ul>
+										</div>
+										<div class="des"><?php echo htmlspecialchars_decode($dd['jieshao'])?><a href="{:cmf_url('portal/common/index',array('id'=>$dd['aid'],'classname'=>$dd['class']))}" title="查看详情">查看详情 &gt;&gt;</a></div>
+									</div>
+									<div class="info-right">
+										<div class="money">投资金额：<span>¥ {$dd['invested']}</span></div>
+										<div class="btn">
+											<a href="{:cmf_url('portal/common/index',array('id'=>$dd['aid'],'classname'=>$dd['class']))}" title="申请加盟" class="btn-confirm">申请加盟</a>
+										</div>
+										<h3 class="company">{$dd['companyname']}</h3>
+									</div>
+								</div>
+							</li>
+						</volist>
+					</ul>
+                    <div class="page" <if condition="$total lt 10">style="display:none"</if>>
+						<ul>
+							{$data->render()}
+						</ul>
+					</div>
+				</div>
+			</div>	
+			<div class="main-right">
+				<div class="hdxw ad-hdxw">
+					<div class="hdxw-img">
+						<div class="images-inner">
+							<volist name="dapai" id="dapai">
+							<a href="{:cmf_url('portal/common/index',['id'=>$dapai['aid'],'classname'=>$dapai['class']])}" title="{$dapai.title}" class="link" rel="nofollow"><img src="{$dapai.litpic|checkImgurl=###}"></a>
+							</volist>
+						</div>
+					</div>
+					<div class="hdxw-dots">
+						<div class="dots-inner"></div>
+					</div>
+				</div>
+				<div class="side-section hot-hy">
+					<div class="side-tit">热门行业</div>
+					<div class="cont">
+						<ul>
+							<volist name="type" id="a2" key="k">
+								<li><a href="{:cmf_url('portal/common/index',array('classname'=>$a2['path']),'')}/"><?php echo str_replace('加盟','',$a2['name'])?></a></li>
+							</volist>
+						</ul>
+					</div>
+				</div>
+				<div class="side-section food-phb">
+					<div class="side-tit">十大{$catename}加盟品牌排行榜</div>
+					<div class="cont">
+						<ul>
+							<volist name="lick2" id="lick2" key="k">
+							<li><a href="{:cmf_url('portal/common/index',array('classname'=>$lick2['class'],'id'=>$lick2['aid']))}" title="{$lick2.title}"><i class="num num{$k}">{$k}</i><?php if(!empty($lick2['path2'])){?><span class="name">{$lick2.title}</span><em class="price">{$lick2.invested}</em><i class="hangye"><a href="/{$lick2.path2}/">{$lick2['catename']}</a></i><?php }else{?><span class="name name-large">{$lick2.title}</span><em class="price">{$lick2.invested}</em><?php }?><i class="icon icon-up"></i></a></li>
+							</volist>
+						</ul>
+					</div>
+				</div>
+				<div class="side-section good-xm">
+					<div class="side-tit">好项目加盟</div>
+					<div class="cont">
+						<volist name="lick1" id="lick1">
+						<div class="m-1">
+							<a class="brand" href="{:cmf_url('portal/common/index',array('classname'=>$lick1['class'],'id'=>$lick1['aid']))}" rel="nofollow">
+								<img src="{$lick1.litpic|checkImgurl=###}" alt="{$lick1.title}">
+							</a>
+							<dl class="m-1-a">
+								<dt><a href="{:cmf_url('portal/common/index',array('classname'=>$lick1['class'],'id'=>$lick1['aid']))}">{$lick1.title}</a></dt>
+								<dd>
+									<span>投资额：<em>{$lick1.invested}</em></span>
+									<span>咨询数：<em>{$lick1.click}</em><i>人</i></span>
+									<span>门店数：<em>{$lick1.sum}</em><i>家</i></span>
+								</dd>	
+							</dl>
+						</div>
+						</volist>
+					</div>
+				</div>
+				<div class="side-section side-news">
+					<ul class="tabs">
+						<li class="on">最新资讯</li>
+						<li><?php echo str_replace('创业','',$topname)?>专题</li>
+						<li>创业聚焦</li>
+					</ul>
+					<div class="cont">
+						<ul class="m-list">
+							<volist name="lick3" id="lick3">
+							<li><a href="{:cmf_url('portal/common/index',['id'=>$lick3['id'],'classname'=>$lick3['class']])}" title="{$lick3.post_title}">{$lick3.post_title}</a></li>
+							</volist>
+						</ul>
+						<ul class="m-list">
+							<volist name="lick4" id="catetop">
+							<li><a class='w250' href="{:cmf_url('portal/common/index',['classname'=>$catetop['path']],'')}/" title="{$catetop.name}">{$catetop.name}十大品牌 {$catetop.name}品牌排行榜</a></li>
+							</volist>
+						</ul>
+						<ul class="m-list">
+							<volist name="lick5" id="lick5">
+							<li><a href="{:cmf_url('portal/common/index',['id'=>$lick5['id'],'classname'=>$lick5['class']])}" title="{$lick5.post_title}">{$lick5.post_title}</a></li>
+							</volist>
+						</ul>
+					</div>
+				</div>	
+			</div>
+		</div>
+		<include file="foot_hytj"/>
+		<div class="xmpp-tj">
+			<div class="side-tit">推荐项目品牌</div>
+			<div class="cont">
+				<ul>
+					<volist name="tuijian" id="tuijian">
+					<li><a href="{:cmf_url('portal/common/index',['id'=>$tuijian['aid'],'classname'=>$tuijian['class']])}">{$tuijian.title}</a>|</li>
+					</volist>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="friend-tips">
+		<div class="w1200">
+			<ul>
+				<li><span>友情提示：</span><p>本页面内容仅供参考，为降低投资风险，建议您在投资前多做考察咨询、多对比分析。</p></li>
+				<li><span>内容声明：</span><p>以上所展示的信息均由第三方用户免费注册发布，内容的真实性、准确性和合法性均由发布用户负责。91创业网对此不承担任何相关连带责任。</p></li>
+				<li><span>投诉删除：</span><p>本平台所有品牌信息均为用户免费注册发布，91创业网遵循相关法律法规严格审核相关内容，如您发现页面有任何违法或侵权信息，欢迎向91创业网举报并提供有效线索，我们将认真核查、及时处理。</p></li>
+			</ul>
+		</div>
+	</div>
+	<div class="liucheng">
+		<div class="w1200">
+			<div class="common-tit">
+				<h2>创业<em>5</em>步</h2>
+			</div>
+			<ul>
+				<li>
+					<div class="icon icon-xunzhao"></div>
+					<div class="info">01. 寻找项目</div>
+					<span class="arrow"></span>
+				</li>
+				<li>
+					<div class="icon icon-zixun"></div>
+					<div class="info">02. 留言咨询</div>
+					<span class="arrow"></span>
+				</li>
+				<li>
+					<div class="icon icon-huifang"></div>
+					<div class="info">03. 等待回访</div>
+					<span class="arrow"></span>
+				</li>
+				<li>
+					<div class="icon icon-kaocha"></div>
+					<div class="info">04. 上门考察</div>
+					<span class="arrow"></span>
+				</li>
+				<li>
+					<div class="icon icon-hezuo"></div>
+					<div class="info">05. 成功合作</div>
+				</li>
+			</ul>	
+		</div>
+	</div>
+	<include file="footer_xin4"/>
+<script type="text/javascript" src="__TMPL__/public/xin/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/xin/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/xin/js/theia-sticky-sidebar-list.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/xin/js/index.js"></script>
+<script type="text/javascript" src="__TMPL__/public/xin/js/layer/layer.js"></script>
+<script>
+$('.main-right').theiaStickySidebar({});
+</script>
+</body>
+</html>

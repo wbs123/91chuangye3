@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+	<meta http-equiv="Cache-Control" content="no-transform">
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="applicable-device" content="pc" />
+	<meta name="robots" content="all">
+	<meta name="format-detection" content="telephone=no,address=no,email=no">
+	<meta name="renderer" content="webkit">
+	<link rel="shortcut icon" href="__TMPL__/public/new/images/favicon.ico" type="image/x-icon" />
+	<title>创业资讯_如何创业_创业故事 91创业网</title>
+	<script type="text/javascript" src="__TMPL__/public/xin/js/uaredirect.js"></script>
+	<script type="text/javascript">uaredirect("{$seo_url}");</script>
+	<meta name="keywords" content="创业资讯,餐饮资讯,小投资创业项目加盟,自己创业做什么好,如何创业,创业故事">
+	<meta name="description" content="2018自己创业做什么好？年轻人如何创业？大学生创业项目有哪些？91chuangye.com创业资讯汇集最新最全的创业好项目、创业故事。分享最新创业资讯，了解创业好项目，引领成功新起点！">
+	<meta name="applicable-device" content="pc">
+	<meta name="mobile-agent" content="format=html5;url={$seo_url}"/>
+	<link rel="alternate" media="only screen and(max-width: 640px)" href="{$seo_url}"/>
+	<link type="text/css" rel="stylesheet" href="__TMPL__/public/xin/css/common.css">
+	<link type="text/css" rel="stylesheet" href="__TMPL__/public/xin/css/news.css">
+</head>
+<body>
+<include file="new_header"/>
+<div class="w1200">
+	<div class="news_section1" style="margin-top:15px;">
+		<div class="chuangye-zx">
+			<div class="hdxw ad-hdxw">
+				<div class="hdxw-img">
+					<div class="images-inner">
+						<volist name="$recommend" id="d">
+						<div class="link">
+							<a href="/{$d.class}/{$d.id}.html" title="{$d.post_title}" rel="nofollow">
+							<img src="{$d.thumbnail|checkImgurl=###}" alt="{$d.post_title}">
+							</a>
+							<p>{$d.post_title}</p>
+
+						</div>
+						</volist>
+					</div>
+				</div>
+				<div class="hdxw-dots">
+					<div class="dots-inner"></div>
+				</div>
+			</div>
+			<div class="chuangye-item chuangye-gs">
+				<div class="common-tit-2">
+					<h2>创业故事</h2>
+					<a href="/chuangyegushi/" class="more">更多+</a>
+				</div>
+				<div class="cont">
+					<dl class="m-1-a">
+						<volist name="$gushi" key="k" id="d">
+							<if condition="$k eq 1">
+								<dt><a href="/{$d.class}/{$d.id}.html">{$d.post_title}</a></dt>
+							</if>
+							<if condition="$k gt 1 && $k lt 4">
+								<dd><a href="/{$d.class}/{$d.id}.html">{$d.post_title}</a></dd>
+							</if>
+						</volist>
+					</dl>
+					<dl class="m-1-a">
+						<volist name="$gushi" key="k" id="d">
+							<if condition="$k eq 4">
+								<dt><a href="/{$d.class}/{$d.id}.html">{$d.post_title}</a></dt>
+							</if>
+							<if condition="$k gt 4 && $k lt 7">
+								<dd><a href="/{$d.class}/{$d.id}.html">{$d.post_title}</a></dd>
+							</if>
+						</volist>
+					</dl>
+					<dl class="m-1-a">
+						<volist name="$gushi" key="k" id="d">
+							<if condition="$k eq 7">
+								<dt><a href="/{$d.class}/{$d.id}.html">{$d.post_title}</a></dt>
+							</if>
+							<if condition="$k gt 7">
+								<dd><a href="/{$d.class}/{$d.id}.html">{$d.post_title}</a></dd>
+							</if>
+						</volist>
+					</dl>
+				</div>
+			</div>
+			<div class="chuangye-item chuangye-zd">
+				<div class="common-tit-2">
+					<h2>创业之道</h2>
+					<a href="/zhidao/" class="more">更多+</a>
+				</div>
+				<div class="cont">
+					<volist name="$zhidao" key="k" id="d">
+						<if condition="$k eq 1">
+							<div class="m-1">
+								<div class="picfocus">
+									<a href="/{$d.class}/{$d.id}.html" title="{$d.post_title}" rel="nofollow">
+										<img class="lazy" src="__TMPL__/public/images/lazyBg3x2.jpg" data-original="{$d.thumbnail|checkImgurl=###}" alt="{$d.post_title}">
+									</a>
+								</div>
+								<dl class="m-1-a">
+									<dt><a href="/{$d.class}/{$d.id}.html" title="{$d.post_title}">{$d.post_title}</a></dt>
+									<dd>{$d.post_excerpt|msubstr=0,60,'utf-8',true}</dd>
+								</dl>
+							</div>
+						</if>
+					</volist>
+					<ul class="m-list">
+						<volist name="$zhidao" key="k" id="d">
+							<if condition="$k gt 1">
+								<li><a href="/{$d.class}/{$d.id}.html">{$d.post_title}</a>{$d.published_time|date='Y-m-d',###}</li>
+							</if>
+						</volist>
+					</ul>
+				</div>
+			</div>
+			<div class="chuangye-item chuangye-zs">
+				<div class="common-tit-2">
+					<h2>创业知识</h2>
+					<a href="/ruhe/" class="more">更多+</a>
+				</div>
+				<div class="cont">
+					<ul class="m-list">
+						<volist name="$zhishi" key="k" id="d">
+							<li><a href="/{$d.class}/{$d.id}.html">{$d.post_title}</a>{$d.published_time|date='Y-m-d',###}</li>
+						</volist>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="chuangye-item chuangye-zn">
+			<div class="common-tit-2">
+				<h2>创业指南</h2>
+				<a href="/zhinan/" class="more">更多+</a>
+			</div>
+			<div class="cont">
+				<ul class="m-list">
+					<volist name="$zhinan" key="k" id="d">
+						<li>
+							<a href="/{$d.class}/" class="a1">[{$d.name}] </a>
+							<a href="/{$d.class}/{$d.id}.html" class="a2" title="{$d.post_title}">{$d.post_title}</a>
+						</li>
+					</volist>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="pinpai">
+		<div class="cont">
+			<ul>
+				<volist name="$aboutProduct" id="d">
+				<li>
+					<div class="item">
+						<div class="picfocus">
+							<a href="/{$d.class}/{$d.aid}.html" title="{$d.title}" rel="nofollow">
+								<img class="lazy" src="__TMPL__/images/lazyBg3x2.jpg" data-original="{$d.logo|checkImgurl=###}" alt="{$d.title}">
+							</a>
+						</div>
+						<div class="tit"><a href="/{$d.class}/{$d.aid}.html" title="{$d.title}">{$d.title}</a><em>{$d.invested}</em></div>
+					</div>
+				</li>
+				</volist>
+			</ul>
+		</div>
+	</div>
+	<div class="news_stction2">
+		<div class="zixun_nav">
+			<div class="common-tit-2">
+				<em class="line"></em>
+				<h2>资讯导航</h2>
+				<a href="/xiangmu/" class="more">更多+</a>
+			</div>
+			<div class="cont">
+				<ul>
+					<volist name="$catess" id="d">
+						<li><a href="/{$d.path}/">{$d.name}</a></li>
+						<volist name="$d.data" id="ds">
+						<li><a href="/{$ds.path}/">{$ds.name}</a></li>
+						</volist>
+					</volist>
+				</ul>
+			</div>
+		</div>
+		<div class="zixun">
+			<div class="zixun_tj">
+				<div class="common-tit-2">
+					<em class="line"></em>
+					<h2>最新资讯推荐</h2>
+					<a href="/news/" class="more">更多+</a>
+				</div>
+				<div class="cont">
+					<volist name="$tuijian" key="k" id="d">
+						<if condition="$k lt 3">
+							<div class="m-1">
+								<div class="picfocus">
+									<a href="/{$d.class}/{$d.id}.html" title="{$d.post_title}" rel="nofollow">
+										<img class="lazy" src="__TMPL__/images/lazyBg3x2.jpg" data-original="{$d.thumbnail|checkImgurl=###}" alt="{$d.post_title}">
+									</a>
+								</div>
+								<dl class="m-1-a">
+									<dt><a href="/{$d.class}/{$d.id}.html" title="{$d.post_title}">{$d.post_title}</a></dt>
+									<dd>{$d.post_excerpt|msubstr=0,60,'utf-8',true}</dd>
+								</dl>
+							</div>
+						</if>
+					</volist>
+					<ul class="m-list">
+						<volist name="$tuijian" key="k" id="d">
+							<if condition="$k gt 2">
+								<li><a href="/{$d.class}/{$d.id}.html">{$d.post_title}</a></li>
+							</if>
+						</volist>
+					</ul>
+				</div>
+			</div>
+			<div class="zixun_xm">
+				<div class="common-tit-2">
+					<em class="line"></em>
+					<h2>餐饮资讯</h2>
+					<a href="/news/cy/" class="more">更多+</a>
+				</div>
+				<div class="cont">
+					<ul class="m-list">
+						<volist name="$canyinnews" key="k" id="d">
+						<li><a href="/{$d.class}/{$d.id}.html">{$d.post_title}</a>{$d.published_time|date='Y-m-d',###}</li>
+						</volist>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="phb-item">
+			<div class="common-tit-2">
+				<em class="line"></em>
+				<h2>十大品牌排行榜</h2>
+				<a href="/top/" class="more">更多+</a>
+			</div>
+			<div class="cont">
+				<ul>
+					<volist name="productten" id="parent">
+						<volist name="$parent.data" id="d" key="k">
+							<li>
+								<div class="item">
+									<a href="{:cmf_url('portal/common/index',['id'=>$d['aid'],'classname'=>$d['class']])}" title="{$d.title}" class="tit">
+										<i class="num">{$k}</i>
+										<span class="name">{$d.title}</span>
+										<em class="price">{$d['invested']}</em>
+									</a>
+									<a href="/{$d.categoryPath}/" class="hangye">{$d.categoryName}</a>
+									<i class="icon icon-up"></i>
+								</div>
+								<div class="m-1">
+									<a href="{:cmf_url('portal/common/index',['id'=>$d['aid'],'classname'=>$d['class']])}" class="brand" rel="nofollow">
+										<img class="lazy" src="__TMPL__/public/xin/images/lazyBg3x2.jpg" data-original="{$d.logo|checkImgurl=###}" alt="{$d.title}">
+									</a>
+									<dl class="m-1-a">
+										<dd>
+											<span>咨询数：<em>{$d.click}</em><i>人</i></span>
+											<span>门店数：<em>{$d.sum}</em><i>家</i></span>
+										</dd>
+									</dl>
+									<p class="info">{$d['description']|msubstr=0,60,'utf-8',true}</p>
+								</div>
+							</li>
+						</volist>
+					</volist>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="news_section3">
+		<div class="common-tit">
+			<h2><i class="icon icon-quyu"></i>区域热点</h2>
+		</div>
+		<div class="left">
+			<div class="hot-week">
+				<div class="common-tit-2">
+					<em class="line"></em>
+					<h2>本周热门</h2>
+					<i class="icon icon-hot"></i>
+				</div>
+				<div class="cont">
+					<div class="top">
+						<ul>
+							<volist name="$benzhou" key="k" id="d">
+								<if condition="$k lt 3">
+									<li>
+										<a href="/{$d.class}/{$d.aid}.html" class="item" title="{$d.title}" rel="nofollow">
+											<div class="picfocus">
+												<img class="lazy" src="__TMPL__/images/lazyBg3x2.jpg" data-original="{$d.litpic|checkImgurl=###}" alt="{$d.title}">
+											</div>
+										</a>
+										<div class="tit">
+											<a href="/{$d.class}/{$d.aid}.html" title="{$d.title}">{$d.title}</a><em>{$d['invested']}</em>
+										</div>
+									</li>
+								</if>
+							</volist>
+						</ul>
+					</div>
+					<div class="bot">
+						<div class="tit">热门项目</div>
+						<ul>
+							<volist name="$benzhou" key="k" id="d">
+								<if condition="$k gt 2">
+									<li><a href="/{$d.class}/{$d.aid}.html">{$d.title}</a></li>
+								</if>
+							</volist>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="zixun_hot">
+				<div class="common-tit-2">
+					<em class="line"></em>
+					<h2>热点资讯</h2>
+					<i class="icon icon-hot"></i>
+				</div>
+				<div class="cont">
+					<ul class="m-list">
+						<volist name="$hotnews" key="k" id="d">
+						<li><a href="/{$d.path}/" class="a1">[{$d.name}]</a>
+							<a href="/{$d.class}/{$d.id}.html" class="a2" title="{$d.post_title}">
+							{$d.post_title}</a>{$d.published_time|date='Y-m-d',###}</li>
+						</volist>
+					</ul>
+				</div>
+			</div>
+			<div class="choose-brand">
+				<div class="common-tit-2">
+					<em class="line"></em>
+					<h2>精选品牌</h2>
+					<a href="/xiangmu/" class="more">更多+</a>
+				</div>
+				<div class="cont">
+					<ul>
+						<volist name="$jingxuan" id="d">
+							<li>
+								<div class="item">
+									<div class="picfocus">
+										<a href="/{$d.class}/{$d.aid}.html" title="{$d.title}" rel="nofollow">
+											<img class="lazy" src="__TMPL__/images/lazyBg4x3.jpg" data-original="{$d.logo|checkImgurl=###}" alt="{$d.title}">
+										</a>
+									</div>
+									<div class="hover">
+										<a href="/{$d.class}/{$d.aid}.html" title="{$d.title}">
+											<div class="tit">{$d.title}</div>
+											<div class="price">￥{$d.invested}</div>
+											<p class="btn">详情</p>
+										</a>
+									</div>
+								</div>
+							</li>
+						</volist>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="brand-fenlei">
+			<div class="common-tit-2">
+				<em class="line"></em><h2>加盟品牌分类查询</h2>
+			</div>
+			<div class="hot">
+				<div class="tit">
+					<i class="icon icon-hot"></i><h3>热门分类</h3>
+				</div>
+				<div class="cont">
+					<ul class="ul_hot1">
+						<volist name="$cate" key="k" id="d">
+							<if condition="$k lt 9">
+								<li><a href="/{$d.path}/"><i class="icon icon-{$d.path}"></i><p>{$d.name|str_replace='加盟','',###}</p></a></li>
+							</if>
+						</volist>
+					</ul>
+				</div>
+			</div>
+			<div class="invest">
+				<div class="tit">
+					<i class="icon icon-invest"></i>
+					<h3>投资金额</h3>
+				</div>
+				<div class="cont">
+					<ul>
+						<li><a href="/xiangmu/0-1/">￥0-1万</a></li>
+						<li><a href="/xiangmu/1-5/">￥1-5万</a></li>
+						<li><a href="/xiangmu/5-10/">￥5-10万</a></li>
+						<li><a href="/xiangmu/10-20/">￥10-20万</a></li>
+						<li><a href="/xiangmu/20-50/">￥20-50万</a></li>
+						<li><a href="/xiangmu/50-100/">￥50-100万</a></li>
+						<li><a href="/xiangmu/100-200/">￥100-200万</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="source">
+				<div class="tit">
+					<i class="icon icon-source"></i>
+					<h3>品牌源地</h3>
+				</div>
+				<div class="cont">
+					<ul>
+						<volist name="$area" id="d">
+						<li><a href="/xiangmu/{$d.py}/">{$d.ename}</a></li>
+						</volist>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="news_section4">
+		<div class="common-tit">
+			<h2><i class="icon icon-zixun"></i>行业资讯</h2>
+		</div>
+		<div class="hyzx-box">
+			<volist name="$hangye" id="d">
+			<div class="zixun-item">
+				<div class="common-tit-2">
+					<em class="line"></em>
+					<h2>{$d.name}</h2>
+					<a href="/{$d.path}/" class="more">更多+</a>
+				</div>
+				<div class="cont">
+					<volist name="$d.data" key="k" id="ds">
+						<if condition="$k eq 1">
+							<div class="m-1">
+								<div class="picfocus">
+									<a href="/{$ds.class}/{$ds.id}.html" title="{$ds.post_title}" rel="nofollow">
+										<img class="lazy" src="__TMPL__/images/lazyBg3x2.jpg" data-original="{$ds.thumbnail|checkImgurl=###}" alt="{$ds.post_title}">
+									</a>
+								</div>
+								<dl class="m-1-a">
+									<dt><a href="/{$ds.class}/{$ds.id}.html" title="{$ds.post_title}">{$ds.post_title}</a></dt>
+									<dd>{$ds.post_excerpt|msubstr=0,60,'utf-8',true}</dd>
+								</dl>
+							</div>
+						</if>
+					</volist>
+					<ul class="m-list">
+						<volist name="$d.data" key="k" id="dd">
+							<if condition="$k gt 1">
+							<li><a href="/{$dd.class}/{$dd.id}.html">{$dd.post_title
+								}</a>{$dd.create_time|date='Y-m-d',###}</li>
+							</if>
+						</volist>
+					</ul>
+				</div>
+			</div>
+			</volist>
+		</div>
+	</div>
+</div>
+<include file="footer_xin2"/>
+<script>
+	function lefcheckMessageN() {
+		var tel = $('#unit_left_text').val();
+		var url = $('#url').val();
+		var mobile = /^1[3|4|5|6|7|8]\d{9}$/,
+			phone = /^0\d{2,3}-?\d{7,8}$/;
+		if (tel == "" || (tel != "" && !mobile.test(tel) && !phone.test(tel))) {
+			layer.msg('请输入正确有效的手机号码！');
+			$("#unit_left_text").focus();
+			return false;
+		} else {
+			$.ajax({
+				type: "POST",
+				url: "/plus/diy4",
+				data: {
+					tel: tel,
+					url: url
+				},
+				dataType: "json",
+				success: function(msg) {
+					if (msg.data == "1") {
+						layer.msg('信息提交成功！');
+					} else {
+						layer.msg('信息提交失败，请稍后再试！');
+					}
+				}
+			});
+		}
+	}
+</script>
+<script type="text/javascript" src="__TMPL__/public/xin/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/xin/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/xin/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+</style>
+
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('AdminMessage/news_index')}">留言管理</a></li>
+        <li class="active"><a href="{:url('AdminXm/edit')}">资讯留言</a></li>
+    </ul>
+    <form action="{:url('AdminXm/editPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div class="col-md-9">
+                <table class="table table-bordered">
+                    <tr>
+                        <th style="width: 80px;">姓名<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="name" required value="{$post.name}" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 80px;">手机号<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="tel" required value="{$post.tel}" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 80px;">性别<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="tel" required value="<?php if($post['sex'] == 0){?>男<?php }else{?>女<?php }?>" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 80px;">投资金额<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="tel" required value="<?php if($post['invested'] == 0){?>未选择<?php }else if($post['invested'] == 1){?>一万以下<?php }else if($post['invested'] == 2){?>1-5万<?php }else if($post['invested'] == 3){?>5-10万<?php }else if($post['invested'] == 4){?>10-20万<?php }else if($post['invested'] == 5){?>20-50万<?php }else if($post['invested'] == 6){?>50-100万<?php }else if($post['invested'] == 7){?>100万以上<?php }?>" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 80px;">url<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="url" required value="{$post.url}" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 80px;">来源<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="source" required value="<?php if($post['source'] == 1){?>PC端<?php }else{?>手机端<?php }?>" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 80px;">提交时间<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" name="inputtime" required value="<?php echo date('Y-m-d H:i:s',$post['inputtime'])?>" readonly/>
+                        </td>
+                    </tr>
+                </table>
+                <hook name="portal_admin_article_edit_view_main"/>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <!-- <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('SAVE')}</button> -->
+                        <a class="btn btn-default" href="{:url('AdminMessage/index')}">{:lang('BACK')}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    //编辑器路径定义
+    var editorURL = GV.WEB_ROOT;
+</script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/themes/simpleboot3/public/new/js/p.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        $("#nat_top").trigger("change");
+
+        $("#nat_son").change(function(){
+            if($(this).val()>0){
+                $("#nativeplace_son").val($.trim($(this).find("option:selected").text()));
+            }else{
+                $("#nativeplace_son").val('');
+            }
+        });
+
+
+        $.each(province,function (k,v) {
+            if(v.ProRemark  != '直辖市' && v.ProRemark !='特别行政区') {
+                //选中
+                if(v.name == "<?php echo $post['address']; ?>"){
+                    $("#adderss_select").append('<option selected value="' + v.ProID + '">--' + v.name + '</option>');
+                }else{
+                    $("#adderss_select").append('<option value="' + v.ProID + '">--' + v.name + '</option>');
+                }
+            }
+            $.each(city,function (key,value) {
+                if(v.ProID == value.ProID){
+                    $("#adderss_select").append('<option value="'+value.CityID+'">'+value.name+'</option>');
+                    if(value.name == "<?php echo  $post['address']; ?>"){
+                        $("#adderss_select").append('<option selected  value="'+value.CityID+'">'+value.name+'</option>');
+                    }else{
+                        $("#adderss_select").append('<option  value="'+value.CityID+'">'+value.name+'</option>');
+                    }
+                }
+            })
+        })
+        $("#adderss_select").change(function(){
+            $("#address").val($.trim($(this).find("option:selected").text()));
+        });
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('jieshao');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+    });
+
+    $(function () {
+
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('tiaojian');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+    });
+    $(function () {
+
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('liucheng');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+    });
+
+    $(function () {
+
+        editorcontent = new baidu.editor.ui.Editor();
+        editorcontent.render('fenxi');
+        try {
+            editorcontent.sync();
+        } catch (err) {
+        }
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+    });
+
+    function doSelectCategory() {
+        var selectedCategoriesId = $('#js-categories-id-input').val();
+        openIframeLayer("{:url('AdminCategory/select')}?ids=" + selectedCategoriesId, '请选择分类', {
+            area: ['700px', '400px'],
+            btn: ['确定', '取消'],
+            yes: function (index, layero) {
+                //do something
+
+                var iframeWin          = window[layero.find('iframe')[0]['name']];
+                var selectedCategories = iframeWin.confirm();
+                if (selectedCategories.selectedCategoriesId.length == 0) {
+                    layer.msg('请选择分类');
+                    return;
+                }
+                $('#js-categories-id-input').val(selectedCategories.selectedCategoriesId.join(','));
+                $('#js-categories-name-input').val(selectedCategories.selectedCategoriesName.join(' '));
+                //console.log(layer.getFrameIndex(index));
+                layer.close(index); //如果设定了yes回调，需进行手工关闭
+            }
+        });
+    }
+</script>
+</body>
+</html>

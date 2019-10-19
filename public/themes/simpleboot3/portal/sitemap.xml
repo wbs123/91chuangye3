@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+<url>
+<loc>http://www.91chuangye.com/</loc>
+<changefreq>daily</changefreq>
+<priority>1.00</priority>
+<lastmod> {dede:php runphp='yes'}
+$ntime = time();
+ @me=MyDate('Y-m-d',$ntime);
+ {/dede:php}</lastmod>
+</url>
+	{dede:channelartlist  type='top' row='22'}
+<url>
+<loc>{dede:field name='typeurl'/}</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+	{/dede:channelartlist}
+	{dede:channelartlist  type='top' row='22'}
+	{dede:channel type='son' row='200'}
+<url>
+<loc>[field:typelink /]</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+{/dede:channel}
+{/dede:channelartlist}
+  
+{dede:arclist typeid='1,2,3,4,5,6,7,8,9,10,63,312,313,339,350,396,420' titlelen='300' orderby='sortrank' row='60000'}
+<url>
+   <loc>[field:arcurl/]</loc>
+   <priority>0.60</priority>
+   <lastmod>[field:sortrank function=strftime('%Y-%m-%d',@me)/]</lastmod>
+   <changefreq>daily</changefreq>
+</url>
+{/dede:arclist}
+ {dede:arclist typeid='11,20,32,37,366,399' titlelen='300' orderby='sortrank' row='60000'}
+<url>
+   <loc>[field:arcurl/]</loc>
+   <priority>0.60</priority>
+   <lastmod>[field:sortrank function=strftime('%Y-%m-%d',@me)/]</lastmod>
+   <changefreq>daily</changefreq>
+</url>
+{/dede:arclist}
+  
+</urlset>

@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>{$q}加盟店_{$q}加盟费多少钱</title>
+    <link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon" />
+    <meta name='description' content=''>
+    <meta name='keyword' content="">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/lists.css" />
+
+</head>
+<body >
+<!--------------------------top_bar start---------------------------->
+<div class="header">
+    <div class="top_bar">
+        <div class="top_bar_item">
+            <div class="return"><a class="btn back" href="javascript:history.go(-1)"></a></div>
+            <div class="tit">搜索结果页</div>
+            <div class="sear"><a href="javascript:;"></a></div>
+        </div>
+    </div>
+    <div class="swiper-container nav">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide"><a href="/">91创业网</a> </li>
+            <li class="swiper-slide"><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">找项目</a></li>
+            <li class="swiper-slide"><a href="{:cmf_url('portal/common/index',['classname'=>'top'],'')}/">品牌排行榜</a></li>
+            <li class="swiper-slide"><a href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/">创业资讯</a></li>
+        </ul>
+    </div>
+</div>
+<!--------------------------top_bar   end---------------------------->
+
+
+<!--------------------------item_chose start------------------------->
+
+<section class="item-section item_path">
+    <a href="/">首页</a>&nbsp;>&nbsp;<span>搜索<font color="red">"{$q}"</font>的结果</span>
+</section>
+<!--<section class="item-section item_chose item_chose_2">-->
+    <!--<div class="item_chose_2_box">-->
+        <!--<ul>-->
+            <!--<li class="on"><a href="javascript:;">全部</a></li>-->
+            <!--<li><a href="javascript:;">人气</a></li>-->
+            <!--<li><a href="javascript:;">最新</a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</section>-->
+<!--------------------------item_chose   end------------------------->
+
+<div class="shadow"></div>
+
+<!-------------------------加盟行业下拉 start------------------------>
+<!-------------------------加盟行业下拉   end------------------------>
+
+<!-------------------------投资金额下拉 start------------------------>
+<!-------------------------投资金额下拉   end------------------------>
+
+
+<!-------------------------加盟区域下拉 start------------------------>
+<!-------------------------加盟区域下拉   end------------------------>
+
+
+<div id="wrapper2" class="wrapper2" style="overflow:auto;-webkit-overflow-scrolling: touch;">
+    <div class="select_cont">
+        <!-------------------------item_xmklist start------------------------>
+        <section class="item-section item_xmklist">
+            <ul class="xmlist_ul">
+                <if condition="$data1 == 1">
+                    <volist name="data" id="dd">
+                        <li>
+                            <a href="{:cmf_url('portal/common/index',['id'=>$dd['aid'],'classname'=>$dd['class']])}">
+                                <div class="pic"><img src="{$dd['litpic']}"></div>
+                                <dl>
+                                    <dt>{$dd['title']}</dt>
+                                    <dd>所属行业：{$dd['category_name']}</dd>
+                                    <dd>投资额度：<em>{$dd['invested']}</em></dd>
+                                    <dd>门店数量：{$dd['sum']}</dd>
+                                    <dd>地区：{$dd['company_address']}</dd>
+                                </dl>
+                                <div class="zx">
+                                    <span class="ck_more">查看更多</span>
+                                    <span class="zixun">立即咨询</span>
+                                </div>
+                            </a>
+                        </li>
+                    </volist>
+                <else/>
+                <p style="    color: red;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;">抱歉！暂无相关记录</p>
+                </if>
+            </ul>
+            <div style="text-align: center;margin: 0.3em 0;">
+                <span >共找到&nbsp;<span style="color: red;">{$datas->total()}</span>&nbsp;条记录</span>
+            </div>
+            <div class="page">
+                <ul>
+                    {$datas->render()}
+                </ul>
+            </div>
+        </section>
+        <!-------------------------item_xmklist   end------------------------>
+
+
+        <!-------------------------item_tsxm   start------------------------->
+        <section class="item-section item_tsxm">
+            <div class="common_tit">
+                <a class="tit" href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">特色项目推荐</a>
+                <a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/" class="more">+更多</a>
+            </div>
+            <ul class="clearfix">
+                <volist name="catess" id="catess">
+                    <li><a href="{:cmf_url('portal/common/index',['classname'=>$catess['class'],'id'=>$catess['aid']],'')}/">{$catess.title}</a></li>
+                </volist>
+            </ul>
+
+        </section>
+        <!------------------------item_xmklist   end------------------------->
+    </div>
+
+    <!---------------------------footer start---------------------------->
+    <include file="mobile/new_footer"/>
+    <!---------------------------footer   end---------------------------->
+
+
+    <!-------------------------search_box start-------------------------->
+    <include file="mobile/search"/>
+    <!-------------------------search_box   end-------------------------->
+
+    <!------------------------- returnTop  start -------------------------->
+    <a href="javascript:void(0);" id="returnTop"></a>
+    <!------------------------- returnTop    end -------------------------->
+
+   <!-- <script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.js"></script> -->
+    <!-- <script type="text/javascript" src="__TMPL__/public/mobile/js/swiper.min.js"></script> -->
+    <!-- <script type="text/javascript" src="__TMPL__/public/mobile/js/TouchSlide.1.1.js"></script> -->
+    <!-- <script type="text/javascript" src="__TMPL__/public/mobile/js/iscroll.js"></script> -->
+    <!-- <script type="text/javascript" src="__TMPL__/public/mobile/js/select.js"></script> -->
+    <!-- <script type="text/javascript" src="__TMPL__/public/mobile/js/xm_list.js"></script> -->
+    <!-- <script type="text/javascript" src="__TMPL__/public/mobile/js/index.js"></script> -->
+  
+   <script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/swiper.min.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/TouchSlide.1.1.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/iscroll.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/xm_list.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/index.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/mobile/js/select12.js"></script>
+
+    <!--<script>-->
+    <!--$('#condition_1').html($('.left li>a.on').html());-->
+    <!--$('#condition_2').html($('.right li>a.on').html());-->
+    <!--var value = $('.selected_box_1 li>a.on').html();-->
+    <!--var value1 = $('.selected_box_2 li>a.on').html();-->
+    <!--if (value != '全部') {-->
+    <!--$('#condition_3').html(value);-->
+    <!--}-->
+    <!--if (value1 != '全部') {-->
+    <!--$('#condition_4').html(value1);-->
+    <!--}-->
+    <!--// if (!$('.left li>a').hasClass('on')) {-->
+    <!--//     $('.left li:first>a').addClass('on');-->
+    <!--// }-->
+    <!--// if (!$('.right li>a').hasClass('on')) {-->
+    <!--//     $('.right li:first>a').addClass('on');-->
+    <!--// }-->
+    <!---->
+    <!--$('.left li>a').click(function () {-->
+    <!--$('.left li>a').removeClass('on');-->
+    <!--$(this).addClass('on');-->
+    <!--$('#condition_1').html($(this).html());-->
+
+    <!--var id = $(this).attr('data-id');-->
+    <!--$.post('http://m.91chuangye.com/plus/filter.php', {id:id}, function (h) {-->
+    <!--$('.right ul').html(h);-->
+    <!--});-->
+    <!--});-->
+    <!--$('.right li>a').click(function () {-->
+    <!--$('.right li>a').removeClass('on');-->
+    <!--$(this).addClass('on');-->
+    <!--});-->
+    <!---->
+    <!--$(".right li>a").live("click", function(){-->
+    <!--$(this).addClass("on");-->
+    <!--var s = $(this).attr('data-url');-->
+    <!--$("#hiddens").html(s);   	-->
+    <!--$('#condition_2').html($(this).html());-->
+    <!--});-->
+
+    <!--$('.selected_box_1 li>a').click(function () {-->
+    <!--$('.selected_box_1 li>a').removeClass('on');-->
+    <!--$(this).addClass('on');-->
+    <!--$('#condition_3').html($(this).html());-->
+    <!--});-->
+    <!--$('.selected_box_2 li>a').click(function () {-->
+    <!--$('.selected_box_2 li>a').removeClass('on');-->
+    <!--$(this).addClass('on');-->
+    <!--$('#condition_4').html($(this).html());-->
+    <!--});-->
+
+    <!--$("#search-btn").click(function(){-->
+    <!---->
+    <!--//var type = $('.right li>a.on').attr('data-url');-->
+    <!--var type= $("#hiddens").html();-->
+    <!--console.log(type);-->
+    <!--if(!type) {-->
+    <!--type = $('.left li>a.on').attr('data-url');-->
+    <!--}-->
+    <!---->
+    <!--if(!type) {-->
+    <!--type = '/xiangmu/';-->
+    <!--}-->
+
+    <!--var address = $('.selected_box_2 li>a.on').attr('data-type');-->
+    <!--var invested = $('.selected_box_1 li>a.on').attr('data-type');-->
+    <!--var url = type;-->
+    <!--if (address) {-->
+    <!--url = url + address + '/';-->
+    <!--}-->
+    <!--if (invested) {-->
+    <!--url = url + invested + '/';-->
+    <!--}-->
+    <!--window.location.href = url;-->
+    <!---->
+    <!--})-->
+    <!---->
+    <!--</script>-->
+</body>
+</html>

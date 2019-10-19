@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{$seo['seo_title']}</title>
+    <meta name="keywords" content="{$seo['seo_keywords']}">
+    <meta name="description" content="{$seo['seo_description']}">
+    <link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="__TMPL__/public/mobile/xin/lib/css/swiper.css">
+    <script src="__TMPL__/public/mobile/xin/lib/js/jquery.js"></script>
+    <script src="__TMPL__/public/mobile/xin/lib/js/jquery.lazyload.js"></script>
+    <script src="__TMPL__/public/mobile/xin/lib/js/swiper.js"></script>
+    <script src="__TMPL__/public/mobile/xin/js/common.js"></script>
+    <script src="__TMPL__/public/mobile/xin/js/projectLibrary.js"></script>
+    <link rel="stylesheet" href="__TMPL__/public/mobile/xin/css/common.css">
+	<meta name="applicable-device" content="mobile">
+	<link rel="canonical" href="{$seo_url}">
+    <script src="__TMPL__/public/mobile/xin/js/ranking.js"></script>
+	<link href="__TMPL__/public/mobile/xin/css/smallclass.css" rel="stylesheet">
+	</head>
+<body>
+    <header class="header second active">
+        <div class="left">
+            <div class="return">
+                <a href="javascript:history.go(-1);">
+                    <img src="__TMPL__/public/mobile/xin/images/c27e82981d1f8cf843cb80c467ca4d4d.png"
+                       >
+                </a>
+            </div>
+        </div>
+        <div class="title">{$name1}{$onename}排行榜</div>
+		<include file="mobile/search_all"/>
+    </header>
+    <section class="merchants">
+        <ul class="commonlistmerchants">
+            <volist name="data" id="data" key="k">
+                <li>
+                    <a href="{:cmf_url('portal/common/index',['id'=>$data['aid'],'classname'=>$data['class']])}">
+                        <div class="img">
+                            <img class="lazy" src="__TMPL__/public/mobile/xin/images/44feb2a189bb6a55ade0a5349fcccfb2.jpg" data-original="{$data.litpic|checkImgurl=###}">
+                        </div>
+                        <div class="text">
+                            <div class="top">
+                                <div class="title">{$data.title}</div>
+                                <div class="price">¥{$data.invested}</div>
+                            </div>
+                            <div class="desc">
+                                {$data['description']|msubstr=0,60,'utf-8',true}
+                            </div>
+                        </div>
+                        <div class="level">TOP{$k}</div>
+                    </a>
+                </li>
+            </volist>
+        </ul>
+    </section>
+    <section class="independent">
+        <ul>
+            <volist name="lick2" id="lick2">
+            <li>
+                <a href="{:cmf_url('portal/common/index',['id'=>$lick2['aid'],'classname'=>$lick2['class']])}">
+                    <img class="lazy" src="__TMPL__/public/mobile/xin/images/44feb2a189bb6a55ade0a5349fcccfb2.jpg" data-original="{$lick2.litpic|checkImgurl=###}" alt="{$lick2.title}">
+                    <div class="text">{$lick2.title}</div>
+                </a>
+            </li>
+            </volist>
+        </ul>
+    </section>
+    <section class="related">
+        <div class="commonlistTitleNew">
+            相关文章
+        </div>
+        <div class="list">
+            <ul>
+                <volist name="AboutNews" id="AboutNews">
+                    <li>
+                    <a href="{:cmf_url('portal/common/index',['id'=>$AboutNews['id'],'classname'=>'news'])}">
+                        <span class="title">{$AboutNews.post_title}</span>
+                        <span class="date"><?php echo date('Y-m-d',$AboutNews['published_time'])?></span>
+                    </a>
+                </li>
+                </volist>
+            </ul>
+        </div>
+    </section>
+    <section class="new-product">
+        <div class="commonlistTitleNew">
+            {$name1}品牌新品入驻商家
+            <img src="__TMPL__/public/mobile/xin/images/91fc7c1488951c1f0daa4b51470c9074.png">
+        </div>
+        <div class="list">
+            <ul>
+                <volist name="xgxm" id="newsxm">
+                <li><a href="{:cmf_url('portal/common/index',['id'=>$newsxm['aid'],'classname'=>$newsxm['class']])}">{$newsxm.title}</a></li>
+                </volist>
+            </ul>
+        </div>
+    </section>
+    <div class="commonStatement">
+        <div class="bg">
+            <div class="title">本站声明</div>
+            <div class="desc">
+                <p>1.本站为用户提供免费信息展示，不收取任何费用（包括加盟费），如有冒充本站收费行为请及时报警。</p>
+                <p>2. 投资有风险 加盟需谨慎。为规避投资风险，建议您在投资前务必多咨询，多考察，降低投资风险</p>
+            </div>
+        </div>
+        <div class="bg2">
+            <p>Copyright © 91创业网</p>
+            <p>全国免费服务热线：400-809-0091</p>
+            <p>友情提示：<span>投资有风险，咨询请细致</span>，以便成功加盟。</p>
+            <div class="addnewfooter">
+                <a href="/guanyuwomen/">关于我们</a>
+                <a href="/lianxiwomen/">联系我们</a>
+                <a href="/mianzeshengming/">免责声明</a>
+                <a href="/tousushanchu/">投诉删除</a>
+            </div>
+        </div>
+    </div>
+<footer class="footer">
+    <ul>
+      <li class="">
+        <a href="/">
+          <img src="__TMPL__/public/mobile/xin/images/9004914b98fa09eb39f3719a94ec8a94.png">
+          <img class="active" src="__TMPL__/public/mobile/xin/images/a2024139e8d4ab4fae68087c6ee8c030.png">
+          <span>首页</span>
+        </a>
+      </li>
+      <li>
+        <h1>
+          <a href="/xiangmu/">
+            <img src="__TMPL__/public/mobile/xin/images/97e9f713f8859d9cab0422fa3ed61396.png">
+            <img class="active" src="__TMPL__/public/mobile/xin/images/7f9f322c2462b2501a79e548b0ef0969.png">
+            <span>项目库</span>
+          </a>
+        </h1>
+      </li>
+      <li class="active">
+        <a href="/top/">
+          <img src="__TMPL__/public/mobile/xin/images/30132e0d9549c2976eee067b8b9ffe3a.png">
+          <img class="active" src="__TMPL__/public/mobile/xin/images/c1f301996e866215f80987290da25fce.png">
+          <span>排行榜</span>
+        </a>
+      </li>
+      <li class="">
+        <a href="/news/">
+          <img src="__TMPL__/public/mobile/xin/images/e6b23ae996955e5be242ffdca92beefe.png">
+          <img class="active" src="__TMPL__/public/mobile/xin/images/e6b23ae996955e5be242ffdca92beefe.png">
+          <span>资讯</span>
+        </a>
+      </li>
+    </ul>
+	<include file="mobile/other"/>
+  </footer>
+</body></html>

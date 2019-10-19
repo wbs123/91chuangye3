@@ -1,0 +1,312 @@
+﻿
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+    <meta content="91创业网,登录页面" name="keywords">
+    <meta content="91创业网个人中心登录页面。" name="description">
+	<title>个人中心--登录</title>
+	<link rel="stylesheet" href="__STATIC__/member/css/reset.css" />
+	<link rel="stylesheet" href="__STATIC__/member/css/style.css" />
+	<script type="text/javascript" src="__STATIC__/member/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<div class="mainBody"> 
+		<div class="autoWidth clear"> 
+			<div class="logo fl"> 
+				<a href="/" class="fl jmw">
+                    <img src="__STATIC__/member/img/logo.png" />
+                </a>
+				<p class="title fl">个人登录</p>
+			</div>
+			<div class="freeConsultation fr"> 
+				<span class="free">免费咨询：400-809-0091 </span>
+				<a href="/" class="return">返回首页</a>
+				<a href="/user/enterprise" class="personalLogin">企业登录</a>
+			</div>
+		</div>
+		<!-- 登录框 -->
+		<div class="loginBox"> 
+			<div class="loginBoxOne"> 
+				<p class="title">个人账户登录</p>
+				<form id="person_login" action="/user/loginCheck/" style="display:block;" method="post"
+						  autocomplete="off">
+						<ul> 
+							<li> 
+								<p class="formPhone clear">
+									<input type="text" name="personPhone" id="personPhone" placeholder="手机号" title="手机号" class="fl" maxlength="11">
+								</p>
+							</li>
+							<li> 
+								<p class="formPhone password">
+									<input type="password" name="pass_word" id="pass_word" placeholder="密码" title="密码">
+								</p>
+							</li>
+							<li class="clear mt24"> 
+								<p class="formPhone yzm fl">
+									<input type="text" name="tuxingyzm" id="tuxingyzm" placeholder="验证码" title="验证码">
+								</p>
+								<p class="fl yzmNum"> 
+									<!--<img id="tuxing" src="img/identifying_code.php" onclick="refresh($(this))" />-->
+									<captcha height="40" width="100" font-size="12" length="4" id="captcha2"/>
+								</p>
+								<!--<p class="refresh fr" onclick="refresh($('#tuxing'))">刷新</p>-->
+							</li>
+							<!--<li class="wrongPass">账号或密码错误</li>-->
+							<li class="personalLog"> 
+								<input type="submit" value="立即登录" class="logImmediately">
+							</li>
+							<li class="clear rememberFindPass">
+								<!-- <div class="fr findPassword personalFingPass">
+									<a href="../findpwdbytel.php">忘记密码？</a>
+								</div> -->
+							</li>
+						</ul>
+					</form>
+			</div>
+			<p class="notRegistered">
+				<span>尚未注册？</span>
+				<a href="/user/registered/">立即注册</a>
+			</p>
+		</div>
+		<!-- 底部版权信息 -->
+		<div class="footer"> 
+			<p>Copyright@2017-2022 <a href="http://www.91chuangye.com" style="color: white;">www.91chuangye.com</a>京ICP备14049210号3 <br>北京品创天下科技有限公司  版权所有</p>
+
+			<!--<p class="icp clear"><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202006020700545" target="_blank"></a><font class="fl">京ICP备14049210号3</font></p>-->
+		</div>
+	</div>
+    <script type="text/javascript" src="__STATIC__/member/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="__STATIC__/member/js/jquery.form.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/layer/layer.js"></script>
+	<script type="text/javascript"> 
+		//个人账户登录和动态密码切换
+		$('.personalBoxOne .personalTitle li').click(function(){
+            $('.wrongPass').remove();
+            $('.formPhone').css('border','1px solid #e3e4ee');
+			$(this).addClass('selected').siblings('.selected').removeClass('selected');
+			$('.personalBoxOne .con form').eq($(this).index()).show().siblings().hide();
+		});
+		$('.formPhone input:text,.formPhone input:password').focus(function(){
+			$(this).parents('.formPhone').css('border','1px solid #a1aed4')
+		});
+
+        //验证账号密码登录信息
+        $(function () {
+            $("#person_login").validate({
+                rules: {
+                    personPhone:{
+                        required:true,
+                        maxlength:11
+                    },
+                    pass_word:{
+                        required:true,
+                        maxlength:20
+                    },
+                    tuxingyzm:{
+                        required:true,
+                        remote:{
+                            url:'/user/loginCheck/',
+                            type:'post',
+                            data:{
+                                tuxingyzm:function () {
+                                    return $('#tuxingyzm').val();
+                                }
+                            }
+                        }
+                    }
+                },
+                messages: {
+                    personPhone:{
+                        required:'请填写手机号',
+                        maxlength:'手机号最多输入11位'
+                    },
+                    pass_word:{
+                        required:'请填写密码',
+                        maxlength:'密码最多输入20位'
+                    },
+                    tuxingyzm:{
+                        required:'请填写验证码',
+                        remote:'验证码不正确'
+                    }
+                },
+                focusInvalid: false,
+                onfocusout: function(element) {
+                    $(element).valid();
+                },
+                showErrors: function(errorMap,errorList){
+                    if(errorList.length > 0)
+                    {
+                        var key = Object.keys(errorMap);
+                        $('#'+key[0]).parent().css('border','1px solid #f45242');
+                        $('.wrongPass').remove();
+                        $('.personalLog').before('<li class="wrongPass">'+errorList[0].message+'</li>');
+                    }else{
+                        $('.wrongPass').remove();
+                        $(':text,:password').parent().css('border','1px solid #e3e4ee');
+                    }
+                },
+				submitHandler: function (form) {
+					$(form).ajaxSubmit({
+						dataType:"json",
+						success:function (result) {
+							if(result.code == 0)
+							{
+								setTimeout(function () {
+								
+									$('.wrongPass').remove();
+									$('.personalLog').before('<li class="wrongPass">'+result.msg+'</li>');
+								}, 1000);
+							}else{
+								window.location.href = '/user/login/';
+							}
+						}
+					});
+				}
+            });
+
+            //自定义验证--手机号
+            $.validator.addMethod("isMobile",function(value,element){
+                var mobile = /^1[\d]{10}$/;
+                return this.optional(element) || mobile.test(value);
+            },"请输入正确的手机号");
+
+            //验证动态密码登录信息
+            $("#person_send_login").validate({
+                rules: {
+                    person_phone:{
+                        required:true,
+                        maxlength:11,
+                        isMobile:true
+                    },
+                    tuxing_yzm:{
+                        required:true,
+                        remote:{
+                            url:'/user/loginChecks/',
+                            type:'post',
+                            data:{
+								tuxing_yzm:function () {
+                                    return $('#tuxing_yzm').val();
+                                }
+                            }
+                        }
+                    },
+                    send_code:{
+                        required:true,
+                        remote:{
+                            url:'/user/loginChecks/',
+                            type:'post',
+                            data:{
+                                code:function () {
+                                    return $('#send_code').val();
+                                },
+                                telphone:function () {
+                                    return $('#person_phone').val();
+                                }
+                            }
+                        }
+                    }
+                },
+                messages: {
+                    person_phone:{
+                        required:'请填写手机号码',
+                        maxlength:'手机号最多输入11位',
+                        isMobile:'请输入正确的手机号'
+                    },
+                    tuxing_yzm:{
+                        required:'请填写图形验证码',
+                        remote:'图形验证码不正确'
+                    },
+                    send_code:{
+                        required:'请填写短信验证码',
+                        remote:'短信验证码不正确'
+                    }
+                },
+                focusInvalid: false,
+                onfocusout: function(element) {
+                    $(element).valid();
+                },
+                showErrors: function(errorMap,errorList){
+                    if(errorList.length > 0)
+                    {
+                        var key = Object.keys(errorMap);
+                        $('#'+key[0]).parent().css('border','1px solid #f45242');
+                        $('.wrongPass').remove();
+                        $('.personalLog').before('<li class="wrongPass">'+errorList[0].message+'</li>');
+                    }else{
+                        $('.wrongPass').remove();
+                        $(':text,:password').parent().css('border','1px solid #e3e4ee');
+                    }
+                }
+            });
+        });
+		
+		//获取验证码
+		var countdown=60;
+		function sendemail()
+        {
+			var person_phone = $("#person_phone").val();
+			var imgCode2    = $.trim($("#tuxing_yzm").val());
+			if(imgCode2.length<4){
+				layer.msg('图片验证码格式错误!',{time:1000});
+				return false;
+			}
+			// var tuxing_yzm = $("#tuxing_yzm").val();
+			var myreg=/^1[\d]{10}$/;
+			if(!myreg.test(person_phone)) 
+            {
+                $('.wrongPass').remove();
+                $('.personalLog').before('<li class="wrongPass">手机号错误</li>');
+                return false;
+            }
+			if(tuxing_yzm=='')
+            {
+                $('.wrongPass').remove();
+                $('.personalLog').before('<li class="wrongPass">图形验证码为空</li>');
+                return false;
+            }
+			var obj = $("#getYzm");
+			$.ajax({
+                async:false,
+                type:'post',
+                url:"/user/sendLoginSmsCode/",
+                data:{telephone:person_phone,imgcode:imgCode2},
+                success:function(html)
+                {
+					if(html.code == 200 ){
+						layer.msg(html.data,{time:1000});
+						settime($("#getYzm"));
+						$('#send_code').val(html.data);
+					}else{
+						layer.msg(html.msg,{time:1000});
+						// $("#imgCode2").next().click();
+					}
+                }
+            })
+		}
+		function settime(obj)
+        {
+			if (countdown == 0)
+			{
+				obj.attr('disabled',false); 
+				obj.val("重新发送");
+				countdown = 60; 
+				return;
+			} else { 
+				obj.attr('disabled',true);
+				obj.val("(" + countdown + ")秒");
+				countdown--; 
+			} 
+		    setTimeout(function() { settime(obj) },1000)
+		}
+
+		//图形验证码变化
+		function refresh(obj)
+        {
+            obj.attr("src","./identifying_code.php?rand"+Math.random());
+			return false;
+		}
+		//测试ftp
+	</script>
+</body>
+</html>

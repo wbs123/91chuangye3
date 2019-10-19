@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>编辑资料_91创业网</title>
+<meta name="applicable-device" content="pc">
+<link rel="shortcut icon" href="/themes/simpleboot3/public/new/images/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/themes/simpleboot3/public/xin/css/common.css">
+<link rel="stylesheet" href="__STATIC__/member/css/qyzx.css">
+<script type="text/javascript">
+    //全局变量
+    var GV = {
+        ROOT: "__ROOT__/",
+        WEB_ROOT: "__WEB_ROOT__/",
+        JS_ROOT: "static/js/"
+    };
+</script>
+<script src="__TMPL__/public/assets/js/jquery-1.10.2.min.js"></script>
+<script src="__TMPL__/public/assets/js/jquery-migrate-1.2.1.js"></script>
+<script src="__STATIC__/js/wind.js"></script>
+</head>
+<body>
+<!-- head start -->
+<include file="user@header"/>
+<!-- head end -->
+
+<!-- bread start -->
+<div class="w1200"><div class="bread"><span><a href="/">首页</a> &gt;<h1 style="font-size:14px"><a href="javascript:;">会员中心</a></h1></span></div></div>
+<!-- bread end -->
+
+<!-- qyzx start -->
+<div class="w1200">
+	<div class="qyzx">
+		<include file="user@left"/>
+		<div class="sideCont">
+			<ul class="tabs-tit">
+				<li class="on"><a href="{:cmf_url('user/Profile/edit','',false)}/">编辑资料</a></li>
+			</ul>
+			<div class="message_list">
+				<div class="tab-pane active" id="one">
+					<br>
+					<form class="js-ajax-form" action="{:url('user/profile/editPost')}" method="post">
+						<div class="form-group">
+							<label for="input-user_nickname">昵称</label>
+							<input type="text" class="form-control" id="input-user_nickname" placeholder="昵称" name="user_nickname" value="{$user.user_nickname}">
+						</div>
+						<div class="form-group">
+							<label for="input-sex">性别</label>
+							<php>
+								$sexs=array("0"=>"保密","1"=>"程序猿","2"=>"程序媛");
+							</php>
+							<select class="form-control" id="input-sex" name="sex">
+								<foreach name="sexs" item="vo">
+								<php>$sexselected=$key==$user['sex']?"selected":"";</php>
+									<option value="{$key}" {$sexselected}>{$vo}</option>
+								</foreach>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="input-birthday">生日</label>
+							<input class="form-control js-bootstrap-date" type="text" id="input-birthday" placeholder="2013-01-04" name="birthday" value="{:date('Y-m-d',$user.birthday)}">
+						</div>
+						<div class="form-group">
+							<label for="input-user_url">个人网址</label>
+							<input class="form-control" type="text" id="input-user_url" placeholder="http://91chuangye.com" name="user_url" value="{$user.user_url}">
+						</div>
+						<div class="form-group">
+							<label for="input-signature">个性签名</label>
+							<textarea class="form-control" id="input-signature" placeholder="个性签名" name="signature">{$user.signature}</textarea>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary js-ajax-submit">保存</button>
+						</div>
+					</form>
+			   </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- qyzx end -->
+
+<!-- footer start -->
+<include file="user@footer"/>
+<!-- footer end -->
+<include file="public@scripts" />
+<script type="text/javascript" src="__STATIC__/member/js/qyzx.js"></script>
+<link href="__TMPL__/public/assets/simpleboot3/themes/simpleboot3/bootstrap.min.css" rel="stylesheet">
+</body>
+</html>

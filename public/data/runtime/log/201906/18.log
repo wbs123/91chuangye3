@@ -1,0 +1,6 @@
+---------------------------------------------------------------
+[ 2019-06-18T11:12:02+00:00 ] 127.0.0.1 GET /m/
+[ info ] www.91.com/m/ [运行时间：0.016578s][吞吐率：60.32req/s] [内存消耗：393.19kb] [文件加载：18]
+[ error ] [2]require(D:\PhpStudy20180211\PHPTutorial\WWW\91chuangye\public\m/../data/conf/route.php): failed to open stream: No such file or directory[D:\PhpStudy20180211\PHPTutorial\WWW\91chuangye\public\m\index.php:67]
+[ error ] [64]main(): Failed opening required 'D:\PhpStudy20180211\PHPTutorial\WWW\91chuangye\public\m/../data/conf/route.php' (include_path='.;C:\php\pear')[D:\PhpStudy20180211\PHPTutorial\WWW\91chuangye\public\m\index.php:67]
+[ info ] [ LOG ] INIT File

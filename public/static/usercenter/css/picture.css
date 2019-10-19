@@ -1,0 +1,504 @@
+﻿@charset "utf-8";
+body{
+	background:#f6f9fc;
+}
+
+.content_right{
+	width:974px;
+	margin-top:25px;
+	background:#fff;
+	border:1px solid #edf3f8;
+	min-height: 820px;
+}
+.zp_joinIn{
+	width:846px;
+	margin:auto;
+	padding-bottom:45px;
+}
+.zp_titleLink{
+	margin-top:30px;
+	width:100%;
+	height:48px;
+	line-height:48px;
+	border-bottom:1px solid #cfdce8;
+}
+.zp_titleLink a{
+	font-size:16px;
+	color:#666666;
+	margin-right:80px;
+	display:inline-block;
+}
+.zp_titleLink a.active{
+	font-weight:bold;
+	color:#13639c;
+	border-bottom:2px solid #13639c;
+	height:47px;
+}
+.sendPic_an{
+	height:40px;
+	margin:24px 0;
+}
+.sendPic_an .btn{
+	width:166px;
+	height:38px;
+	font-size:15px;
+	border-radius:4px;
+	margin-left:14px;
+	float:right;
+}
+.sendPic_an .btn:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+.piLiang{
+	background:#fff;
+	border:1px solid #4999d2;
+	color:#4999d2;
+}
+.sendPic{
+	background:#4999d2;
+	border:1px solid #1867a0;
+	color:#fff;
+}
+.itemPhoto_box1{
+	display:none;
+}
+.itemPhoto dl{
+	width:198px;
+	border:1px solid #d6e5f0;
+	padding-top:15px;
+	border-radius:4px;
+	position:relative;
+	margin-right:15px;
+	margin-bottom:40px;
+}
+.itemPhoto dl:hover{
+	box-shadow:0 3px 10px 2px #dae6ee;
+	transition:box-shadow .4s;
+	border:1px solid #b9d0e1;
+}
+.itemPhoto dl:nth-child(4n){
+	margin-right:0;
+}
+.itemPhoto dl dt{
+	width:168px;
+	height:128px;
+	margin:auto;
+	overflow:hidden;
+}
+.itemPhoto dl dt img{
+	width:100%;
+	height:100%;
+}
+.itemPhoto dl .dd1{
+	height:40px;
+	line-height:40px;
+	font-size:14px;
+	color:#404040;
+	text-align:center;
+	overflow:hidden;
+}
+.jiaoBiao{
+	position:absolute;
+	top:-3px;
+	left:-3px;
+	width:62px;
+	height:62px;
+}
+.jiaoBiao2{
+	position:absolute;
+	top:110px;
+	right:25px;
+	padding:5px 9px;
+	border-radius:4px;
+	background:rgba(0,0,0,.3);
+	color:#fff;
+	border:1px solid #d6d3cf;
+	font-size:10px;
+}
+.itemPhoto dl .dd2{
+	padding:16px 0;
+	background:#f3f8fc;
+	height:24px;
+	font-size:12px;
+	color:#757575;
+	border-radius:0 0 4px 4px;
+}
+.itemPhoto dl .dd2 label {
+	float:left;
+	cursor: pointer;
+	margin:5px 3px 0 15px;
+}
+.itemPhoto dl .dd2 label i {
+	font-size: 12px;
+	font-style: normal;
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	text-align: center;
+	line-height: 15px;
+	color: #fff;
+	vertical-align: middle;
+	margin: 0 5px 0 0;
+	border: #b2b7c4 1px solid;
+}
+.itemPhoto dl .dd2 label input[type="checkbox"] {
+	display: none;
+}
+.itemPhoto dl .dd2 label input[type="checkbox"]+i {
+	border-radius: 4px;
+}
+.itemPhoto dl .dd2 label input[type="checkbox"]:checked+i {
+	background: #4999d2;
+	border:1px solid #4999d2;
+}
+.itemPhoto dl .dd2 .oper{
+	width:38px;
+	height:22px;
+	border:1px solid #d6e5f0;
+	border-radius:4px;
+	line-height:22px;
+	text-align:center;
+	color:#6f9ebd;
+	cursor:pointer;
+	margin-left:8px;
+	float:left;
+	background:#fff;
+}
+.itemPhoto dl .dd2 .oper:hover{
+	background:#4999d2;
+	border:1px solid #4999d2;
+	color:#fff;
+}
+.pages{
+	height:32px;
+	text-align:center;
+}
+.pages a{
+	display:inline-block;
+	width:32px;
+	height:32px;
+	line-height:32px;
+	text-align:center;
+	background:#f4f4f5;
+	color:#666666;
+	font-size:13px;
+	border-radius:4px;
+	margin-right:5px;
+}
+.pages a:hover{
+	color:#fff;
+	background:#4999d2;
+}
+.pages a.active{
+	color:#fff;
+	background:#4999d2;
+}
+.pages a.width56{
+	width:56px;
+}
+
+/* 更多弹层 */
+.moreBox{
+	z-index: 100;
+	width:102px;
+	border:1px solid #b9d0e1;
+	background:#fff;
+	position:absolute;
+	bottom:-120px;
+	right:16px;
+	border-radius:4px;
+	display:none;
+}
+.moreBox .sj{
+	position:absolute;
+	top:-7px;
+	right:13px;
+	width:13px;
+	height:7px;
+	background:url('../img/picsj_19.png') no-repeat;
+}
+.moreBox p{
+	height:30px;
+	line-height:30px;
+	color:#999999;
+	font-size:12px;
+	text-indent:15px;
+	border-bottom:1px solid #e4e7ed;
+	cursor:pointer;
+}
+.moreBox p:last-child{
+	border-bottom:none;
+}
+.moreBox p:hover{
+	font-weight:bold;
+	color:#177abf;
+	background:#d6e6f2;
+}
+/* 上传图片 */
+.blackLayer{
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	background:rgba(0,0,0,.5);
+	z-index:8;
+	display:none;
+}
+.uploadPic{
+	width:665px;
+	height:310px;
+	padding:40px;
+	background:#fff;
+	border-radius:4px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin-top:-195px;
+	margin-left:-372px;
+	z-index:10;
+	display:none;
+}
+.uploadClose{
+	display:block;
+	width:20px;
+	height:20px;
+	position:absolute;
+	right:0;
+	top:-25px;
+	cursor:pointer;
+	background:url('../img/pic_close.png') no-repeat;
+}
+.uploadPic .first{
+	height:40px;
+}
+.uploadPic .first select{
+	border:1px solid #dcdfe6;
+	width:102px;
+	height:38px;
+	border-radius:4px;
+	font-size:14px;
+	color:#666666;
+	text-indent:10px;
+}
+.uploadPic .first select option{
+	padding:5px 0;
+}
+.uploadPic .first .please{
+	font-size:14px;
+	color:#333;
+	margin-left:40px;
+}
+.uploadPic .first input{
+	width:263px;
+	height:38px;
+	border-radius:4px;
+	border:1px solid #dcdfe6;
+	color:#757575;
+	font-size:14px;
+	padding-left:15px;
+	margin-left:15px;
+}
+.uploadPic .two{
+	padding:24px 0;
+	border-bottom:1px solid #cfdce8;
+}
+.file {
+	position: relative;
+	display: inline-block;
+	width:102px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	background:#4999d2;
+	border:1px solid #1867a0;
+	border-radius:4px;
+	color:#fff;
+	font-size:12px;
+}
+.file:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+.file input {
+	position: absolute;
+	font-size: 12px;
+	right: 0;
+	top: 0;
+	opacity: 0;
+	width:102px;
+	height:30px;
+}
+.removePic{
+	width:14px;
+	height:14px;
+	background:url('../img/removepic.png') no-repeat;
+	margin:9px 0 0 20px;
+	cursor:pointer;
+}
+.uploadPic .two font{
+	font-size:12px;
+	color:#999999;
+	line-height:38px;
+	margin-left:20px;
+}
+.buttonBox{
+	height:40px;
+	margin-top:40px;
+	text-align:center;
+}
+.commonBtn{
+	width:168px;
+	height:40px;
+	line-height:40px;
+	color:#fff;
+	font-size:15px;
+	border-radius:4px;
+}
+.addBtn{
+	background:#4999d2;
+}
+.addBtn:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+.uploadPic .three{
+	width:625px;
+	height:72px;
+	padding:0 20px;
+	background:#f3f8fc;
+	border-radius:4px;
+	margin-top:32px;
+	font-size:12px;
+}
+.uploadPic .three .p1{
+	width:90px;
+	color:#666;
+	margin-top:20px;
+}
+.uploadPic .three .p2{
+	width:530px;
+	color:#999;
+	margin-top:17px;
+	line-height:20px;
+}
+.uploadPic .three .p2 span{
+	color:#ec4c16;
+}
+/* 点击查看大图 */
+.lookBigPic{
+	padding:50px 50px;
+	background:#fff;
+	border-radius:4px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	z-index:10;
+	border:1px solid #e4e7ed;
+	display:none;
+}
+.uploadClose{
+	display:block;
+	width:20px;
+	height:20px;
+	position:absolute;
+	right:0;
+	top:-25px;
+	cursor:pointer;
+	background:url('../img/close.png') no-repeat;
+}
+
+.ipt_error{
+	color:#bababa;
+	font-size:12px;
+	margin-left:150px;
+	border:1px  solid  #e4e7ed;
+	padding:  9px  7px;
+	width:  auto;
+	z-index:  2;
+	position:  absolute;
+	border-radius:4px;
+	top:37px;
+	left:15px;
+	background:#fff  url('../img/dengp.png')  no-repeat  7px;
+	padding-left:25px;
+	display: none;
+}
+.ipt_error  img{
+	position:absolute;
+	top:-7px;
+	left:15px;
+}
+.ipt_errorRed{
+	background:#fff  url('../img/dengp2.png')  no-repeat  7px;
+	color:#ec4c16;
+}
+.checkMark{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	position:relative;
+	top:6px;
+	left:10px;
+}
+.checkMark_dui{
+	background:url('../img/yes.png')  no-repeat;
+}
+.checkMark_cuo{
+	background:url('../img/error1.png')  no-repeat;
+}
+
+.cs_city {
+	width: 84px;
+	height: 38px;
+	line-height:38px;
+	cursor: pointer;
+	border: 1px solid #dcdfe6;
+	border-radius: 4px;
+	margin: 0 18px 0 3px;
+	text-indent: 10px;
+	padding:0 10px;
+	background: #fff url('../img/down.png') no-repeat 80px center;
+	background-size: 11px 7px;
+	position: relative;
+}
+.cs_city span {
+	font-size: 13px;
+	color: #757575;
+}
+.cs_city .xiala_select {
+	width: 100%;
+	max-height: 200px;
+	overflow: auto;
+	background: #fff;
+	position: absolute;
+	border-radius: 4px;
+	top: 100%;
+	left: -1px;
+	border: 1px solid #dcdfe6;
+	z-index: 100;
+	display:none;
+}
+.cs_city .xiala_select .item {
+	text-indent: 0;
+	height: 40px;
+	text-align: center;
+	color: #666666;
+	font-size: 14px;
+}
+.cs_city .xiala_select .item:hover{
+	background: #f3f4f6;
+	font-weight: bold;
+	cursor: pointer;
+}
+.common_right .title {
+	color: #404040;
+	font-size: 16px;
+	font-weight: bold;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 66px;
+	position: relative;
+	top: 38px;
+}

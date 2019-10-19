@@ -1,0 +1,127 @@
+<?php
+// +----------------------------------------------------------------------
+// | Author: heizai <876555425@qq.com>
+// +----------------------------------------------------------------------
+namespace app\portal\controller;
+
+use app\portal\model\PortalPostModel;
+use app\user\model\CommentModel;
+use cmf\controller\HomeBaseController;
+use plugins\comment\model\PluginCommentModel;
+use think\Db;
+use think\db\exception\DataNotFoundException;
+use think\db\exception\ModelNotFoundException;
+use think\exception\DbException;
+use think\Session;
+use think\Validate;
+
+class CommentController extends HomeBaseController
+{
+    // 提交
+    public function add()
+    {
+		$ids = Session::get('pids');
+		$data = Db::name('portal_xm')->alias('a')->join('portal_category b','a.typeid = b.id')->field('a.aid,a.title,b.name')->order('a.update_time desc')->where(['a.arcrank'=>1,'a.status'=>1])->where(['a.aid'=>['in',$ids]])->limit(1)->select()->toArray();
+		foreach($data as $data){
+			$userid = Db::name('fakeuser')->where('num',0)->column('id');
+			$data['name'] = str_replace('加盟','',$data['name']);
+			$wenti = Db::name('wenda')->where(['typeid'=>2])->field('title,id')->order('id asc')->select()->toArray();
+			$wenti = array_slice($wenti,rand(1,15000),rand(5,10));
+			foreach($wenti as $wenti){
+				$wenti['title'] = str_replace('{title}',$data['title'],$wenti['title']);
+				$wenti['title'] = str_replace('{type}',$data['name'],$wenti['title']);
+				$uid =  array_slice($userid,rand(1,10000),1);
+				$comment = array(
+					"object_id" => $data["aid"],
+					"create_time" => rand(strtotime('2018-01-01'),time()),
+					"status" => 2,
+					"type" => 1,
+					"user_id" =>$uid[0],
+					"table_name" => 'portal_xm',
+					"content" => $wenti["title"]
+				);
+				$count = Db::name('comment')->where('object_id',$data["aid"])->count();
+				if($count<10){
+					$q = Db::name('comment')->insert($comment);
+					if($q){
+						dump(Db::name('comment')->getlastsql());
+						Db::name('wenda')->where('id',$wenti['id'])->setInc('num');
+						Db::name('wenda')->where('id',$uid[0])->setInc('num');
+					}else{
+						dump(Db::name('comment')->getlastsql());exit;
+					}
+				}
+			}
+			$count = Db::name('comment')->where('object_id',$data["aid"])->count();
+			if($count > 0){
+				Session::set('pids',array_diff(Session::get('pids'), [$data['aid']]));
+			}
+		}
+		echo "<script>";
+        echo "window.open('http://www.91chuangye.com/comment/','');";
+        echo "</script>";
+    }
+
+    // 赞
+    public function dolike()
+    {
+        $id = $this->request->param("id", 0, "intval");
+        $model = new PluginCommentModel();
+        $where['id'] = $id;
+        $session_name = 'comment_dolike_' . $id;
+        $config = $this->getPlugin()->getConfig();
+        if ($config['time'] > 0 && $config['time'] * 60 + session($session_name) > time()) {
+            return $this->error("不能频繁对同一内容点赞！");
+        }
+        try {
+            $comment = $model->find($where)->toArray();
+        } catch (DataNotFoundException $e) {
+        } catch (ModelNotFoundException $e) {
+        } catch (DbException $e) {
+        }
+        if ($comment) {
+            $data['like_count'] = $comment['like_count'] + 1;
+            $res = $model->save($data, $where);
+        }
+        if ($res) {
+            session($session_name, time());
+            $this->success("操作成功！");
+        } else {
+            $this->error("操作失败！");
+        }
+
+    }
+
+    // 踩
+    public function dounlike()
+    {
+        $id = $this->request->param("id", 0, "intval");
+        $model = new PluginCommentModel();
+        $where['id'] = $id;
+
+        $session_name = 'comment_dounlike_' . $id;
+        $config = $this->getPlugin()->getConfig();
+        if ($config['time'] > 0 && $config['time'] * 60 + session($session_name) > time()) {
+            return $this->error("不能频繁踩一内容！");
+        }
+
+        try {
+            $comment = $model->find($where)->toArray();
+        } catch (DataNotFoundException $e) {
+        } catch (ModelNotFoundException $e) {
+        } catch (DbException $e) {
+        }
+        if ($comment) {
+            $data['dislike_count'] = $comment['dislike_count'] + 1;
+            $res = $model->save($data, $where);
+        }
+        if ($res) {
+            session($session_name, time());
+            $this->success("操作成功！");
+        } else {
+            $this->error("操作失败！");
+        }
+
+    }
+
+}

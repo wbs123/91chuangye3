@@ -1,0 +1,105 @@
+﻿.cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(50, 50, 50, 0.7);
+  display: none;
+  z-index: 100;
+}
+.cover .tc {
+  width: 448px;
+  height: 168px;
+  background: #fff;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+}
+.cover .tc p {
+  font-size: 16px;
+  color: #404040;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 40px;
+  line-height: 28px;
+}
+.cover .tc p img {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.cover .tc .tc_btn {
+  height: 30px;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+.cover .tc .tc_btn .btn_item {
+  width: 143px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cover .tc .close_img {
+  cursor: pointer;
+  position: absolute;
+  top: -25px;
+  right: 8px;
+  width: 21px;
+  height: 21px;
+  background: url(../img/close.png) no-repeat center center;
+  background-size: 21px 21px;
+}
+
+/* 批量回复 */
+.cover .tc2 {
+  width: 600px;
+  height: 230px;
+  padding:0 50px;
+  background: #f9fafa;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.cover .tc2 .close_img {
+  position: absolute;
+  top: -25px;
+  right: 8px;
+  width: 21px;
+  height: 21px;
+  background: url(../img/close.png) no-repeat center center;
+  background-size: 21px 21px;
+}
+.cover .tc2 .shuR{
+  height:56px;
+  line-height:56px;
+  color:#404040;
+  font-size:13px;
+  margin-top: 0;
+  text-align: left;
+}
+.cover .tc2 textarea{
+  border:1px solid #dedede;
+  padding:10px 15px;
+  width:568px;
+  height:60px;
+  line-height:20px;
+  border-radius:4px;
+  resize:none;
+}

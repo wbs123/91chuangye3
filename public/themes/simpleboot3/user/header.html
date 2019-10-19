@@ -1,0 +1,47 @@
+<div class="head">
+	<div class="h-top">
+		<div class="w1200 posr">
+			<div class="fl">
+				<a href="/" title="加盟网" class="area">加盟网</a>
+				|<a href="http://m.91chuangye.com" title="移动站" class="wap">移动站</a>|
+				<a href="javascript:;" title="招商名企">招商名企</a>
+				<span><i class="icon icon-ad"></i>广告合作：<em>18612923336</em></span>
+				<span><i class="icon icon-tel"></i>全国服务热线：<em>400-809-0091</em></span>
+				<span><i class="icon icon-qq"></i>客服QQ：<a target="_blank" rel="nofollow" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1569054682&amp;site=qq&amp;menu=yes" title="QQ 1569054682">1569054682</a></span>
+			</div>
+			<div class="fr">
+				<a href="/nav/" title="加盟导航" id="topNavRightNav" class="jmdh">加盟导航</a>
+			</div>
+		</div>
+	</div>
+	<div class="h-nav h-nav-qyzx clearfix">
+		<div class="w1200">
+			<div class="fl logo"><a href="/"><img src="/themes/simpleboot3/public/xin/images/logo.png" alt="91创业加盟网"></a></div>
+
+			<div class="logo-name">企业中心</div>
+			<ul class="nav_2">
+				<li><a href="/xiangmu/">项目库</a></li>
+				<li><a href="/top/">加盟排行榜</a></li>
+				<li><a href="/haoxiangmu/">创业好项目</a></li>
+				<li><a href="/news/">创业资讯</a></li>
+			</ul>
+			<div class="user">
+				<a href="{:url('user/Profile/avatar')}">
+					<if condition="empty($user.avatar)">
+						<img width="40" height="40" src="__STATIC__/member/images/user_default.jpg">
+						<else/>
+						<img src="{:cmf_get_user_avatar_url($user.avatar)}?t={:time()}" width="40" height="40"/>
+					</if>
+					<span class="name"><empty name="$user.user_nickname"><empty name="$user.user_login">{$user.mobile}<else/>{$user.user_login}</empty><else/>{$user.user_nickname}</empty></span>
+					<span class="caret1"></span>
+				</a>	
+				<div class="content">
+					<ul>
+						<li><a href="{:url('user/Profile/password')}">修改密码</a></li>
+						<li><a href="{:url('user/index/logout')}">退出登录</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

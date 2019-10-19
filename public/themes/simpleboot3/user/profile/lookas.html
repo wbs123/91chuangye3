@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>企业中心_91创业网</title>
+<meta name="applicable-device" content="pc">
+<link rel="shortcut icon" href="/themes/simpleboot3/public/new/images/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/themes/simpleboot3/public/xin/css/common.css">
+<link rel="stylesheet" href="__STATIC__/member/css/qyzx.css">
+<script src="__STATIC__/usercenter/js/jquery-1.8.3.min.js"></script>
+<link rel="stylesheet" href="__STATIC__/usercenter/css/layui.css" media="all">
+</head>
+<body>
+	
+<!-- head start -->
+<include file="user@header"/>
+<!-- head end -->
+
+
+<!-- bread start -->
+<div class="w1200"><div class="bread"><span><a href="/">首页</a> &gt;<h1><a href="javascript:;">会员中心</a></h1></span></div></div>
+<!-- bread end -->
+
+<!-- qyzx start -->
+<div class="w1200">
+	<div class="qyzx">
+		<include file="user@left"/>
+		<div class="sideCont">
+			<ul class="tabs-tit">
+				<li><a href="{:cmf_url('user/Profile/center','',false)}/">创业库</a></li>
+				<li class="on"><a href="/user/lookas/">已查看</a></li>
+			</ul>
+			<p class="tips">您好， 您一共可以浏览<span>{$user.all_nums}</span>条信息 已查看：<span>{$looks}</span>条，还可以查看：<span>{$shengyu}</span>条</p>
+			<!--留言列表-->
+			<div class="message_list">
+				<volist name="data" id="vo" empty="$empty">
+						<div class="item_message">
+							<div class="name_from">
+								<i class="checkBox"></i>
+								<span class="user_name">用户：<i>
+										<empty name="$vo.name">无名用户
+											<else />{$vo.name}</empty>
+									</i></span>
+								<span class="from">来源 ：<i>
+										<if condition="$vo['source'] == 1">网页版--<a href="{$vo.url}">{$vo.url}</a>
+											<else />手机版--<a href="{$vo.url}">{$vo.url}</a></if>
+									</i> </span>
+								<span class="time">{$vo.inputtime|date='Y-m-d H:i',###}</span>
+								<input type="hidden" name="id" class="id" value="{$vo.id}">
+							</div>
+							<div class="message_nei">
+								<span class="time" style="font-size:16px;font-weight:bolder;">联系方式：{$vo.tel}</span>
+							</div>
+							<div class="message_nei">
+								<span class="lx_title">留言内容：</span>
+								<empty name="$vo.rules">无留言内容
+									<else />{$vo.rules}
+								</empty>
+							</div>
+						</div>
+				</volist>
+				<div class="page">
+					<ul>{$render}</ul>
+				</div>
+			</div>
+		</div>
+		 
+
+		<!--留言列表-->
+	</div>
+</div>
+<!-- qyzx end -->
+
+<!-- footer start -->
+<include file="user@footer"/>
+<!-- footer end -->
+
+<script type="text/javascript" src="__STATIC__/member/js/qyzx.js"></script>
+</body>
+</html>

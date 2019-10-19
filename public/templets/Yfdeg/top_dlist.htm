@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta name="applicable-device" content="pc" /> 
+<meta name="robots" content="all">
+<title>{dede:field.seotitle /}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}">
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}">
+<meta name="renderer" content="webkit">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
+<link rel="alternate" media="only screen and(max-width: 640px)" href="http://m.91chuangye.com/">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.91chuangye.com/">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.91chuangye.com/">
+<link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/new/css/common.css">
+<link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/new/css/index.css">
+<link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/new/css/rank.css">
+<link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/new/css/ranking.css" /> 
+<base target="_blank">
+
+<script type="text/javascript">
+if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="http://m.91chuangye.com"+location.pathname+location.search;}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}
+</script>
+</head>
+<body>
+<div class="wrapper">
+{dede:include filename="new_head1.htm"/}
+
+<!--subnav&hdxw-->
+<div class="banner-box">
+	<div class=" w1200 clearfix">
+		<!--左侧二级导航-->
+		<div class="fl b-subnav">
+			<ul class="ytopnav">
+				{dede:channelartlist typeid='391,391' row='15'}
+				<li>
+					 {dede:channel type='son' row='15'}
+					 <a href="[field:typelink/]" class='link'>[field:typename/]排行榜</a> 
+					 {/dede:channel}
+				</li>
+				{/dede:channelartlist}
+			</ul>
+		</div>
+		
+		<!--焦点图&品牌上榜-->
+		<div class="fl b-hdxw top-b-hdxw">
+			<div id="hdxw" class="hdxw-box">
+				<div class="hdxw-img">
+					<div class="images-inner">
+						<a href="http://www.91chuangye.com/naichajiameng/90912.html" target="_blank" class="link">
+							<img src="{dede:global.cfg_templets_skin/}/new/images/banner4.jpg" class="img" />
+						</a>
+						<a href="http://www.91chuangye.com/xiaolongxiajiameng/75230.html" target="_blank" class="link">
+							<img src="{dede:global.cfg_templets_skin/}/new/images/banner2.jpg" class="img" />
+						</a>
+						<a href="http://www.91chuangye.com/zhajidianjiameng/13060.html" target="_blank" class="link">
+							<img src="{dede:global.cfg_templets_skin/}/new/images/banner5.jpg" class="img" />
+						</a>
+					</div>
+				</div>
+				<div class="hdxw-dots">
+						<div class="dots-inner"></div>
+				</div>
+			</div>
+
+			<!-- 热门榜单 -->
+			<div class="top-brand-cont">
+			{dede:myad name='topcy'/}{dede:myad name='topgx'/}{dede:myad name='topjy'/}{dede:myad name='topsp'/}{dede:myad name='topzb'/}
+			</div>
+		</div>
+		
+		<!--右侧搜索&商机资讯-->
+		
+		<div class="main-comprehensive">
+			<h3 class="clearfix"><strong>{dede:field.typename /}综合排行榜</strong><span>搜索指数</span></h3>
+			<div class="main-comprehensive-center">
+				<ul>
+					{dede:sql sql='select * from u88_archives where typeid in(SELECT id From u88_arctype WHERE reid=~crossid~) order by click desc limit 0,10'}
+
+					<li><a href="[field:arcurl/]">
+					<i [field:global name='autoindex'runphp='yes']if(@me==1||@me==2||@me==3){@me='class="i_red"';}else{@me='class="i_red1"';}[/field:global]>[field:global.autoindex/]</i>
+					<span class="li_span_1">[field:title/]</span>
+					<span class="li_span_2">[field:typename/]</span>
+					<span class="li_span_3">[field:click/]<i class="up_down0"></i></span>
+					</a></li>
+				  {/dede:sql}
+				</ul>
+			</div>
+		</div>
+
+		
+	</div>
+</div>
+	
+
+<div id="ranking">
+<!--top-rank-->
+<div class="w1200 clearfix">
+		<div class="join-rank top-rank">
+			<!-- Hot to join -->
+				<div class="hot-pai" id="hot-pai">
+				    <div class="tit"><h2> 热门加盟 </h2></div>
+				    <div class="txtMarquee-top">
+				     <div class="bd"> 
+					  <ul class="infoList"> 
+								<li class="clone" style="height: 20px;">
+									 {dede:channel typeid='376,378,379,377,380,381,382'}
+									 <a href="[field:typelink/]" class='link'>[field:typename/]排行榜</a> 
+									 {/dede:channel}
+								</li>
+								<li style="height: 20px;">
+									 {dede:channel typeid='384,385,385,386,387,388,389'}
+									 <a href="[field:typelink/]" class='link'>[field:typename/]排行榜</a> 
+									 {/dede:channel}
+								</li>
+
+				     </ul>	  
+				     </div>
+
+				   </div>
+				</div>		   
+
+			<!-- Hot to join -->
+			
+
+			<!-- industry ranking -->
+			<div class="cont jmlist clearfix">
+				{dede:sql sql='select id,typename from u88_arctype where reid =~crossid~ limit 12'}
+				<div class="paihang">
+					<div class="tit tit-rank-canyin">
+					[field:typename/]排行榜</div>
+					<div class="list">
+						<div class="top">
+							<span class="fl array-list">排名</span>
+							<span class="fl sellers-list">商家列表</span>
+							<span class="fr sear-index">搜索指数</span>
+						</div>
+						<ul>
+            [field:id runphp=yes]
+                        global $dsql;
+                        $id = @me;
+                        $sql='select b.title,b.click,b.description,a.logo,a.sum,a.invested from u88_addonjiameng a LEFT JOIN   u88_archives  b on b.id=a.aid where b.typeid='.$id.' order by click desc limit 0,10';
+                        $dsql->SetQuery($sql);//将SQL查询语句格式化
+                        $dsql->Execute();//执行SQL操作
+                        //通过循环输出执行查询中的结果
+                        $is = 0;
+                        
+                        while($row = $dsql->GetArray()){
+                          $isd = $is+1;
+                         // var_dump($row);
+                       $iv+=$is+1;
+                        $url = GetOneArchive($row[id]);
+                       $description = cn_substr($row[description],120);
+                        $url = $url['arcurl'];
+                        $str .=<<<str
+                        <li>
+						<a href="$url" title="$row[title]" class="link">
+									<span class="fl array-list"><i class="num num$iv">$iv</i></span>
+									<span class="fl sellers-list">$row[title]</span>
+									<span class="fr sear-index"><i class="number">$row[click]</i><i class="icon icon-up"></i></span>
+						</a>
+					    <dl class="link-cont">
+									<dt class="fl"><a href="$url" title="$row[title]"><img src="$row[logo]" alt="$row[title]"></a></dt>
+									<dd>
+										<span>投资额：<em>$row[invested]</em></span>
+										<span>门店数：<em>$row[sum]</em></span>
+										<span>已咨询：$row[click]</span>
+									</dd>
+									<dd class="info">$description </dd>
+						</dl>
+						</li>           
+str;
+                        @me = $str;
+                        }
+            [/field:id]			
+						</ul>
+
+					</div>
+				</div>
+        {/dede:sql}
+			</div>
+		</div>
+	</div>	
+
+<!-- latest join -->
+<div class="w1200">
+	<ul class="hot_JM rank_hotJM mb13 clearfix">		
+		<li class="fl li1"><h3>最新餐饮加盟排行榜品牌</h3></li>
+		<li class="fr li2 f12"><a href="http://www.91chuangye.com/xiangmu" >更多&gt;</a></li>
+	</ul>
+	<!-- 最新餐饮加盟排行榜品牌选项卡 -->
+	<div class="newest"> 
+     
+	    <!--综合火锅的TAB栏--> 
+	    <div class="tab-pai"> 
+	     <ul id="tab-ul"> 
+		 {dede:channelartlist typeid='top' row='10'}
+	      <li> {dede:field name='typename'/} <span></span> </li> 
+	 	      {/dede:channelartlist}
+	     </ul> 
+	     <!--TAB内容1--> 
+	     <div id="main"> 
+		  {dede:channelartlist typeid='top' row='10'}
+	      <div class="content-one content-tab"> 
+			{dede:arclist typeid='0' orderby='click' titlelen='180' row=8 addfields='invested,sum,logo' channelid='17'}
+				   <div class="content"> 
+					<div class="tranImg"> 
+					 <div class="tranImg"> 
+					  <a href="[field:arcurl/]" title="[field:title/]"><img src="[field:picname/]" alt="[field:title/]"></a> 
+					 </div> 
+					</div> 
+					<p><a href="[field:arcurl/]" title="[field:title/]"> [field:title/] </a><span><small>￥</small>[field:invested/]</span></p> 
+					<a href="[field:arcurl/]"><span class="cover-span"> [field:title/]<span class="bnt-span">我要加盟</span> </span> </a>
+				   </div> 
+			 {/dede:arclist}		
+	      </div> 
+		   {/dede:channelartlist}
+	     </div> 
+	    </div> 
+	    <!--tab--> 
+   </div>
+</div>
+</div>
+<!-- 加盟资讯推荐 -->
+<div class="w1200"> 
+	<ul class="hot_JM rank_hotJM mb13 clearfix">		
+		<li class="fl li1"><h3>加盟资讯推荐</h3></li>
+		<li class="fr li2 f12">{dede:type typeid='399'}<a href="[field:typeurl/]" >更多&gt;</a> {/dede:type} </li>
+	</ul>
+	<div class="jmnew clearfix">
+ {dede:channelartlist typeid='401,402,403,404'}
+		<div class="fl join-story">
+		{dede:arclist typeid='0' orderby='sortrank' type='image' titlelen='180' limit='0,1'}
+			<div class="pic">
+				<a href="[field:arcurl/]">
+					<img class="lazy" src="[field:picname/]" alt="[field:title/]" style="display: inline;">
+					<p>[field:title/]</p>
+				</a>
+			</div>
+			{/dede:arclist}
+			<div class="new">
+				<ul class="m-list">
+					{dede:arclist typeid='0' orderby='sortrank' titlelen='180' limit='1,10'}
+				  <li>
+					  <a href="[field:arcurl/]">[field:title/]</a>
+				  </li>
+					{/dede:arclist}
+
+				</ul>
+			</div>
+	    </div>
+	{/dede:channelartlist}	
+	</div>	
+</div>	
+<!-- </div> -->
+
+<!-- 加盟品牌大全 -->
+<div class="daQuan_JM w1200"> 
+	<!-- 标题 -->
+	<ul class="hot_JM rank_hotJM clearfix">
+		<li class="fl li1"><h3>加盟品牌大全</h3></li>
+		<li class="fr li2 f12"><a href="http://www.91chuangye.com/xiangmu/">更多&gt;</a></li>
+	</ul>
+
+	<!--加盟品牌 -->
+	<div class="Manycon_JM">
+		<div class="many_jiaM pr"> 
+			<div class="many_jiaMLbt">
+				<div class="many_jiaMLbtCon pa">
+					<!-- 十二个品牌-大分类导航 -->
+					<div class="jiaM_navs"> 
+						<ul class="ul_jsNav fl">	
+					  {dede:channelartlist typeid='2,1,3,339,4,5,6,7,8,9,10,312'}	  
+						<li {dede:global.itemindex runphp='yes'}(@me==1)?@me='class="navs_select"':@me='';{/dede:global.itemindex}><a href="" target="_blank" class="navs_select" title="{dede:field name='typename'/}">{dede:field name='typename'/}</a></li> 		  
+				      {/dede:channelartlist}
+						</ul>
+					</div>
+					<!-- 内容 -->
+					<div class="jsNav_bottomBoss">
+					 {dede:channelartlist typeid='top' row='12'}
+						<div class="jsNav_bottom dis_n">
+							<!-- 小分类导航 -->
+							<div class="jsNav_bottom2">
+								<p class="p1_huoG">
+									 {dede:channel type='son' row='12'}
+									 <a href="[field:typelink/]" >[field:typename/]</a> 
+									 {/dede:channel}
+								</p>
+							</div>
+							<!-- 加盟项目 -->
+							<ul class="zhengMo_ul clearfix">
+								{dede:arclist typeid='0' orderby='rand' titlelen='180' row=10}
+									<li><a href="[field:arcurl/]"><img src="[field:picname/]" alt="[field:title/]"></a></li>
+								{/dede:arclist}											
+							</ul>
+						</div>
+					{/dede:channelartlist}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+	
+
+<!--footer-->
+<div class="footer">		
+{dede:include filename="new_footer.htm"/}
+</div>
+
+  <!-- gotop -->
+    <div class="fixrightbox">
+    <div class="selectbox"> <a href="http://www.91chuangye.com/xiangmu/">项目库</a> </div>
+    <div class="gotop">
+      <p>TOP</p>
+    </div>
+  </div>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/jquery.SuperSlide.2.1.1.js"></script>
+<!-- <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/one-pai.js"></script> -->
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/ranking.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/base.js"></script>  
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/index.js"></script>
+<script type="text/javascript">
+	$(".paihang").each(function(){
+		$(this).find(".list li").first().addClass("link-hover");
+	});
+	$(".paihang .list li").hover(function() {
+		$(this).addClass("link-hover");
+		$(this).siblings().removeClass("link-hover");
+	});
+	//品牌大全	
+	$('.many_jiaMLbtCon .jsNav_bottomBoss .jsNav_bottom').eq(0).show()
+	$('.many_jiaMLbtCon .jiaM_navs .ul_jsNav li').mouseover(function(){
+		$(this).addClass('navs_select').siblings('.navs_select').removeClass('navs_select');
+		$('.many_jiaMLbtCon .jsNav_bottomBoss .jsNav_bottom').eq($(this).index()).show().siblings().hide();
+	});
+	//向上滚动的十大品牌
+	$(".txtMarquee-top").slide({
+		mainCell: ".bd ul",
+		autoPlay: true,
+		effect: "topLoop",
+		interTime: 3000
+	});	
+	//tab栏的切换
+	$("#ranking .newest .tab-pai ul li").eq(0).addClass("on").siblings().removeClass("on");
+	$("#ranking .newest .tab-pai .content-tab").eq(0).show();
+	$("#ranking .newest .tab-pai ul li").mouseover(function() {	
+			var i = $(this).index();
+			console.log(i);
+			$(this).addClass("on").siblings().removeClass("on");
+			$("#ranking .newest .tab-pai .content-tab").eq(i).show().siblings().hide();
+	});
+
+</script>
+
+</body>
+</html>

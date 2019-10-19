@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>分类导航</title>
+  <link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon" />
+  <script src="__TMPL__/public/mobile/xin/lib/js/better.scroll.js"></script>
+  <link href="__TMPL__/public/mobile/xin/lib/css/swiper.css" rel="stylesheet">
+  <script src="__TMPL__/public/mobile/xin/lib/js/jquery.js"></script>
+  <script src="__TMPL__/public/mobile/xin/lib/js/jquery.lazyload.js"></script>
+  <script src="__TMPL__/public/mobile/xin/lib/js/swiper.js"></script>
+  <script src="__TMPL__/public/mobile/xin/js/common.js"></script>
+  <script src="__TMPL__/public/mobile/xin/js/projectLibrary.js"></script>
+  <link href="__TMPL__/public/mobile/xin/css/common.css" rel="stylesheet">
+  <link href="__TMPL__/public/mobile/xin/css/projectLibrary.css" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header second ">
+    <div class="left">
+      <!--<div class="logo">-->
+        <!--<a href="index.html">-->
+          <!--<img src="__TMPL__/public/mobile/xin/images/96b6ab37f90c0223e579f5e59455923f.png" alt="">-->
+        <!--</a>-->
+      <!--</div>-->
+      <div class="return">
+        <a href="javascript:history.go(-1);">
+          <img src="__TMPL__/public/mobile/xin/images/c27e82981d1f8cf843cb80c467ca4d4d.png" alt="">
+        </a>
+      </div>
+    </div>
+
+    <div class="title">项目库</div>
+
+    <div class="search">
+      <form action="{:cmf_url('portal/plus/index')}" method="post">
+        <input placeholder="感兴趣的品牌项目" class="search-input" type="text" name="q">
+        <span class="active"><img src="__TMPL__/public/mobile/xin/images/47543d8d4603d7ca3d5785ec94c142ad.png" alt=""></span>
+        <span><img src="__TMPL__/public/mobile/xin/images/24e35ae249e906015475e3040991b772.png" alt=""></span>
+        <input class="submit-input" type="submit">
+      </form>
+    </div>
+    <div class="list-iconfont">
+      <a href="projectLibrary.html">
+        <img src="__TMPL__/public/mobile/xin/images/4f95773fc89abd85c3d3fa5fda069cb4.png" alt="">
+      </a>
+    </div>
+  </header>
+
+  <div class="content projectLibrary">
+
+    <div class="tab">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+          <volist name="catess" id="catess">
+            <div class="swiper-slide">
+              <a href="javascript:;" attr="{$catess.id}" class="type">
+                <?php echo str_replace('加盟','',$catess['name']);?>
+              </a>
+            </div>
+          </volist>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="content-parent">
+
+      <div class="block">
+        <div class="wrapper">
+          <ul class="content asd">
+
+            <li>
+              <a href="{:cmf_url('portal/common/index',['classname'=>'canyin'],'')}/">
+                <div class="img">
+                  <img src="__TMPL__/public/mobile/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" class="lazy"
+                       data-original="__TMPL__/public/mobile/xin/images/eeaf6aa9385bda5e72b89033812cd7f5.png" alt="">
+                </div>
+                <span>全部</span>
+              </a>
+            </li>
+
+          <volist name="cated" id="cated">
+            <li>
+              <a href="{:cmf_url('portal/common/index',['classname'=>$cated['path']],'')}/">
+                <div class="img">
+                  <img src="__TMPL__/public/mobile/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" class="lazy"
+                       data-original="{$img}{$cated.mobile_thumbnail}" alt="{$cated.name}">
+                </div>
+                <span><?php echo str_replace('加盟','',$cated['name']);?></span>
+              </a>
+            </li>
+          </volist>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  $(".type").click(function () {
+    var id = $(this).attr('attr');
+    $.ajax({
+      type: "POST",
+      url: "/cate/ajaxtype",
+      data: {id:id},
+      dataType: "json",
+      success: function (msg) {
+        $('.asd').html(msg.html);
+      }
+    });
+  })
+</script>

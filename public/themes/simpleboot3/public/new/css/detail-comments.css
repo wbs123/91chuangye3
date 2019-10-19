@@ -1,0 +1,53 @@
+.mt20{margin-top: 0;}
+.adTab{margin-top: 20px;}
+.txtlist{}
+.searchbar{margin-top: 20px;}
+.fs16{font-size: 14px !important;color: #666666 !important;}
+.fs16 span{color: #db3428;font-size: 18px}
+.titleleft dl{display: flex;align-items: center;}
+.commentsItem{padding-top: 20px;}
+.comments .commentsItem :first-child{padding-top: 0 ;}
+.commentList{padding: 20px 30px; width: 820px; background: #fff;margin-top:10px;}
+.commentList .stitle{font-size: 16px; color: #787878; margin: 30px 0 10px 0;font-weight: 600;}
+.commentarea{ border: solid 1px #eee;}
+.commentarea textarea{ width: 100%; height: 85px; font-size: 14px; border: 0; line-height: 35px; text-indent: 15px; resize: none;}
+.submitBar{ height: 35px; background: #f5f5f5; position: relative;}
+.question_sub{position: absolute; right: 0; bottom: 0; width: 120px; height: 36px; line-height: 36px; text-align: center; color: #fff; background: #db3428;font-size: 14px; border-width: 0;}
+.question_sub:hover{color:#fff;}
+.comments .leftItem img{float: left; width: 30px; height: 30px; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;}
+.comments .leftItem a{ margin: 0 10px; font-size: 14px; color: #666;line-height: 30px; display: inline-block; float: left;}
+.comments .leftItem span{ color: #999;line-height: 30px; display: inline-block; float: left;}
+.commentTxt{ width: 760px; margin-left: 40px; padding-bottom: 20px; border-bottom: solid 1px #eee;}
+.comments .leftItem{ float: left;}
+.nonecomment{color: #999;text-align: center;padding: 75px 0 55px;font-size: 14px;}
+.rightItem{ float: right;}
+.rightItem a{ display: inline-block;font-size: 14px; color: #999;  padding-right: 20px; border-right: solid 1px #eee;}
+.rightItem a:last-child{ border-right: 0; padding-right: 0; padding-left: 20px;}
+/* .rightItem a i{ background: url(../images/project_icon.png) no-repeat; width: 20px; height: 16px; display: inline-block; vertical-align: middle;} */
+.rightItem a b{ font-weight: normal;}
+.rightItem a:hover span{ color: #dc3429;}
+.rightItem .reply i{ background-position: 0 -355px;}
+.rightItem .giveup.on i{ background-position: -30px -270px;}
+.rightItem .reply:hover i{ background-position: -30px -355px;}
+.txtTitle{ font-size: 16px; margin: 10px 0;}
+.listitem{ padding: 0; background: #f8f8f8; height: auto; overflow: hidden; }
+.listitem p{ color: #999; font-size: 14px; line-height: 25px;}
+.listitem p span{ color: #555;}
+.commentContent{padding: 0 20px;margin: 10px 0;}
+.commentContent .comment-list{display: none;}
+.commentContent .comment-list:first-child{display: block;}
+.commentInput{ margin-top: 10px;padding:0 20px;margin-bottom: 10px;display: none;}
+.commentInput .comTxt{ width: 635px; border: solid 1px #eee;text-indent: 15px;}
+.commentInput .comBtn{ width: 70px; border-width: 0; background: #db3428; text-align: center; color: #fff; float: right; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;}
+.commentInput .comTxt,.commentInput .comBtn{ height: 34px; line-height: 34px; font-size: 14px; }
+.listitem.active .commentInput,.listitem.active .commentContent .comment-list{display: block;}
+.lookmore{ width: 600px; height: 48px; line-height: 48px; margin: 20px auto 0; border:none; text-align: center; color: #FFFFFF; font-size: 14px;background: #ff5500;box-shadow: 0 0 14px 0 #ff6c22;}
+.lookmore1{ width: 600px; height: 48px; line-height: 48px; margin: 20px auto 0; border:none; text-align: center; color: #ff5500; font-size: 14px;background: #FFFFFF;box-shadow: 0 0 14px 0 #CCCCCC;}
+.lookmore2{ width: 600px; height: 48px; line-height: 48px; margin: 20px auto 0; border:none; text-align: center; font-size: 14px;background-color: #ffffff; border: solid 1px #e8f2f7;color: #0e8ed8;}
+.btnUp:hover,.lookmore:hover,.retractNav:hover,.lookmore2:hover{ cursor: pointer;}
+.lookmore2:hover{color:#db3428}
+.comments{position: relative;}
+/* .download_box{width: 267px;height: 49px;background: url(../images/download_box.png) no-repeat center 0;text-align: center;line-height: 49px;position: absolute;top: -40px;right: -5px;} */
+.download_box span{color: #FFFFFF;font-size: 14px;}
+/* .download_box1{width: 267px;height: 49px;background: url(../images/download_box_noonline.png) no-repeat center 0;text-align: center;line-height: 49px;position: absolute;top: -40px;right: -5px;} */
+.download_box1 span{color: #ff5500;font-size: 14px;}

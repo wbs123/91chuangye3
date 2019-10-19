@@ -1,0 +1,457 @@
+﻿body {
+  background: #f6f9fc;
+}
+
+#dd,
+#dd1 {
+  left: 0!important;
+  top: 100%!important;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.content_right {
+  width: 974px;
+  background: #fff;
+  margin: 27px 0 0 20px;
+  overflow: hidden;
+  border: 1px solid #edf3f8;
+  min-height: 820px;
+}
+.content_right .main_infor {
+  width: 850px;
+  margin: 30px auto;
+}
+.content_right .main_infor .search_message {
+  width: 800px;
+  background: #f9fafa;
+  padding: 25px;
+}
+.content_right .main_infor .search_message .message_nav {
+  height: 48px;
+  border-bottom: 1px solid #cfdce8;
+}
+.content_right .main_infor .search_message .message_nav .nav_item {
+  float: left;
+  padding: 0 10px;
+  height: 47px;
+  line-height: 48px;
+  font-size: 16px;
+  margin-right: 35px;
+}
+.content_right .main_infor .search_message .message_nav .nav_item a {
+  color: #666666;
+}
+.content_right .main_infor .search_message .message_nav .active_me {
+  border-bottom: 2px solid #16669f;
+  font-weight: bold;
+}
+.content_right .main_infor .search_message .message_nav .active_me a {
+  color: #16669f;
+}
+.content_right .main_infor .search_message .message_num {
+  font-weight: bold;
+  font-size: 14px;
+  color: #343434;
+  margin-top: 34px;
+}
+.content_right .main_infor .search_message .message_num span {
+  color: #ec4c16;
+}
+.content_right .main_infor .search_message .sort_chose {
+  height: 128px;
+  margin-top: 26px;
+}
+.content_right .main_infor .search_message .sort_chose .place {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.content_right .main_infor .search_message .sort_chose .place span {
+  font-size: 14px;
+  color: #333333;
+}
+.content_right .main_infor .search_message .sort_chose .place .cs_city {
+  width: 134px;
+  height: 40px;
+  cursor: pointer;
+  border: 1px solid #b2b7c4;
+  border-radius: 4px;
+  margin-left: 16px;
+  text-indent: 10px;
+  background: #fff url(../img/down.png) no-repeat 110px center;
+  background-size: 11px 7px;
+  position: relative;
+}
+.content_right .main_infor .search_message .sort_chose .place .cs_city span {
+  font-size: 12px;
+  color: #757575;
+}
+.content_right .main_infor .search_message .sort_chose .place .cs_city .xiala_select {
+  width: 100%;
+  max-height: 200px;
+  overflow: auto;
+  background: #fff;
+  position: absolute;
+  border-radius: 4px;
+  top: 100%;
+  left: -1px;
+  display: none;
+  border: 1px solid #b2b7c4;
+  z-index: 100;
+}
+.content_right .main_infor .search_message .sort_chose .place .cs_city .xiala_select .item {
+  text-indent: 0;
+  height: 40px;
+  text-align: center;
+  color: #666666;
+  font-size: 14px;
+}
+.content_right .main_infor .search_message .sort_chose .place .cs_city .xiala_select .item:hover {
+  background: #f3f4f6;
+  font-weight: bold;
+  cursor: pointer;
+}
+.content_right .main_infor .search_message .sort_chose .place .search_btn {
+  width: 74px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  background: #4999d2 url(../img/search_w.png) no-repeat 10px center;
+  background-size: 13px 13px;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  outline: none;
+  margin-top: 4px;
+  margin-left: 23px;
+  text-indent: 10px;
+}
+.content_right .main_infor .search_message .sort_chose .place .search_btn:hover {
+ opacity: 0.8;
+  cursor: pointer;
+}
+.content_right .main_infor .search_message .sort_chose .place .daochu {
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  color: #177abf;
+  margin-left: 10px;
+  background: url(../img/dcjg_icon.png) no-repeat right center;
+  background-size: 14px 13px;
+  padding-right: 15px;
+  cursor: pointer;
+  position: relative;
+  left: 160px;
+  top: -175px;
+}
+.content_right .main_infor .search_message .sort_chose .time {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 20px;
+  position:relative;
+}
+.content_right .main_infor .search_message .sort_chose .time .cs_time {
+  width: 134px;
+  height: 40px;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  margin-left: 16px;
+  position: relative;
+  font-size: 13px;
+}
+.content_right .main_infor .search_message .sort_chose .time .cs_time input {
+  font-size: 12px;
+}
+.content_right .main_infor .search_message .sort_chose .time .cs_time .selct_time {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: url(../img/data.png) no-repeat 100px center;
+  background-size: 16px 17px;
+  text-indent: 10px;
+}
+.content_right .main_infor .message_list {
+  margin-top: 32px;
+}
+.content_right .main_infor .message_list .item_message {
+  border: 1px solid #e5e6e7;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  padding: 23px;
+  font-size: 14px;
+  position: relative;
+  box-shadow: 1px 1px 10px 1px #e5e6e7;
+}
+.content_right .main_infor .message_list .item_message .name_from {
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+}
+.content_right .main_infor .message_list .item_message .name_from .checkBox {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url(../img/mf.png) no-repeat center center;
+  background-size: 100% 100%;
+  position: relative;
+  top: 2px;
+  cursor: pointer;
+}
+.content_right .main_infor .message_list .item_message .name_from .ischeck {
+  background: url(../img/xf.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.content_right .main_infor .message_list .item_message .name_from .user_name {
+  font-size: 14px;
+  color: #333;
+  margin-right: 52px;
+}
+.content_right .main_infor .message_list .item_message .name_from .from {
+  font-size: 14px;
+  color: #999;
+}
+.content_right .main_infor .message_list .item_message .name_from .time {
+  color: #666;
+  font-size: 12px;
+  margin-left: 25px;
+}
+.content_right .main_infor .message_list .item_message .name_from .yz_img {
+  width: 74px;
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 22px;
+}
+.content_right .main_infor .message_list .item_message .message_nei {
+  margin-left: 20px;
+  margin-top: 15px;
+  line-height: 20px;
+  overflow: hidden;
+  color: #67a7dc;
+  font-size: 14px;
+}
+.content_right .main_infor .message_list .item_message .message_nei .lx_title {
+  color: #999;
+  font-size: 14px;
+}
+.content_right .main_infor .message_list .item_message .message_nei .lx_neirong {
+  color: #7a97b9;
+  font-size: 12px;
+}
+.content_right .main_infor .message_list .item_message .three_btn {
+  height: 32px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.content_right .main_infor .message_list .item_message .three_btn .b_t_n {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.content_right .main_infor .message_list .item_message .three_btn .b_t_n img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.content_right .main_infor .message_list .item_message .three_btn .b_t_n .xz_lb {
+  z-index: 100;
+}
+.content_right .main_infor .message_list .item_message .three_btn .b_t_n:nth-child(1) {
+  background: url(../img/moren_lb.png) no-repeat;
+}
+.content_right .main_infor .message_list .item_message .three_btn .b_t_n:nth-child(1):hover {
+  background: url(../img/xz_lb.png) no-repeat;
+}
+
+.content_right .main_infor .message_list .item_message .three_btn .b_t_n:nth-child(2) {
+  background: url(../img/moren_sc.png) no-repeat;
+}
+.content_right .main_infor .message_list .item_message .three_btn .b_t_n:nth-child(2):hover {
+  background: url(../img/xz_sc.png) no-repeat;
+}
+.content_right .main_infor .message_list .item_message .three_btn .chose1 {
+  background: url(../img/xz_lb.png) no-repeat !important;
+}
+.content_right .main_infor .message_list .item_message .three_btn .chose2 {
+  background: url(../img/xz_sc.png) no-repeat !important;
+}
+
+.content_right .main_infor .message_list .item_message .infor_user {
+  border-top: 1px dashed #e9e9e9;
+  padding: 20px 0 20px 20px;
+  position: relative;
+  top: 20px;
+  display: none;
+}
+.content_right .main_infor .message_list .item_message .infor_user .connect {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.content_right .main_infor .message_list .item_message .infor_user .connect p {
+  float: left;
+  color: #666666;
+  margin-right: 46px;
+}
+.content_right .main_infor .message_list .item_message .infor_user .connect p span:nth-child(1) {
+  color: #a9a9a9;
+  margin-right: 2px;
+}
+.content_right .main_infor .message_list .item_message .ly_dafu {
+  height: 73px;
+  border-top: 1px solid  #d6e6f3;
+  background: #f3f8fc;
+  font-size: 12px;
+  display: none;
+  position: relative;
+}
+.content_right .main_infor .message_list .item_message .ly_dafu .dafu_neirong {
+  margin: 0 26px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.content_right .main_infor .message_list .item_message .ly_dafu .dafu_neirong span {
+  color: #5e83ad;
+}
+.content_right .main_infor .message_list .item_message .ly_dafu .dafu_neirong i {
+  color: #9a9997;
+}
+.content_right .main_infor .message_list .item_message .ly_dafu .dafu_time {
+  color: #9a9997;
+  margin: 0 26px;
+}
+.content_right .main_infor .message_list .item_message .ly_dafu .tishi_numchart {
+  width: 72px;
+  height: 26px;
+  line-height: 26px;
+  background: #7eabca;
+  color: #fff;
+  text-align: center;
+  float: right;
+  border-radius: 3px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.content_right .main_infor .page_num {
+  height: 65px;
+  line-height: 65px;
+  width: 100%;
+  background: #f9fafa;
+  border-radius: 4px;
+}
+.content_right .main_infor .page_num .num_page {
+  font-size: 14px;
+  float: right;
+}
+.content_right .main_infor .page_num .num_page p {
+  color: #4999d2;
+}
+.content_right .main_infor .page_num .num_page .every_page_num {
+  padding: 0 8px 0 8px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 16px;
+  border-radius: 4px;
+  border: 1px solid #acb6c0;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.content_right .main_infor .page_num .num_page .every_page_num .ps_data_num {
+  width: 100%;
+  height: 160px;
+  background: #fff;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  border: 1px solid #acb6c0;
+  border-radius: 4px;
+  display: none;
+}
+.content_right .main_infor .page_num .num_page .every_page_num .ps_data_num .item {
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 12px;
+  color: #999999;
+}
+.content_right .main_infor .page_num .num_page .every_page_num .ps_data_num .item:hover {
+  font-weight: bold;
+  cursor: pointer;
+  width: 99%;
+}
+.content_right .main_infor .page_num .num_page .page_item {
+  margin-top: 16px;
+}
+.content_right .main_infor .page_num .num_page .page_item .item {
+  width: 32px;
+  height: 32px;
+  background: #eef0f1;
+  float: left;
+  line-height: 32px;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.content_right .main_infor .page_num .num_page .page_item div:hover a{
+  background:#4999d2!important;
+  color: #fff!important;
+}
+.content_right .main_infor .page_num .num_page .page_item .item a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #343434;
+  border-radius: 4px;
+}
+.content_right .main_infor .page_num .num_page .page_item .is_item a{
+  background: #4999d2;
+  color: #fff;
+  cursor: pointer;
+}
+.content_right .main_infor .page_num .num_page .page_item .is_item {
+  background: #4999d2;
+  color: #fff;
+}
+.content_right .main_infor .page_num .num_page .page_item .longBox {
+  width: 56px;
+  font-size: 12px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background: #eef0f1;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.content_right .main_infor .page_num .num_page .page_item .longBox a{
+  color: #343434;
+  display: block;
+}
+.content_right .main_infor .page_num .num_page .page_item .longBox a:hover {
+  border-radius: 4px;
+}
+.content_right .main_infor .title {
+  color: #404040;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 41px;
+  position: relative;
+  top: 9px;
+}

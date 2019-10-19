@@ -1,0 +1,37 @@
+<div class="hangye-tj-left-link">
+	<div class="title">品牌专区</div>
+	<ul>
+		<li><a href="/xiangmu/1-5/">1-5万元</a></li>
+		<li><a href="/xiangmu/5-10/">5-10万元</a></li>
+		<li><a href="/xiangmu/10-20/">10-20万元</a></li>
+		<li><a href="/xiangmu/20-50/">20-50万元</a></li>
+		<li><a href="/xiangmu/50-100/">50-100万元</a></li>
+		<li><a href="/xiangmu/100-200/">100-200万元</a></li>
+	</ul>
+</div>
+<div class="hangye-tj">
+	<ul class="tabs">
+		<volist name="htyj_datas" id="cass">
+			<li class="on"><a href="/{$cass.path}/"><?php echo str_replace('加盟','',$cass['name']);?></a></li>
+		</volist>
+	</ul>
+	<div class="cont">
+		<volist name="htyj_datas" id="das">
+		<ul>
+			<volist name="das.data" id="ddd">
+			<li>
+				<div class="item">
+					<a class="pic" href="{:cmf_url('portal/common/index',['id'=>$ddd['aid'],'classname'=>$ddd['class']])}" title="{$ddd.title}" rel="nofollow">
+						<p><img class="lazy" src="__TMPL__/public/xin/images/lazyBg3x2.jpg" data-original="{$ddd.litpic|checkImgurl=###}" alt="{$ddd.title}"></p>
+					</a>
+					<a href="{:cmf_url('portal/common/index',['id'=>$ddd['aid'],'classname'=>$ddd['class']])}" title="{$ddd.title}">
+						<div class="tit">{$ddd.title}</div>
+						<div class="price">{$ddd.invested}</div>
+					</a>
+				</div>	
+			</li>
+			</volist>
+		</ul>
+		</volist>
+	</div>
+</div>

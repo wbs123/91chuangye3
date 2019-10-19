@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{$seo_arr.seo_title}_91创业网</title>
+    <meta name="keywords" content="{$seo_arr.seo_keywords}">
+    <meta name="description" content="{$seo_arr.seo_description}">
+    <link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon" />
+    <!-- 线上有的链接 -->
+    <link rel="stylesheet" href="__TMPL__/public/mobile/xin/css/common.css">
+    <script src="__TMPL__/public/mobile/xin/lib/js/jquery.js"></script>
+    <script src="__TMPL__/public/mobile/xin/lib/js/swiper.js"></script>
+    <script src="__TMPL__/public/mobile/xin/lib/js/jquery.lazyload.js"></script>
+    <script src="__TMPL__/public/mobile/xin/js/common.js"></script>
+    <script src="__TMPL__/public/mobile/xin/js/projectLibrary.js"></script>
+
+    <!-- 新加链接 -->
+    <link rel="stylesheet" href="__TMPL__/public/mobile/xin/css/information-list.css">
+    <script src="__TMPL__/public/mobile/xin/js/information-list.js"></script>
+
+</head>
+
+<body>
+
+    <!-- 线上有的头部 -->
+    <header class="header second active">
+        <div class="left">
+            <div class="return">
+                <a href="javascript:history.go(-1);">
+                    <img src="__TMPL__/public/mobile/xin/images/c27e82981d1f8cf843cb80c467ca4d4d.png"
+                        alt="">
+                </a>
+            </div>
+        </div>
+        <div class="title">{$seo_arr.name}</div>
+        <div class="search">
+            <form action="{:cmf_url('portal/plus/index')}" method="post">
+                <input placeholder="感兴趣的品牌项目" class="search-input" type="text" name="q">
+                <span class="active"><img
+                        src="__TMPL__/public/mobile/xin/images/47543d8d4603d7ca3d5785ec94c142ad.png"
+                        alt=""></span>
+                <span><img
+                        src="__TMPL__/public/mobile/xin/images/24e35ae249e906015475e3040991b772.png"
+                        alt=""></span>
+                <input class="submit-input" type="submit">
+            </form>
+        </div>
+        <!--<div class="list-iconfont">-->
+            <!--<a href="/nav/">-->
+                <!--<img src="__TMPL__/public/mobile/xin/images/4f95773fc89abd85c3d3fa5fda069cb4.png"-->
+                    <!--alt="">-->
+            <!--</a>-->
+        <!--</div>-->
+    </header>
+
+    <!-- 列表 -->
+    <div class="news">
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <ul>
+                        <volist name="data" id="dd">
+                            <li>
+                            <a href="{:cmf_url('portal/common/index',['id'=>$dd['id'],'classname'=>$dd['class']])}">
+                                <div class="left">
+                                    <div class="title">{$dd['post_title']}</div>
+                                    <div class="desc">{$dd['post_excerpt']|msubstr=0,300,'utf-8',true}</div>
+                                    <div class="date">
+                                        <img src="__TMPL__/public/mobile/xin/images/3cd87f6675b141d9d3350de6078f1d61.png" alt="">
+                                        <span>{$dd.published_time|date='Y-m-d',###}</span>
+                                    </div>
+                                </div>
+                                <div class="img">
+                                    <img class="swiper-lazy lazy"
+                                        data-original="{$dd['thumbnail']}"
+                                        src="__TMPL__/public/mobile/xin/images/44feb2a189bb6a55ade0a5349fcccfb2.jpg"
+                                        alt="{$dd['post_title']}">
+                                </div>
+                            </a>
+                        </li>
+                        </volist>
+                    </ul>
+                    <input type="hidden" name="url" id="url" value="<?php echo $_SERVER['REQUEST_URI'];?>">
+                    <div class="parentbtn">
+                        <div class="more-btn">
+                            <div class="down">
+                                    <span>点击加载更多</span>
+                                    <img src="__TMPL__/public/mobile/xin/images/55ec8b835ce39d4ece38224a8bab98de.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 线上有的底部 -->
+    <div class="commonStatement">
+        <div class="bg2">
+            <p>Copyright © 91创业网</p>
+            <p>全国免费服务热线：400-809-0091</p>
+            <p>友情提示：<span>投资有风险，咨询请细致</span>，以便成功加盟。</p>
+            <div class="addnewfooter">
+                <a href="/guanyuwomen/">关于我们</a>
+                <a href="/lianxiwomen/">联系我们</a>
+                <a href="/mianzeshengming/">免责声明</a>
+                <a href="/tousushanchu/">投诉删除</a>
+                <a href="/areas/">地区站</a>
+                <a href="/nav/">行业分类</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

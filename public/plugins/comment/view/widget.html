@@ -1,0 +1,53 @@
+<!-- 新增评论内容 -->
+<div class="commentList">
+		
+	<!-- 评论框 -->
+	<div class="commentarea">
+		<textarea placeholder="简单描述下您想了解的内容？(150字以内)" name="question" id="question"></textarea>
+		<div class="submitBar">
+			<!-- 注意:这里的a标签为登录页面的地址 -->
+			<a class="question_sub" href="javascript:;">提交问题</a>
+		</div>
+	</div>
+
+	<!-- 问题条数 -->
+	<div class="stitle"><b>{$total}</b>条问题</div>
+	
+	<div class="comments">
+	<foreach name="datas" item="vo">
+		<div class="commentsItem">
+			<div class="clearfix item mt20">
+				<div class="leftItem">
+					<img
+						src="{$vo.user_id|facepic=###}">
+					<a href="javascript:;">{$vo.user_id|facename=###|default='匿名用户'}</a>
+					<span>{$vo.create_time|date='Y-m-d H:i:s',###}</span>
+				</div>
+				<div class="rightItem">
+					<a href="javascript:;" class="reply"><i></i>回复</a>
+				</div>
+			</div>
+			<div class="commentTxt">
+				<p class="txtTitle">{$vo.content}</p>
+				<div class="listitem">
+					<div class="commentContent">
+						<div class="comment-list">
+							<if condition='$vo.parent_id gt 0'>
+								<p> 
+								{$vo.user_id|facename=###|default='匿名用户'}：<span>{$vo.parent.content|strip_tags=###}</span>
+								</p>
+							</if>
+						</div>
+					</div>
+					<div class="commentInput clearfix">
+						<input type="text" class="fn-left comTxt answer_1024026"
+							placeholder="请输入您要的回复的内容~~">
+						<!-- 注意:这里的a标签为登录页面的地址 -->
+						<a href="javascript:;" class="comBtn question_answer_sub">回复</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</foreach>
+	</div>
+</div>

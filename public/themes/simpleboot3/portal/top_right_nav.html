@@ -1,0 +1,40 @@
+<div class="netNav" id="netNav">
+                <div class="netNavbox" id="netNavbox">
+                    <div class="item">
+                        <volist name="cates1" id="cats1" key="k">
+                            <dl class="netNavList">
+                                <dt class="tit"><i class="icon icon-{$cats1.path}"></i><a href="{:cmf_url('portal/common/index',['classname'=>$cats1['path']],'')}/">{$cats1['name']}</a></dt>
+                                <dd class="smallList clearfix">
+                                    <volist name="cats1.data" id="cada1">
+                                        <a href="{:cmf_url('portal/common/index',['classname'=>$cada1['path']],'')}/">{$cada1['name']}</a>
+                                    </volist>
+                                </dd>
+                            </dl>
+                        </volist>
+                    </div>
+                    <div class="item">
+                        <volist name="cates2" id="cats2">
+                            <dl class="netNavList">
+                                <dt class="tit"><i class="icon icon-{$cats2.path}"></i><a href="{:cmf_url('portal/common/index',['classname'=>$cats2['path']],'')}/">{$cats2['name']}</a></dt>
+                                <dd class="smallList clearfix">
+                                    <volist name="cats2.data" id="cada2">
+                                        <a href="{:cmf_url('portal/common/index',['classname'=>$cada2['path']],'')}/">{$cada2['name']}</a>
+                                    </volist>
+                                </dd>
+                            </dl>
+                        </volist>
+                    </div>
+                    <div class="item">
+                        <volist name="cates3" id="cats3">
+                            <dl class="netNavList">
+                                <dt class="tit"><i class="icon icon-{$cats3.path}"></i><a href="{:cmf_url('portal/common/index',['classname'=>$cats3['path']],'')}/">{$cats3['name']}</a></dt>
+                                <dd class="smallList clearfix">
+                                    <volist name="cats3.data" id="cada3">
+                                        <a href="{:cmf_url('portal/common/index',['classname'=>$cada3['path']],'')}/">{$cada3['name']}</a>
+                                    </volist>
+                                </dd>
+                            </dl>
+                        </volist>
+                    </div>
+                </div>
+            </div>

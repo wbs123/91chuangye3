@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title><?php echo $seo_title;?></title>
+  <link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon" />
+  <meta name="keywords" content="<?php echo $seo_keywords;?>">
+  <meta name="description" content="<?php echo $seo_description;?>">
+  <script src="__TMPL__/public/mobile/xin/lib/js/better.scroll.js"></script>
+  <link href="__TMPL__/public/mobile/xin/lib/css/swiper.css" rel="stylesheet">
+  <script src="__TMPL__/public/mobile/xin/lib/js/jquery.js"></script>
+  <script src="__TMPL__/public/mobile/xin/lib/js/jquery.lazyload.js"></script>
+  <script src="__TMPL__/public/mobile/xin/lib/js/swiper.js"></script>
+  <script src="__TMPL__/public/mobile/xin/js/common.js"></script>
+  <script src="__TMPL__/public/mobile/xin/js/projectPage.js"></script>
+  <script src="__TMPL__/public/mobile/xin/js/ajax.js"></script>
+  <script src="__TMPL__/public/mobile/xin/layui/layui.js"></script>
+  <link href="__TMPL__/public/mobile/xin/css/common.css" rel="stylesheet">
+  <link href="__TMPL__/public/mobile/xin/layui/css/layui.css" rel="stylesheet">
+  <link href="__TMPL__/public/mobile/xin/css/projectPage.css" rel="stylesheet">
+  <meta name="applicable-device" content="mobile">
+  <link rel="canonical" href="{$seo_url}">
+  <style>
+    .projectPage{
+      margin-top: 66px;
+    }
+    .projectPage .contentList .bg{
+    }
+    .projectPage .contentList ul li{
+      flex-flow:wrap;
+      height:auto;
+    }
+    .projectPage .contentList ul li>span{
+      color:#0055aa;
+      width:100%;
+      margin-bottom:10px;
+    }
+    .projectPage .contentList ul li>.Moneycity a{
+      margin-right:5px;
+      margin-bottom:5px;
+      display:inline-block;
+    }
+  </style>
+</head>
+<body onload="refresh()">
+  <header class="header  active">
+    <div class="left">
+      <div class="logo">
+        <a href="/">
+          <img src="__TMPL__/public/mobile/xin/images/96b6ab37f90c0223e579f5e59455923f.png">
+        </a>
+      </div>
+      <div class="return">
+        <a href="javascript:history.go(-1);">
+          <img src="__TMPL__/public/mobile/xin/images/c27e82981d1f8cf843cb80c467ca4d4d.png">
+        </a>
+      </div>
+    </div>
+    <div class="title">项目库</div>
+    <include file="mobile/search_all"/>
+  </header>
+  <div class="projectPage">
+    <div class="contentList">
+      <div class="bg">
+        <ul>
+			<volist name="numicipalityArea" id="n">
+				<li>
+					<span>{$n.ename}</span>
+					<b class="BlueLine"></b>
+					<div class="Moneycity">
+						<volist name="$n.city" id="s">
+							<a target="_blank"
+							   title="{$s.ename}"
+							   href="/xiangmu/{$s.py}/">{$s.ename}
+							</a>
+						</volist>
+					</div>
+				</li>
+			</volist>
+			<volist name="nativeplace" id="c">
+				<li>
+						<span><a title="{$c.ename}" target="_blank"
+								 href="/xiangmu/{$c.py}/"
+								 style="color:#0055aa;">{$c.ename}</a> </span>
+					<b class="BlueLine"></b>
+					<div class="Moneycity">
+						<if condition="isset($c['city'])">
+							<volist name="$c.city" id="s">
+								<a target="_blank" title="{$s.ename}"
+								   href="/xiangmu/{$s.py}/">{$s.ename}
+								</a>
+							</volist>
+						</if>
+					</div>
+				</li>
+			</volist>
+		</ul>
+      </div>
+    </div>
+    <div class="news">
+      <div class="commonTabTages">
+        <ul>
+          <li class="active"><a href="javascript:;">最新资讯</a></li>
+          <li class=""><a href="javascript:;">创业知识</a></li>
+          <li class=""><a href="javascript:;">创业故事</a></li>
+        </ul>
+      </div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="content">
+              <ul>
+              <volist name="zixun" id="zixun">
+                <li>
+                  <a href="{:cmf_url('portal/common/index',['id'=>$zixun['id'],'classname'=>'news'])}">
+                    <span>{$zixun.post_title}</span>
+                    <span><?php echo date('Y-m-d',$zixun['published_time']);?></span>
+                  </a>
+                </li>
+              </volist>
+              </ul>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <ul>
+              <volist name="zhishi" id="zhishi">
+                <li><a href="{:cmf_url('portal/common/index',['id'=>$zhishi['id'],'classname'=>$zhishi['class']])}">
+                  <span>{$zhishi.post_title}</span>
+                  <span><?php echo date('Y-m-d',$zhishi['published_time']);?></span>
+                </a></li>
+              </volist>
+              </ul>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <ul>
+              <volist name="gushi" id="gushi">
+                <li><a href="{:cmf_url('portal/common/index',['id'=>$gushi['id'],'classname'=>$gushi['class']])}">
+                  <span>{$gushi.post_title}</span>
+                  <span><?php echo date('Y-m-d',$gushi['published_time']);?></span>
+                </a></li>
+              </volist>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="commonStatement">
+    <div class="bg">
+      <div class="title">本站声明</div>
+      <div class="desc">
+        <p>1.本站为用户提供免费信息展示，不收取任何费用（包括加盟费），如有冒充本站收费行为请及时报警。</p>
+        <p>2. 投资有风险 加盟需谨慎。为规避投资风险，建议您在投资前务必多咨询，多考察，降低投资风险</p>
+      </div>
+    </div>
+    <div class="bg2">
+      <p>Copyright © 91创业网</p>
+      <p>全国免费服务热线：400-809-0091</p>
+      <p>友情提示：<span>投资有风险，咨询请细致</span>，以便成功加盟。</p>
+      <div class="addnewfooter">
+                <a href="/guanyuwomen/">关于我们</a>
+                <a href="/lianxiwomen/">联系我们</a>
+                <a href="/mianzeshengming/">免责声明</a>
+                <a href="/tousushanchu/">投诉删除</a>
+        <a href="/areas/">地区站</a>
+            </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <ul>
+      <li class="">
+        <a href="/">
+          <img src="__TMPL__/public/mobile/xin/images/9004914b98fa09eb39f3719a94ec8a94.png">
+          <img class="active" src="__TMPL__/public/mobile/xin/images/a2024139e8d4ab4fae68087c6ee8c030.png">
+          <span>首页</span>
+        </a>
+      </li>
+      <li class="active">
+        <h1>
+          <a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">
+            <img src="__TMPL__/public/mobile/xin/images/97e9f713f8859d9cab0422fa3ed61396.png">
+            <img class="active" src="__TMPL__/public/mobile/xin/images/7f9f322c2462b2501a79e548b0ef0969.png">
+            <span>项目库</span>
+          </a>
+        </h1>
+      </li>
+      <li class="">
+        <a href="{:cmf_url('portal/common/index',['classname'=>'top'],'')}/">
+          <img src="__TMPL__/public/mobile/xin/images/30132e0d9549c2976eee067b8b9ffe3a.png">
+          <img class="active" src="__TMPL__/public/mobile/xin/images/30132e0d9549c2976eee067b8b9ffe3a.png">
+          <span>排行榜</span>
+        </a>
+      </li>
+      <li class="">
+        <a href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/">
+          <img src="__TMPL__/public/mobile/xin/images/e6b23ae996955e5be242ffdca92beefe.png">
+          <img class="active" src="__TMPL__/public/mobile/xin/images/e6b23ae996955e5be242ffdca92beefe.png">
+          <span>资讯</span>
+        </a>
+      </li>
+    </ul>
+  </footer>
+  <div class="commonTop">
+    <img src="__TMPL__/public/mobile/xin/images/fc51cd31a0b75c3aa1f88cc11f63ed1b.png">
+  </div>
+  <div class="mc"></div>
+  <input type="hidden" id="url" value="<?php echo $_SERVER['QUERY_STRING'];?>">
+<include file="mobile/other"/>
+</body>
+</html>
+<script>
+  $(".classification .content .contentTab .swiper-container .swiper-slide").click(function () {
+    var id = $(this).find('div').attr('attr');
+    $.ajax({
+      type: "POST",
+      url: "/cate/xmajax/",
+      data: {id:id},
+      dataType: "json",
+      success: function (msg) {
+        $('.leftList').html(msg.html);
+      }
+    });
+  })
+  // 初始化加载分类
+  $(".classification .content .contentTab .swiper-container .swiper-slide.active").click()
+  function refresh()
+  {
+    $.ajax({
+      type: "POST",
+      url: "/cate/reload/",
+      data: {id:1},
+      dataType: "json",
+      success: function (msg) {
+      }
+    });
+  }
+
+  //流加载
+  layui.use('flow', function() {
+    var $ = layui.jquery;
+    var flow = layui.flow;
+    flow.load({
+      elem: '#LAY_demo2' //流加载容器
+      , isAuto: false
+      , isLazyimg: true
+      , done: function (page, next) { //加载下一页
+        alert(page);return false;
+        var lis = [];
+        $.post("/cate/listajax/",{'page':page}, function(res) {
+          console.log(res);return false;
+          layui.each(res.data, function(index, item){
+            lis.push('<li>'+ item.title +'</li>');
+          });
+          next(lis.join(''), page < res.pages);
+        });
+      }
+    });
+  });
+</script>

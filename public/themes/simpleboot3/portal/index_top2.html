@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta name="applicable-device" content="pc" /> 
+<meta name="robots" content="all">
+<title>{$seo['seo_title']}_91创业网</title>
+<link rel="shortcut icon" href="__TMPL__/public/new/images/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="{$seo['seo_keywords']}">
+<meta name="description" content="{$seo['seo_description']}">
+<meta name="renderer" content="webkit">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
+<link rel="alternate" media="only screen and(max-width: 640px)" href="http://m.91chuangye.com/">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.91chuangye.com/">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.91chuangye.com/">
+<link type="text/css" rel="stylesheet" href="__TMPL__/public/new/css/common.css">
+<link type="text/css" rel="stylesheet" href="__TMPL__/public/new/css/index.css">
+<link type="text/css" rel="stylesheet" href="__TMPL__/public/new/css/rank.css">
+<link type="text/css" rel="stylesheet" href="__TMPL__/public/new/css/ranking.css" />
+<base target="_blank">
+<!--<meta name="mobile-agent" content="format=html5;url={dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}"/>
+<meta http-equiv="mobile-agent" content="format=xhtml; url={dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}">
+<link rel="alternate" media="only screen and(max-width: 640px)" href="{dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}"/>-->
+ <!-- <script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="http://m.91chuangye.com"+location.pathname+location.search;}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script> -->
+</head>
+<body>
+<div class="wrapper">
+    <include file="new_head3"/>
+
+<!--subnav&hdxw-->
+<div class="banner-box">
+	<div class=" w1200 clearfix">
+		<!--左侧二级导航-->
+		<div class="fl b-subnav">
+			<ul class="ytopnav">
+				<volist name="cate" id="ca">
+				<li>
+					 <a href="{:cmf_url('portal/top/index_top',['classname'=>$ca['path']],'')}/" class='link' title="{$ca['name']}排行榜">{$ca['name']}排行榜</a>
+				</li>
+                </volist>
+			</ul>
+		</div>
+		
+		<!--焦点图&品牌上榜-->
+		<div class="fl b-hdxw top-b-hdxw">
+			<div id="hdxw" class="hdxw-box">
+				<div class="hdxw-img">
+					<div class="images-inner">
+						<a href="{:cmf_url('portal/common/index',['id'=>'90912','classname'=>'naichajiameng'])}" target="_blank" class="link">
+							<img src="__TMPL__/public/new/images/banner4.jpg" class="img" />
+						</a>
+						<a href="{:cmf_url('portal/common/index',['id'=>'75230','classname'=>'xiaolongxiajiameng'])}" target="_blank" class="link">
+							<img src="__TMPL__/public/new/images/banner2.jpg" class="img" />
+						</a>
+						<a href="{:cmf_url('portal/common/index',['id'=>'13060','classname'=>'zhajidianjiameng'])}" target="_blank" class="link">
+							<img src="__TMPL__/public/new/images/banner5.jpg" class="img" />
+						</a>
+					</div>
+				</div>
+				<div class="hdxw-dots">
+						<div class="dots-inner"></div>
+				</div>
+			</div>
+
+			<!-- 热门榜单 -->
+			<div class="top-brand-cont">
+				<a href="{:cmf_url('portal/common/index',['classname'=>$cy],'')}/" target="_blank"><img alt="" src="/uploads/20180903/cy.jpg" /></a>
+				<a href="{:cmf_url('portal/common/index',['classname'=>$gx],'')}/" target="_blank"><img alt="" src="/uploads/20180903/gx.jpg" /></a>
+				<tbdiv id="playerControlBtn"></tbdiv>
+				<tbdiv id="leftFullStackButton"></tbdiv>
+				<tbdiv id="rightFullStackButton"></tbdiv>
+				<a href="{:cmf_url('portal/common/index',['classname'=>$jy],'')}/" target="_blank"><img alt="" src="/uploads/20180903/jy.jpg" /></a>
+				<a href="{:cmf_url('portal/common/index',['classname'=>$sp],'')}/" target="_blank"><img alt="" src="/uploads/20180903/sp.jpg" /></a>
+				<a href="{:cmf_url('portal/common/index',['classname'=>$zb],'')}/" target="_blank"><img alt="" src="/uploads/20180903/zb.jpg" /></a>
+			</div>
+		</div>
+		
+		<!--右侧搜索&商机资讯-->
+		
+		<div class="main-comprehensive">
+			<h3 class="clearfix"><strong>{$name}综合排行榜</strong><span>搜索指数</span></h3>
+			<div class="main-comprehensive-center">
+				<ul>
+					<volist name="lick1" id="li1" key="k">
+					<li><a href="{:cmf_url('portal/common/index',['id'=>$li1['aid'],'classname'=>$li1['class']])}">
+					<i [field:global name='autoindex'runphp='yes']if(@me==1||@me==2||@me==3){@me='class="i_red"';}else{@me='class="i_red1"';}[/field:global]>{$k}</i>
+					<span class="li_span_1">{$li1['title']}</span>
+					<span class="li_span_2">{$li1['invested']}</span>
+					<span class="li_span_3">{$li1['click']}<i class="up_down0"></i></span>
+					</a></li>
+                    </volist>
+				</ul>
+			</div>
+		</div>
+
+		
+	</div>
+</div>
+	
+
+<div id="ranking">
+<!--top-rank-->
+<div class="w1200 clearfix">
+		<div class="join-rank top-rank">
+			<!-- Hot to join -->
+				<div class="hot-pai" id="hot-pai">
+				    <div class="tit"><h2> 热门加盟 </h2></div>
+				    <div class="txtMarquee-top">
+				     <div class="bd"> 
+					  <ul class="infoList"> 
+								<li class="clone" style="height: 20px;">   
+								<volist name="lick2" id="li2">
+								 <a href="{:cmf_url('portal/common/list_top',['classname'=>$li2['path']],'')}/" title="{$li2['name']}排行榜">{$li2['name']}排行榜</a>
+                                </volist>
+								</li>
+								<li class="clone" style="height: 20px;">
+                                    <volist name="lick3" id="li3">
+                                        <a href="{:cmf_url('portal/common/list_top',['classname'=>$li3['path']],'')}/" title="{$li3['name']}排行榜">{$li3['name']}排行榜</a>
+                                    </volist>
+								</li>
+								<li class="clone" style="height: 20px;">
+                                    <volist name="lick4" id="li4">
+                                        <a href="{:cmf_url('portal/common/list_top',['classname'=>$li4['path']],'')}/" title="{$li4['name']}排行榜">{$li4['name']}排行榜</a>
+                                    </volist>
+								</li>
+								<li class="clone" style="height: 20px;">
+                                    <volist name="lick5" id="li5">
+                                        <a href="{:cmf_url('portal/common/list_top',['classname'=>$li5['path']],'')}/" title="{$li5['name']}排行榜">{$li5['name']}排行榜</a>
+                                    </volist>
+								</li>
+				     </ul>	  
+				     </div>
+				   </div>
+				</div>		   
+			<!-- Hot to join -->
+			<!-- industry ranking -->
+			<div class="cont jmlist clearfix">
+				<volist name="data" id="da">
+				<div class="paihang">
+                  
+					<div class="tit tit-rank-canyin xiegang">
+						<a href="{:cmf_url('portal/common/list_top',['classname'=>$da['path']],'')}/" title="{$da['name']}">{$da['name']}排行榜</a>
+
+                  </div>
+                   
+					<div class="list">
+						<div class="top">
+							<span class="fl array-list">排名</span>
+							<span class="fl sellers-list">商家列表</span>
+							<span class="fr sear-index">搜索指数</span>
+						</div>
+						<ul>
+                            <volist name="da.data" id="dd" key="k">
+                                <li>
+                                    <a href="{:cmf_url('portal/common/index',['id'=>$dd['aid'],'classname'=>$dd['class']])}" class="link">
+                                        <span class="fl array-list"><i class="num">{$k}</i></span>
+                                        <span class="fl sellers-list">{$dd['title']}</span>
+                                        <span class="fr sear-index"><i class="number">{$dd['click']}</i><i class="icon icon-up"></i></span>
+                                    </a>
+                                    <dl class="link-cont">
+                                        <dt class="fl"><a href="{:cmf_url('portal/common/index',['id'=>$dd['aid'],'classname'=>$dd['class']])}"><img src="{$dd['litpic']}" alt="{$dd['title']}"></a></dt>
+                                        <dd>
+                                            <span>投资额：<em>{$dd['invested']}</em></span>
+                                            <span>门店数：<em>{$dd['sum']}</em></span>
+                                            <span>点击数：{$dd['click']}</span>
+                                        </dd>
+                                        <dd class="info">{$dd['description']|msubstr=0,60,'utf-8',true}</dd>
+                                    </dl>
+                                </li>
+                            </volist>
+						</ul>
+
+					</div>
+				</div>
+                </volist>
+			</div>
+		</div>
+	</div>	
+
+<!-- latest join -->
+<div class="w1200">
+	<ul class="hot_JM rank_hotJM mb13 clearfix">		
+		<li class="fl li1"><h3>最新加盟排行榜品牌</h3></li>
+		<li class="fr li2 f12"><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/" >更多&gt;</a></li>
+	</ul>
+	<!-- 最新加盟排行榜品牌选项卡 -->
+	<div class="newest"> 
+     
+	    <!--综合火锅的TAB栏--> 
+	    <div class="tab-pai"> 
+	     <ul id="tab-ul"> 
+		 <volist name="data1" id="cass">
+	      <li> {$cass['name']} <span></span> </li>
+         </volist>
+	     </ul> 
+	     <!--TAB内容1--> 
+	     <div id="main"> 
+		  <volist name="data1" id="da1">
+	      <div class="content-one content-tab"> 
+			<volist name="da1.data" id="dd1">
+				   <div class="content"> 
+					<div class="tranImg"> 
+					 <div class="tranImg"> 
+					  <a href="{:cmf_url('portal/common/index',['id'=>$dd1['aid'],'classname'=>$dd1['class']])}" title="{$dd1['title']}"><img src="{$dd1['litpic']}" alt="{$dd1['title']}"></a>
+					 </div> 
+					</div> 
+					<p><a href="{:cmf_url('portal/common/index',['id'=>$dd1['aid'],'classname'=>$dd1['class']])}" title="{$dd1['title']}">{$dd1['title']} </a><span><small>￥</small>{$dd1['invested']}</span></p>
+					<a href="{:cmf_url('portal/common/index',['id'=>$dd1['aid'],'classname'=>$dd1['class']])}"><span class="cover-span"> {$dd1['title']}<span class="bnt-span">我要加盟</span> </span> </a>
+				   </div>
+            </volist>
+	      </div>
+          </volist>
+	     </div> 
+	    </div> 
+	    <!--tab--> 
+   </div>
+</div>
+</div>
+<!-- 加盟资讯推荐 -->
+<div class="w1200"> 
+	<ul class="hot_JM rank_hotJM mb13 clearfix">		
+		<li class="fl li1"><h3>加盟资讯推荐</h3></li>
+		<li class="fr li2 f12"><a href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/" >更多&gt;</a></li>
+	</ul>
+	<div class="jmnew clearfix">
+ <volist name="data2" id="da2">
+		<div class="fl join-story">
+		<volist name="da2.data" id="im">
+			<div class="pic">
+				<a href="{:cmf_url('portal/common/index',['id'=>$im['id'],'classname'=>'news'])}">
+					<img class="lazy" src="{$im['thumbnail']}" alt="{$im['post_title']}" style="display: inline;">
+					<p>{$im['post_title']}</p>
+				</a>
+			</div>
+        </volist>
+			<div class="new">
+				<ul class="m-list">
+					<volist name="da2.data1" id="dd2">
+				  <li>
+					  <a href="{:cmf_url('portal/common/index',['id'=>$dd2['id'],'classname'=>'news'])}">{$dd2['post_title']}</a>
+				  </li>
+                    </volist>
+
+				</ul>
+			</div>
+	    </div>
+ </volist>
+	</div>	
+</div>	
+<!-- </div> -->
+
+<!-- 加盟品牌大全 -->
+<div class="daQuan_JM w1200"> 
+	<!-- 标题 -->
+	<ul class="hot_JM rank_hotJM clearfix">
+		<li class="fl li1"><h3>加盟品牌大全</h3></li>
+		<li class="fr li2 f12"><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">更多&gt;</a></li>
+	</ul>
+
+	<!--加盟品牌 -->
+    <div class="Manycon_JM">
+        <div class="many_jiaM pr">
+            <div class="many_jiaMLbt">
+                <div class="many_jiaMLbtCon pa">
+                    <!-- 十二个品牌-大分类导航 -->
+                    <div class="jiaM_navs">
+                        <ul class="ul_jsNav fl">
+                            <volist name="cat2" id="ca1">
+                                <li class="navs_select"><a href="{:cmf_url('portal/common/index',['classname'=>$ca1['path']],'')}/" target="_blank" class="navs_select" title="{$ca1['name']}">{$ca1['name']}</a></li>
+                            </volist>
+                        </ul>
+                    </div>
+                    <!-- 内容 -->
+                    <div class="jsNav_bottomBoss">
+                        <volist name="data5" id="dd5">
+                            <div class="jsNav_bottom dis_n">
+                                <!-- 小分类导航 -->
+                                <div class="jsNav_bottom2">
+                                    <p class="p1_huoG">
+                                        <volist name="dd5.son" id="son">
+                                            <a href="{:cmf_url('portal/common/index',['classname'=>$son['path']],'')}/" >{$son['name']}</a>
+                                        </volist>
+                                    </p>
+                                </div>
+                                <!-- 加盟项目 -->
+                                <ul class="zhengMo_ul clearfix">
+                                    <volist name="dd5.data" id="d5">
+                                        <li><a href="{:cmf_url('portal/common/index',['id'=>$d5['aid'],'classname'=>$d5['class']])}"><img src="{$d5['litpic']}" alt="{$d5['title']}"></a></li>
+                                    </volist>
+                                </ul>
+                            </div>
+                        </volist>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<div class="footer">
+    <include file="new_footer"/>
+</div>
+
+  <!-- gotop -->
+    <div class="fixrightbox">
+    <div class="selectbox"> <a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">项目库</a> </div>
+    <div class="gotop">
+      <p>TOP</p>
+    </div>
+  </div>
+<script type="text/javascript" src="__TMPL__/public/new/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/new/js/jquery.SuperSlide.2.1.1.js"></script>
+<!-- <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/one-pai.js"></script> -->
+<script type="text/javascript" src="__TMPL__/public/new/js/ranking.js"></script>
+<script type="text/javascript" src="__TMPL__/public/new/js/base.js"></script>
+<script type="text/javascript" src="__TMPL__public/new/js/index.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		$(".infoList li").each(function(){
+			$(this).html($(this).html().replace(/%2F/ig, '/'));
+		  });
+	})
+
+	$(function(){
+		$(".ytopnav li").each(function(){
+			$(this).html($(this).html().replace(/%2F/ig, '/'));
+		  });
+	})
+
+	$(function () {
+		$('.top-brand-cont a').each(function(){
+			var thisLink = $(this).attr('href');
+			var thisNewLink = thisLink.replace(/%2F/ig, "/");
+			$(this).attr('href',thisNewLink)
+		})
+      
+      $('.xiegang a').each(function(){
+			var thisLink = $(this).attr('href');
+			var thisNewLink = thisLink.replace(/%2F/ig, "/");
+			$(this).attr('href',thisNewLink)
+		})
+      
+      
+      
+	})
+	
+
+	
+	$(".paihang").each(function(){
+		$(this).find(".list li").first().addClass("link-hover");
+	});
+	$(".paihang .list li").hover(function() {
+		$(this).addClass("link-hover");
+		$(this).siblings().removeClass("link-hover");
+	});
+	//品牌大全	
+	$('.many_jiaMLbtCon .jsNav_bottomBoss .jsNav_bottom').eq(0).show()
+	$('.many_jiaMLbtCon .jiaM_navs .ul_jsNav li').mouseover(function(){
+		$(this).addClass('navs_select').siblings('.navs_select').removeClass('navs_select');
+		$('.many_jiaMLbtCon .jsNav_bottomBoss .jsNav_bottom').eq($(this).index()).show().siblings().hide();
+	});
+	//向上滚动的十大品牌
+	$(".txtMarquee-top").slide({
+		mainCell: ".bd ul",
+		autoPlay: true,
+		effect: "topLoop",
+		interTime: 3000
+	});	
+	//tab栏的切换
+	$("#ranking .newest .tab-pai ul li").eq(0).addClass("on").siblings().removeClass("on");
+	$("#ranking .newest .tab-pai .content-tab").eq(0).show();
+	$("#ranking .newest .tab-pai ul li").mouseover(function() {	
+			var i = $(this).index();
+			console.log(i);
+			$(this).addClass("on").siblings().removeClass("on");
+			$("#ranking .newest .tab-pai .content-tab").eq(i).show().siblings().hide();
+	});
+
+</script>
+
+</body>
+</html>

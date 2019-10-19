@@ -1,0 +1,70 @@
+<!--尾部结构开始--> 
+ <div class="foot">
+    <div class="footnav">
+        {dede:type typeid='53'}<a href="[field:typelink/]" title="[field:typename /]" rel="nofollow">[field:typename /]</a>{/dede:type} 
+		{dede:type typeid='54'}<a href="[field:typelink/]" title="[field:typename /]" rel="nofollow">[field:typename /]</a>{/dede:type} 
+		{dede:type typeid='55'}<a href="[field:typelink/]" title="[field:typename /]" rel="nofollow">[field:typename /]</a>{/dede:type} 
+		{dede:type typeid='56'}<a href="[field:typelink/]" title="[field:typename /]" rel="nofollow">[field:typename /]</a>{/dede:type} 
+		{dede:type typeid='57'}<a href="[field:typelink/]" title="[field:typename /]" rel="nofollow">[field:typename /]</a>{/dede:type} 
+		{dede:type typeid='58'}<a href="[field:typelink/]" title="行业分类">行业分类</a>{/dede:type} 
+      	{dede:type typeid='59'}<a href="[field:typelink/]" title="[field:typename /]" rel="nofollow">[field:typename /]</a>{/dede:type} 
+      <a href="http://www.91chuangye.com/sitemap.html" title="网站地图">网站地图</a>
+      <a href="http://m.91chuangye.com/" title="手机版">手机版</a>
+    </div>
+     <!--<p>
+        目前共收录项目 {dede:sql sql="select count(*) as c from u88_archives where channel in(17)"}
+           <b> [field:c/]</b>
+            {/dede:sql} 个 文章 {dede:sql sql="select count(*) as c from u88_archives where channel in(1)"}
+            <b>[field:c/]</b>
+            {/dede:sql} 篇  广告客服QQ： 项目收录QQ：
+    </p>-->
+	 <p>
+        目前共收录项目<b>15654</b> 个 文章 <b>62545</b> 篇  广告客服QQ：1569054682 项目收录QQ：1569054682
+    </p>
+    <p> {dede:global name='cfg_powerby'/} 版权所有</a></p>    
+ </div>   
+<!--返回顶部--> 
+<div class="fixed">
+    <a href="">返回顶部</a>
+</div>        
+<!--尾部结构结束-->
+
+<script type="text/javascript" src="__TMPL__/public/new/js/jquery.js"></script>
+<script type="text/javascript" src="__TMPL__/public/new/js/jquery.flexslider-min.js"></script>
+<script language="javascript" src="__TMPL__/public/new/js/base.js"></script>
+<script type="text/javascript" src="__TMPL__/public/new/js/91push.js"></script>
+<script type="text/javascript">
+//set homepage
+function SetHome(obj, vrl) {
+    try {
+        obj.style.behavior = 'url(#default#homepage)';
+        obj.setHomePage(vrl);
+    } catch (e) {
+        if (window.netscape) {
+            try {
+                netscape.security.PrivilegeManager
+                        .enablePrivilege("UniversalXPConnect");
+            } catch (e) {
+               // alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入"about:config"并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+            }
+            var prefs = Components.classes['@mozilla.org/preferences-service;1']
+                    .getService(Components.interfaces.nsIPrefBranch);
+            prefs.setCharPref('browser.startup.homepage', vrl);
+        }
+    }
+}
+
+//加入收藏
+function AddFavorite(sURL, sTitle) {
+    try {
+        window.external.addFavorite(sURL, sTitle);
+    } catch (e) {
+        try {
+            window.sidebar.addPanel(sTitle, sURL, "");
+        } catch (e) {
+            alert("加入收藏失败，请使用Ctrl+D进行添加");
+        }
+    }
+}
+</script>
+

@@ -1,0 +1,53 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('advert/indexm')}">广告管理</a></li>
+        <li><a href="{:url('advert/addm')}">添加广告</a></li>
+    </ul>
+    <form method="post" class="js-ajax-form margin-top-20" action="{:url('advert/listOrder')}">
+        <div class="table-actions">
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x"
+                                             data-checklist="js-check-x"></label></th>
+                <th width="50">ID</th>
+                <th>广告图片及URL</th>
+                <th>项目名称</th>
+                <th>位置</th>
+                <th>创建人</th>
+                <th>创建时间</th>
+                <th width="120">{:lang('ACTIONS')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="datas" item="vo">
+                <tr>
+                    <td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
+                               value="{$vo.id}"></td>
+                    <td>{$vo.id}</td>
+                   <td style="text-align: center;"><notempty name="$vo.url"><a href="{$vo.url}" target="_blank" alt="{$vo.url}"> <img src="{$vo.pic}" style="width: 200px;height: 50px;"/> </a> <else/>{$vo.aid} </notempty></td>
+                    <td>{$vo.title}</td>
+                    <td>{$vo.type_val}</td>
+                    <td>{$vo.user_name}</td>
+                    <td>{$vo.create_time}</td>
+                    <td>
+                        <a href="{:url('advert/editm',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
+                        <a href="{:url('advert/deletem',array('id'=>$vo['id']))}" class="js-ajax-delete">
+                            {:lang('DELETE')}
+                        </a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <ul class="pagination">{$PageHtml|default=''}</ul>
+    </form>
+
+</div>
+
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>{$data['post_title']}_91创业网</title>
+<link rel="shortcut icon" href="__TMPL__/public/mobile/img/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="{$data['post_keywords']}" />
+<meta name="description" content="{$data['post_excerpt']}" />
+<meta name='description' content=''>
+<meta name='keyword' content="">
+<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+<link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/common.css" />
+<link rel="stylesheet" type="text/css" href="__TMPL__/public/mobile/css/lists.css" />
+   <link rel="alternate" media="only screen and(max-width: 640px)" href="http://m.91chuangye.com/">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.91chuangye.com/">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.91chuangye.com/">
+
+
+
+</head>
+
+<body>
+	<!-------------------------- top_bar  start --------------------------->
+	<div class="header">
+		<div class="top_bar">
+			<div class="top_bar_item">
+				<div class="return"><a class="btn back" href="javascript:history.go(-1)"></a></div>
+				<div class="tit">创业资讯</div>
+				<div class="sear"><a href="javascript:;" onclick="serch()"></a></div>
+			</div>
+		</div>
+      <div class='nav_bar'>
+		 <div class="swiper-container nav">
+		    <ul class="swiper-wrapper">
+		      <li class="swiper-slide"><a href="/">91创业网</a> </li>
+              <li class="swiper-slide"><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/">找项目</a></li>
+              <li class="swiper-slide"><a href="{:cmf_url('portal/common/index',['classname'=>'top'],'')}/">品牌排行榜</a></li>
+              <li class="swiper-slide"><a href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/">创业资讯</a></li>
+		    </ul>
+		  </div>
+      </div>
+	</div>
+	<!-------------------------- top_bar   end ---------------------------->
+	
+	<!---------------------------- path  start ---------------------------->
+	<section class="item-section item_path">
+		<a href="/">首页</a> &gt;
+		<volist name="array_reverse" id="arr">
+			<a href="{:cmf_url('portal/common/index',['classname'=>$arr['path']],'')}/" class="asd">{$arr.name}</a> &gt;
+		</volist>
+		<span>{$data['post_title']}</span>
+	</section>
+	<!---------------------------- path   end ----------------------------->
+	
+	<!-------------------------- article start ---------------------------->
+	<section class="item-section item_article">
+
+		<h1 class="title">{$data['post_title']}</h1>
+		<p class="time">
+			 <!--<span class="source">原创</span>-->
+			<span>{$data.published_time|date='Y-m-d H:i',###}</span>
+			<span>{$data.author}</span>
+		</p>
+		<?php echo htmlspecialchars_decode($data['post_content'])?>
+
+		</div>
+		<div class="nextpage">
+          <?php if($lick4){?>
+            <p>上一篇：<a href="{:cmf_url('portal/common/index',['classname'=>'news','id'=>$lick4['id']])}">{$lick4['post_title']}</a></p>
+          <?php }else{?>
+          	 <p>上一篇：<a href="javascript:;"></a></p>
+          <?php }?>
+          <?php if($lick5){?>
+            <p>下一篇：<a href="{:cmf_url('portal/common/index',['classname'=>'news','id'=>$lick5['id']])}">{$lick5['post_title']}</a></p>
+          <?php }else{?>
+           	<p>下一篇：<a href="javascript:;"></a></p>
+          <?php }?>
+        </div>
+	</section>
+	<!-------------------------- article   end ---------------------------->
+	
+	<!-------------------------- hot-news  start -------------------------->
+	<section class="item-section">
+		<div class="common_tit"> 
+			<a class="tit" href="{:cmf_url('portal/common/index',['classname'=>'news'])}"><i class="index_icon2"></i>相关推荐</a>
+			<a href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/" class="more">+更多</a>
+		</div>
+        <ul class="newlistbox">
+			<volist name="relevant" id="rel">
+				 <li>
+					<a href="{:cmf_url('portal/common/index',['classname'=>'news','id'=>$rel['id']])}" title="">
+						<div class="title"> {$rel.post_title} </div>
+						<span>{$rel.published_time|date='Y-m-d',###}</span>
+					</a>
+				</li>
+			</volist>
+        </ul>
+    </section>
+
+	<section class="item-section hot_news">
+		<div class="common_tit"> 
+			<a class="tit" href="{:cmf_url('portal/common/index',['classname'=>'news'])}"><i class="index_icon2"></i>大家都在看</a>
+			<a href="{:cmf_url('portal/common/index',['classname'=>'news'],'')}/" class="more">+更多</a>
+		</div>
+		<ul class="hotnews_ul iil">
+			<volist name="everybody" id="ever">
+				<li>
+				<a href="{:cmf_url('portal/common/index',['id'=>$ever['id'],'classname'=>$ever['class']])}" title="">
+					<div class="pic"><img src={$ever['thumbnail']}></div>
+					<dl>
+						<dt>{$ever['post_title']}</dt>
+						<dd class="des">{$ever['post_excerpt']|msubstr=0,300,'utf-8',true}</dd>
+						<dd>
+							<span>91创业网</span>
+							<span>{$ever.published_time|date='Y-m-d H:i',###}</span>
+						</dd>
+					</dl>
+				</a>
+			</li>
+			</volist>
+		</ul>
+
+	</section>
+	<!-------------------------- hot-news   end --------------------------->
+	
+	<!--------------------------- xm-tj   start --------------------------->
+	<section class="item-section xm_tj">
+		<div class="common_tit"> 
+			<a class="tit" href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/"><i class="index_icon2"></i>项目推荐</a>
+			<a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/" class="more">+更多</a>
+		</div>
+		<div class="xm_tj_big">
+			<div class="pic"><a href="{:cmf_url('portal/common/index',['classname'=>$recommend2['class'],'id'=>$recommend2['aid']])}"><img src="{$recommend2['litpic']}"></a></div>
+			<dl>
+				<dt><a href="{:cmf_url('portal/common/index',['classname'=>$recommend2['class'],'id'=>$recommend2['aid']])}">哆可茶饮</a></dt>
+				<dd>投资额度：<span><em>{$recommend2['invested']}</em></span></dd>
+				<dd>店铺数量：<span><em>{$recommend2['sum']}</em>家</span></dd>
+				<dd class="desc"><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu','id'=>$recommend2['aid']])}" class="btn">我要加盟</a><a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu','id'=>$recommend2['aid']])}" class="btn">获取资料</a></dd>
+			</dl>
+		</div>
+		<ul>
+			<volist name="recommend" id="reco">
+				<li>
+				<a href="{:cmf_url('portal/common/index',['classname'=>$reco['class'],'id'=>$reco['aid']])}">
+					<div class="pic">
+						<img src="{$reco['litpic']}">
+						<p class="m_t">{$reco['title']}</p>
+					</div>
+					<div class="cont">
+						<span class="price">￥<em>{$reco['invested']}</em></span>
+						<span class="num">我要加盟</span>
+					</div>
+				</a>
+			</li>
+			</volist>
+		</ul>
+
+	</section>
+	<!---------------------------- xm-tj   end ---------------------------->
+
+
+   <!-- kd_msg start-->
+	<!--<div id="mes_div_unlogin_UNM">
+		<div class="coverTan"></div>
+		<div class="lastCeng"></div>
+		<div class="CengBox">
+			<img src="img/kai.png" class="money">
+			<img src="img/cha.png" class="chaaaa">	
+			<p class="top1"><span id="brand_name_UNM">花溪渚时尚火锅</span><span><font style="margin:0 3px;">|</font></span><span id="title_one_UNM">开店方案</span></p>
+			<p class="top2" id="title_two_UNM">手机验证，获取详细开店方案</p>
+			<form action="#" method="post" id="myform1">
+				<ul>
+					<li>
+						<p><label for=""></label><input type="text" id="name1" placeholder="请输入您的称呼"></p>
+					</li>
+					<li>
+						<p class=""><label for=""></label><input type="text" maxlength="11" class="tellTex" id="tel1" placeholder="请输入手机号码"></p>
+					</li>
+					<li style="height: 82px;">
+						<p><label for=""></label></p> 
+						<textarea name="" rows="" cols="" id="msg1">【现金奖励活动】我有意向加盟小碗布丁项目，申请领取现金奖励！</textarea>
+					</li>
+				</ul>
+				<input type="submit" name="" value="确定" class="sure">
+			</form>
+		</div>	
+	</div>-->
+   <!-- kd_msg end -->
+   
+	<!--------------------------- footer start ---------------------------->
+	<include file="mobile/new_footer"/>
+	<!--------------------------- footer   end ---------------------------->
+	
+	<!------------------------- search_box start -------------------------->
+			<include file="mobile/search"/>
+	<!------------------------- search_box   end -------------------------->
+	
+	<!------------------------- returnTop  start -------------------------->
+	<!--<a href="javascript:void(0);" id="returnTop"></a>-->
+	<!------------------------- returnTop    end -------------------------->
+
+	
+<script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.js"></script>
+	<script type="text/javascript">
+	   $(function () {
+	      $('.item_path .asd').each(function(){
+	        var thisLink = $(this).attr('href');
+	        var thisNewLink = thisLink.replace(/%2F/ig, "/");
+	        $(this).attr('href',thisNewLink)
+	      })
+         $('.iil a').each(function(){
+	        var thisLink = $(this).attr('href');
+	        var thisNewLink = thisLink.replace(/%2F/ig, "/");
+	        $(this).attr('href',thisNewLink)
+	      })
+	    })
+</script>
+<script type="text/javascript" src="__TMPL__/public/mobile/js/swiper.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="__TMPL__/public/mobile/js/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="__TMPL__/public/mobile/js/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="__TMPL__/public/mobile/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="__TMPL__/public/mobile/js/index.js"></script>
+</body>
+</html>

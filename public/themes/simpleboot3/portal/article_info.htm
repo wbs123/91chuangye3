@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta name="applicable-device" content="pc" /> 
+<meta name="robots" content="all">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="renderer" content="webkit">
+<link rel="shortcut icon" href="{dede:global.cfg_basehost/}/favicon.ico" type="image/x-icon" />   
+<title>{dede:field.title/}_91创业网</title>
+<meta name="keywords" content="" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<meta name="mobile-agent" content="format=html5;url={dede:field.id runphp='yes'}$id=@me;@me='';$url=GetOneArchivess($id);@me=$url['arcurl'];{/dede:field.id}"/>
+<meta http-equiv="mobile-agent" content="format=xhtml; url={dede:field.id runphp='yes'}$id=@me;@me='';$url=GetOneArchivess($id);@me=$url['arcurl'];{/dede:field.id}">
+<link rel="alternate" media="only screen and(max-width: 640px)" href="{dede:field.id runphp='yes'}$id=@me;@me='';$url=GetOneArchivess($id);@me=$url['arcurl'];{/dede:field.id}"/>
+<link rel="canonical" href="{dede:field.id runphp='yes'}$id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];{/dede:field.id}"/>
+<script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="http://m.91chuangye.com"+location.pathname+location.search;}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script>
+<link href="{dede:global.cfg_templets_skin/}/new/css/common.css" rel="stylesheet" type="text/css">
+<link href="{dede:global.cfg_templets_skin/}/new/css/xm_list.css" rel="stylesheet" type="text/css">
+<link href="{dede:global.cfg_templets_skin/}/new/css/message.css" rel="stylesheet" type="text/css">
+<link href="{dede:global.cfg_templets_skin/}/new/css/news.css" rel="stylesheet" type="text/css">
+</head> 
+<body> 
+<!-- header start --> 
+{dede:include filename="new_head.htm"/}
+<!-- header end -->
+
+<!--content start-->    
+<div class="w1200">
+
+    <!-- bread start-->
+    <div class="bread">
+        <span>当前位置：</span>
+        <span>{dede:field name='position'/}{dede:field.title/}</span>
+    </div>
+    <!-- bread end-->
+
+    <!-- main start -->
+    <div class="main clearfix">
+        <!-- main-left start-->
+        <div class="fl main-left">
+            <!-- newinfo start -->
+            <div class="art-title">
+                <h1>{dede:field.title/}</h1>
+                <h2><i>时间：{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}</i> <i>来源：{dede:field.source/}</i> <i>作者：91创业网</i>  <i>点击：{dede:field.click/}</i></h2>
+            </div>
+
+            <!-- <div class="jm-brand clearfix">              
+                <div class="jm-brand-l clearfix">
+                  <a class="brand-logo" href='[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]'  target="_blank">
+                    <img src="http://www.91chuangye.com/uploads/180831/56-1PS1153153512.jpg" alt="">
+                  </a>
+                  <div class="brand-con">
+                    <div class="title">
+                    <a href='[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]'  target="_blank">一点点奶茶</a>
+                    </div>
+                    <ul>
+                      <li>所属行业：<a href="javascript:;" target="_blank">奶茶行业</a></li>
+                      <li>加盟费用：<span><em class="jm-rmb-num">1-3</em>万</span></li>
+                      <li>已加盟数：<span><em class="jm-rmb-num">1234</em></span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="jm-brand-r">
+                  <a href="#_msg1">我要加盟</a>
+                  <a href="" class="btn1">查看详情</a>
+                </div>
+            </div>-->
+
+            <div class="artinfo">
+  {dede:field.body runphp='yes'}
+if(@me=='')
+{@me='该内容暂时无相关数据，详情请留言咨询';}
+else
+{@me=@me;}
+{/dede:field.body}                            
+                                <!-- <div class="tag">标签：<a href="">服装</a><a href="">童装</a><a href="">加盟</a></div> -->   
+								<br>
+								<!--<ul class='page'>
+								{dede:pagebreak/}
+								</ul>-->
+				<div class="artlink">
+				   <p>{dede:prenext get='pre'/}</p>
+				   <p>{dede:prenext get='next'/}</p>    
+				</div>
+            </div>
+            <div id="_msg1" class="user_mesg " style="background: #FFFFFF;"> 
+        <div id="quick_liuyan1"> 
+         <div class="title"> 
+          <strong>留言咨询<em>(24小时内获得企业的快速回复)</em> </strong>
+          <span>(<b class="star1">*</b>为必填选项)</span> 
+         </div> 
+         <div id="quick_liuyan_ad1" class="quick_liuyan_ad_default"> 
+          <div class="form-left-top"> 
+           <img src="{dede:global.cfg_templets_skin/}/new/img/form-left-img.png" alt="" data-bd-imgshare-binded="1"> 
+           <p>我们立即与您沟通</p> 
+          </div> 
+<form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+		<input type="hidden" name="action" value="post" />
+		<input type="hidden" name="diyid" value="3" />
+		<input type="hidden" name="do" value="2" />
+          <div class="Free_phone_bottom"> 
+           <input type="text" id="Free_phone_text_1" maxlength="11" name='phone' class="Free_phone_text" value="请输入手机号码" onfocus="if(this.value == '请输入手机号码') this.value = ''" onblur="if(this.value =='') this.value = '请输入手机号码'" />
+			   <input name="xiangmu" value="{dede:field.title/}" type="hidden"  />
+				<input name="time" value="" type="hidden"  id="time"  /><!-- 如不需要在前台显示的话可以修改type="hidden" -->
+				<input name="ip" id="ip" value="" type="hidden">
+				<input name="yemian" id="laiyuanyemian" value="{dede:field.id runphp='yes'}$id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];{/dede:field.id}" type="hidden">
+				<input type="hidden" name="dede_fields" value="phone,text;time,text;yemian,text;xiangmu,text;ip,text" />
+				<input type="hidden" name="dede_fieldshash" value="b83251052edae4a74c2d33319b6d7c30" />
+           <a data-pointkey="XQ005-002">
+		   <input type="submit" id="Free_phone_btn_1" class="Free_phone_btn" value="免费电话" /></a> 
+           <p><span>温馨提示:</span><br /> 1.此次通话将不会产生任何费用, 请放心使用</p> 
+          </div>
+        </form> 
+          <div class="Free_phonenumbertext"> 
+           <div class="text"> 
+            <img src="{dede:global.cfg_templets_skin/}/new/img/tel.png" data-bd-imgshare-binded="1"> 
+           </div> 
+          </div> 
+         </div> 
+         <script type="text/javascript">
+          $(function() {
+            if($("#form_contact_us_left_ad").length == 0) {
+              //$("#quick_liuyan_ad").hide();
+              return;
+            }
+            var html = $("#form_contact_us_left_ad").html();
+            $("#quick_liuyan_ad1").removeClass("quick_liuyan_ad_default").html(html);
+          });
+        </script> 
+		<form action="/plus/diy.php" enctype="multipart/form-data" method="post" id="msgform1" class="fl ynew_msg">
+		<input type="hidden" name="action" value="post" />
+		<input type="hidden" name="diyid" value="1" />
+		<input type="hidden" name="do" value="2" />  
+          <div class="quick_liuyan_con"> 
+           <div class="item"> 
+            <span><b class="star">*</b>姓名</span> 
+            <div class="item-right"> 
+             <input type="text" class="v-ipt" value="" name="name" id="Name1"> 
+             <label for="man"> <input type="radio" id="man1" name="sex" style="border: none" checked="checked" value="男"> 先生 </label> 
+             <label for="woman"> <input type="radio" id="woman1" name="sex" style="border: none" value="女"> 女士 </label> 
+            </div> 
+            <div style="clear: both"></div> 
+           </div> 
+           <div class="item"> 
+            <span><b class="star">*</b>电话</span> 
+            <div class="item-right"> 
+             <input type="text" value="" name="tel" id="Tel1" maxlength="11"> 
+            </div> 
+            <div style="clear: both"></div> 
+           </div> 
+           <div class="item"> 
+            <span>投资金额</span> 
+            <div class="item-right"> 
+             <select id="InvestMoney1" class="c-money" name="jine"> <option value="0" selected="selected">请选择投资金额</option> <option value="1">1万以下</option> <option value="2">1-5万</option> <option value="3">5-10万</option> <option value="4">10-20万</option> <option value="5">20-50万</option> <option value="6">50-100万</option> <option value="7">100万以上</option> </select> 
+            </div> 
+            <div style="clear: both"></div> 
+           </div> 
+           <div class="item"> 
+            <span>QQ/Email</span> 
+            <div class="item-right"> 
+             <input type="text" value="" name="Email" id="Email"> 
+            </div> 
+            <div style="clear: both"></div> 
+           </div> 
+           <div class="item"> 
+            <span>加盟地区</span> 
+            <div class="item-right"> 
+             <select name="msgProvince1" id="msgProvince1" size="1" class="mselect " onchange="showSmalla(this.value)"><option value="0">省/市</option><option value="1">北京市</option><option value="2">天津市</option><option value="3">河北省</option><option value="4">山西省</option><option value="5">内蒙古自治区</option><option value="6">辽宁省</option><option value="7">吉林省</option><option value="8">黑龙江省</option><option value="9">上海市</option><option value="10">江苏省</option><option value="11">浙江省</option><option value="12">安徽省</option><option value="13">福建省</option><option value="14">江西省</option><option value="15">山东省</option><option value="16">河南省</option><option value="17">湖北省</option><option value="18">湖南省</option><option value="19">广东省</option><option value="20">海南省</option><option value="21">广西壮族自治区</option><option value="22">甘肃省</option><option value="23">陕西省</option><option value="24">新疆维吾尔自治区</option><option value="25">青海省</option><option value="26">宁夏回族自治区</option><option value="27">重庆市</option><option value="28">四川省</option><option value="29">贵州省</option><option value="30">云南省</option><option value="31">西藏自治区</option><option value="32">台湾省</option><option value="33">澳门特别行政区</option><option value="34">香港特别行政区</option></select> 
+             <select id="msgCity1" size="1" class="mselect1" name="msgCity1" onchange="showXiana(this.value)"> <option selected="selected" value="0">地/州 </option> </select> 
+             <select id="msgXian1" size="1" class="mselect2" name="msgXian1" onchange="resetAddressa()"> <option selected="selected" value="0">区/县 </option> </select> 
+             <div class="box-address"> 
+              <input type="text" value="" name="Address" id="Address1"> 
+             </div> 
+            </div> 
+            <div style="clear: both"></div> 
+           </div> 
+           <div class="item"> 
+            <span>留言</span> 
+            <div class="item-right"> 
+             <textarea name="msg" id="Message" class="Message1" cols="30" rows="10"></textarea> 
+            </div> 
+            <div style="clear: both"></div> 
+           </div> 
+		   <input name="xiangmu" value="{dede:field.title/}" type="hidden"  />
+									<input name="time" value="" type="hidden"  id="time"  /><!-- 如不需要在前台显示的话可以修改type="hidden" -->
+									<input name="ip" id="ip" value="" type="hidden">
+									<input name="yemian" id="laiyuanyemian" value="{dede:field.id runphp='yes'}$id=@me;@me='';
+					$url=GetOneArchive($id);
+					@me=$url['arcurl'];
+					{/dede:field.id}" type="hidden">
+									
+						<input type="hidden" name="dede_fields" value="name,text;sex,radio;jine,radio;msg,multitext;tel,text;yemian,text;xiangmu,text;time,text;ip,text" />
+						<input type="hidden" name="dede_fieldshash" value="d14d8aeca17aeac40c5bdd792081c238" />
+           <div class="item item_checkbox"> 
+            <span> </span> 
+            <div class="item-right"> 
+             <input type="checkbox" id="checkbox1" value="11" checked="checked">
+             <span>我同意将我的联系方式推荐给商家</span> 
+            </div> 
+           </div> 
+           <div class="item"> 
+            <a data-pointkey="XQ005-001"><input type="submit" class="btn-mesSubmit" id="imgBtnUp1"  value="提交留言"></a> 
+           </div> 
+          </div> 
+         </form> 
+         <div class="form-right fl yform_right"> 
+          <h3>您可以根据下列意向,<span>快捷留言</span></h3> 
+          <ul id="quickMessage" class="quickMessage1"> 
+           <li> <a data-pointkey="XQ006-001"> <p>想要加盟,请尽快联系.</p> </a> </li> 
+           <li> <a data-pointkey="XQ006-002"> <p>加盟流程怎样的?</p> </a> </li> 
+           <li> <a data-pointkey="XQ006-003"> <p>加盟费是多少钱?</p> </a> </li> 
+           <li> <a data-pointkey="XQ006-004"> <p>有哪些扶持政策?</p> </a> </li> 
+           <li> <a data-pointkey="XQ006-005"> <p>能实地考察吗?</p> </a> </li> 
+          </ul> 
+          <i></i> 
+         </div> 
+        </div> 
+       </div>
+            <!-- newinfo end --> 
+        </div>
+        <!-- main-left end-->
+
+        <!-- main-right start -->
+        <div class="fl main-right">
+
+            <!-- msg -->
+            <div class="jmxms">
+                <div class="title"><span></span>加盟小秘书</div>
+				<form action="/plus/diy.php" enctype="multipart/form-data" method="post" id="listform">
+				<input type="hidden" name="action" value="post" />
+				<input type="hidden" name="diyid" value="2" />
+				<input type="hidden" name="do" value="2" />
+                <div class="hotline">
+                    <span>热线电话：</span>
+                    <a href="javascript:;">400-809-0091</a>
+                    <em>人工推荐好项目</em>
+					<input type="text" id="user" class="tel" value="请输入姓名" name="name" onblur="if(this.value==''){this.value='请输入姓名';}" onfocus="if(this.value=='请输入姓名'){this.value='';}">
+                    <input type="text" id="tel" class="tel" value="请输入手机号" name="tel" onblur="if(this.value==''){this.value='请输入手机号';}" onfocus="if(this.value=='请输入手机号'){this.value='';}">
+                    <p>创业顾问会以最快速度联系您</p>
+					<input name="typename" value="{dede:field.title/}" type="hidden"  />
+					<input name="time" value="" type="hidden"  id="time"  />
+					<input name="ip" id="ip" value="" type="hidden">
+					<input name="yemian" id="laiyuanyemian" value="{dede:field.id runphp='yes'}$id=@me;@me='';
+					$url=GetOneArchive($id);
+					@me=$url['arcurl'];
+					{/dede:field.id}" type="hidden">
+					<input type="hidden" name="dede_fields" value="name,text;tel,text;typename,text;yemian,text;ip,text;time,text" />
+					<input type="hidden" name="dede_fieldshash" value="70082e47d5fe68f11ee6914648874169" />
+                    <input type="submit" value="我要加盟" class="tur">
+					</tr>
+                </div>
+				</form>
+            </div>
+
+            <!-- latest-news -->
+            <div class="latest-news ">
+                <div class="title"><span></span>创业聚焦</div>
+                <ul>
+				 {dede:arclist row='10' orderby='pubdate' typeid='399'}
+                    <li>
+                        <span [field:global name='autoindex'runphp='yes']if(@me==1||@me==2||@me==3||@me==4){@me='class="red"';}else{@me='';}[/field:global]></span><a href="[field:arcurl /]" title="[field:title/]">[field:title/]</a>
+                    </li>
+				{/dede:arclist}
+                </ul>
+            </div>
+
+
+            <!-- hot-news -->
+            <div class="latest-news ">
+                <div class="title"><span class="yico_hot"></span>品牌动态</div>
+                <ul>
+				 {dede:arclist row='10' orderby='pubdate' typeid='0'}
+                    <li>
+                        <span [field:global name='autoindex'runphp='yes']if(@me==1||@me==2||@me==3||@me==4){@me='class="red"';}else{@me='';}[/field:global]></span><a href="[field:arcurl /]" title="[field:title/]">[field:title/]</a>
+                    </li>
+				{/dede:arclist}
+                </ul>
+            </div>
+
+            <!-- top -->
+            <div class="xmlist_top">
+                <div class="title"><span></span>十大女性品牌排行榜</div>
+                <ul class="jingX_xm2"> 
+                {dede:arclist row='10' orderby='click' typeid='9' addfields='invested' channelid='17'}
+                    <li class="clearfix">
+                        <span class="fl span1 bgRed">[field:global.autoindex/]</span>
+                        <a href="[field:arcurl /]"  class="fl aName" title="[field:title/]">[field:title/]</a>
+                        <span class="fr span2">￥[field:invested/]</span>
+                    </li>
+				{/dede:arclist}
+                </ul>
+            </div>
+
+        </div>
+        <!-- main-right end -->
+    </div>
+    <!-- main end -->
+
+    <!-- xmtj -->
+{dede:include filename="flag.htm"/} 
+    <!-- xmtj -->
+    
+</div>
+<!--content end-->
+
+<!--footer start--> 
+    <div class="footer">
+        
+            <!-- <div class="w1200 ft-links clearfix">
+                <h3>友情链接：</h3>
+                <ul>
+      
+                </ul>
+            </div> -->
+            <div class="ft-line"></div>
+            {dede:include filename="new_footer.htm"/}
+        
+    </div>      
+<!--footer end-->
+
+  <!-- gotop -->
+  <div class="fixrightbox">
+    <div class="selectbox"> <a href="http://www.91chuangye.com/xiangmu/">项目库</a> </div>
+    <div class="gotop">
+      <p>TOP</p>
+    </div>
+  </div>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/jquery.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/new/js/p.js" type="text/javascript"></script> 
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/base.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/validate.js"></script>
+  <!--百度统计-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2d9e045958ce99591356a5d8641bfaec";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--百度推送-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script type="text/javascript">
+  //快捷留言
+    $(".quickMessage1 li").click(function() {
+      var lit = $(this).find("p").text()
+      $(".Message1").val(lit)
+    });
+</script>
+</body>
+</html>

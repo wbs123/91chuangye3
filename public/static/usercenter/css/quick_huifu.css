@@ -1,0 +1,195 @@
+﻿@charset "utf-8";
+body{
+	background:#f6f9fc;
+}
+
+.content_right{
+	width:974px;
+	margin-top:25px;
+	background:#fff;
+	border:1px solid #edf3f8;
+	min-height: 820px;
+}
+
+.zp_joinIn{
+	width:846px; 
+	margin:auto;
+	padding-bottom:45px;
+}
+.quickTable{
+	width:844px;
+	border-left:1px solid #e5e6e7;
+	border-top:1px solid #e5e6e7;
+	margin-top:64px;
+	border-radius:4px;
+}
+.quickTable tr{
+	height:47px;
+	text-align:center;
+}
+.quickTable thead tr td,.quickTable tbody tr td{
+	border-right:1px solid #e5e6e7;
+	border-bottom:1px solid #e5e6e7;
+	word-break: break-all;
+	line-height: 20px;
+	padding: 10px 0;
+}
+.quickTable thead{
+	background:#f3f8fc;
+	color:#1867a0;
+	font-size:14px;
+	font-weight:bold;
+}
+.quickTable tbody{
+	color:#666666;
+	font-size:14px;
+}
+.quickTable tbody .tdBtn{
+	display:inline-block;
+	width:33px;
+	height:33px;
+	margin:0 2px;
+}
+.quickTable tbody .details{
+	background:url('../img/xq_1.png') no-repeat;
+}
+.quickTable tbody .details:hover{
+	background:url('../img/xq_2.png') no-repeat;
+}
+.quickTable tbody .reply{
+	background:url('../img/hf_1.png') no-repeat;
+}
+.quickTable tbody .reply:hover{
+	background:url('../img/hf_2.png') no-repeat;
+}
+.quickTable tbody .delete{
+	background:url('../img/delete_1.png') no-repeat;
+}
+.quickTable tbody .delete:hover{
+	background:url('../img/delete_2.png') no-repeat;
+}
+.zp_litleTitle{
+	height:60px; 
+	line-height:60px; 
+	margin-top:36px; 
+	color:#1867a0;
+	font-size:14px; 
+	font-weight:bold;
+}
+.zp_createNewCase{
+	background:#f9fafa;
+	padding-top:24px;
+	padding-bottom:48px;
+}
+.zp_pleaseInput .inputDes{
+	display:inline-block;
+	width:96px;
+	line-height:32px;
+	font-size:14px;
+	color:#333333;
+	margin-left:48px;
+}
+.zp_pleaseInput textarea{
+	float:left;
+	width:570px;
+	height:90px;
+	border:1px solid #b2b7c4;
+	background:#fff;
+	padding:15px;
+	line-height:20px;
+	font-size:12px;
+	border-radius:4px;
+	resize:none;
+}
+.zp_pleaseInput{
+	position:relative;
+}
+.ipt_error{
+	color:#bababa;
+	font-size:12px;
+	margin-left:150px;
+	border:1px  solid  #e4e7ed;
+	padding:  9px  7px;
+	width:  auto;
+	z-index:  2;
+	position:  absolute;
+	border-radius:4px;
+	top:37px;
+	left:15px;
+	background:#fff  url('../img/dengp.png')  no-repeat  7px;
+	padding-left:25px;
+	display: none;
+}
+.ipt_error  img{
+	position:absolute;
+	top:-7px;
+	left:15px;
+}
+.ipt_errorRed{
+	background:#fff  url('../img/dengp2.png')  no-repeat  7px;
+	color:#ec4c16;
+}
+.checkMark{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	position:relative;
+	top:6px;
+	left:10px;
+}
+.checkMark_dui{
+	background:url('../img/yes.png')  no-repeat;
+}
+.checkMark_cuo{
+	background:url('../img/error1.png')  no-repeat;
+}
+.buttonBox{
+	height:40px;
+	margin-top:40px;
+	text-align:center;
+}
+.commonBtn{
+	width:168px;
+	height:40px;
+	line-height:40px;
+	color:#fff; 
+	font-size:15px;
+	border-radius: 4px;
+}
+.addBtn{
+	background:#4999d2;
+}
+.addBtn:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+quickTable tbody .td2{
+	font-size:14px;
+}
+.quickTable tbody .td2 .line{
+	position:relative;
+	top:-1px;
+	margin:0 8px;
+}
+.quickTable tbody .td2 span{
+	cursor:pointer;
+}
+.quickTable tbody .td2 span:hover{
+	color:#F60;
+}
+.blue{
+	color:#5e83ac;
+}
+.orange{
+	color:#F60;
+}
+.common_right .title {
+	color: #404040;
+	font-size: 16px;
+	font-weight: bold;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 66px;
+	position: relative;
+	top: 38px;
+}

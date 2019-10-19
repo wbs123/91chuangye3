@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="wap-font-scale" content="no" /> 
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta name="applicable-device" content="mobile" /> 
+  <title>{dede:field.typename /}排行榜_2019{dede:field.typename /}十大品牌排行榜_91创业网</title>
+<meta name="keywords" content="{dede:field.typename /}排行榜,2019{dede:field.typename /}排行榜">
+<meta name="description" content="91创业网(91chuangye.com)是一家提供创业加盟项目门户网站,为网友提供2019年十大品牌{dede:field.typename /}排行榜加盟信息,汇集2019年10大{dede:field.typename /}品牌排行榜,打造优质的加盟平台,帮助创业者找到适合自己的{dede:field.typename /}项目,让创业者轻松创业!">
+  <link rel="canonical" href="{dede:type typeid='0' row=1}http://www.91chuangye.com[field:typelink /]{/dede:type}"/>
+  <link rel="stylesheet" href="{dede:global.cfg_templets_skin/}/newmobile/css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/newmobile/css/css.css" /> 
+ </head> 
+ <body> 
+  <div class="viewport"> 
+   <!-- Top Bar --> 
+   <!--header开始--> 
+   <div class="header"> 
+    <div class="top_bar">
+      <div class="top_bar_item">
+        <div class="return"><a class="btn back" href="javascript:history.go(-1)"></a></div>
+        <div class="tit">{dede:field.typename/}排行榜</div>
+        <div class="sear"><a href="javascript:;" onclick="serch()"></a></div>
+      </div>
+    </div> 
+   </div> 
+   <!--header结束-->
+
+   <!-- bread start-->
+   <section class="item-section item_xminfopath">
+    <a href="{dede:global.cfg_mobile/}">首页</a> &gt;
+    <a href="{dede:global.cfg_mobile/}/top/">排行榜</a> &gt;
+   <a href="{dede:field.typeid function=mygetretype(@me,typeurl)/}">{dede:field.typeid function=mygetretype(@me,typename)/}排行榜</a> &gt;
+    <h1><a href="{dede:type typeid='0' row=1}[field:typelink /]{/dede:type}">{dede:field.typename/}排行榜</a></h1>
+  </section>  
+   <!-- bread end-->
+
+   <!-- score start-->
+  <div class="contentbox">
+    <p class="bgsm">榜单说明：榜单是根据项目品牌、口碑、效益、扶持等各项指标评分计算得出。</p>
+    <ul>
+	  {dede:sql sql='select b.id,b.title,b.description,b.litpic,b.weight,a.invested from u88_addonjiameng a LEFT JOIN   u88_archives  b on b.id=a.aid where b.typeid=~crossid~ order by weight desc limit 0,10'}   
+         <li class="li-no[field:global.autoindex/]">
+					<a href='[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]' title="[field:title/]">[field:global.autoindex/]、<em>[field:title/]</em><span>[field:weight/]</span></a>
+				</li> 
+	  {/dede:sql}
+    </ul>
+  </div>
+  <!-- score end-->
+
+  <ul class="top_xm_tj">
+{dede:sql sql='select b.id,b.title,b.description,b.litpic,b.weight,a.invested from u88_addonjiameng a LEFT JOIN   u88_archives  b on b.id=a.aid where b.typeid=~crossid~ order by weight desc limit 0,10'} 
+    <li class="clearfix">
+        <div class="fire"><em class="ico_fire"></em>TOP.[field:global.autoindex/]</div>
+        <div class="pic"><a href='[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]' title="[field:title/]"><img src="http://www.91chuangye.com/[field:litpic/]" alt="[field:title/]"></a></div>
+        <dl>
+          <dt><a href='[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]' title="[field:title/]">[field:title/]</a></dt>
+          <dd>投资额度：<span><em> [field:invested function='str_replace("万","",@me)/] </em>万</span></dd>
+          <dd class="info"> [field:description/]...</dd>   
+          <dd class="desc"><span>综合评分： <em>[field:weight/]</em></span><a href='[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]'  class="btn">我要加盟</a></dd>
+        </dl>
+    </li>
+ {/dede:sql}
+  </ul>
+
+
+   <!-- 项目推荐 开始-->
+   <div class="common_tit"> 
+    <a class="tit" href="{dede:field.typeid function=mygetretype(@me,typeurl)/}">项目推荐</a>
+    <a href="{dede:field.typeid function=mygetretype(@me,typeurl)/}" class="more">+更多</a> 
+   </div>
+   <div class="index_item"> 
+      <ul class="mHotAttctLists"> 
+	  {dede:sql sql='select b.id,b.title,b.click,b.description,b.litpic,a.invested from u88_addonjiameng a LEFT JOIN   u88_archives  b on b.id=a.aid where b.typeid=~crossid~ and arcrank=0 order by click asc limit 0,6'}
+       <li><a href='[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]' title="[field:title/]" class="mHotAttctItems"><img class="lazy" src="http://www.91chuangye.com/[field:litpic/]" alt="[field:title/]"/><p>[field:title/]</p><span>￥[field:invested/]</span></a></li> 
+	   {/dede:sql}
+      </ul>
+    </div>
+    
+   <!-- 项目推荐 结束 -->
+
+   <!--footer开始--> 
+   <div class="footer">
+		<p>创业有风险，投资需谨慎</p>
+    <div class="link-box ">
+	   {dede:channelartlist typeid='52,52'}					
+			{dede:channel type='son'}
+			<a href="[field:global.cfg_mobile/][field:typelink/]" class="foot-link" [field:global name='autoindex'runphp='yes']if(@me==5){@me='';}else{@me='rel="nofollow"';}[/field:global]>[field:typename/]</a><span class="v-line">|</span>
+			{/dede:channel} 
+		{/dede:channelartlist}
+		</div> 
+    <div class="copyright">
+			<p>Copyright ©91网</p>
+			<p>品创天下（北京）科技发展有限公司</p>
+		</div> 
+    <div class="footer_nav"> 
+     <a href="/"><span class="ico1"></span>首页</a>
+     <a href="{dede:global.cfg_mobile/}/xiangmu/"><span class="ico2"></span>找项目</a>
+     <a href="{dede:global.cfg_mobile/}/top/"><span class="ico3"></span>排行榜</a> 
+     <a href="{dede:global.cfg_mobile/}/news/"><span class="ico4"></span>资讯</a> 
+    </div>
+   </div>
+   <a href="javascript:void(0);" id="returnTop"></a>
+   <!--footer结束--> 
+   
+  
+  <!------------------------- search_box start -------------------------->
+  <div class="sear_box">
+    <div class="header_sear">
+      <div class="search">
+		 <form name="searchform" id="searchform" method="get" action="{dede:global.cfg_mobile/}/search.php">  
+		   <input type="hidden" name="typeid" value="1,2,3,4,5,6,7,8,9,10,350,312,313,63,339" /> 
+		  <ul> 
+		   <li class="back"><a href="javascript:;"></a></li> 
+		   <li class="input"> <i></i><input type="text" placeholder="搜索关键字" autocomplete="off" id="lkey" name="q" /> </li> 
+		   <li class="enter"><input type="submit" class="btn" value="确定" id="s_button" onclick="Search(this,'key=lkey');" /></li> 
+		  </ul> 
+		 </form>
+      </div>
+    </div>
+    <div class="sear_cont">
+      <div class="tit">热门搜索</div>
+      <div class="sear_cont_list">
+        <ul>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!------------------------- search_box   end -------------------------->
+  
+  <!------------------------- returnTop  start -------------------------->
+  <a href="javascript:void(0);" id="returnTop"></a>
+  <!------------------------- returnTop    end -------------------------->
+  </div> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.min.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/swiper.min.js"></script>
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.SuperSlide.2.1.1.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/TouchSlide.1.1.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.lazyload.min.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/index.js"></script>  
+  <script type="text/javascript">
+    //lazyload
+  $("img.lazy").lazyload({
+    effect: "fadeIn",
+    threshold : 200,
+    skip_invisible : false
+  }); 
+    //contentbox
+     $(".contentbox .li-no1").width($(".contentbox .li-no1").find("span").text()+"%");
+    $(".contentbox .li-no2").width($(".contentbox .li-no2").find("span").text()+"%");
+    $(".contentbox .li-no3").width($(".contentbox .li-no3").find("span").text()+"%");
+    $(".contentbox .li-no4").width($(".contentbox .li-no4").find("span").text()+"%");
+    $(".contentbox .li-no5").width($(".contentbox .li-no5").find("span").text()+"%");
+    $(".contentbox .li-no6").width($(".contentbox .li-no6").find("span").text()+"%");
+    $(".contentbox .li-no7").width($(".contentbox .li-no7").find("span").text()+"%");
+    $(".contentbox .li-no8").width($(".contentbox .li-no8").find("span").text()+"%");
+    $(".contentbox .li-no9").width($(".contentbox .li-no9").find("span").text()+"%");
+    $(".contentbox .li-no10").width($(".contentbox .li-no10").find("span").text()+"%"); 
+		
+		/*$(document).ready(function() {     
+			//x上限，y下限     
+				var x = 90;     
+				var y = 80;     
+					
+			
+			var arr_name = new Array();
+			$(".contentbox ul li em").each(function(){
+				var nameValue = $(this).text();
+				for(var i=0;i<$(this).length;i++){
+					arr_name.push(nameValue);
+				}
+			})
+			//var arr_name = ['漾漾好贡茶','优之贡茶','禧御贡茶','御可贡茶','乾贡茶','太客贡茶','一品贡茶','宫廷贡茶','佳利来贡茶','喜年贡茶'];
+			
+			for(var i = 0;i<10;i++){
+					var rand = parseInt(Math.random() * (x - y + 1) + y);  
+					//$(".contentbox ul").append("<li class='li-no" + (i+1) + "' name='" + rand + "'>" + arr_name[i] + "<span>" + rand + "</span></li>"); //在ul标签上动态添加li标签
+					$(".contentbox ul li").eq(i).attr("name",rand)
+			}
+			
+			function sortNumber(a, b){
+				return b - a
+			}
+			
+			var arr = new Array();
+			
+			$(".contentbox ul li").each(function(){
+				var idValue = $(this).attr("name");
+				for(var i=0;i<$(this).length;i++){
+					arr.push(idValue);
+				}
+			})
+			//console.log(arr.sort(sortNumber))
+			
+			for(var i = 0;i<10;i++){
+					var rand = parseInt(Math.random() * (x - y + 1) + y);  
+					$(".contentbox ul li").eq(i).find("span").text(arr.sort(sortNumber)[i]); 
+					$(".contentbox ul li").eq(i).css("width",arr.sort(sortNumber)[i]+"%")
+			}
+		})*/
+  </script>
+
+ </body>
+</html>

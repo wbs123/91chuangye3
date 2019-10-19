@@ -1,0 +1,437 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta content="91创业网,注册页面" name="keywords">
+    <meta content="91创业网企业中心注册页面。" name="description">
+    <title>企业注册-91创业网</title>
+    <link rel="stylesheet" href="__STATIC__/member/css/reset.css" />
+    <link rel="stylesheet" href="__STATIC__/member/css/style.css" />
+    <script type="text/javascript" src="__STATIC__/member/js/jq.js"></script>
+    <script type="text/javascript" src="__STATIC__/member/js/changecode.js"></script>
+</head>
+<body>
+<div class="mainBody">
+    <div class="autoWidth clear">
+        <div class="logo fl">
+            <a href="/" class="fl jmw"><img src="__STATIC__/member/img/logo.png" /></a>
+            <p class="title fl">企业账号注册</p>
+        </div>
+        <div class="freeConsultation fr">
+            <span class="free">免费咨询：400-809-0091 </span>
+            <a href="/" class="return">返回首页</a>
+            <a href="{:url('user/Register/index')}" class="personalLogin">个人注册</a>
+        </div>
+    </div>
+
+    <div id="main">
+        <form action="{:url('user/Register/comdoRegister')}" method="post" id="company_register" autocomplete="off">
+            <div id="wizard">
+                <p class="title" style="display:block;">企业账号注册</p>
+                <div class="items">
+                    <div class="page">
+                        <!-- 品牌名称 -->
+                        <div class="brandName">
+                            <div class="brandNameTop brandIcon select clear">
+                                <input type="text" name="brand_name" id="brand_name" placeholder="品牌名称" title="品牌名称" class="fl">
+                            </div>
+                            <div class="brandNameTop brandIcon select clear">
+                                <input type="text" name="company_name" id="company_name" placeholder="公司名称" title="公司名称" maxlength="50" class="fl">
+                            </div>
+                            <div class="brandNameBtm clear">
+                                <div class="selectIndustry fl mapIcon" onclick="showGrade(1);">
+                                    <span id="areaCont1">选择品牌所属行业</span>
+                                    <div class="newIndustry_ul" id="industry_ul1">
+                                        <ul class="selectIndustry_ul clear">
+											<volist name="type" id="v">
+											<li tag="{$v.id}" onclick="selectParent($(this));">{$v.name}</li>
+											</volist>
+										</ul>
+                                    </div>
+                                </div>
+								<input type="hidden" name="industry_id" id="industry_id">
+                                <div class="selectIndustry fl rightArrowIcon" onclick="showGrade(2);">
+                                    <span id="areaCont2" style="margin-left:20px;">请选择</span>
+                                    <div class="newIndustry_ul" id="industry_ul2">
+                                        <ul class="selectIndustry_ul selectIndustry_ul2 clear">
+										
+										</ul>
+                                    </div>
+                                </div>
+								<input type="hidden" name="industry_child_id" id="industry_child_id">
+                            </div>
+                        </div>
+                        <!-- 手机号 -->
+                        <div class="brandName">
+                            <div class="brandNameTop accountPhone select">
+                                <input type="text" name="mobile" id="mobile" placeholder="手机号" title="手机号" class="fl" maxlength="11">
+                            </div>
+                            <div class="brandNameBtm">
+                                <div class="formPhone dxin_yzm clear">
+                                    <input type="text" name="combiner" id="combiner" placeholder="联系人" title="联系人" class="fl" maxlength="10">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 验证码 -->
+                        <div class="brandName">
+                            <div class="brandNameTop picYzhengm clear select">
+                                <p class="formPhone yzm fl">
+                                    <input type="text" name="captcha" id="captcha" placeholder="图形验证码" title="图形验证码" >
+                                </p>
+                                <p class="fl yzmNum">
+                                    <captcha height="36" width="147" font-size="18" length="5"/>
+                                </p>
+                            </div>
+                            <div class="brandNameBtm">
+                                <p class="formPhone dxin_yzm clear">
+                                    <input type="text" name="code" id="code" placeholder="短信验证码" title="短信验证码" class="fl" value="">
+                                    <input type="button" value="获取验证码" class="getYzm fr" id="getYzm" onclick="sendcode();">
+                                </p>
+                            </div>
+                        </div>
+						<div class="brandName">
+                            <div class="brandNameTop accountPassword select clear">
+                                <input type="password" name="password" id="password" placeholder="设置登录密码" title="设置登录密码" class="fl" maxlength="20" minlength="6" onblur="checkPassword();">
+                            </div>
+                        </div>
+                        <div class="serviceTerms">我已阅读并接受<a href="/explain/" target="_blank">《91创业网服务条款》</a></div>
+                        <div class="btn_nav personalLog">
+                            <input type="submit" class="next" value="立即注册" />
+                        </div>
+                        <p class="notRegistered">
+                            <span>已有账号，去</span>
+                            <a href="{:url('user/login/comlogin')}">登录</a><span>>></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- 底部版权信息 -->
+    <div class="footer footer_qy">
+        <p>Copyright@2017-2022 <a href="http://www.91chuangye.com" style="color: white;">www.91chuangye.com</a>京ICP备14049210号3 <br>北京品创天下科技有限公司  版权所有</p>
+    </div>
+</div>
+<script type="text/javascript" src="__STATIC__/member/js/jquery.validate.js"></script>
+<script type="text/javascript" src="__STATIC__/member/js/jquery.form.js"></script>
+<script type="text/javascript" src="__STATIC__/js/layer/layer.js"></script>
+<script type="text/javascript">
+	$(function () {
+		jQuery.validator.addMethod("mobile", function(value, element) {
+			var length = value.length; 
+			var mobile = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/ 
+			return this.optional(element) || (length == 11 && mobile.test(value)); 
+		}, "手机号码格式错误");
+		jQuery.validator.addMethod("checktype", function(value, element) {
+			var length = value.length; 
+			return this.optional(element) || (length > 0); 
+		}, "请选择品牌分类");
+		$("#company_register").validate({
+			rules: {
+				brand_name:{
+					required:true,
+					maxlength:16,
+					minlength:2,
+					remote:{
+						url:"{:url('user/Register/checkBrand')}",
+						type:'post',
+						data:{
+							brand_name:function () {
+								return $('#brand_name').val();
+							}
+						}
+					}
+				},
+				company_name:{
+					required:true
+				},
+				industry_id:{
+					required:true
+				},
+				industry_child_id:{
+					required:true
+				},
+				mobile:{
+					required:true,
+					maxlength:11,
+					number:true,
+					mobile:true
+				},
+				combiner:{
+					required:true,
+					minlength:2
+				},
+				captcha:{
+					required:true,
+					remote:{
+						url:"{:url('user/Register/checkcaptcha')}",
+						type:'post',
+						data:{
+							captcha:function () {
+								return $('#captcha').val();
+							}
+						}
+					}
+				},
+				code:{
+					required:true,
+					remote:{
+						url:"{:url('user/Register/checkcode')}",
+						type:'post',
+						data:{
+							code:function () {
+								return $('#code').val();
+							},
+							mobile:function () {
+								return $('#mobile').val();
+							}
+						}
+					}
+				},
+				password:{
+					required:true,
+					maxlength:16,
+					minlength:6
+				}
+			},
+			messages: {
+				brand_name:{
+					required:'请填写品牌名称',
+					maxlength:'品牌名称最多16位',
+					minlength:'品牌名称最少2位',
+					remote:'品牌名称已存在，请直接登录'
+				},
+				company_name:{
+					required:'请填写公司名称'
+				},
+				industry_id:{
+					required:'请选择品牌所属行业'
+				},
+				industry_child_id:{
+					required:'请选择品牌所属行业二级分类'
+				},
+				mobile:{
+					required:'请填写手机号',
+					maxlength:'手机号最多输入11位',
+					number:'手机号码格式不正确',
+					mobile:'手机号码格式不正确'
+				},
+				combiner:{
+					required:'请填写联系人姓名',
+					minlength:'联系人姓名最少两位'
+				},
+				password:{
+					required:'请填写密码',
+					maxlength:'密码最多输入16位',
+					minlength:'密码最少输入6位',
+				},
+				captcha:{
+					required:'请填写图形验证码',
+					remote:'图形验证码输入错误'
+				},
+				code:{
+					required:'请填写短信验证码',
+					remote:'短信验证码错误'
+				}
+			},
+			focusInvalid: false,
+			onfocusout: function(element) {
+				$(element).valid();
+			},
+			showErrors: function(errorMap,errorList){
+				if(errorList.length > 0)
+				{
+					var key = Object.keys(errorMap);
+					$('#'+key[0]).parent().css('border','1px solid #f45242');
+					$('.wrongPass').remove();
+					$('.personalLog').before('<li class="wrongPass clear" style="margin-bottom:10px;">'+errorList[0].message+'</li>');
+				}else{
+					$('.wrongPass').remove();
+					$(':text,:password').parent().css('border','1px solid #e3e4ee');
+				}
+			},
+			submitHandler: function (form) {
+				$(form).ajaxSubmit({
+					dataType:"json",
+					success:function (result) {
+						if(result.code == 0)
+						{
+							layer.msg(result.msg,{time:1000});
+							refresh();
+							setTimeout(function () {
+								$('.wrongPass').remove();
+								$('.personalLog').before('<li class="wrongPass clear" style="margin-bottom:10px;">'+result.msg+'</li>');
+							}, 1000);
+						}else{
+							layer.msg('注册成功,正在为您跳转到会员中心...', {
+							  time:2000,
+							  end:function(){
+								location.href="{:cmf_url('user/Profile/center','',false)}/";
+							  }
+							});
+						}
+					}
+				});
+			}
+		});
+	});
+	
+	$('.formPhone input:text,.formPhone input:password').focus(function(){
+		$(this).parents('.formPhone').css('border','1px solid #a1aed4')
+	});
+
+	//获取验证码
+	var countdown=60;
+	function sendcode()
+	{
+		var myreg=/^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
+		if($("#mobile").val().length==0){
+			layer.msg('请填写手机号!',{time:1000});
+			return false;
+		}
+		if(!myreg.test($("#mobile").val()))
+		{
+			layer.msg('手机号码格式不正确!',{time:1000});
+			return false;
+		}
+		//验证图形验证码
+		if($("#captcha").val().length==0){
+			layer.msg('请填写图形验证码!',{time:1000});
+			return false;
+		}else{
+			$.ajax({
+				type:'post',
+				url:"{:url('user/Register/sendsmscode')}",
+				data:{mobile:$('#mobile').val(),captcha:$('#captcha').val()},
+				success:function(html)
+				{
+					if(html.code == 1 ){
+						layer.msg(html.msg,{time:3000});
+						settime($("#getYzm"));
+						$('#code').val(html.msg);
+					}else{
+						layer.msg(html.msg,{time:3000});
+					}
+				}
+			})
+		}
+	}
+	function settime(obj)
+	{
+		if (countdown == 0) {
+			obj.attr('disabled',false);
+			obj.val("重新发送");
+			countdown = 60;
+			return;
+		} else {
+			obj.attr('disabled',true);
+			obj.val("(" + countdown + ")秒");
+			countdown--;
+		}
+		setTimeout(function() { settime(obj) },1000);
+	}
+	//图形验证码变化
+	function refresh(obj)
+	{
+		$('.captcha').attr("src","/captcha/new.html?height=36&width=144&font_size=18&length=5&time="+Math.random());
+		return false;
+	}
+	function removeError(type)
+	{
+		$('.wrongPass').remove();
+	}
+	//选择品牌所属行业
+	function showGrade(tag)
+	{
+		var industry_id = $.trim($('#industry_id').val()),
+			industry_child_id = $.trim($('#industry_child_id').val());
+
+		if(tag == 1){
+			$('#industry_ul1').show();
+			$('#industry_ul2').hide();
+			$('.mapIcon').css('border','1px solid #a1aed4');
+			$('.rightArrowIcon').css({'border':'none','border-left':'1px solid #e3e4ee'});
+		}else if(tag == 2){
+			if(parseInt(industry_id) != 0)
+			{
+				$('#industry_ul1').hide();
+				$('#industry_ul2').show();
+				$('.mapIcon').css('border','none');
+				$('.rightArrowIcon').css('border','1px solid #a1aed4');
+			}
+		}
+
+		e = window.event || arguments.callee.caller.arguments[0];
+		if (e.stopPropagation) {
+			e.stopPropagation();
+		} else {
+			e.cancelBubble = true;
+		}
+
+		$(document).click(function () {
+			$("#industry_ul1,#industry_ul2").hide();
+			$('.mapIcon,.rightArrowIcon').css('border','none');
+			$('.mapIcon').css('border-right','1px solid #e3e4ee');
+		});
+	}
+
+	//一级行业选中
+	function selectParent(obj)
+	{
+		var old_content = obj.html(),
+			tag=obj.attr('tag');
+		$('#areaCont1').text(old_content);
+		$('#industry_id').val(tag);
+
+		e = window.event || arguments.callee.caller.arguments[0] ;
+		if (e.stopPropagation) {
+			e.stopPropagation();
+		} else {
+			e.cancelBubble = true;
+		}
+
+		$('#industry_ul1').hide();
+		$('.mapIcon').css('border','none');
+
+		removeError(1);
+
+		if(tag != 0)
+		{
+			$.ajax({
+				url:"{:url('user/Register/getcate')}",
+				type:'post',
+				data:{sid:tag},
+				dataType:'json',
+				success:function (html) {
+					$('#areaCont2').html('请选择');
+					$('.selectIndustry_ul2').html(html.content);
+				}
+			});
+		}
+	}
+
+	//二级行业选中
+	function selectChild(obj)
+	{
+		var old_content = obj.html(),
+			tag=obj.attr('tag');
+		$('#areaCont2').text(old_content);
+		$('#industry_child_id').val(tag);
+
+		e = window.event || arguments.callee.caller.arguments[0] ;
+		if (e.stopPropagation) {
+			e.stopPropagation();
+		} else {
+			e.cancelBubble = true;
+		}
+
+		removeError(1);
+
+		$('#industry_ul2').hide();
+		$('.rightArrowIcon').css({'border':'none','border-left':'1px solid #e3e4ee'});
+	}
+	
+</script>
+</body>
+</html>

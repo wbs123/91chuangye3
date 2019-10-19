@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="wap-font-scale" content="no" /> 
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta name="applicable-device" content="mobile" />
+<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>{dede:field.title/}_{dede:field.title/}加盟费多少钱_91创业网</title>
+<meta name="keywords" content="{dede:field.title/},{dede:field.title/}加盟,{dede:field.title/}加盟费多少钱,{dede:field.title/}加盟条件"> 
+<meta name="description" content="{dede:field.title/}加盟详情：{dede:field.description function='html2text(@me)'/}">
+<link rel="canonical" href="http://www.91chuangye.com{dede:field.id runphp='yes'}$id=@me;@me='';$url=GetOneArchivess($id);@me=$url['arcurl'];{/dede:field.id}" >
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/newmobile/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/newmobile/css/common.css" />
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/newmobile/css/lists.css" />
+
+</head>
+
+<body>
+	<!--------------------------top_bar start-------------------------->
+	<div class="header">
+		<div class="top_bar">
+			<div class="top_bar_item">
+				<div class="return"><a class="btn back" href="javascript:history.go(-1)"></a></div>
+				<div class="tit">{dede:field.title/}</div>
+				<div class="sear"><a href="javascript:;" onclick="serch()"></a></div>
+			</div>
+		</div>
+		<div class="nav_bar">
+			<div class="swiper-container nav">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide"><a href="{dede:global.cfg_mobile/}">91创业网</a> </li>
+					<li class="swiper-slide"><a href="http://m.91chuangye.com/xiangmu/">找项目</a></li>
+						{dede:type typeid='391'} <li class="swiper-slide"><a href='[field:global.cfg_mobile/][field:typelink /]' >品牌排行榜</a> </li>{/dede:type}
+					{dede:type typeid='399'} <li class="swiper-slide"><a href='[field:global.cfg_mobile/][field:typelink /]' >[field:typename/]</a> </li>{/dede:type}
+					</ul>
+				</div>
+		</div>
+	</div>
+
+	<!--------------------------top_bar   end-------------------------->
+	
+	<!----------------------banner_xminfo   start---------------------->
+	<div id="focus" class="banner_xminfo"> 
+		<div class="hd"> 
+			<ul> 
+			</ul> 
+		</div> 
+		<div class="bd"> 
+			<div class="tempWrap"> 
+			<ul> 
+			<li>{dede:field.jieshao function=getxiangmupic(@me,1)/}</li>
+		   {dede:field.tiaojian function=getbodypic(@me,2)/}
+		  {dede:field.liucheng function=getbodypic(@me,2)/}
+		   {dede:field.fenxi function=getbodypic(@me,2)/}
+			</ul> 
+			</div> 
+		</div> 
+	</div> 
+	<!----------------------banner_xminfo   end------------------------>
+	
+	<!---------------------------path start---------------------------->
+	<section class="item-section item_xminfopath">
+		<a href="{dede:global.cfg_mobile/}">91创业网</a> &gt;
+		<a href="{dede:type row=1}[field:typelink /]{/dede:type}">{dede:field name='typename'/}</a> &gt;
+		<span>{dede:field.title/}</span>
+	</section>
+	<!---------------------------path   end---------------------------->
+	
+	<!------------------------itme_xminfo start------------------------>
+	<section class="item-section itme_xminfo">
+		<div class="xm_info_top">
+			<div class="left">
+				<div class="tit_info">
+					<h1 class="tit">{dede:field.title/}</h1>
+					<p class="desc">{dede:field.companyname/}</p>
+					<p class="date">{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}</p>
+				</div>
+				<div class="tit_zx">
+					<p class="price">￥{dede:field.invested/}</p>
+					<p class="info"><a href="{dede:type typeid='0' row=1}[field:typelink /]{/dede:type}">{dede:field.typename/}</a></p>
+				</div>
+			</div>
+			<div class="right">
+				<a href="#ly">我要加盟</a>
+			</div>
+		</div>
+		<ul class="listNum">
+			<li>
+				<span>招商区域</span>
+				<span><em>全国</em></span>
+			</li>
+			<li>
+				<span>门店数量</span>
+				<span><em>{dede:field.sum/}家</em></span>
+			</li>
+			<li>
+				<span>已申请</span>
+				<span><em>{dede:field.click/}</em></span>
+			</li>
+		</ul>
+		<div class="tel_info">
+			<div class="phone"></div>
+			<a href="tel:400-809-0091" class="btn">拨打电话</a> 	
+		</div>
+	</section>
+	<!------------------------itme_xminfo   end------------------------>
+	
+	<!------------------------itme_qyjs   start------------------------>
+	<section class="item-section itme_qyjs">
+		<div class="common_tit"> 
+			<a class="tit" href="#">企业介绍</a> 
+		</div>
+		<p class="name">{dede:field.companyname/}</p>
+		<ul>
+			<li>企业性质：有限责任公司</li>
+			<li>注册资金：100万元</li>
+			<li>所在地区：{dede:field.company_address/}</li>
+		</ul>
+	</section>
+	<!------------------------itme_qyjs     end------------------------>
+	
+	<!------------------------itme_jminfo start------------------------>
+	<section class="item-section itme_jminfo">			
+		<ul class="jminfo_tab">
+			<li class="js_join_1">加盟前景</li>
+			<li class="js_join_2">加盟条件</li>
+			<li class="js_join_3">加盟流程</li>
+			<li class="js_join_4">投资分析</li>
+		</ul>
+		<!-- 加盟前景/加盟优势/项目简介	start -->
+		<div class="jm_box">
+		<div class="common_tit join_tit" id="js_join_1"><span class="tit">加盟前景/加盟优势/项目简介</span></div>
+		<div class="jm_tab_boxs">
+			<div class="jm_tab_item">
+				{dede:field.jieshao/}
+			</div>		
+		</div>
+		<!-- <a href="javascript:;" class="show_more"><em>加载更多</em><i></i></a> -->
+		<!-- 项目介绍/加盟前景/加盟优势	end -->
+
+
+		<!-- 加盟条件	start -->		
+		<div class="common_tit join_tit" id="js_join_2"><span class="tit">加盟条件</span></div>		
+			<div class="jm_tab_boxs">
+				<div class="jm_tab_item">
+					 {dede:field.tiaojian/}
+				</div>			
+			</div>
+			<!-- <a href="javascript:;" class="show_more"><em>加载更多</em><i></i></a> -->
+			<!-- 加盟条件	end -->
+
+
+			<!-- 加盟流程	start -->
+			<div class="common_tit join_tit" id="js_join_3"><span class="tit">加盟流程</span></div>
+			<div class="jm_tab_boxs">
+				<div class="jm_tab_item">
+					 {dede:field.liucheng/}
+				</div>
+			</div>
+			<!-- <a href="javascript:;" class="show_more"><em>加载更多</em><i></i></a> -->
+			<!-- 加盟流程	end -->
+
+
+			<!-- 加盟费用/加盟利润/政策扶持	start -->
+			<div class="common_tit join_tit" id="js_join_4"><span class="tit">加盟费用/加盟利润/政策扶持</span></div>
+			<div class="jm_tab_boxs">
+				<div class="jm_tab_item">
+					 {dede:field.fenxi/}
+				</div>
+			</div>
+			<!-- <a href="javascript:;" class="show_more"><em>加载更多</em><i></i></a> -->
+		</div>		
+		<a href="javascript:;" class="show_more"><em>加载更多</em><i></i></a>
+		<!-- 加盟费用/加盟利润/政策扶持	end -->
+	</section>
+	<!------------------------itme_jminfo   end------------------------>
+	
+	<!-------------------------item-zx   start------------------------->
+	<section class="item-section item_zx">
+		<div class="common_tit"> 
+			<a class="tit" href="#">我要咨询</a> 
+		</div>
+		<form action="http://www.91chuangye.com/plus/diy.php"  method="post" id="myform">
+			<input type="hidden" name="action" value="post" />
+			<input type="hidden" name="diyid" value="1" />
+			<input type="hidden" name="do" value="2" />
+			<ul>
+				<li>
+					<span><i>*</i>姓 名</span>
+					<div class="p">
+						<input type="text" id="name" name="name" placeholder="如 万先生" maxlength="11" value="">
+					</div>
+				</li>
+				<li>
+					<span><i>*</i>手 机</span>
+					<div class="p">
+						<input type="text" id="tel" name="tel" placeholder="如：180***66666" maxlength="11" value="">
+					</div>
+				</li>
+				<li>
+					<span><i>*</i>咨 询</span>
+					<div class="p">
+						<input type="text" id="msg" name="msg" placeholder="我想咨询" value="">
+					</div>
+				</li>
+				<li class="btn">
+				<input name="xiangmu" value="{dede:field.title/}" type="hidden"  />
+				<input name="time" value="" type="hidden"  id="time"  />
+				<input name="ip" id="ip" value="" type="hidden">
+				<input name="yemian" id="laiyuanyemian" value="http://m.91chuangye.com{dede:field.id runphp='yes'}$id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];{/dede:field.id}" type="hidden">
+				<input type="hidden" name="dede_fields" value="name,text;sex,radio;jine,radio;msg,multitext;tel,text;yemian,text;xiangmu,text;time,text;ip,text" />
+				<input type="hidden" name="dede_fieldshash" value="d14d8aeca17aeac40c5bdd792081c238" />
+				<input type="submit" name="" value="提交">
+				</li>
+			</ul>
+		</form>
+	</section>
+	<!-------------------------item-zx   start------------------------->
+	
+	<!-----------------------guess_like   start------------------------>
+	<section class="item-section xm_tj">
+		<div class="common_tit"> 
+			<a class="tit" href="{dede:global.cfg_mobile/}/xiangmu/"><i class="index_icon2"></i>项目推荐</a> 
+			<a href="{dede:global.cfg_mobile/}/xiangmu/" class="more">+更多</a>
+		</div>
+		{dede:arclist typeid='0'  type='image'  orderby='pubdate'  limit='0,1' imgwidth='133' imgheight='100' addfields='invested,sum' channelid='17' }
+		<div class="xm_tj_big">
+			<div class="pic">
+			<a href="[field:global.cfg_mobile/][field:arcurl/]" title="[field:title/]"><img src="[field:picname/]" alt="[field:title/]"></a>
+			</div>
+			<dl>
+				<dt><a href="[field:global.cfg_mobile/][field:arcurl/]" title="[field:title/]">[field:title/]</a></dt>
+					<dd>投资额度：<span><em>[field:invested/]</em></span></dd>
+					<dd>店铺数量：<span><em>[field:sum/]</em>家</span></dd>		
+				<dd class="desc"><a href="[field:global.cfg_mobile/][field:arcurl/]" class="btn">我要加盟</a><a href="#ly" class="btn">获取资料</a></dd>
+			</dl>
+		</div>
+		 {/dede:arclist}  
+		<ul>			
+		 {dede:arclist typeid='0'  type='image'  orderby='pubdate'  limit='1,6' imgwidth='133' imgheight='100' addfields='invested,sum' channelid='17' }
+			<li>
+				<a href="[field:global.cfg_mobile/][field:arcurl/]">
+					<div class="pic">
+						<img src="[field:picname/]" alt="[field:title/]">
+						<p class="m_t">[field:title/]</p>
+					</div>
+					<div class="cont">
+						<span class="price">￥<em>[field:invested/]</em></span>
+						<span class="num">我要加盟</span>
+					</div>
+				</a>
+			</li>
+			 {/dede:arclist} 
+		</ul>
+	</section>
+	<!------------------------guess_like start------------------------->
+	
+	<!-------------------------statement start------------------------->
+	<section class="item-section hot_news">
+		<div class="common_tit"> 
+			<a class="tit" href="{dede:global.cfg_mobile/}/news/">项目资讯</a> 
+		</div>
+		<ul class="hotnews_ul">
+     {dede:likesql sql="SELECT id,title,litpic,description,click,pubdate FROM u88_archives WHERE title like '%~title~%' and arcrank=0 and channel=1 ORDER BY pubdate DESC limit 0,5"}
+			<li>
+				<a href='[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]' title="[field:title/]">
+					<div class="pic"><img src="http://www.91chuangye.com[field:litpic/]" alt="[field:title/]" /></div>
+					<dl>
+						<dt>[field:title/]</dt>
+						<dd class="des">[field:description/]</dd>
+						<dd>
+							<span>[field:pubdate function="GetDateMK(@me)"/]</span>
+							<span>91创业网</span>
+						</dd>
+					</dl>
+				</a>
+			</li>
+		{/dede:likesql}
+		</ul>
+	</section>
+	<!------------------------itme_jminfo   end------------------------>
+	
+   <!-------------------------statement start-------------------------->
+   <div class="item-section statement">
+       <div class="common_tit"> 
+        <a class="tit" href="">本网声明</a> 
+       </div> 
+       <div class="statCon">
+           <p>1.本站为用户提供免费信息展示，不收取任何费用（包括加盟费），如有冒充本站收费行为请及时报警。</p>
+           <p>2.投资有风险 加盟需谨慎。为规避投资风险，建议您在投资前务必多咨询，多考察，降低投资风险。</p>
+       </div>
+   </div>
+   <!-------------------------statement   end-------------------------->
+
+   <!-- kd_msg start-->
+	<div id="mes_div_unlogin_UNM">
+		<div class="coverTan"></div>
+		<div class="lastCeng"></div>
+		<div class="CengBox">
+			<img src="{dede:global.cfg_templets_skin/}/newmobile/img/kai.png" class="money">
+			<img src="{dede:global.cfg_templets_skin/}/newmobile/img/cha.png" class="chaaaa">	
+			<p class="top1"><span id="brand_name_UNM">{dede:field.title/}</span><span><font style="margin:0 3px;">|</font></span><span id="title_one_UNM">开店方案</span></p>
+			<p class="top2" id="title_two_UNM">获取详细开店方案</p>
+			<form action="http://www.91chuangye.com/plus/diy.php" enctype="multipart/form-data" method="post" id="myform1">
+			<input type="hidden" name="action" value="post" />
+			<input type="hidden" name="diyid" value="1" />
+			<input type="hidden" name="do" value="2" />
+				<ul>
+					<li>
+						<p><label for=""></label><input type="text" id="name1" name="name"  placeholder="请输入您的称呼"></p>
+					</li>
+					<li>
+						<p class=""><label for=""></label><input type="text" maxlength="11" name="tel" class="tellTex" id="tel1" placeholder="请输入手机号码"></p>
+					</li>
+					<li style="height: 82px;">
+						<p><label for=""></label></p> 
+						<textarea  name="msg" rows="" cols="" id="msg1">我对【{dede:field.title/}】感兴趣，想了解一下开店方案。</textarea>
+					</li>
+				</ul>
+				<input name="xiangmu" value="{dede:field.title/}" type="hidden"  />
+				<input name="time" value="" type="hidden"  id="time"  />
+				<input name="ip" id="ip" value="" type="hidden">
+				<input name="yemian" id="laiyuanyemian" value="http://m.91chuangye.com{dede:field.id runphp='yes'}$id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];{/dede:field.id}" type="hidden">
+				<input type="hidden" name="dede_fields" value="name,text;sex,radio;jine,radio;msg,multitext;tel,text;yemian,text;xiangmu,text;time,text;ip,text" />
+				<input type="hidden" name="dede_fieldshash" value="d14d8aeca17aeac40c5bdd792081c238" />
+				<input type="submit" name="" value="确定" class="sure">
+			</form>
+		</div>	
+	</div>
+   <!-- kd_msg end -->
+
+	<!---------------------------footer start---------------------------->
+	<div class="footer">
+		<p>创业有风险，投资需谨慎</p>
+		<div class="link-box ">
+			<a href="{dede:global.cfg_mobile/}" class="foot-link">首页</a>
+			<span class="v-line">|</span>
+			<a href="http://www.91chuangye.com" class="foot-link">电脑版</a>
+			<span class="v-line">|</span>
+			<a href="{dede:global.cfg_mobile/}/mianzeshengming/" class="foot-link">免责声明</a>
+			<span class="v-line">|</span>
+			<a href="{dede:global.cfg_mobile/}/sitemap.xml" class="foot-link">网站地图</a>
+			<span class="v-line">|</span>
+			<a href="{dede:global.cfg_mobile/}/guanyuwomen/" class="foot-link">关于我们</a>
+			<span class="v-line">|</span>
+			<a href="http://mip.91chuangye.com" class="foot-link">mip版</a>
+		</div>
+		<div class="copyright">
+			<p>Copyright @91创业网</p>
+			<p>品创天下（北京）科技发展有限公司</p>
+		</div>
+		<div class="footer_nav footer_nav2">
+			<a href="http://suo.im/4SwGCL">
+				<span class="ico1"></span>立即咨询</a>
+			<a href="javascript:void(0);" onclick="kd()">
+				<span class="ico2"></span>获取开店方案</a>
+		</div>
+	</div>
+	<!---------------------------footer   end---------------------------->
+	
+	<!-------------------------search_box start-------------------------->
+	<div class="sear_box">
+		<div class="header_sear">
+			<div class="search">
+			 <form name="searchform" id="searchform" method="get" action="{dede:global.cfg_mobile/}/search.php">  
+			   <input type="hidden" name="typeid" value="1,2,3,4,5,6,7,8,9,10,350,312,313,63,339" /> 
+			  <ul> 
+			   <li class="back"><a href="javascript:;"></a></li> 
+			   <li class="input"> <i></i><input type="text" placeholder="搜索关键字" autocomplete="off" id="lkey" name="q" /> </li> 
+			   <li class="enter"><input type="submit" class="btn" value="确定" id="s_button" onclick="Search(this,'key=lkey');" /></li> 
+			  </ul> 
+			 </form>
+			</div>
+		</div>
+		<div class="sear_cont">
+			<div class="tit">热门搜索</div>
+			<div class="sear_cont_list">
+				<ul>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-------------------------search_box   end-------------------------->
+	
+	<!------------------------- returnTop  start -------------------------->
+	<a href="javascript:void(0);" id="returnTop"></a>
+	<!------------------------- returnTop    end -------------------------->
+		<!--百度统计-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5294d4276f52adb2e38d1599fd6e2815";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--百度推送-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!--百度商桥-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b07628c0dc92bfe463fdd5453d5aed8e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.min.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/swiper.min.js"></script>
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.SuperSlide.2.1.1.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/TouchSlide.1.1.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.lazyload.min.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/index.js"></script>  
+</body>
+</html>	

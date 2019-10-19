@@ -1,0 +1,43 @@
+﻿/*header*/
+.fl{ float: left;}
+
+.container ,.container2{width: 1200px; margin: 0 auto;}
+.container .logo-lib{ height: 70px; padding: 30px 0; }
+.container .logo-lib img { height: 70px;width: 246px;padding-left: 10px;}
+.container .div-title { width: 98px; height: 24px; line-height: 24px;background: #e60012;color: #ffffff;margin: 44px 0 0 8px; text-align: center; font-size: 14px;}
+.container .b-fff{background: #fff;}
+.container .search-left {float: left;padding: 40px 0 14px /*30px*/50px; width: 482px;}
+.search-left .form-search{ /*width:598px;*/ width: 480px; height:36px; border:1px solid #e60012; position:relative; z-index:10;}
+.search-left .form-search .field{ float:left; border:0; height:36px; line-height:36px; text-align: center;}
+.search-left .form-search .field-120{/* width:106px*/width: 104px; cursor:pointer;}
+.search-left .form-search .field-250{ /*width:250px*/ width: 254px; text-align:left; text-indent:1em; }
+.search-left .form-search .div-anchor{ float:left; width:14px; height:36px; background:#e60012; cursor:pointer; text-align:center;}
+.search-left .form-search .div-anchor .icon{ margin:15px auto;}
+.search-left .form-search .btn-submit{ float:left; width:108px; background:#e60012; color:#fff; height:36px; font-size:16px; line-height:36px; border:0;}
+.search-left .form-search .btn-submit .icon{}
+.search-left .div-select-industry{ width:480px; background:#fff; border:1px solid #979797; position:absolute; left:-1px; top:36px;}
+.search-left .div-select-industry .div-select-inner{ padding:0 4px;}
+.search-left .div-select-industry .link{ float:left; display:block; width:96px; height:36px; font-size:14px; line-height:36px; color:#3e3a39; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.search-left .div-select-industry .link:hover{ color:#f83d33;}
+.search-left .div-select-invest{ width:488px; background:#fff; border:1px solid #979797; position:absolute; left:0; top:36px;}
+.search-left .div-select-invest .div-select-inner{ padding:0 4px;}
+.search-left .div-select-invest .link{ float:left; display:block; height:36px; line-height:36px; color:#3e3a39; padding:0 8px;}
+.search-left .div-select-invest .link:hover{ color:#f83d33;}
+.search-left .div-select-keyword{ /*width:248px;*/width: 254px; background:#fff; padding:4px 0; border:1px solid #979797; position:absolute; /*left:240px;*/left: 117px; top:36px;}
+.search-left .div-select-keyword .div-select-inner{ padding:0 4px;}
+.search-left .div-select-keyword .link{ display:block; height:22px; line-height:22px; color:#3e3a39; padding:0; overflow:hidden;}
+.search-left .div-select-keyword .link:hover{ color:#f83d33;}
+.search-left .div-select-keyword .link .text-word,
+.search-left .div-select-keyword .link .text-other{ height:22px; line-height:22px; font-size: 12px; position: static; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.search-left .div-select-keyword .link .text-word{ display:block; float:left; width:160px; text-align:left;}
+.search-left .div-select-keyword .link .text-other{ display:block; float:right; width:80px; text-align:right;}
+.search-left .div-quicklink { text-align: left;  padding: 5px 0; height: 26px; overflow: hidden; text-overflow: ellipsis;  white-space: nowrap;}
+.search-left .div-quicklink span{  font-size: 12px; }
+.search-left .div-quicklink a{ margin-right: 10px; font-size: 12px; }
+
+.container .header_right { padding: 40px 0 0 /*40px*/ 93px;}
+.header_right .header_right_li {padding-right: 50px;}
+.header_right li a i {width: 32px; height: 30px; padding-bottom: 8px; margin: 0 auto;}
+.header_right li a i, .header_right li a span { display: block; text-align: center; font-size: 12px; color: #3e3a39;}
+.header_right li a:hover span{text-decoration: underline; color: #ff4339;}
+.div-quicklink .link{  padding:0;  }

@@ -1,0 +1,17 @@
+    <div class="xmtj">        
+        <div class="title-com">
+            <h3><i class="icon icon-brand"></i>项目推荐</h3>
+            <a href="http://www.91chuangye.com/xiangmu/" class="fr link-more">查看更多&gt;</a>
+        </div>
+
+        <ul class="xmtj2 clearfix">                
+            {dede:arclist typeid='top' flag='a' orderby='pubdate' addfields='invested,sum,imgs' channelid='17' titlelen='180' row="5"}
+               <li class="content"> 
+                 <div class="tranImg"> 
+                  <a href="[field:arcurl /]" title="[field:title/]"><img src="[field:imgs/]" alt="[field:title/]"></a> 
+                 </div>                  
+                <p><a href="[field:arcurl /]" title="[field:title/]">[field:title/]</a><span><small>￥</small>[field:invested/]</span></p> 
+               </li>
+             {/dede:arclist}
+        </ul>
+    </div> 

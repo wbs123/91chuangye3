@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+<title>{dede:field.typename /}排行榜_2018{dede:field.typename /}十大品牌排行榜_91创业网</title>
+<meta name="keywords" content="{dede:field.typename /}排行榜,2018{dede:field.typename /}排行榜">
+<meta name="description" content="91创业网(91chuangye.com)是一家提供创业加盟项目门户网站,为网友提供2018年十大品牌{dede:field.typename /}排行榜加盟信息,汇集2018年10大{dede:field.typename /}品牌排行榜,打造优质的加盟平台,帮助创业者找到适合自己的{dede:field.typename /}项目,让创业者轻松创业!">
+  <meta name="renderer" content="webkit" /> 
+  <meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta name="applicable-device" content="pc" /> 
+<meta name="robots" content="all">
+  <link rel="alternate" media="only screen and(max-width: 640px)" href="http://m.91chuangye.com/" /> 
+  <meta http-equiv="mobile-agent" content="format=html5; url=http://m.91chuangye.com/" /> 
+  <link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/new/css/common.css" /> 
+  <link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/new/css/index.css" /> 
+  <link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/new/css/rank.css" /> 
+  <link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/new/css/ranking.css" /> 
+  <link type="text/css" rel="stylesheet" href="{dede:global.cfg_templets_skin/}/new/css/ranking-two.css" /> 
+  <meta name="mobile-agent" content="format=html5;url={dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}"/>
+<meta http-equiv="mobile-agent" content="format=xhtml; url={dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}">
+<link rel="alternate" media="only screen and(max-width: 640px)" href="{dede:type typeid='0' row=1}[field:id runphp='yes']@me=GetOneTypeUrlAd(@me);[/field:id]{/dede:type}"/>
+  <base target="_blank" /> 
+ <script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="http://m.91chuangye.com"+location.pathname+location.search;}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script>
+<style>
+.on{background: #fb8b8b;color:#fff;}
+</style>
+ </head> 
+ <body> 
+  <div class="wrapper"> 
+{dede:include filename="new_head1.htm"/} 
+   <div id="secondary"> 
+    <div class="secondary-top clearfix"> 
+     <aside> 
+      <div class="h1tit"><span>{dede:field.typeid function=mygetretype(@me,typename)/}</span>排行榜<i><a href="{dede:field.typeid function=mygetretype(@me,typeurl)/}" title="{dede:field.typeid function=mygetretype(@me,typename)/}">更多&gt;</a></i></div> 
+      <ul> 
+		{dede:channel type='son' row='100' currentstyle="<li class='on'><a href='~typelink~' ~rel~>~typename~排行榜</a></li>"}
+      	<li class='[field:ID function='MagicVar("","a")'/]'><a href="[field:typelink/]" title="[field:typename/]排行榜">[field:typename/]排行榜</a></li>
+      	{/dede:channel}
+      </ul> 
+     </aside> 
+     <article> 
+      <div class="h1tit"><span>{dede:field.typename /}排行榜</span></div> 
+      <dl id="art-dl" class="art-dl"> 
+       <dt class="pai-dt">{dede:field.typename/}排行榜</dt> 
+       <dd class="pai-dd"> 投资资金 </dd> 
+       <dd class="pai-dd"></dd> 
+       <dd class="pai-dd">综合评分（本月）</dd> 
+       <dd class="pai-dd"></dd> 
+       <dd class="pai-dd"> 相关链接</dd> 
+      </dl> 
+      <div class="border"> 
+		{dede:sql sql='select b.id,b.title,b.weight,b.description,a.logo,a.invested from u88_addonjiameng a LEFT JOIN   u88_archives  b on b.id=a.aid where b.typeid=~crossid~ order by weight desc limit 0,1'}
+       <div class="public-li only"> 
+        <span>1</span> 
+        <a href='[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]' title="[field:title/]">[field:title/]</a> 
+        <span><i>[field:invested function='str_replace("万","",@me)/] </i>万</span> 
+        <u>
+         <!-- <img src="{dede:global.cfg_templets_skin/}/new/img/ba8c4f8bb1484ce7a15036838b3e9c94.gif"/> --></u> 
+        <b>[field:weight/]</b> 
+        <b></b> 
+        <i><a href='[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]' title="[field:title/]">详情</a></i> 
+        <i class="topmsg">留言</i>      
+       </div> 
+       <div class="pic-infor"> 
+        <figure> 
+         <img src="[field:logo/]" alt="[field:title/]">
+        </figure> 
+        <figcaption> 
+         <p style=" color: #333;font-size: 14px;margin-top: 6px;">项目介绍</p> 
+         <p style="font-size: 13px;line-height: 24px;margin-top: 10px;color: #999999;"> [field:description/]... </p> 
+        </figcaption> 
+       </div>
+	 {/dede:sql}	
+      </div> 
+      <div class="border" style="border: none;" id="list"> 
+	  {dede:sql sql='select b.id,b.title,b.weight,a.invested from u88_addonjiameng a LEFT JOIN   u88_archives  b on b.id=a.aid where b.typeid=~crossid~ order by weight desc limit 1,9'}	
+       <div class="public-li"> 
+        <span [field:global name='autoindex'runphp='yes'] if(@me==1||@me==2){@me='style="background: #ccc;"';}else{@me='style="background: #ccc!important"';}[/field:global]>[field:global name=autoindex runphp="yes"]@me=@me+1;[/field:global]</span> 
+        <a href='[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]' title="[field:title/]">[field:title/]</a> 
+        <span><i> [field:invested function='str_replace("万","",@me)/] </i>万 </span>  
+		<u>
+         <!-- <img src="img/ba8c4f8bb1484ce7a15036838b3e9c94.gif"/> --></u>
+        <b>[field:weight/]</b> 
+        <b></b> 
+        <i><a href='[field:id runphp='yes'] $id=@me;@me='';$url=GetOneArchive($id);@me=$url['arcurl'];[/field:id]' title="[field:title/]">详情</a></i> 
+        <i  class="topmsg">留言</i> 
+       </div> 	
+			 {/dede:sql}
+      </div> 
+     </article> 
+    </div> 
+    <!--内容的下面的2块--> 
+    <div id="article-main"> 
+     <!--第一块--> 
+     <div class="article-one main-article top_aticle"> 
+      <div class="h1tit"><span>{dede:field.typeid function=mygetretype(@me,typename)/}排行榜</span></div> 
+      <dl id="art-dl2" class="art-dl"> 
+       <dt>
+        {dede:field.typeid function=mygetretype(@me,typename)/}排行榜
+       </dt> 
+       <dd>
+        投资资金
+       </dd> 
+       <dd></dd> 
+       <dd>
+        综合评分（本月）
+       </dd> 
+       <dd></dd> 
+       <dd>
+        相关链接
+       </dd> 
+      </dl> 
+      <div class="border"> 
+   {dede:php} 
+				$crossid = $refObj->Fields['crossid']; 
+				$row = $dsql->GetOne("select reid from u88_arctype  where id='$crossid'"); 
+				$id = $row['reid'];
+                 $sql='select a.invested,a.logo,b.id,b.title,b.weight,b.description from u88_addonjiameng a LEFT JOIN   u88_archives  b on b.id=a.aid where b.typeid in(SELECT id From `u88_arctype` WHERE reid='.$id.')order by weight desc  limit 0,1';
+				 $dsql->SetQuery($sql);//将SQL查询语句格式化
+                        $dsql->Execute();//执行SQL操作
+                        //通过循环输出执行查询中的结果
+                        while($row = $dsql->GetArray()){
+						$t = str_replace('万','',$row[invested]);
+						$description = cn_substr($row[description],300);
+                        $url = GetOneArchive($row[id]);
+                        $url = $url['arcurl'];
+                       echo "
+             <div class='public-li only'> 
+		   <span>1</span> 
+			<a href=".$url." title='$row[title]'>$row[title]</a> 
+			<span><i>$t</i>万</span> 
+			<u>
+			 <!-- <img src='{dede:global.cfg_templets_skin/}/new/img/ba8c4f8bb1484ce7a15036838b3e9c94.gif'/> --></u> 
+			<b>$row[weight]</b> 
+			<b></b> 
+			<i><a href=".$url." title='$row[title]'>详情</a></i>           
+        <i  class='topmsg'>留言</i>   
+		   </div> 
+		   <div class='pic-infor'> 
+			<figure> 
+			 <img src='$row[logo]' alt='$row[title]'>
+			</figure> 
+			<figcaption> 
+			 <p style=' color: #333;font-size: 14px;margin-top: 6px;'>项目介绍</p> 
+			 <p style='font-size: 13px;line-height: 24px;margin-top: 10px;color: #999999;'> $description... </p> 
+			</figcaption>    
+      </div>
+      ";
+            }
+				{/dede:php}
+	  </div>
+      <div class="border list2" style="border: none;"> 
+  {dede:php} 
+				$crossid = $refObj->Fields['crossid']; 
+				$row = $dsql->GetOne("select reid from u88_arctype  where id='$crossid'"); 
+				$id = $row['reid'];
+                 $sql='select a.invested,a.logo,b.id,b.title,b.weight,b.description from u88_addonjiameng a LEFT JOIN   u88_archives  b on b.id=a.aid where b.typeid in(SELECT id From `u88_arctype` WHERE reid='.$id.')order by weight desc  limit 1,2';
+				 $dsql->SetQuery($sql);//将SQL查询语句格式化
+                        $dsql->Execute();//执行SQL操作
+                        //通过循环输出执行查询中的结果
+                         $is = 1;
+                        
+                        while($row = $dsql->GetArray()){
+                          $isd= ++$is;
+                         // var_dump($row);
+						$t = str_replace('万','',$row[invested]);
+                        $url = GetOneArchive($row[id]);
+                        $url = $url['arcurl'];
+                       echo "
+						<div class='public-li'> 
+						   <span>$isd</span> 
+							<a href=".$url." title='$row[title]'>$row[title]</a>
+							<span ><i>$t </i>万</span>  
+							<u>
+							 <!-- <img src='img/ba8c4f8bb1484ce7a15036838b3e9c94.gif'/> --></u>
+							<b>$row[weight]</b> 
+							<b></b> 
+							<i><a href=".$url.">详情</a></i> 
+							<i  class='topmsg'>留言</i> 
+						 </div> 	 	
+		      ";
+            }
+	 {/dede:php} 
+	  {dede:php} 
+				$crossid = $refObj->Fields['crossid']; 
+				$row = $dsql->GetOne("select reid from u88_arctype  where id='$crossid'"); 
+				$id = $row['reid'];
+                 $sql='select a.invested,a.logo,b.id,b.title,b.weight,b.description from u88_addonjiameng a LEFT JOIN   u88_archives  b on b.id=a.aid where b.typeid in(SELECT id From `u88_arctype` WHERE reid='.$id.')order by weight desc  limit 4,7';
+				 $dsql->SetQuery($sql);//将SQL查询语句格式化
+                        $dsql->Execute();//执行SQL操作
+                        //通过循环输出执行查询中的结果
+                         $is = 3;
+                        
+                        while($row = $dsql->GetArray()){
+                          $isd= ++$is;
+                         // var_dump($row);
+						$t = str_replace('万','',$row[invested]);
+                        $url = GetOneArchive($row[id]);
+                        $url = $url['arcurl'];
+                       echo "
+<div class='public-li'> 
+       <span style='background: #ccc!important'>$isd</span> 
+        <a href=".$url." title='$row[title]'>$row[title]</a>
+        <span ><i>$t </i>万</span>  
+		<u>
+         <!-- <img src='img/ba8c4f8bb1484ce7a15036838b3e9c94.gif'/> --></u>
+        <b>$row[weight]</b> 
+        <b></b> 
+        <i><a href=".$url.">详情</a></i> 
+        <i  class='topmsg'>留言</i> 
+       </div> 	 	
+		      ";
+            }
+				{/dede:php} 
+      </div> 
+     </div> 
+
+    </div> 
+    <!--内容--> 
+   </div> 
+ <div id="ranking">
+    <!-- latest join -->
+    <div class="w1200">
+    	<ul class="hot_JM rank_hotJM mb13 clearfix">		
+    		<li class="fl li1"><h3>最新{dede:field.typename/}排行榜品牌</h3></li>
+    		<li class="fr li2 f12"><a href="http://www.91chuangye.com/xiangmu" >更多&gt;</a></li>
+    	</ul>
+    	<!-- 最新餐饮加盟排行榜品牌选项卡 -->
+    	<div class="newest"> 
+         
+    	    <!--综合火锅的TAB栏--> 
+    	    <div class="tab-pai"> 
+    	     <ul id="tab-ul"> 
+    		 {dede:channelartlist typeid='top' row='10'}
+    	      <li> {dede:field name='typename'/} <span></span> </li> 
+    	 	      {/dede:channelartlist}
+    	     </ul> 
+    	     <!--TAB内容1--> 
+    	     <div id="main"> 
+    		  {dede:channelartlist typeid='top' row='10'}
+    	      <div class="content-one content-tab"> 
+    			{dede:arclist typeid='0' orderby='click' titlelen='180' row=4 addfields='invested,sum,logo' channelid='17'}
+    				   <div class="content"> 
+    					<div class="tranImg"> 
+    					 <div class="tranImg"> 
+    					  <a href="[field:arcurl/]" title="[field:title/]"><img src="[field:picname/]" alt="[field:title/]"></a> 
+    					 </div> 
+    					</div> 
+    					<p><a href="[field:arcurl/]" title="[field:title/]"> [field:title/] </a><span><small>￥</small>[field:invested/]</span></p> 
+    					<a href="[field:arcurl/]"><span class="cover-span"> [field:title/]<span class="bnt-span">我要加盟</span> </span> </a>
+    				   </div> 
+    			 {/dede:arclist}		
+    	      </div> 
+    		   {/dede:channelartlist}
+    	     </div> 
+    	    </div> 
+    	    <!--tab--> 
+        </div>
+    </div> 
+</div>
+<!-- 加盟资讯推荐 -->
+<div class="w1200"> 
+	<ul class="hot_JM rank_hotJM mb13 clearfix">		
+		<li class="fl li1"><h3>加盟资讯推荐</h3></li>
+		<li class="fr li2 f12">{dede:type typeid='399'}<a href="[field:typeurl/]" >更多&gt;</a> {/dede:type} </li>
+	</ul>
+  <div class="ranking_ziX top_rank_zx clearfix"> 
+    <ul class="fl"> 
+      <p><span>{dede:field.typeid function=mygetretype(@me,typename)/}快讯</span></p>
+            {dede:php} 
+				$reid = $refObj->Fields['reid']; 
+				//$row = $dsql->GetOne("select typename from u88_arctype  where id='$typeid'"); 
+				$row = $dsql->GetOne("select typename from u88_arctype where id='$reid'"); 
+               $typename=$row[typename];
+                //$t = str_replace('资讯','',$typename);            
+				$rows = $dsql->GetOne("SELECT id FROM u88_arctype where typename like '%$typename%' and channeltype=1 and reid=399");
+				$id = $rows['id'];
+                 $sql='select * from u88_archives where typeid='.$id.' and arcrank=0 order by sortrank desc  limit 0,5';
+				 $dsql->SetQuery($sql);//将SQL查询语句格式化
+                        $dsql->Execute();//执行SQL操作
+                        while($row = $dsql->GetArray()){
+                          $isd= ++$is;
+                         // var_dump($row);
+						$t = str_replace('万','',$row[invested]);
+						$sortrank=date("Y-m-d",$row[sortrank]);
+                        $url = GetOneArchive($row[id]);
+                        //$url = $url['arcurl'];
+						$url= str_replace(['cy/','jy/','fz/','jc/','nx/','jr/','qc/','ls/','jj/',],'',$url['arcurl']);
+                       echo "<li class='clear'><a href=".$url." class='fl a_zi' title='$row[title]'>$row[title]</a><span class='fr'>$sortrank</span></li>";}
+			{/dede:php}
+    </ul>
+    <ul class="fl"> 
+      <p><span>{dede:field.typeid function=mygetretype(@me,typename)/}经验分享</span></p>
+                  {dede:php} 
+				$reid = $refObj->Fields['reid']; 
+				//$row = $dsql->GetOne("select typename from u88_arctype  where id='$typeid'"); 
+				$row = $dsql->GetOne("select typename from u88_arctype where id='$reid'"); 
+               $typename=$row[typename];
+                //$t = str_replace('资讯','',$typename);            
+				$rows = $dsql->GetOne("SELECT id FROM u88_arctype where typename like '%$typename%' and channeltype=1 and reid=399");
+				$id = $rows['id'];
+                 $sql='select * from u88_archives where typeid='.$id.' and arcrank=0 order by sortrank desc  limit 10,5';
+				 $dsql->SetQuery($sql);//将SQL查询语句格式化
+                        $dsql->Execute();//执行SQL操作
+                        while($row = $dsql->GetArray()){
+                          $isd= ++$is;
+                         // var_dump($row);
+						$t = str_replace('万','',$row[invested]);
+						$sortrank=date("Y-m-d",$row[sortrank]);
+                        $url = GetOneArchive($row[id]);
+                        //$url = $url['arcurl'];
+						$url= str_replace(['cy/','jy/','fz/','jc/','nx/','jr/','qc/','ls/','jj/',],'',$url['arcurl']);
+                       echo "<li class='clear'><a href=".$url." class='fl a_zi' title='$row[title]'>$row[title]</a><span class='fr'>$sortrank</span></li>";}
+			{/dede:php}
+
+    </ul> 
+    <ul class="fl"> 
+      <p><span>{dede:field.typeid function=mygetretype(@me,typename)/}创业故事</span></p>
+           {dede:php} 
+				$reid = $refObj->Fields['reid']; 
+				//$row = $dsql->GetOne("select typename from u88_arctype  where id='$typeid'"); 
+				$row = $dsql->GetOne("select typename from u88_arctype where id='$reid'"); 
+               $typename=$row[typename];
+                //$t = str_replace('资讯','',$typename);            
+				$rows = $dsql->GetOne("SELECT id FROM u88_arctype where typename like '%$typename%' and channeltype=1 and reid=399");
+				$id = $rows['id'];
+                 $sql='select * from u88_archives where typeid='.$id.' and arcrank=0 order by sortrank desc  limit 15,5';
+				 $dsql->SetQuery($sql);//将SQL查询语句格式化
+                        $dsql->Execute();//执行SQL操作
+                        while($row = $dsql->GetArray()){
+                          $isd= ++$is;
+                         // var_dump($row);
+						$t = str_replace('万','',$row[invested]);
+						$sortrank=date("Y-m-d",$row[sortrank]);
+                        $url = GetOneArchive($row[id]);
+                        //$url = $url['arcurl'];
+						$url= str_replace(['cy/','jy/','fz/','jc/','nx/','jr/','qc/','ls/','jj/',],'',$url['arcurl']);
+                       echo "<li class='clear'><a href=".$url." class='fl a_zi' title='$row[title]'>$row[title]</a><span class='fr'>$sortrank</span></li>";}
+			{/dede:php}
+
+    </ul> 
+    <ul class="ranking_ziX"> 
+      <p><span>最新加盟意向</span></p>
+      <div id="rankDemo">
+        <div id="rankDemo1">  	
+          <div class='league-dynamic'>
+		  <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var myhour= mydate.getHours();
+								   var myminu= mydate.getMinutes();
+								   var time=myyear+"."+mymonth+"."+myday+" "+myhour+":"+myminu;
+									document.write(time);
+									</script><span>创业投资者</span><a class="a_name">刘女士</a>对<a href='{dede:field.typelink /}'  title="[field:title/]"  target='_blank' class='a_name'>{dede:field.typename /}</a>行业产生意向：我想了解加盟详情</div>
+<div class='league-dynamic'>
+		  <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var myhour= mydate.getHours();
+								   var myminu= mydate.getMinutes();
+								   var time=myyear+"."+mymonth+"."+myday+" "+myhour+":"+myminu;
+									document.write(time);
+									</script><span>创业投资者</span><a class="a_name">张女士</a>对<a href='{dede:field.typelink /}'  title="[field:title/]"  target='_blank' class='a_name'>{dede:field.typename /}</a>行业产生意向：我想了解加盟详情</div>
+
+<div class='league-dynamic'>
+		  <script language="javascript">
+								   var mydate=new Date();
+								   var mymonth=mydate.getMonth()+1;
+								   var myday= mydate.getDate();
+								   var myyear= mydate.getFullYear(); 
+								   var myhour= mydate.getHours();
+								   var myminu= mydate.getMinutes();
+								   var time=myyear+"."+mymonth+"."+myday+" "+myhour+":"+myminu;
+									document.write(time);
+									</script><span>创业投资者</span><a class="a_name">王先生</a>对<a href='{dede:field.typelink /}'  title="[field:title/]"  target='_blank' class='a_name'>{dede:field.typename /}</a>行业产生意向：我想了解加盟详情</div>		
+        </div>          
+        <div id="rankDemo2"></div>
+      </div>
+    </ul>
+    
+
+
+  </div>
+</div> 
+   <!-- 加盟品牌大全 --> 
+   <div class="daQuan_JM w1200"> 
+    <!-- 标题 --> 
+	<ul class="hot_JM rank_hotJM clearfix">
+		<li class="fl li1"><h3>加盟品牌大全</h3></li>
+		<li class="fr li2 f12"><a href="http://www.91chuangye.com/xiangmu/">更多&gt;</a></li>
+	</ul> 
+    <!--加盟品牌 --> 
+    <div class="Manycon_JM"> 
+     <div class="many_jiaM pr"> 
+      <div class="many_jiaMLbt"> 
+       <div class="many_jiaMLbtCon pa"> 
+        <!-- 十二个品牌-大分类导航 --> 
+        <div class="jiaM_navs"> 
+         <ul class="ul_jsNav fl"> 
+		  {dede:channelartlist typeid='2,1,3,339,4,5,6,7,8,9,10,312'}	  
+			<li {dede:global.itemindex runphp='yes'}(@me==1)?@me='class="navs_select"':@me='';{/dede:global.itemindex}><a href="" target="_blank" class="navs_select" title="{dede:field name='typename'/}">{dede:field name='typename'/}</a></li> 		  
+		  {/dede:channelartlist}
+         </ul> 
+        </div> 
+		<!-- 内容 -->
+		<div class="jsNav_bottomBoss">
+		   {dede:channelartlist typeid='top' row='12'}
+			<div class="jsNav_bottom dis_n">
+				<!-- 小分类导航 -->
+				<div class="jsNav_bottom2">
+					<p class="p1_huoG">
+						 {dede:channel type='son' row='12'}
+						 <a href="[field:typelink/]" >[field:typename/]</a> 
+						 {/dede:channel}
+					</p>
+				</div>
+				<!-- 加盟项目 -->
+				<ul class="zhengMo_ul clearfix">
+					{dede:arclist typeid='0' orderby='rand' titlelen='180' row=10}
+						<li><a href="[field:arcurl/]"><img src="[field:picname/]" alt="[field:title/]"></a></li>
+					{/dede:arclist}											
+				</ul>
+			</div>
+		   {/dede:channelartlist}
+		</div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+
+
+   <!--留言弹框验证--> 
+   <div class="sentMassage_login_cover" id="mes_div_unlogin_SHANGQIAO"> 
+    <div class="tanCeng"> 
+     <div class="popover-close"> 
+      <a href="javascript:;" onclick="$('.sentMassage_login_cover').hide();return false;" >关闭</a> 
+     </div> 
+     <div class="mostIput"> 
+      <!--讯加盟低价--> 
+      <p id="title_one_SHANGQIAO">立即咨询</p> 
+      <dl> 
+       <dt id="title_two_SHANGQIAO"></dt> 
+       <dd id="title_three_SHANGQIAO">
+        请提供您的联系方式，我们会第一时间与您联系！
+       </dd> 
+      </dl> 
+      <div class="sentMassage"> 
+        <form id="top_form" method="post" action="/plus/diy.php">
+	    <input type="hidden" name="action" value="post" />
+		<input type="hidden" name="diyid" value="2" />
+		<input type="hidden" name="do" value="2" />
+       <div class="itrm irealname"> 
+        <label for="" class="nameBox"><input type="text" value="" id="name" name='name' class="name" placeholder="请输入您的姓名  如王先生" /></label>  
+       </div>  
+       <div class="itrm imobile"> 
+        <label for="" class="tellBox"><input type="text" maxlength="11" id="tel" name="tel" value="" class="tell" placeholder="请输入您的手机号码" /></label> 
+       </div>  
+		<input name="typename" value="{dede:field.typename/}" type="hidden"  />
+		<input name="time" value="" type="hidden"  id="time"  />
+		<input name="ip" id="ip" value="" type="hidden">
+		<input name="yemian" id="yemian" value="{dede:geturl runphp='yes'}@me = GetCurUrl();{/dede:geturl}" type="hidden">
+		<input type="hidden" name="dede_fields" value="name,text;tel,text;typename,text;yemian,text;ip,text;time,text" />
+		<input type="hidden" name="dede_fieldshash" value="70082e47d5fe68f11ee6914648874169" />
+       <input type="submit" class="btn" onclick="topform();" value="提 &nbsp;交">
+       <div style="height: 20px;width: 98%;margin-top: 10px;font-size: 14px;line-height: 20px;"> 
+        <label for=""><input type="checkbox" checked="checked" />免费提供一对一加盟咨询服务</label> 
+       </div> 
+       </form>
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!--留言弹框验证 end--> 
+
+
+   <!--footer--> 
+   <div class="footer"> 
+   {dede:include filename="new_footer.htm"/}
+  </div> 
+  <!-- gotop --> 
+  <div class="fixrightbox"> 
+   <div class="selectbox"> 
+    <a href="">项目库</a> 
+   </div> 
+   <div class="gotop"> 
+    <p>TOP</p> 
+   </div> 
+  </div> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/jquery-1.11.3.min.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/jquery.SuperSlide.2.1.1.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/base.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/index.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/one-pai.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/new/js/ranking.js"></script> 
+  <script type="text/javascript">
+	//品牌大全	
+	$('.many_jiaMLbtCon .jsNav_bottomBoss .jsNav_bottom').eq(0).show();
+	$('.many_jiaMLbtCon .jiaM_navs .ul_jsNav li').mouseover(function(){
+		$(this).addClass('navs_select').siblings('.navs_select').removeClass('navs_select');
+		$('.many_jiaMLbtCon .jsNav_bottomBoss .jsNav_bottom').eq($(this).index()).show().siblings().hide();
+	});	
+
+  var speed=50 
+  Brand_new();
+  function Brand_new(){
+  var rankDemo=document.getElementById("rankDemo"); 
+  var gundong=document.getElementById("gundong"); 
+  var rankDemo2=document.getElementById("rankDemo2"); 
+  var rankDemo1=document.getElementById("rankDemo1"); 
+  rankDemo2.innerHTML=rankDemo1.innerHTML 
+  function Marquee(){ 
+  if(rankDemo.scrollTop>=rankDemo1.offsetHeight){
+  rankDemo.scrollTop=0; 
+  }
+  else{ 
+  rankDemo.scrollTop=rankDemo.scrollTop+1;
+  } 
+  } 
+  var MyMar=setInterval(Marquee,speed) 
+  rankDemo.onmouseover=function(){clearInterval(MyMar)} 
+  rankDemo.onmouseout=function(){MyMar=setInterval(Marquee,speed)} 
+  }
+
+  $(".topmsg").click(function(){
+    $(".sentMassage_login_cover").show();
+  });
+
+
+   $("#top_form").submit(function(){                    
+    var username=$("#name").val(); 
+    var tel=$("#tel").val();            
+    var cn=/^[\u0391-\uFFE5]+$/; 
+    var mobile = /^1[3|5|8]\d{9}$/ , phone = /^0\d{2,3}-?\d{7,8}$/;
+    if(username=="" || (username != "" && !cn.test(username))) 
+    { 
+        alert("请输入您的中文姓名"); 
+        $("#name").focus(); 
+        return false; 
+    }           
+    if (tel=="" || tel=="请输入手机号" || (tel != "" && !mobile.test(tel) && !phone.test(tel))) { 
+        alert("请输入正确的电话"); 
+        $("#tel").focus(); 
+        return false; 
+    } 
+    else{
+      alert("提交成功");
+    }        
+  });
+</script> 
+<script type="text/javascript"> 
+window.onload=function(){  
+setInterval(function(){   
+var date=new Date();   
+var year=date.getFullYear(); //获取当前年份   
+var mon=date.getMonth()+1; //获取当前月份   
+var da=date.getDate(); //获取当前日   
+var day=date.getDay(); //获取当前星期几   
+var h=date.getHours(); //获取小时   
+var m=date.getMinutes(); //获取分钟   
+var s=date.getSeconds(); //获取秒   
+var d=document.getElementById('Date');    
+d.innerHTML='当前时间:'+year+'年'+mon+'月'+da+'日'+'星期'+day+' '+h+':'+m+':'+s;  },1000)  }
+</script>
+ </body>
+</html>

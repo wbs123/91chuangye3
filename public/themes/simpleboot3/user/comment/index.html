@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>评论管理_91创业网</title>
+<meta name="applicable-device" content="pc">
+<link rel="shortcut icon" href="/themes/simpleboot3/public/new/images/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/themes/simpleboot3/public/xin/css/common.css">
+<link rel="stylesheet" href="__STATIC__/member/css/qyzx.css">
+<script type="text/javascript">
+    //全局变量
+    var GV = {
+        ROOT: "__ROOT__/",
+        WEB_ROOT: "__WEB_ROOT__/",
+        JS_ROOT: "static/js/"
+    };
+</script>
+<script src="__TMPL__/public/assets/js/jquery-1.10.2.min.js"></script>
+<script src="__TMPL__/public/assets/js/jquery-migrate-1.2.1.js"></script>
+<script src="__STATIC__/js/wind.js"></script>
+</head>
+<body>
+<!-- head start -->
+<include file="user@header"/>
+<!-- head end -->
+
+<!-- bread start -->
+<div class="w1200"><div class="bread"><span><a href="/">首页</a> &gt;<h1 style="font-size:14px"><a href="javascript:;">会员中心</a></h1></span></div></div>
+<!-- bread end -->
+
+<!-- qyzx start -->
+<div class="w1200">
+	<div class="qyzx">
+		<include file="user@left"/>
+		<div class="sideCont">
+			<ul class="tabs-tit">
+				<li class="on"><a href="{:cmf_url('user/Profile/edit','',false)}/">评论管理</a></li>
+			</ul>
+			<div class="message_list">
+				<div class="tab-content">
+                    <div class="tab-pane active" id="one">
+                        <br>
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>评论内容</th>
+                                <th width="150">评论时间</th>
+                                <th width="150">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <foreach name="comments" item="vo">
+                                <tr>
+                                    <td>{$vo.id}</td>
+                                    <td>{$vo.content}</td>
+                                    <td width="160">{$vo.create_time|date='Y-m-d H:i:s',###}</td>
+                                    <td>
+                                        <a href="{$vo.object_id|getProducturl=###}" target="_blank">查看</a> |
+                                        <a class="js-ajax-dialog-btn"
+                                           href="{:url('user/comment/delete',array('id'=>$vo['id']))}"
+                                           data-msg="您确定要删除评论吗？" data-ok="" data-cacel="取消">删除评论</a>
+                                    </td>
+                                </tr>
+                            </foreach>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <ul class="pagination">{$page}</ul>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- qyzx end -->
+
+<!-- footer start -->
+<include file="user@footer"/>
+<!-- footer end -->
+<include file="public@scripts" />
+<script type="text/javascript" src="__STATIC__/member/js/qyzx.js"></script>
+<link href="__TMPL__/public/assets/simpleboot3/themes/simpleboot3/bootstrap.min.css" rel="stylesheet">
+</body>
+</html>

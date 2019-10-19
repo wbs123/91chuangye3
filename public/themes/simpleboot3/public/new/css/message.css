@@ -1,0 +1,360 @@
+
+/*******big form start*********/
+#_msg #quick_liuyan_ad{ float:left; width:280px; height:480px; margin-right:10px; padding-top: 30px; overflow:hidden; border-right:dashed 1px #dd2218;}
+#_msg #quick_liuyan_ad.quick_liuyan_ad_default{ }
+#_msg #quick_liuyan_ad .link{ display:block;}
+#_msg #quick_liuyan_ad .img{ display:block; width:200px; height:100px; margin-bottom:10px;}
+#_msg #quick_liuyan_ad .img-default{ display:block; width:240px; height:auto; margin-bottom:0;}
+.ui-dialog #_msg #quick_liuyan_ad{ display:none;}
+
+#_msg input, #_msg select, #_msg textarea{ border:1px solid #ccc; color:#666;}
+#_msg #quick_liuyan { /*width: 720px; height: 430px;*/ position: relative; overflow: hidden;border: 1px solid #CC092E;}
+#_msg .title { position: relative; height: 60px;overflow: hidden; ;text-align: right; padding: 0 10px; margin:0; line-height: 60px; background: #DD2218;  }
+#_msg .title a { display: inline-block; line-height: 30px; font-family: "Microsoft Yahei"; margin-right: 10px; }
+#_msg .title strong { font-size: 16px; float: left; margin-left: 10px;color: #fff;  }
+#_msg .title strong b { font-size: 16px; padding-right: 5px; color: #fff; }
+#_msg .title strong em { color: #fff; padding-left: 10px; font-style:normal; font-weight:normal; font-size:12px;}
+#_msg .title strong span { padding-left: 5px; }
+#_msg .title span { display: inline-block; line-height: 60px; float:none; font-size:12px; color: #fff;}
+#_msg .hr1 { border-top: 1px solid #bebebe; border-bottom: 2px solid #f3f3f3; margin-bottom: 15px; font-size: 0;}
+#_msg .star { color: #dd2218; display: inline-block; padding: 0 5px; vertical-align: middle;}
+#_msg .star1 { color:#FFF; display: inline-block; padding: 0 5px; vertical-align: middle;}
+#_msg .quick_liuyan_con {overflow: hidden;margin-top:  20px;}
+#_msg .quick_liuyan_con p { margin-bottom: 10px;}
+#_msg .item-right input { padding: 5px 2px;}
+#_msg .item-right label { margin-left: 10px; font-size: 16px; color: #333333;}
+#_msg .quick_liuyan_con .liuyan_area span { line-height: 30px; float: left;}
+#_msg .btn-mesSubmit,.ads-txtLogin { float: left; line-height: 36px;}
+#_msg .btn-mesSubmit a { }
+#_msg textarea { font: 14px "Microsoft Yahei"; padding: 5px; color: #666; resize: none; height: 128px; width: 365px;}
+#_msg .pop_liuyan { position: absolute; top: 140px; right: 8px; width: 300px; height: 230px; border: 2px solid #ff5871;}
+#_msg .pop_liuyan dl { position: relative;}
+#_msg .pop_liuyan dl .pop_liuyan_icon { position: absolute; left: -9px; top: 180px;;  width: 7px; height: 15px;}
+#_msg .pop_liuyan dt { height: 28px; line-height: 28px; background: #ff5871; font-size: 14px; color: #fff; text-indent: 12px;}
+#_msg .pop_liuyan dd ul li { height: 28px; line-height: 28px; margin: 0 12px; overflow:hidden;}
+#_msg .bbdashed { border-bottom: 1px dashed #ccc;}
+#_msg .item { margin-bottom:16px; _height: 31px; text-align: left}
+#_msg .item span { display: block; float: left; width: 128px; margin-right: 10px; text-align: right; line-height: 30px; min-height: 2px; font-size: 14px; color: #333;}
+#_msg .item:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;}
+#_msg .item input[type="text"] { padding:5px; width: 202px; font-size: 14px;}
+#_msg .item input[type="text"]:focus { outline: 1px solid #ff665e; border-color: #ff665e;}
+#_msg .item textarea:focus { outline: 1px solid #ff665e; border-color: #ff665e;}
+#_msg .item input:disabled,
+#_msg .item textarea:disabled,
+#_msg .item select:disabled{ background:#eee;}
+#_msg .item-right { float: left;}
+#_msg .item-right select {  padding-left: 24px; height: 28px; line-height: 28px; text-align: left; font-size: 14px; }
+#_msg .item-right select:focus { outline: 1px solid #ff665e; border-color: #ff665e;}
+#_msg .item-right #msgProvince{width: 150px;}
+#_msg .item-right #msgCity{width: 110px;}
+#_msg .item-right #msgXian{width: 110px;}
+
+/*add checkbox start*/
+#_msg .item_checkbox{
+    margin-top: -15px;
+    margin-bottom: 5px;
+}
+#_msg .item_checkbox .item-right input{
+    vertical-align:middle; margin-bottom: 2px;
+}
+#_msg .item_checkbox .item-right span{
+    padding-left: 6px; font-size: 12px; display: inline-block; float: none; width: 300px; text-align: left; line-height: 12px;
+}
+/*add checkbox end*/
+
+
+#_msg select.c-money { width: 214px; padding-left:36px !important;}
+#_msg .box-address { margin-top: 3px;}
+#_msg .box-address input { width: 365px !important;}
+#_msg .clause * { vertical-align: middle}
+#_msg .clause label { margin-left: 0}
+#_msg .clause a { text-decoration: none}
+#_msg .clause a:hover { color: #f70000 !important}
+#_msg .clause a b { font-family: sans-serif; font-weight: normal; font-size: 11px;}
+#_msg .item .btn-mesSubmit{ display: block; width: 140px; height: 40px; margin:10px 0 6px; border: 1px solid #ccc;/*  border-radius: 5px; */ line-height:30px; float: left;  color: #dd2218; font-size: 16px; margin-left: 139px; _margin-left: 37px; margin-right: 30px; font-family: Microsoft Yahei; cursor: pointer}
+#_msg .item .btn-mesSubmit:hover { background:#dd2218; color: #fff;border-color:#dd2218;}
+#_msg .item .btn-mesSubmit:disabled{ background:#ccc;}
+
+#allMsgListDiv{}
+#allMsgListDiv .msgItem{ border:1px solid #d2d2d2; margin-bottom:5px; padding:0;}
+#allMsgListDiv .msgItem .msgHead{ height:20px; background:#eee; padding:5px 10px;}
+#allMsgListDiv .msgItem .msgHead .name{ float:left; margin-right:10px;}
+#allMsgListDiv .msgItem .msgHead .address{ float:left; color:#666;}
+#allMsgListDiv .msgItem .msgHead .addtime{ float:right; color:#666;}
+#allMsgListDiv .msgItem .msgBody{ padding:5px 10px;}
+#allMsgListDiv .msgItem .msgBody .td1{ width:54px; vertical-align:top;}
+#allMsgListDiv .msgItem .msgBody .td2{}
+#allMsgListDiv .msgItem .msgBody .avatar{ display:block; width:42px; height:42px; margin-right:10px;}
+#allMsgListDiv .msgItem .msgBody .text{}
+#allMsgListMoreDiv{ display:none; text-align:right;}
+#allMsgListMoreDiv .link{ cursor:pointer; color:#666;}
+
+/*add form left*/
+.form-left-top{ text-align: center;}
+.form-left-top img{ display: block; margin: 0 auto;}
+.form-left-top p{ text-align: center; padding-top: 20px; font-size: 16px; color: #333;}
+
+.Free_phone_bottom{ padding: 30px 20px; position: relative;}
+.Free_phone_bottom a:hover{ text-decoration: none !important;}
+.Free_phone_bottom .b-pos-a{width: 200px; height: 44px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; position: absolute; top:52px; left: 32px; z-index: -1;}
+.Free_phone_bottom input[type="text"]{ /* border-radius:10px; */width:220px; height: 26px; line-height: 26px; font-size: 14px; padding: 10px; margin-bottom: 12px; text-align: center;}
+#Free_phone_text:focus{ outline: 1px solid #ff665e; border-color: #ff665e; border-radius: 10px !important;}
+
+
+/*******big form end*********/
+
+
+.Free_phone_bottom input[type="button"],
+.Free_phone_bottom input[type="submit"]{/* border-radius:10px; */width:100%; height: 48px; line-height: 48px; font-size: 18px;  color: #fff !important;border: none !important; background-color: #F5910D !important;}
+.Free_phone_bottom input[type="button"]:hover,
+.Free_phone_bottom input[type="submit"]:hover{ background-color:#F5910D !important; color: #fff !important; }
+.Free_phone_bottom p{ padding-top: 22px; font-size: 14px; color: #333; line-height: 28px;}
+/*add form center*/
+#msgform{ margin-top:22px; }
+/*add form right*/
+.form-right{width:266px !important;/* height: 300px; */margin: 50px 0 0 50px;/* border: 1px solid #dd2218; *//* border-radius: 5px; *//* position: relative; */}
+.form-400{/* position: absolute; *//* top:-85px; *//* left:0px; */height: 80px;width: 215px;line-height: 30px;text-align: center;font-size: 18px;margin-bottom:  30px;} 
+.form-400 span{ color: red; font-size: 28px;}
+.form-right h3{width:266px !important;height: 46px;padding-left: 10px;box-sizing: border-box;line-height: 46px;font-size: 16px;background: #dd2218;color: #fff;font-weight: normal;}
+.form-right h3 span{ font-size: 16px !important; font-weight: bold; color: #fff;}
+.form-right ul{height: 217px;padding: 0 12px;overflow-y: auto;overflow-x: hidden;border: 1px solid #dd2218; */}
+.form-right ul li {/* width:266px !important; */width:100%;min-height: 40px;border-bottom: dashed 1px #999;font-size: 14px;color: #666;cursor: pointer;}
+.form-right ul li a{width: 100%;height: 100%;display: block;font-size: 14px !important;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.form-right ul li:hover{border-bottom: dashed 1px #ff665e; color: #ff665e;}
+.form-right ul li:hover a{text-decoration: none;}
+.form-right ul li:hover p{ color: #e60012; }
+.form-right ul li p{  line-height: 40px;font-size: 14px !important; display: inline; color: #666; cursor: pointer;}
+.form-right i{
+    width: 15px;
+    height: 23px;
+    position: absolute;
+    background: url(../img/form-right-1.jpg);
+    left: -15px;
+    top: 190px;
+    z-index: 1;
+    }
+
+#_msg1 #quick_liuyan_ad1{ float:left; width:220px; height:460px; margin-right:10px; padding-top: 30px; overflow:hidden; border-right:dashed 1px #dd2218;}
+#_msg1 #quick_liuyan_ad1.quick_liuyan_ad_default{
+    width: 220px;
+}
+#_msg1 #quick_liuyan_ad1 .link{ display:block;}
+#_msg1 #quick_liuyan_ad1 .img{ display:block; width:200px; height:100px; margin-bottom:10px;}
+#_msg1 #quick_liuyan_ad1 .img-default{ display:block; width:240px; height:auto; margin-bottom:0;}
+#_msg1 #quick_liuyan_ad2{ float:left; width:220px; height:460px; margin-right:10px; padding-top: 40px; overflow:hidden; border-right:dashed 1px #dd2218;}
+
+#_msg1 #quick_liuyan_ad2.quick_liuyan_ad_default{width: 220px;}
+#_msg1 #quick_liuyan_ad2 .link{ display:block;}
+#_msg1 #quick_liuyan_ad2 .img{ display:block; width:200px; height:100px; margin-bottom:10px;}
+#_msg1 #quick_liuyan_ad2 .img-default{ display:block; width:240px; height:auto; margin-bottom:0;}
+
+#_msg1 input, #_msg1 select, #_msg1 textarea{ border:1px solid #ccc; color:#666;}
+#_msg1 #quick_liuyan1 { /*width: 720px; height: 430px;*/ position: relative; overflow: hidden;border: 1px solid #CC092E;}
+#_msg1 .title { position: relative; height: 60px;overflow: hidden;; text-align: right; padding: 0 10px; margin:0; line-height: 60px; background: #DD2218;  }
+#_msg1 .title a { display: inline-block; line-height: 30px; font-family: "Microsoft Yahei"; margin-right: 10px; }
+#_msg1 .title strong { font-size: 16px; float: left; margin-left: 10px;color: #fff;  }
+#_msg1 .title strong b { font-size: 16px; padding-right: 5px; color: #fff; }
+#_msg1 .title strong em { color: #fff; padding-left: 10px; font-style:normal; font-weight:normal; font-size:12px;}
+#_msg1 .title strong span { padding-left: 5px; }
+#_msg1 .title span { display: inline-block; line-height: 60px; float:none; font-size:12px; color: #fff;}
+#_msg1 .hr1 { border-top: 1px solid #bebebe; border-bottom: 2px solid #f3f3f3; margin-bottom: 15px; font-size: 0;}
+#_msg1 .star { color: #dd2218; display: inline-block; padding: 0 5px; vertical-align: middle;}
+#_msg1 .star1 { color:#FFF; display: inline-block; padding: 0 5px; vertical-align: middle;}
+#_msg1 .quick_liuyan_con { overflow: hidden;width: 500px;}
+#_msg1 .quick_liuyan_con p { margin-bottom: 10px;}
+#_msg1 .item-right input { padding: 5px 2px;}
+#_msg1 .item-right label { margin-left: 10px; font-size: 16px; color: #333333;}
+#_msg1 .quick_liuyan_con .liuyan_area span { line-height: 30px; float: left;}
+#_msg1 .btn-mesSubmit,.ads-txtLogin { float: left; line-height: 36px;}
+#_msg1 .btn-mesSubmit a { }
+#_msg1 textarea { font: 14px "Microsoft Yahei"; padding: 5px; color: #666; resize: none; height: 128px; width: 302px;}
+#_msg1 .pop_liuyan { position: absolute; top: 140px; right: 8px; width: 300px; height: 230px; border: 2px solid #ff5871;}
+#_msg1 .pop_liuyan dl { position: relative;}
+#_msg1 .pop_liuyan dl .pop_liuyan_icon { position: absolute; left: -9px; top: 180px;;  width: 7px; height: 15px;}
+#_msg1 .pop_liuyan dt { height: 28px; line-height: 28px; background: #ff5871; font-size: 14px; color: #fff; text-indent: 12px;}
+#_msg1 .pop_liuyan dd ul li { height: 28px; line-height: 28px; margin: 0 12px; overflow:hidden;}
+#_msg1 .bbdashed { border-bottom: 1px dashed #ccc;}
+#_msg1 .item { margin-bottom:16px; _height: 31px; text-align: left}
+#_msg1 .item span { display: block; float: left; width: 88px; margin-right: 10px; text-align: right; min-height: 2px; line-height: 30px; font-size: 14px; color: #333;}
+#_msg1 .item:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;}
+#_msg1 .item input[type="text"] { padding:5px; width: 168px; font-size: 14px;}
+#_msg1 .item input[type="text"]:focus { outline: 1px solid #ff665e; border-color: #ff665e;}
+#_msg1 .item textarea:focus { outline: 1px solid #ff665e; border-color: #ff665e;}
+#_msg1 .item input:disabled,
+#_msg1 .item textarea:disabled,
+#_msg1 .item select:disabled{ background:#eee;}
+#_msg1 .item-right { float: left;}
+#_msg1 .item-right select { padding-left: 14px; height: 28px; line-height: 28px; text-align: left; font-size: 14px; }
+#_msg1 .item-right select:focus { outline: 1px solid #ff665e; border-color: #ff665e;}
+#_msg1 .item-right #msgProvince1{width: 120px;}
+#_msg1 .item-right #msgCity1{width: 100px;}
+#_msg1 .item-right #msgXian1{width: 100px;}
+/*add checkbox start*/
+#_msg1 .item_checkbox{
+    margin-top: -15px;
+    margin-bottom: 5px;
+}
+#_msg1 .item_checkbox .item-right input{
+    vertical-align:middle; margin-bottom: 2px;
+}
+#_msg1 .item_checkbox .item-right span{
+    padding-left: 6px; font-size: 12px; display: inline-block; float: none; width: 290px; text-align: left; line-height: 12px;
+}
+/*add checkbox end*/
+#_msg1 select.c-money { width: 180px; padding-left:36px !important;}
+#_msg1 .box-address { margin-top: 3px;}
+#_msg1 .box-address input { width: 302px !important;}
+#_msg1 .clause * { vertical-align: middle}
+#_msg1 .clause label { margin-left: 0}
+#_msg1 .clause a { text-decoration: none}
+#_msg1 .clause a:hover { color: #f70000 !important}
+#_msg1 .clause a b { font-family: sans-serif; font-weight: normal; font-size: 11px;}
+#_msg1 .item .btn-mesSubmit{ display: block; width:140px; height:40px; border: 1px solid #ccc; margin: 10px 0 6px 0; /* border-radius: 5px; */ line-height:32px; float: left;  color: #dd2218; font-size: 16px; margin-left: 98px; _margin-left: 37px; margin-right: 30px; font-family: Microsoft Yahei; cursor: pointer}
+#_msg1 .item .btn-mesSubmit:hover { background:#dd2218; color: #fff;border-color: #dd2218;}
+#_msg1 .item .btn-mesSubmit:disabled{ background:#ccc;}
+
+
+/*add form left*/
+.form-left-top { text-align: center;}
+.form-left-top img{display: block;margin: 0 auto;max-height: 100px;}
+.form-left-top p{ text-align: center; padding-top: 20px; font-size: 16px; color: #333;}
+
+#_msg1 .Free_phone_bottom{ padding: 30px 20px; position: relative;}
+#_msg1 .Free_phone_bottom a:hover{text-decoration: none !important;}
+/*#_msg1 .Free_phone_bottom .b-pos-a{width: 170px; height: 44px; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; position: absolute; top:52px; left: 32px; z-index: -1;}*/
+#_msg1 .Free_phone_bottom input[type="text"]{
+    width: 158px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    padding: 10px;
+    margin-bottom: 12px;
+    text-align: center;
+    /* border-radius: 10px !important; */
+    border: 1px solid #D5D5D5;
+    }
+#_msg1 #Free_phone_text:focus{ outline: 1px solid #ff665e; border-color: #ff665e;/* border-radius: 10px; */}
+#_msg1 .Free_phone_bottom input[type="button"],
+#_msg1 .Free_phone_bottom input[type="submit"]{
+    width: 180px !important;
+    background-color: #F5910D !important;
+    /* border-radius: 10px; */
+    border: 0 !important;
+    height: 48px;
+    line-height: 48px;
+    font-size: 18px;
+    border: none;
+    }
+#_msg1 .Free_phone_bottom input[type="button"]:hover,
+#_msg1 .Free_phone_bottom input[type="submit"]:hover{ background-color:#F5910D !important; color: #fff !important;}
+#_msg1 .Free_phone_bottom p{ padding-top: 22px; font-size: 14px; color: #333; line-height: 28px;}
+#_msg1 .Free_phone_bottom p span{font-size: 14px;color: #F5910D;}
+
+#_msg1 .Free_phone_bottom1 input[type="text"]{ margin-left:20px;border-radius:8px ;width:160px; height: 18px; font-size: 18px; padding: 18px 10px 16px; margin-bottom: 12px; text-align: center;}
+#_msg1 #Free_phone_text:focus{ outline: 1px solid #ff665e; border-color: #ff665e;}
+#_msg1 .Free_phone_bottom1 input[type="button"]{margin-left:20px;border-radius:8px;width:180px;padding: 0 !important; height: 54px; font-size: 22px;  color: #fff !important; background: #F5910D;}
+#_msg1 .Free_phone_bottom1 input[type="button"]:hover{ background:#F5910D; color: #fff !important;}
+#_msg1 .Free_phone_bottom1 p{ margin-left:20px;margin-top:30px;padding-top: 22px; font-size: 14px; color: #333333;}
+
+
+.boxleft .bottom #msgProvince{width: 110px;}
+.boxleft .bottom #msgCity{width: 110px;}
+.boxleft .bottom #msgXian{width: 110px;}
+/*add form center*/
+#_msg1 #msgform1{margin-top:22px;}
+/*add form right*/
+#_msg1 .form-right{width:266px;margin: 50px 0 0 25px;}
+#_msg1 .form-400{height: 80px;width: 215px;line-height: 30px;text-align: center;font-size: 16px;}
+#_msg1 .form-400 span{ color: red; font-size: 26px;}
+#_msg1 .form-right h3{width: 260px;height: 38px;padding-left:10px;line-height: 38px;font-size: 16px;background: #dd2218;color: #fff;}
+#_msg1 .form-right h3 span{ font-size: 16px; font-weight: bold; color: #fff;}
+#_msg1 .form-right ul{height: 218px;padding: 0 10px;overflow-y: auto;overflow-x: hidden;}
+#_msg1 .form-right ul li {width: 100%;min-height: 32px;border-bottom: dashed 1px #999;font-size: 14px;color: #666;cursor: pointer;}
+#_msg1 .form-right ul li a{ width: 100%; height: 100%; display: block; font-size: 16px; }
+#_msg1 .form-right ul li:hover{border-bottom: dashed 1px #ff665e; color: #ff665e;}
+#_msg1 .form-right ul li:hover a{text-decoration: none;}
+#_msg1 .form-right ul li:hover p{ color: #ff665e; }
+#_msg1 .form-right ul li p{  line-height: 40px;font-size: 14px; display: inline; color: #666; cursor: pointer;}
+#_msg1 .form-right i{ width: 15px; height: 23px; position: absolute; background: url(../img/form-right-1.jpg); left: -15px; top:190px; z-index: 1;}
+
+#allMsgListDiv{}
+#allMsgListDiv .msgItem{ border:1px solid #d2d2d2; margin-bottom:5px; padding:0;}
+#allMsgListDiv .msgItem .msgHead{ height:20px; background:#eee; padding:5px 10px;}
+#allMsgListDiv .msgItem .msgHead .name{ float:left; margin-right:10px;}
+#allMsgListDiv .msgItem .msgHead .address{ float:left; color:#666;}
+#allMsgListDiv .msgItem .msgHead .addtime{ float:right; color:#666;}
+#allMsgListDiv .msgItem .msgBody{ padding:5px 10px;}
+#allMsgListDiv .msgItem .msgBody .td1{ width:54px; vertical-align:top;}
+#allMsgListDiv .msgItem .msgBody .td2{}
+#allMsgListDiv .msgItem .msgBody .avatar{ display:block; width:42px; height:42px; margin-right:10px;}
+#allMsgListDiv .msgItem .msgBody .text{}
+#allMsgListMoreDiv{ display:none; text-align:right;}
+#allMsgListMoreDiv .link{ cursor:pointer; color:#666;}
+
+#item3 .item3box .Free_phonenumbertext .text span {
+    font-size: 24px;
+    color: #E60012;
+    line-height: 24px;
+}
+
+#item3 .item3box .Free_phonenumbertext .text p {
+    color: #666;
+    font-size: 14px;
+    line-height: 14px;
+}
+#item3 .item3box .Free_phonenumbertext {
+    width: 220px;
+    height: 38px;
+    margin-left: 20px;
+}
+
+#item3 .item3box .Free_phonenumbertext .imgbox {
+    float: left;
+    margin-right: 10px;
+}
+
+#item3 .item3box .Free_phonenumbertext .imgbox img {
+    width: 40px;
+    height: 38px;
+}
+.boxleft .bottom{
+    background-color: #fff;
+}
+.boxleft .bottom .item3boxtitle{
+    width: 930px;
+    padding: 25px 0;
+    box-sizing: border-box;
+}
+.boxleft .bottom .item3boxtitle img{
+    width: 900px;
+    display: block;
+    margin: 0 auto;
+}
+.boxleft .bottom .mselect{
+    width: 107px !important;
+}
+.boxleft .bottom .form-right{
+    width: 240px !important;
+    margin-left: 0 !important;
+}
+
+.boxleft .bottom .form-right h3{width: 100% !important;height: 38px;padding-left:10px;line-height: 38px;font-size: 14px;background:#ff665e;color: #fff;}
+.boxleft .bottom .form-right h3 span{ font-size: 14px !important; font-weight: bold; color: #ffffff;}
+.boxleft .bottom .form-right ul{ height: 218px; padding: 0 12px; overflow-y: auto; overflow-x: hidden;}
+.boxleft .bottom .form-right ul li { width:200px; min-height: 32px; border-bottom: dashed 1px #999999; font-size: 14px; color: #666666; cursor: pointer;}
+.boxleft .bottom .form-right ul li a{ width: 100%; height: 100%; display: block; font-size: 16px; }
+.boxleft .bottom .form-right ul li:hover{border-bottom: dashed 1px #ff665e; color: #ff665e;}
+.boxleft .bottom .form-right ul li:hover a{text-decoration: none;}
+.boxleft .bottom .form-right ul li:hover p{ color: #ff665e; }
+.boxleft .bottom .form-right ul li p{  line-height: 40px;font-size: 14px !important; display: inline; color: #666666; cursor: pointer;}
+.boxleft .bottom .form-right i{ width: 15px; height: 23px; position: absolute; background: url(../img/form-right-1.jpg); left: -15px; top:190px; z-index: 1;}
+.boxleft .bottom .quick_liuyan_con{
+    width: 438px !important;
+}
+
+.Free_phonenumbertext {
+    width: 210px;
+    /* height: 58px; */
+    /*margin-left: 20px;*/
+    margin-top: -10px;
+}

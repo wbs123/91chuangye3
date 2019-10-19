@@ -1,0 +1,49 @@
+.h-nav .nav_1 {
+  display: none;
+}
+
+.content404 {
+  padding: 150px 0;
+}
+.content404 > img {
+  display: block;
+  margin: 0 auto;
+}
+.content404 .newsButton {
+  text-align: center;
+  margin-top: -130px;
+}
+.content404 .newsButton a {
+  display: inline-block;
+  width: 138px;
+  height: 45px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+  margin: 0 20px;
+  line-height: 45px;
+}
+.content404 .newsButton a img {
+  vertical-align: middle;
+  margin-right: 3px;
+}
+.content404 .newsButton a:nth-of-type(1) {
+  background: #ff9f07;
+}
+.content404 .newsButton a:nth-of-type(2) {
+  background: #ec2a42;
+}
+
+/* add */
+.content404{
+  padding:50px 0;
+}
+.content404 .newsButton{
+  margin-top:-200px;
+}
+.footer .ft-info{
+  padding-top:40px;
+}
+
+
+/*# sourceMappingURL=404.css.map */

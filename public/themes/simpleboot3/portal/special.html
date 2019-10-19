@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{$ZtTdk['zt_title']}</title>
+    <meta name="keywords" content="{$ZtTdk['zt_keywords']}">
+    <meta name="description" content="{$ZtTdk['zt_description']}">
+    <link rel="shortcut icon" href="__TMPL__/public/new/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="__TMPL__/public/xin/css/common.css">
+    <link rel="stylesheet" href="__TMPL__/public/xin/css/xm_info.css">
+	<script type="text/javascript" src="__TMPL__/public/xin/js/uaredirect.js"></script>
+	<script type="text/javascript">uaredirect("{$seo_url}");</script>
+    <script src="__TMPL__/public/xin/js/jquery-1.11.3.min.js"> </script>
+    <script src="__TMPL__/public/xin/js/jquery.lazyload.min.js"> </script>
+    <script src="__TMPL__/public/xin/js/index.js"> </script>
+    <link rel="stylesheet" href="__TMPL__/public/xin/lib/swiper/swiper.css">
+    <script src="__TMPL__/public/xin/lib/swiper/swiper.js"></script>
+    <script src="__TMPL__/public/xin/js/special.js"></script>
+    <link href="__TMPL__/public/xin/css/special.css" rel="stylesheet">
+	<meta name="applicable-device" content="pc">
+	<meta name="mobile-agent" content="format=html5;url={$seo_url}"/>
+	<link rel="alternate" media="only screen and(max-width: 640px)" href="{$seo_url}"/>
+</head>
+<body>
+    <div class="head head-column">
+		<div class="h-top">
+			<div class="w1200 posr">
+				<div class="fl">
+					<a href="/" title="加盟网" class="area">加盟网</a>
+					|<a href="http://m.91chuangye.com" title="移动站" class="wap">移动站</a>|
+					<a href="javascript:;" title="招商名企">招商名企</a>
+					<span><i class="icon icon-ad"></i>广告合作：<em>18612923336</em></span>
+					<span><i class="icon icon-tel"></i>全国服务热线：<em>400-809-0091</em></span>
+					<span><i class="icon icon-qq"></i>客服QQ：<a target="_blank" rel="nofollow" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1569054682&amp;site=qq&amp;menu=yes" title="QQ 1569054682">1569054682</a></span>
+				</div>
+				<div class="fr">
+				   <a rel="nofollow" href="{:url('user/login/index')}" title="登录" class="login">登录</a> 
+				 <i>|</i>
+					<a rel="nofollow" href="{:url('user/register/index')}" title="注册" class="register">注册</a>
+					<a href="/nav/" title="加盟导航" id="topNavRightNav" class="jmdh">加盟导航</a>
+				</div>
+				<include file="top_right_nav"/>
+			</div>
+		</div>
+		<div class="h-center">
+			<div class="w1200">
+				<div class="fl logo"><a href="/"><img src="__TMPL__/public/xin/images/logo.png" alt="91创业加盟网"></a></div>
+				<div class="logo-desc"><h1 class='p1'>{$catename}加盟</h1>
+                    <p class="p2">精品{$catename}加盟信息推荐</p></div>
+				<include file="search_all"/>
+				<ul class="fl top-right">
+					<li class="jm">
+						<a href="{:url('user/register/index')}" rel="nofollow">
+							<i class="icon icon-jm"></i>我要加盟
+						</a>
+					</li>
+					<li class="kd">
+						<a href="{:url('user/register/comregister')}" rel="nofollow">
+							<i class="icon icon-kd"></i>免费发布
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="h-nav clearfix">
+			   <div class="w1200">
+				<div class="side-nav">
+					<span class="meau_but">{$catename}行业</span>
+				</div>
+				<ul class="nav_2">
+					<li><a href="/xiangmu/"><i class="icon icon-menu"></i>项目库</a></li>
+					<li><a href="/top/">加盟排行榜</a></li>
+					<li><a href="/haoxiangmu/">创业好项目</a></li>
+					<li><a href="/news/">创业资讯</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+    <section class="section-one w1200">
+        <div class="one-nav">
+            <div class="classification">
+                <div class="swiper-content">
+                    <ul class="swiper-ul">
+                        <if condition="$buxian eq 2">
+                            <li><a href="/{$buxianPath.path}_zt/">不限</a></li>
+                        </if>
+                        <volist name="hangye" id="hy" key="k">
+                        <div class="swiper-li">
+                            <li <if condition="$hy['id'] eq $category_id"> class="active" </if>><a href="/{$hy.path}_zt/"><?php echo str_replace('加盟','',$hy['name'])?></a></li>
+                        </div>
+                        </volist>
+                    </ul>
+                    <div class="imglist">
+                        <dl>
+                            <volist name='Cate_Xm' id='Cate_Xm'>
+                                <dt>
+                                    <a href="/{$Cate_Xm.class}/{$Cate_Xm.aid}.html"><img src="{$Cate_Xm['logo']|checkImgurl=###}" alt="{$Cate_Xm.title}"></a>
+                                </dt>
+                            </volist>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="one-banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                     <div class="swiper-slide">
+						<a href="{:cmf_url('portal/common/index',['id'=>'84335','classname'=>'naichajiameng'])}">
+							<img src="__TMPL__/public/xin/images/zhuanti1.jpg" alt="一点点奶茶">
+						</a>
+					</div>
+
+                     <if condition="$logo eq 3">
+                        <div class="swiper-slide">
+                            <a href="{:cmf_url('portal/common/index',['id'=>'87279','classname'=>'zizhuxiyidian'])}">
+                                <img src="__TMPL__/public/xin/images/ucc.jpg" alt="UCC国际洗衣">
+                            </a>
+                        </div>
+                        
+                       
+                     <elseif condition="$logo eq 2"/>
+
+
+                      <div class="swiper-slide">
+                            <a href="{:cmf_url('portal/common/index',['id'=>'79782','classname'=>'lingshijiameng'])}">
+                                <img src="__TMPL__/public/xin/images/yisaoguang.jpg" alt="一扫光零食店">
+                            </a>
+                        </div>
+                      
+                     <else/>
+                        <div class="swiper-slide">
+    						<a href="{:cmf_url('portal/common/index',['id'=>'89613','classname'=>'naichajiameng'])}">
+    							<img src="__TMPL__/public/xin/images/zhuanti2.jpg" alt="coco奶茶">
+    						</a>
+    					</div>
+                    </if>
+                    <div class="swiper-slide">
+						<a href="{:cmf_url('portal/common/index',['id'=>'80367','classname'=>'jipaijiameng'])}">
+							<img src="__TMPL__/public/xin/images/2cbca8d3faa7222deaab02493e9c6c22.png" alt="正新鸡排">
+						</a>
+					</div>
+
+                    <div class="swiper-slide">
+                        <a href="{:cmf_url('portal/common/index',['id'=>'80536','classname'=>'shaokaojiameng'])}">
+                            <img src="__TMPL__/public/xin/images/bingcheng-zt.jpg" alt="冰城串吧">
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="one-Brand style">
+                <div class="headerPonge">
+                    <div class="title">品牌上榜</div>
+                    <ul>
+                        <volist name="Xm" id="brandz" key="k">
+                            <if condition="$k lt 5">
+                        <li <if condition="$k eq '2'"> class="active" </if>><a href="{:cmf_url('portal/common/index',array('classname'=>$brandz['class'],'id'=>$brandz['aid']))}">{$brandz.title}</a></li>
+                            </if>
+                        </volist>
+                    </ul>
+                    <div class="more"><a href="/xiangmu/">MORE+</a></div>
+                </div>
+                <div class="content">
+                    <ul>
+                        <volist name="Xm" id="brandt" key="k">
+                            <if condition="($k gt 4) and ($k lt 9)">
+                                <li>
+									<a href="{:cmf_url('portal/common/index',array('classname'=>$brandt['class'],'id'=>$brandt['aid']))}" rel="nofollow">
+										<img class="lazy" src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" data-original="{$brandt['logo']|checkImgurl=###}" alt="{$brandt.title}">
+									</a>
+								</li>
+                            </if>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+            <div class="one-Boutique style">
+                <if condition='$count lt 9'>
+                    <else/>
+                    <div class="headerPonge">
+                    <div class="title">精品推荐</div>
+                    <ul>
+                        <volist name="Xm" id="boutiquez" key="k">
+                            <if condition="($k gt 8) and ($k lt 13)">
+                                <li <if condition="$k eq '1'"> class="active" </if>><a href="{:cmf_url('portal/common/index',array('classname'=>$boutiquez['class'],'id'=>$boutiquez['aid']))}">{$boutiquez.title}</a></li>
+                            </if>
+                        </volist>
+                    </ul>
+                    <div class="more"><a href="/xiangmu/">MORE+</a></div>
+                </div>
+                <div class="content">
+                    <ul>
+                        <volist name="Xm" id="boutiquet" key="k">
+                            <if condition="($k gt 12) and ($k lt 17)">
+                                <li>
+									<a href="{:cmf_url('portal/common/index',array('classname'=>$boutiquet['class'],'id'=>$boutiquet['aid']))}" rel="nofollow">
+										<img class="lazy" src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" data-original="{$boutiquet['logo']|checkImgurl=###}" alt="{$boutiquet.title}">
+									</a>
+								</li>
+                            </if>
+                        </volist>
+                    </ul>
+                </div>
+                </if>
+                
+            </div>
+        </div>
+        <div class="one-Ranking">
+            <div class="tit">{$catename}加盟排行榜 <a href="/xiangmu/">MORE+</a></div>
+            <ul>
+                <volist name="Top" id="topXm" key="k">
+                   
+                    <li>
+						<a href="{:cmf_url('portal/common/index',array('classname'=>$topXm['class'],'id'=>$topXm['aid']))}">
+							<span class="number">{$k}</span>
+                            <div class="title">{$topXm.title}</div>
+                            <div class="price">{$topXm.invested}</div>
+                            <img src="__TMPL__/public/xin/images/2ba5e547df511c2697e5b985b3fe33a8.png" class="img-fluid" alt="">
+						</a>
+					</li>
+                    
+                </volist>
+            </ul>
+        </div>
+    </section>
+    <section class="section-two w1200">
+        <div class="top-block">
+            <div class="img-list">
+                <ul>
+                    <volist name="Xm" id="banner2" key="k">
+                        <if condition="($k gt 17) and ($k lt 22)">
+                        <li>
+							<div class="item">
+                                <div class="img">
+                                    <a href="{:cmf_url('portal/common/index',array('classname'=>$banner2['class'],'id'=>$banner2['aid']))}" title="{$banner2.title}" rel="nofollow">
+										<img class="lazy" src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" data-original="{$banner2['litpic']|checkImgurl=###}" alt="{$banner2.title}">
+                                    </a>
+								 </div>	
+								<div class="text">
+									<div class="tit">
+										<a href="{:cmf_url('portal/common/index',array('classname'=>$banner2['class'],'id'=>$banner2['aid']))}" title="{$banner2.title}">{$banner2.title}</a>
+									</div>
+									<div class="price">¥{$banner2.invested}</div>
+								</div>
+                            </div>
+                        </li>
+                        </if>
+                    </volist>
+                </ul>
+            </div>
+            <div class="img-list">
+                <ul>
+                    <volist name="Xm" id="banner2" key="k">
+                        <if condition="($k gt 21) and ($k lt 26)">
+                        <li>
+							<div class="item">
+                                <div class="img">
+                                    <a href="{:cmf_url('portal/common/index',array('classname'=>$banner2['class'],'id'=>$banner2['aid']))}" title="{$banner2.title}" rel="nofollow">
+										<img class="lazy" src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" data-original="{$banner2['litpic']|checkImgurl=###}" alt="{$banner2.title}">
+                                    </a>
+								 </div>	
+								<div class="text">
+									<div class="tit">
+										<a href="{:cmf_url('portal/common/index',array('classname'=>$banner2['class'],'id'=>$banner2['aid']))}" title="{$banner2.title}">{$banner2.title}</a>
+									</div>
+									<div class="price">¥{$banner2.invested}</div>
+								</div>
+                            </div>
+                        </li>
+                        </if>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-block">
+            <ul>
+                <if condition='$count < 26'>
+                    
+                <else/>
+                <volist name="Xm" id="Modular" key="k">
+                        <if condition="($k gt 25) and ($k lt 36)">
+                        <li>
+							<div class="item">
+								<div class="img">
+									<a href="{:cmf_url('portal/common/index',array('classname'=>$Modular['class'],'id'=>$Modular['aid']))}" title="{$Modular.title}" rel="nofollow">
+										<img class="lazy" src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" data-original="{$Modular['litpic']|checkImgurl=###}" alt="{$Modular.title}">
+									</a>
+								</div>
+								<div class="text">
+									<div class="tit">
+										<a href="{:cmf_url('portal/common/index',array('classname'=>$Modular['class'],'id'=>$Modular['aid']))}" title="{$Modular.title}">{$Modular.title}</a>
+									</div>
+									<div class="price">¥{$Modular.invested}</div>
+								</div>
+							</div>
+						</li>
+                        </if>
+                    </volist>
+
+                </if>
+            </ul>
+        </div>
+    </section>
+    <section class="latest-recommendation w1200">
+        <if condition='$count lt 34'>
+
+            <else/>
+            <div class="left-block">
+            <div class="header-top">
+                <div class="title">
+                    <img class="lazy" data-original="__TMPL__/public/xin/images/744636b11c3ca46be24522ea02e80cc6.png"
+                        src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" alt="">
+                    <span>最新{$catename}项目推荐</span>
+                </div>
+                <div class="more"><a href="/xiangmu/">MORE+</a></div>
+            </div>
+            <div class="content">
+                <ul>
+                    <volist name="Xm" id="NewsXm" key="k">
+                        <if condition="($k gt 35) and ($k lt 44)">
+                        <li>
+                            <div class="item">
+								<div class="img">
+									<a href="{:cmf_url('portal/common/index',array('classname'=>$NewsXm['class'],'id'=>$NewsXm['aid']))}" rel="nofollow">
+										<img src="{$NewsXm['litpic']|checkImgurl=###}" alt="{$NewsXm.title}">
+									</a>
+								</div>	
+								<div class="text">
+									<div class="tit"><a href="{:cmf_url('portal/common/index',array('classname'=>$NewsXm['class'],'id'=>$NewsXm['aid']))}">{$NewsXm.title}</a></div>
+									<div class="price">¥{$NewsXm.invested}</div>
+								</div>
+                            </div>
+                        </li>
+                        </if>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+        <div class="right-block">
+            <div class="header-top">
+                <div class="title">热点资讯推荐</div>
+                <div class="more"><a href="/news/cy/">MORE+</a></div>
+            </div>
+            <volist name="$HotPost" key="k" id="d">
+                <if condition="$k lt 2">
+                    <div class="ponge-img">
+						<div class="item">
+							<div class="img">
+								<a href="/{$d.class}/{$d.id}.html" title="{$d['post_title']}" rel="nofollow">
+									 <img class="lazy" src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" data-original="{$d['thumbnail']|checkImgurl=###}" alt="{$d['post_title']}">
+								</a>	
+							</div>
+							<div class="text">
+								<div class="tit"><a href="/{$d.class}/{$d.id}.html" title="{$d['post_title']}">{$d['post_title']}</a></div>
+								<div class="desc">{$d['post_excerpt']}</div>
+							</div>
+						</div>
+                    </div>
+                </if>
+            </volist>
+            <div class="content">
+                <ul>
+                    <volist name="$HotPost" key="k" id="d" >
+                        <if condition="$k egt 2">
+                            <li><a href="/{$d.class}/{$d.id}.html">{$d.post_title}</a></li>
+                        </if>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+
+        </if>
+        
+
+    </section>
+    <section class="popular-recommendation w1200">
+        <div class="header-top">
+            <div class="title">
+                <img class="lazy" src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg"
+                    data-original="__TMPL__/public/xin/images/2e4ebe6e265bdefcdf237daac21d2954.png" alt="">
+                <span>热门推荐</span>
+            </div>
+            <div class="more"><a href="/xiangmu/">MORE+</a></div>
+        </div>
+        <div class="img-list">
+            <ul>
+                <volist name="Xm" id="HotXm" key="k">
+                    <if condition="($k gt 43)">
+                    <li>
+						<div class="item">
+							<div class="img">
+								<a href="{:cmf_url('portal/common/index',array('classname'=>$HotXm['class'],'id'=>$HotXm['aid']))}" rel="nofollow" title="{$HotXm.title}">
+									<img class="lazy" src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" data-original="{$HotXm['litpic']|checkImgurl=###}" alt="{$HotXm.title}">
+								</a>
+							</div>	
+							<div class="text">
+								<div class="tit">
+									<a href="{:cmf_url('portal/common/index',array('classname'=>$HotXm['class'],'id'=>$HotXm['aid']))}">{$HotXm.title}</a>
+								</div>
+								<div class="price">投资: <span>¥{$HotXm.invested}</span></div>
+							</div>
+						</div>
+                    </a>
+					</li>
+                    </if>
+                </volist>
+            </ul>
+        </div>
+    </section>
+    <section class="three-block w1200">
+        <div class="style-block">
+            <div class="header-top">
+                <div class="tab">
+                    <ul>
+                        <li>最新餐饮资讯</li>
+                    </ul>
+                </div>
+                <div class="more"><a href="/news/">MORE+</a></div>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <volist name="Newscanyin" id="a" key="k">
+                            <if condition="$k lt 2">
+                            <div class="ponge-img">
+								<div class="item">
+									<div class="img">
+										<a href="/{$a.class}/{$a.id}.html" title="{$a.post_title}" rel="nofollow">
+											<img class="lazy" src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" data-original="{$a['thumbnail']|checkImgurl=###}" alt="{$a.post_title}">
+										</a>
+									</div>
+									<div class="text">
+										<div class="tit"><a href="/{$a.class}/{$a.id}.html" title="{$a.post_title}">{$a.post_title}</a></div>
+										<div class="desc">{$a.post_excerpt}</div>
+									</div>
+								</div>
+                            </div>
+                            </if>
+                        </volist>
+                        <div class="content">
+                            <ul>
+                                <volist name="Newscanyin" id="a" key="k">
+                                    <if condition="$k egt 2">
+                                        <li>
+                                            <a href="/{$a.class}/{$a.id}.html">
+                                                <div class="tit">{$a.post_title}</div>
+                                                <div class="date">{$a.create_time|date='Y-m-d',###}</div>
+                                            </a>
+                                        </li>
+                                    </if>
+                                </volist>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="style-block">
+            <div class="header-top">
+                <div class="tab">
+                    <ul>
+                        <li>创业知识</li>
+                        <li>创业之道</li>
+                    </ul>
+                </div>
+                <div class="more"><a href="/ruhe/">MORE+</a></div>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <volist name="zhishi" id="b" key="k">
+                            <if condition="$k lt 2">
+                                <div class="ponge-img">
+									<div class="item">
+										<div class="img">
+											<a href="/{$b.class}/{$b.id}.html" title="{$b.post_title}" rel="nofollow">
+												<img class="lazy" src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" data-original="{$b['thumbnail']|checkImgurl=###}" alt="{$b.post_title}">
+											</a>
+										</div>
+										<div class="text">
+											<div class="tit">
+												<a href="/{$b.class}/{$b.id}.html" title="{$b.post_title}">{$b.post_title}</a>
+											</div>
+											<div class="desc">{$b.post_excerpt}</div>
+										</div>
+									</div>
+                                </div>
+                            </if>
+                        </volist>
+                        <div class="content">
+                            <ul>
+                                <volist name="zhishi" id="b" key="k">
+                                    <if condition="$k egt 2">
+                                        <li><a href="/{$b.class}/{$b.id}.html">
+                                        <div class="tit">{$b.post_title}</div>
+                                        <div class="date">{$a.create_time|date='Y-m-d',###}</div>
+                                    </a></li>
+                                    </if>
+                                </volist>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <volist name="zhidao" id="c" key="k">
+                            <if condition="$k lt 2">
+                                <div class="ponge-img">
+									<div class="item">
+										<div class="img">
+											<a href="/{$c.class}/{$c.id}.html" title="{$c.post_title}" rel="nofollow">
+												<img class="lazy" src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" data-original="{$c['thumbnail']|checkImgurl=###}" alt="{$c.post_title}">
+											</a>
+										</div>
+										<div class="text">
+											<div class="tit">
+												<a href="/{$c.class}/{$c.id}.html" title="{$c.post_title}">{$c.post_title}</a>
+											</div>
+											<div class="desc">{$c.post_excerpt}</div>
+										</div>
+									</div>
+                                </div>
+                            </if>
+                        </volist>
+                        <div class="content">
+                            <ul>
+                                <volist name="zhidao" id="c" key="k">
+                                    <if condition="$k egt 2">
+                                        <li><a href="/{$c.class}/{$c.id}.html">
+                                        <div class="tit">{$c.post_title}</div>
+                                        <div class="date">{$c.create_time|date='Y-m-d',###}</div>
+                                    </a></li>
+                                    </if>
+                                </volist>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="style-block">
+            <div class="header-top">
+                <div class="tab">
+                    <ul>
+                        <li>加盟指南</li>
+                        <li>创业故事</li>
+                    </ul>
+                </div>
+                <div class="more"><a href="/zhinan/">MORE+</a></div>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <volist name="zhinan" id="e" key="k">
+                            <if condition="$k lt 2">
+                                <div class="ponge-img">
+									<div class="item">
+										<div class="img">
+											<a href="/{$e.class}/{$e.id}.html" title="{$e.post_title}" rel="nofollow">
+												<img class="lazy" src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" data-original="{$e['thumbnail']|checkImgurl=###}" alt="{$e.post_title}">
+											</a>
+										</div>
+										<div class="text">
+											<div class="tit">
+												<a href="/{$e.class}/{$e.id}.html" title="{$e.post_title}">{$e.post_title}</a>
+											</div>
+											<div class="desc">{$e.post_excerpt}</div>
+										</div>
+									</div>
+                                </div>
+                            </if>
+                        </volist>
+                        <div class="content">
+                            <ul>
+                                <volist name="zhinan" id="e" key="k">
+                                    <if condition="$k egt 2">
+                                        <li><a href="/{$e.class}/{$e.id}.html">
+                                        <div class="tit">{$e.post_title}</div>
+                                        <div class="date">{$e.create_time|date='Y-m-d',###}</div>
+                                    </a></li>
+                                    </if>
+                                </volist>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <volist name="gushi" id="f" key="k">
+                            <if condition="$k lt 2">
+                                <div class="ponge-img">
+									<div class="item">
+                                        <div class="img">
+											<a href="/{$f.class}/{$f.id}.html" title="{$f.post_title}" rel="nofollow">
+												<img class="lazy" src="__TMPL__/public/xin/images/f3d98677b149cee3971cf6331de6d8f6.jpg" data-original="{$f['thumbnail']|checkImgurl=###}" alt="{$f.post_title}">
+											</a>
+										</div>
+                                        <div class="text">
+                                            <div class="tit">
+												<a href="/{$f.class}/{$f.id}.html" title="{$f.post_title}">{$f.post_title}</a>
+											</div>
+                                            <div class="desc">{$f.post_excerpt}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </if>
+                        </volist>
+                        <div class="content">
+                            <ul>
+                                <volist name="gushi" id="f" key="k">
+                                    <if condition="$k egt 2">
+                                        <li>
+                                            <a href="/{$f.class}/{$f.id}.html">
+                                                <div class="tit">{$f.post_title}</div>
+                                                <div class="date">{$f.create_time|date='Y-m-d',###}</div>
+                                            </a>
+                                        </li>
+                                    </if>
+                                </volist>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--<section class="advertisement-banner w1200">-->
+    <!--    <a href="javascript:;"><img src="__TMPL__/public/xin/images/1953ecf5a8d16c275be2bf2c2b7173a7.png" alt=""></a>-->
+    <!--</section>-->
+    <section class="brandSection w1200 clearfix">
+        <div class="hangye-tj-left-link">
+    <div class="title">品牌专区</div>
+    <ul>
+        <li><a href="/{$path}/1-5/">1-5万元</a></li>
+        <li><a href="/{$path}/5-10/">5-10万元</a></li>
+        <li><a href="/{$path}/10-20/">10-20万元</a></li>
+        <li><a href="/{$path}/20-50/">20-50万元</a></li>
+        <li><a href="/{$path}/50-100/">50-100万元</a></li>
+        <li><a href="/{$path}/100-200/">100-200万元</a></li>
+    </ul>
+</div>
+<div class="hangye-tj">
+    <ul class="tabs">
+        <volist name="htyj_datas" id="cass">
+            <li class="on"><a href="/{$cass.path}/"><?php echo str_replace('加盟','',$cass['name']);?></a></li>
+        </volist>
+    </ul>
+    <div class="cont">
+        <volist name="htyj_datas" id="das">
+        <ul>
+            <volist name="das.data" id="ddd">
+            <li>
+                <div class="item">
+                    <a class="pic" href="{:cmf_url('portal/common/index',['id'=>$ddd['aid'],'classname'=>$ddd['class']])}" title="{$ddd.title}" rel="nofollow">
+                        <p><img class="lazy" src="__TMPL__/public/xin/images/lazyBg3x2.jpg" data-original="{$ddd.litpic|checkImgurl=###}"alt="{$ddd.title}"></p>
+					</a>
+					<a href="{:cmf_url('portal/common/index',['id'=>$ddd['aid'],'classname'=>$ddd['class']])}" title="{$ddd.title}">
+						<div class="tit">{$ddd.title}</div>
+						<div class="price">{$ddd.invested}</div>
+					</a>
+                </div>
+            </li>
+            </volist>
+        </ul>
+        </volist>
+    </div>
+</div>
+    </section>
+    <section class="hotTabBlock w1200">
+        <div class="tab">
+            <ul>
+                <!-- <li>热门加盟行业</li> -->
+                <li>热门加盟地区</li>
+            </ul>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="content">
+                        <ul>
+                            <volist name="HotAddress" id="HotAddress" >
+                                <li><a href="/{$path}/{$HotAddress.py}/">{$HotAddress['ename']}</a></li>
+                            </volist>
+                        </ul>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="brand-name">
+            <div class="w1200">
+                <ul>
+                    <volist name="brandName" id="brand">
+                        <li><a href="{:cmf_url('portal/common/index',['id'=>$brand['aid'],'classname'=>$brand['class']])}" title="{$brand.title}">{$brand.title}</a></li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section><include file="footer_xin1"/></section>
+    <div id="upTodo"></div>
+</body>
+</html>

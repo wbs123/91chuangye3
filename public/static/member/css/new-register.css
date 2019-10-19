@@ -1,0 +1,28 @@
+.formPhone select{
+    outline:none;
+    border:0;
+    width:100% !important;
+    height:100%;
+}
+.formPhone select{
+    color:#b6b6b6;
+    font-size:15px;
+}
+.address,.invested,.category{
+    padding-left:31px;
+    padding-right:10px;
+}
+
+/* 注意:这里的图片地址要改路径 */
+.category{
+    background-image:url(../img/register-xiangmu.png);
+    background-size: 15px 20px;
+}
+.invested{
+    background-image:url(../img/register-jinqian.png);
+    background-size: 15px 20px;
+}
+.address{
+    background-image:url(../img/register-diqu.png);
+    background-size: 15px 20px;
+}

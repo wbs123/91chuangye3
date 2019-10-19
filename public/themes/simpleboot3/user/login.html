@@ -1,0 +1,164 @@
+﻿
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+    <meta content="91创业网,登录页面" name="keywords">
+    <meta content="91创业网个人中心登录页面。" name="description">
+	<title>个人登录-91创业网</title>
+	<link rel="stylesheet" href="__STATIC__/member/css/reset.css" />
+	<link rel="stylesheet" href="__STATIC__/member/css/style.css" />
+	<script type="text/javascript" src="__STATIC__/member/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<div class="mainBody"> 
+		<div class="autoWidth clear"> 
+			<div class="logo fl"> 
+				<a href="/" class="fl jmw">
+                    <img src="__STATIC__/member/img/logo.png" />
+                </a>
+				<p class="title fl">个人登录</p>
+			</div>
+			<div class="freeConsultation fr"> 
+				<span class="free">免费咨询：400-809-0091 </span>
+				<a href="/" class="return">返回首页</a>
+				<a href="{:url('user/login/comlogin')}" class="personalLogin">企业登录</a>
+			</div>
+		</div>
+		<!-- 登录框 -->
+		<div class="loginBox"> 
+			<div class="loginBoxOne"> 
+				<p class="title">个人账户登录</p>
+				<form id="person_login" action="{:url('user/login/doLogin')}" method="post" autocomplete="off">
+					<ul> 
+						<li> 
+							<p class="formPhone clear">
+								<input type="text" name="username" id="username" placeholder="手机号" title="手机号" class="fl" maxlength="11">
+							</p>
+						</li>
+						<li> 
+							<p class="formPhone password">
+								<input type="password" name="password" id="password" placeholder="密码" title="密码">
+							</p>
+						</li>
+						<li class="clear mt24"> 
+							<p class="formPhone yzm fl">
+								<input type="text" name="captcha" id="captcha" placeholder="验证码" title="验证码">
+							</p>
+							<p class="fl yzmNum"> 
+								<captcha height="36" width="144" font-size="18" length="5"/>
+							</p>
+						</li>
+						<li class="personalLog"> 
+							<input type="submit" value="立即登录" class="logImmediately">
+						</li>
+					</ul>
+				</form>
+			</div>
+			<p class="notRegistered">
+				<span>尚未注册？</span>
+				<a href="{:url('user/register/index')}">立即注册</a>
+			</p>
+		</div>
+		<!-- 底部版权信息 -->
+		<div class="footer"> 
+			<p>Copyright@2017-2022 <a href="http://www.91chuangye.com" style="color: white;">www.91chuangye.com</a>京ICP备14049210号3 <br>北京品创天下科技有限公司  版权所有</p>
+		</div>
+	</div>
+    <script type="text/javascript" src="__STATIC__/member/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="__STATIC__/member/js/jquery.form.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/layer/layer.js"></script>
+	<script type="text/javascript"> 
+	    $('.formPhone input').focus(function(){
+			$(this).parents('.formPhone').css('border','1px solid #a1aed4');
+		});
+        //验证账号密码登录信息
+        $(function () {
+			jQuery.validator.addMethod("mobile", function(value, element) {
+				var length = value.length; 
+				var mobile = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/ 
+				return this.optional(element) || (length == 11 && mobile.test(value)); 
+			}, "手机号码格式错误");
+            $("#person_login").validate({
+                rules: {
+                    username:{
+                        required:true,
+                        maxlength:11,
+						number:true,
+						mobile:true
+                    },
+                    password:{
+                        required:true,
+                        maxlength:16,
+						minlength:6
+                    },
+                    captcha:{
+                        required:true
+                    }
+                },
+                messages: {
+                    username:{
+                        required:'请填写手机号',
+                        maxlength:'手机号最多输入11位',
+						mobile:'手机号码格式不正确',
+                        number:'手机号码格式不正确'
+                    },
+                    password:{
+                        required:'请填写密码',
+                        maxlength:'密码最多输入16位',
+                        minlength:'密码最少输入6位'
+                    },
+                    captcha:{
+                        required:'请填写验证码'
+                    }
+                },
+                focusInvalid: false,
+                onfocusout: function(element) {
+                    $(element).valid();
+                },
+                showErrors: function(errorMap,errorList){
+                    if(errorList.length > 0)
+                    {
+                        var key = Object.keys(errorMap);
+                        $('#'+key[0]).parent().css('border','1px solid #f45242');
+                        $('.wrongPass').remove();
+                        $('.personalLog').before('<li class="wrongPass">'+errorList[0].message+'</li>');
+                    }else{
+                        $('.wrongPass').remove();
+                        $(':text,:password').parent().css('border','1px solid #e3e4ee');
+                    }
+                },
+				submitHandler: function (form) {
+					$(form).ajaxSubmit({
+						dataType:"json",
+						success:function (result) {
+							if(result.code == 0)
+							{
+								layer.msg(result.msg,{time:2000});
+								refresh();
+								setTimeout(function () {
+									$('.wrongPass').remove();
+									$('.personalLog').before('<li class="wrongPass">'+result.msg+'</li>');
+								}, 1000);
+							}else{
+								layer.msg('登录成功,正在为您跳转到会员中心...', {
+								  end:function(){
+									location.href="{:cmf_url('user/Profile/center','',false)}/";
+								  }
+								});
+							}
+						}
+					});
+				}
+            });
+        });
+		
+		//图形验证码变化
+		function refresh(obj)
+        {
+            $('.captcha').attr("src","/captcha/new.html?height=36&width=144&font_size=18&length=5&time="+Math.random());
+			return false;
+		}
+	</script>
+</body>
+</html>

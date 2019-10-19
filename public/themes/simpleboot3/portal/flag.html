@@ -1,0 +1,24 @@
+    <div class="xmtj">
+        <div class="title-com">
+            <h3><i class="icon icon-brand"></i>项目推荐</h3>
+            <a href="{:cmf_url('portal/common/index',['classname'=>'xiangmu'],'')}/" class="fr link-more">查看更多&gt;</a>
+        </div>
+        <div class="cont">
+            <ul class="tab">
+		  <volist name="data4" id="da1">
+			<li><a href="{:cmf_url('portal/common/index',['classname'=>$da1['path']],'')}/">{$da1['name']}</a></li>
+          </volist>
+            </ul>
+            <div class="tab-conts">
+                <volist name="data4" id="da1">
+                <dl class="tab-cont">
+                    <dd class="clearfix">
+                        <volist name="da1.data" id="daa1">
+                        <a href="{:cmf_url('portal/common/index',['id'=>$daa1['aid'],'classname'=>$daa1['class']])}">{$daa1['title']}</a>
+                        </volist>
+                    </dd>
+                </dl>
+                </volist>
+            </div>
+        </div>
+    </div> 

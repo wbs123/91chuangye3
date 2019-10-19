@@ -1,0 +1,173 @@
+<include file="public@header" />
+<!-- 项目logo上传方法 -->
+<script type="text/html" id="photos-item-tpl">
+    <li id="saved-image{id}">
+        <input id="photo-{id}" class="logo" type="hidden" name="post[pic]"  id="pic" value="{url}">
+        <input id="photo-{id}-logo" class="logo" type="hidden" name="pic" value="{url}">
+        <input class="form-control" id="photo-{id}-name" type="text" name="" value="{name}"
+               style="width: 200px;" title="图片名称">
+        <img id="photo-{id}-preview" src="{url}" style="height:36px;width: 36px;"
+             onclick="imagePreviewDialog(this.src);">
+
+        <a href="javascript:(function(){$('#saved-image{id}').remove();})();">移除</a>
+    </li>
+</script>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li ><a href="{:url('advert/index')}">广告管理</a></li>
+        <li class="active"><a href="{:url('advert/add')}">添加广告</a></li>
+    </ul>
+    <form method="post" class="form-horizontal  margin-top-20" action="{:url('advert/addPostm')}" onsubmit="return checkFormData()">
+
+        <div class="form-group">
+            <label for="input-url" class="col-sm-2 control-label">广告分类<span class="form-required">*</span></label>
+            <select class="form-control"  id="nat_son" name="post[type]" style="width: 140px;float: left;margin-left: 15px;border-radius: 0px !important;">
+                <option value='0' >默认分类</option>
+                <option value='1' >首页Banner</option>
+                <option value='2' >排行榜中间2图</option>
+                <!--<option value='3' >专题页面Banner</option>-->
+                <option value='4' >资讯页面Banner</option>
+            </select>
+        </div>
+
+        <div class="form-group pic">
+            <label for="input-url" class="col-sm-2 control-label">图片<span class="form-required">*</span></label>
+                <ul id="logo" class="pic-list list-unstyled form-inline"></ul>
+                <a style="margin-left: 20px;"  href="javascript:uploadMultiImage('图片上传','#logo','photos-item-tpl');"
+                   class="btn btn-default btn-sm">选择图片</a>
+        </div>
+
+        <div class="form-group title">
+            <label for="input-url" class="col-sm-2 control-label">项目名称<span class="form-required">*</span></label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="input-title" name="post[title]">
+            </div>
+        </div>
+
+
+        <div class="form-group url">
+            <label for="input-url" class="col-sm-2 control-label">链接地址<span class="form-required">*</span></label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="input-url" name="post[url]">
+            </div>
+        </div>
+        
+        <div class="form-group ids">
+            <label for="input-url" class="col-sm-2 control-label">项目id<span class="form-required">*</span></label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="input-aid" name="post[aid]" placeholder="多个id请用英文逗号隔开">
+            </div>
+        </div>
+
+
+        <div class="form-group1" style="margin-top: 60px;">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary js-ajax-submit" id="fromSubmit">{:lang('ADD')}</button>
+                <a class="btn btn-default" href="javascript:history.back(-1);">{:lang('BACK')}</a>
+            </div>
+        </div>
+
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script src="__STATIC__/js/layer/layer.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        if($("#nat_son").val() == 2){
+            $(".time").hide();
+            $(".url").hide();
+            $(".title").hide();
+            $(".pic").hide();
+            $(".ids").show();
+        }else{
+            $(".ids").hide();
+            $(".time").show();
+            $(".url").show();
+            $(".title").show();
+            $(".pic").show();
+        }
+        $("#nat_son").change(function(){
+            if($("#nat_son").val() == 2){
+                $(".time").hide();
+                $(".url").hide();
+                $(".title").hide();
+                $(".pic").hide();
+                $(".ids").show();
+            }else{
+                $(".ids").hide();
+                $(".time").show();
+                $(".url").show();
+                $(".title").show();
+                $(".pic").show();
+            }
+        })
+    })
+
+
+
+    // $(".post_status").click(function(){
+    //     if($(this).children().val() == 1){
+    //         $(".post_datetime").hide();
+    //         // $(".post_datetime input").val('');
+    //     }else{
+    //         $(".post_datetime").show();
+    //     }
+    // });
+    function checkFormData () {
+        // alert($("#nat_son").val());
+        if($('#nat_son').val() != 2){
+            if ($("#nat_son").val() == 0) {
+                layer.msg('请选择分类');
+                return false;
+            }
+            var adv_img = $('.logo').val();
+            if (adv_img == '' || adv_img == undefined || adv_img == null) {
+                layer.msg('请上传广告图片');
+                return false;
+            }
+            if ($.trim($("#input-url").val()) == '') {
+                layer.msg('请输入广告URL');
+                return false;
+            }
+        }
+
+        // if ($('input:radio:checked').val() == 2) {
+        //     if ($("#start_time").val() == '' || $("#end_time").val() == '') {
+        //         layer.msg('请选择开始和结束时间');
+        //         return false;
+        //     }
+        // }
+    }
+
+    function imagePreviewDialog(img) {
+        Wind.css('layer');
+
+        Wind.use("layer", function () {
+            layer.photos({
+                photos: {
+                    "title": "", //相册标题
+                    "id": 'image_preview', //相册id
+                    "start": 0, //初始显示的图片序号，默认0
+                    "data": [   //相册包含的图片，数组格式
+                        {
+                            "alt": "",
+                            "pid": 666, //图片id
+                            "src": img, //原图地址
+                            "thumb": img //缩略图地址
+                        }
+                    ]
+                } //格式见API文档手册页
+                , anim: 5, //0-6的选择，指定弹出图片动画类型，默认随机
+                shadeClose: true,
+                // skin: 'layui-layer-nobg',
+                shade: [0.5, '#000000'],
+                shadeClose: true,
+            })
+        });
+    }
+
+</script>

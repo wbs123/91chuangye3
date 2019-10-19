@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="wap-font-scale" content="no" /> 
+	<meta http-equiv="Cache-Control" content="no-transform">
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+	<meta name="applicable-device" content="mobile" />
+  <title>{dede:global name='cfg_webname'/}</title> 
+  <meta name="keywords" content="{dede:global.cfg_keywords/}">
+  <meta name="description" content="{dede:global.cfg_description/}"> 
+  <link rel="canonical"href="http://www.91chuangye.com/" >
+   <link rel="stylesheet" href="{dede:global.cfg_templets_skin/}/newmobile/css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/newmobile/css/css.css" /> 
+  
+ </head> 
+ <body> 
+  <div class="viewport"> 
+   <!-- Top Bar --> 
+	 
+   <!--header开始--> 
+   <div class="header"> 
+    <div class="top"> 
+			<div class="top_bar_item">
+			 <a class="logo" href="{dede:global.cfg_mobile/}" title="91创业网"></a> 
+			 <div class="search"> 
+				<form action="{dede:global.cfg_mobile/}/search.php" method="post"> 
+			 <input type='hidden' name='typeid' value="2,1,3,4,5,6,7,8,9,10,20,339,312,313,350,396,420">
+				 <input type="text" name="q" class="search_txt" maxlength="18" id="keyword" value="" placeholder="找您感兴趣的创业项目" /> 
+				 <input type="submit" class="search_btn" /> 
+				</form> 
+			 </div> 
+			</div> 
+		</div>
+		<div class="nav_bar">
+			<div class="swiper-container nav">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide"><a href="{dede:global.cfg_mobile/}">91创业网</a> </li>
+				<li class="swiper-slide"><a href="http://m.91chuangye.com/xiangmu/">找项目</a></li>
+					{dede:type typeid='391'} <li class="swiper-slide"><a href='[field:typelink function='str_replace("www","m",@me)/]' >品牌排行榜</a> </li>{/dede:type}
+				{dede:type typeid='399'} <li class="swiper-slide"><a href='[field:typelink function='str_replace("www","m",@me)/]' >[field:typename/]</a> </li>{/dede:type}
+				</ul>
+			</div>
+		</div>
+  </div> 
+  <!--header结束--> 
+	
+  <!--幻灯片开始--> 
+  <div id="focus" class="focus"> 
+    <div class="hd"> 
+     <ul> 
+     </ul> 
+    </div> 
+    <div class="bd"> 
+     <div class="tempWrap"> 
+		<ul>
+			<li><a href="{dede:global.cfg_mobile/}/naichajiameng/84335.html"><img src="{dede:global.cfg_templets_skin/}/m/img/banner4.jpg"></a></li>
+			<li><a href="{dede:global.cfg_mobile/}/jipaijiameng/80367.html"><img src="{dede:global.cfg_templets_skin/}/m/img/banner5.jpg"></a></li>
+			<li><a href="{dede:global.cfg_mobile/}/xiaochichejiameng/12988.html"><img src="{dede:global.cfg_templets_skin/}/m/img/banner2.jpg"></a></li>
+		</ul> 
+     </div> 
+    </div> 
+   </div> 
+   <!--幻灯片结束--> 
+   <!--导航开始--> 
+   <div class="index_nav" id="index_nav"> 
+    <div class="hd"> 
+     <ul> 
+     </ul> 
+    </div> 
+    <!-- 导航 --> 
+    <div class="bd"> 
+     <div class="tempWrap"> 
+                <ul>
+                    <li>
+                      <span><a href="{dede:global.cfg_mobile/}/canyin/" class="icon1"><em></em>餐饮加盟</a></span>
+                      <span><a href="{dede:global.cfg_mobile/}/jiushui/" class="icon19"><em></em>酒水加盟</a></span>                     
+                      <span><a href="{dede:global.cfg_mobile/}/fuzhuang/" class="icon2"><em></em>服装加盟</a></span>
+					  <span><a href="{dede:global.cfg_mobile/}/ganxi/" class="icon5"><em></em>干洗加盟</a></span>
+                      <span><a href="{dede:global.cfg_mobile/}/zhubao/" class="icon15"><em></em>珠宝加盟</a></span>                   
+                      <span><a href="{dede:global.cfg_mobile/}/shipin/" class="icon6"><em></em>饰品加盟</a></span>
+                      <span><a href="{dede:global.cfg_mobile/}/jiaju/" class="icon7"><em></em>家居加盟</a></span>
+                      <span><a href="{dede:global.cfg_mobile/}/haoxiangmu/" class="icon3"><em></em>加盟好项目</a></span>                         
+                    </li>
+                    <li>
+                        <span><a href="{dede:global.cfg_mobile/}/nvxing/" class="icon9"><em></em>女性项目</a></span>
+                        <span><a href="{dede:global.cfg_mobile/}/qiche/" class="icon10"><em></em>汽车项目</a></span>
+                        <span><a href="{dede:global.cfg_mobile/}/jiaoyu/" class="icon11"><em></em>教育培训</a></span>
+                        <span><a href="{dede:global.cfg_mobile/}/muying/" class="icon12"><em></em>婴幼儿用品</a></span>
+                        <span><a href="{dede:global.cfg_mobile/}/xieye/" class="icon13"><em></em>鞋业加盟</a></span>
+                        <span><a href="{dede:global.cfg_mobile/}/jiancai/" class="icon4"><em></em>建材加盟</a></span>
+                        <!--<span><a href="{dede:global.cfg_mobile/}/" class="icon16"><em></em>摄影加盟</a></span><-->
+						<!-- <span><a href="{dede:global.cfg_mobile/}/shipin" class="icon17"><em></em>五金加盟</a></span> -->
+                        <span><a href="{dede:global.cfg_mobile/}/ganxi/" class="icon16"><em></em>互联网+</a></span>
+						<span><a href="{dede:global.cfg_mobile/}/jiancai/" class="icon14"><em></em>金融加盟</a></span>
+                    </li>
+                    <li>						
+						<span><a href="{dede:global.cfg_mobile/}/yangshengbaojian/" class="icon8"><em></em>保健加盟</a></span>
+                        
+						<!-- <span><a href="{dede:global.cfg_mobile/}/jiancai/" class="icon18"><em></em>挖掘机</a></span> -->
+                    </li>
+                </ul>
+     </div> 
+    </div> 
+   </div> 
+   <!--导航结束--> 
+   <!--加盟头条开始--> 
+   
+    <div class="headerHot"> 
+     <div class="mainBox"> 
+      <span><img src="{dede:global.cfg_templets_skin/}/newmobile/img/hottop.png" /></span> 
+      <div id="scrollDiv1"> 
+       <div class="scrollText1 bd"> 
+        <ul>  
+		  {dede:arclist typeid='399'  orderby='pubdate' titlelen='180' row=4}
+         <li> <p class="circlePic" style="background: url([field:picname/]) no-repeat;"></p> <p class="a"><a href="[field:arcurl function='str_replace("www","m",@me)/]">[field:title/] </a></p>
+          <div class="p"> 
+           <p> [field:pubdate function="GetDateMK(@me)"/]  </p> 
+           <p> [field:click/] </p> 
+          </div> </li> 
+         {/dede:arclist}
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </div>  
+   <!--加盟头条结束--> 
+   <!--新品推荐 开始--> 
+   <div class="index_item"> 
+    <div class="common_tit"> 
+     <a class="tit" href="http://m.91chuangye.com/xiangmu/"><i class="index_icon1"></i>新品推荐</a> 
+    </div> 
+    <ul class="mHotAttctLists xptj"> 					
+  {dede:arclist  typeid='top'  flag='h' orderby='pubdate' addfields='imgs,invested' channelid='17' titlelen='180' row=6}	
+     <li><a href="[field:arcurl function='str_replace("www","m",@me)/]" title="[field:title/]" class="mHotAttctItems"><img class="lazy" data-original="http://www.91chuangye.com[field:imgs/]"  alt="[field:title/]" /><p>[field:title/]</p><span>￥[field:invested/]</span></a></li> 
+  {/dede:arclist}
+    </ul>  
+   </div> 
+   <!--新品推荐 结束--> 
+   <!--加盟列表 开始--> 
+   <div class="lmflBoxListsBox lmflBoxListsBox1"> 
+    <ul class="lmflBoxtit lmflBoxtitS1 clearfix"> 
+	 {dede:channelartlist typeid='2,312,8,10'  row='4'}
+	 <li>{dede:field name='typename'/}</li> 
+	 {/dede:channelartlist} 
+    </ul> 
+    <div class="con"> 
+{dede:channelartlist typeid='2,312,8,10' row='4'}
+     <ul class="mHotAttctLists"> 
+  {dede:arclist  typeid='0'  orderby='pubdate' addfields='logo,invested' channelid='17' titlelen='180' row=6}	
+     <li><a href="[field:arcurl function='str_replace("www","m",@me)/]" title="[field:title/]" class="mHotAttctItems"><img class="lazy" data-original="[field:picname/]"  alt="[field:title/]" /><p>[field:title/]</p><span>￥[field:invested/]</span></a></li> 
+  {/dede:arclist}
+     </ul> 
+{/dede:channelartlist}
+    </div> 
+   </div> 
+   <div class="lmflBoxListsBox lmflBoxListsBox2"> 
+    <ul class="lmflBoxtit lmflBoxtitS2 clearfix"> 
+	 {dede:channelartlist typeid='5,4,7,313'  row='4'}
+	 <li>{dede:field name='typename'/}</li> 
+	 {/dede:channelartlist} 
+    </ul> 
+    <div class="con"> 
+{dede:channelartlist typeid='5,4,7,313' row='4'}
+     <ul class="mHotAttctLists"> 
+  {dede:arclist  typeid='0'  orderby='pubdate' addfields='logo,invested' channelid='17' titlelen='180' row=6}	
+     <li><a href="[field:arcurl function='str_replace("www","m",@me)/]" title="[field:title/]" class="mHotAttctItems"><img class="lazy" data-original="[field:picname/]"  alt="[field:title/]" /><p>[field:title/]</p><span>￥[field:invested/]</span></a></li> 
+  {/dede:arclist}
+     </ul> 
+{/dede:channelartlist}
+    </div> 
+   </div> 
+   <div class="lmflBoxListsBox lmflBoxListsBox3"> 
+    <ul class="lmflBoxtit lmflBoxtitS3 clearfix"> 
+	 {dede:channelartlist typeid='9,1,3,339'  row='4'}
+	 <li>{dede:field name='typename'/}</li> 
+	 {/dede:channelartlist} 
+    </ul> 
+    <div class="con"> 
+{dede:channelartlist typeid='9,1,3,339' row='4'}
+     <ul class="mHotAttctLists"> 
+  {dede:arclist  typeid='0'  orderby='pubdate' addfields='logo,invested' channelid='17' titlelen='180' row=6}	
+     <li><a href="[field:arcurl function='str_replace("www","m",@me)/]" title="[field:title/]" class="mHotAttctItems"><img class="lazy" data-original="[field:picname/]"  alt="[field:title/]" /><p>[field:title/]</p><span>￥[field:invested/]</span></a></li> 
+  {/dede:arclist}
+     </ul> 
+{/dede:channelartlist}
+    </div>  
+   </div> 
+   <!--加盟列表 结束--> 
+   <!--创业资讯 开始--> 
+   <div class="index_news"> 
+    <ul class="lmflBoxtit clearfix"> 
+	 {dede:channelartlist typeid='401,399'  row='5'}
+	 <li>{dede:field name='typename'function='str_replace("加盟","",@me)/}</li>
+	 {/dede:channelartlist} 
+    </ul> 
+	{dede:channelartlist typeid='401,37' row='5'}
+	   <div class="Headlines"> 
+	   	{dede:arclist  typeid='0'  orderby='sortrank' titlelen='180' row=6 addfields='body'  channelid='1' limit='0,1'}	
+     <dl class="first">
+      <a href="[field:arcurl function='str_replace("www","m",@me)/]" title="[field:title/]"> 
+       <dd> 
+        <img class="lazy" data-original="[field:litpic/]"  alt="[field:title/]" /> 
+       </dd> 
+       <dt> 
+        <p class="jmjj">[field:title/]</p> 
+        <div class="p"> 
+		<p>[field:typename function='str_replace("加盟","",@me)/]</p>
+         <p> [field:sortrank function="GetDateMK(@me)"/] </p> 
+        </div> 
+       </dt> </a>
+     </dl> 
+   {/dede:arclist} 
+	{dede:arclist  typeid='0'  orderby='sortrank' titlelen='180' row=6 addfields='body'  channelid='1' limit='1,2'}	
+     <dl [field:global name='autoindex'runphp='yes']if(@me==4){@me='class="first"';}else{@me='';}[/field:global]>
+      <a href="[field:arcurl function='str_replace("www","m",@me)/]" title="[field:title/]"> 
+       <dd> 
+        <img class="lazy" data-original="[field:litpic/]"  alt="[field:title/]" /> 
+       </dd> 
+       <dt> 
+        <p class="jmjj">[field:title/]</p> 
+        <p class="des">[field:description function="cn_substr(@me,40)"/]...</p>
+        <div class="p clearfix"> 
+      	 <p>[field:typename function='str_replace("加盟","",@me)/]</p>
+         <p> [field:sortrank function="GetDateMK(@me)"/] </p> 
+        </div> 
+       </dt> </a>
+     </dl> 
+   {/dede:arclist} 
+   <!-- {dede:arclist  typeid='0'  orderby='sortrank' titlelen='180' row=1 addfields='body'  channelid='1' limit='3,1'}	
+   <dl class="first second">
+		   <a href="[field:arcurl function='str_replace("www","m",@me)/]" title="[field:title/]">  
+		   <dt> 
+			<p class="jmjj">[field:title/]</p> 
+			<div class="p"> 
+			 <p>[field:typename/]</p>
+			 <p> [field:sortrank function="GetDateMK(@me)"/] </p> 
+			</div> 
+			</dt> 
+			<dd> 
+[field:body function='getbodypics(@me,3)'/]
+		   </dd>
+		   </a>
+      </dl>
+	   {/dede:arclist} -->
+	   	{dede:arclist  typeid='0'  orderby='sortrank' titlelen='180' row=6 addfields='body'  channelid='1' limit='4,3'}	
+     <dl>
+      <a href="[field:arcurl function='str_replace("www","m",@me)/]" title="[field:title/]"> 
+       <dd> 
+        <img class="lazy" data-original="[field:picname/]"  alt="[field:title/]" /> 
+       </dd> 
+       <dt> 
+        <p class="jmjj">[field:title/]</p> 
+		<p class="des">[field:description function="cn_substr(@me,40)"/]...</p>
+        <div class="p clearfix"> 
+		<p>[field:typename function='str_replace("加盟","",@me)/]</p>
+         <p> [field:sortrank function="GetDateMK(@me)"/] </p> 
+        </div> 
+       </dt> </a>
+     </dl> 
+   {/dede:arclist}
+   </div>
+   {/dede:channelartlist}
+   </div> 
+   <!--创业资讯 结束--> 
+
+  <div class="" id="tuijian"> 
+    <ul class="lmflBoxtit clearfix"> 
+     <li>品牌推荐</li> 
+     <li>行业推荐</li>
+    </ul> 
+	   <!-- 特色项目推荐 结束 -->
+   <div class="Headlines index_news_nav index_tuijian"> 
+		<ul class="clearfix"> 
+			 {dede:arclist typeid='2,1,3,4,5,6,7,8,9,10,20,339,312,313,350,396,420' orderby='rand' titlelen='180' row='80'}
+			<li> <a href="[field:arcurl function='str_replace("www","m",@me)/]" title="[field:title/]">[field:title/]</a></li>
+			 {/dede:arclist}   
+		</ul> 
+		<a href="javascript:;" class="addMoreBoxBottom">查看更多<i class="more-icon"></i></a>
+   </div> 
+   <!-- 特色项目推荐 结束 -->
+     <!-- 加盟行业导航 开始-->
+     <div class="Headlines index_news_nav"> 
+		<ul class="clearfix"> 
+			{dede:channelartlist typeid='top' row='16'}
+				<li>
+					<a href='{dede:field name='typeurl'/}'>{dede:field name='typename'/}</a>	
+				</li>
+			 {/dede:channelartlist}	  
+		</ul> 
+   </div> 
+   <!-- 加盟行业导航 结束 -->
+
+  </div>
+   <!-- 本网声明 结束 -->
+   <div class="statement">
+       <div class="common_tit"> 
+        <a class="tit" href="javascript:;">本网声明</a> 
+       </div> 
+       <div class="statCon">
+           <p>1.本站为用户提供免费信息展示，不收取任何费用（包括加盟费），如有冒充本站收费行为请及时报警。</p>
+           <p>2.投资有风险 加盟需谨慎。为规避投资风险，建议您在投资前务必多咨询，多考察，降低投资风险。</p>
+       </div>
+   </div>
+   <!-- 本网声明 结束 -->
+
+  
+  <!---------------------------footer start---------------------------->
+  <div class="footer">
+  	<p>创业有风险，投资需谨慎</p>
+  	<div class="link-box ">
+  		<a href="{dede:global.cfg_mobile/}" class="foot-link">首页</a>
+  		<span class="v-line">|</span>
+  		<a href="http://www.91chuangye.com" class="foot-link">电脑版</a>
+  		<span class="v-line">|</span>
+  		<a href="{dede:global.cfg_mobile/}/mianzeshengming/" class="foot-link">免责声明</a>
+  		<span class="v-line">|</span>
+  		<a href="{dede:global.cfg_mobile/}/sitemap.xml" class="foot-link">网站地图</a>
+  		<span class="v-line">|</span>
+  		<a href="{dede:global.cfg_mobile/}/guanyuwomen/" class="foot-link">关于我们</a>
+  	</div>
+  	<div class="copyright">
+  		<p>Copyright @91创业网</p>
+  		<p>品创天下（北京）科技发展有限公司</p>
+  	</div>
+  	<div class="footer_nav"> 
+  		<a href="/"><span class="ico1"></span>首页</a> 
+  		<a href="{dede:global.cfg_mobile/}/xiangmu/"><span class="ico2"></span>找项目</a> 
+  		<a href="{dede:global.cfg_mobile/}/top/"><span class="ico3"></span>排行榜</a> 
+  		<a href="{dede:global.cfg_mobile/}/news/"><span class="ico4"></span>资讯</a>  
+  	</div>
+  </div>
+  <!---------------------------footer   end---------------------------->
+	
+   <a href="javascript:void(0);" id="returnTop"></a>
+   <!--百度统计-->
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?5294d4276f52adb2e38d1599fd6e2815";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	<!--百度推送-->
+	<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+	</script>
+	<!--百度商桥-->
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?b07628c0dc92bfe463fdd5453d5aed8e";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+   <!--footer结束--> 
+  </div>  
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.min.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/swiper.min.js"></script>
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.SuperSlide.2.1.1.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/TouchSlide.1.1.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/jquery.lazyload.min.js"></script> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/newmobile/js/index.js"></script>  
+  <script type="text/javascript">
+    //scrollDiv1
+  $("#scrollDiv1").slide({mainCell:".bd ul",effect:"topLoop",autoPlay:true});
+  
+  //lazyload
+  $("img.lazy").lazyload({
+    effect: "fadeIn",
+    threshold : 200,
+    skip_invisible : false
+  }); 
+	
+	
+	$(document).ready(function(){
+			var li =$(".index_tuijian li:gt(39)");
+					li.hide();
+			$(".addMoreBoxBottom").click(function(){
+					if(li.is(':visible')){
+							li.slideUp('fast');
+							$(this).removeClass('up');
+							$(this).html("查看更多<i class='more-icon'></i>")
+					}else{
+							li.slideDown('fast').show(); 
+							$(this).addClass('up');
+							$(this).html("收起<i class='more-icon'></i>")
+					}           
+			});
+	});
+  </script>
+
+
+ </body>
+</html>
